@@ -9,7 +9,7 @@
 #import "HealthyFood.h"
 #import "GameMechanics.h"
 
-@implementation SlowMonster
+@implementation HealthyFood
 
 - (id)initWithMonsterPicture
 {

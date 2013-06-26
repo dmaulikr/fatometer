@@ -8,6 +8,6 @@
 
 #import "UnhealthyFood.h"
 
-@interface SlowMonster : BasicMonster
+@interface HealthyFood : BasicMonster
 
 @end

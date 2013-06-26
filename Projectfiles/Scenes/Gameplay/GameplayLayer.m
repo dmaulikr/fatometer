@@ -254,7 +254,7 @@ float fatness;
     
     // set spwan rate for monsters
     [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[BasicMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[SlowMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
 //    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
