@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
+		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -303,6 +304,7 @@
 
 /* Begin PBXFileReference section */
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
+		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -1186,6 +1188,7 @@
 		62F018A517445BEC00BAF979 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				38BE2B9F177BAED80009AEE6 /* pointer.png */,
 				38BE2B9D177BA2080009AEE6 /* toolbar.png */,
 				6212B4F4176671A50040386F /* monster-animations.plist */,
 				6212B4F5176671A50040386F /* monster-animations.png */,
@@ -1672,6 +1675,7 @@
 				54170953177123A90021A8C5 /* send-field-landscape.png in Resources */,
 				5417099B177124400021A8C5 /* README.md in Resources */,
 				38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */,
+				38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -138,6 +138,25 @@
     }
 }
 
+- (void)collect
+{
+    if (self.invincible)
+    {
+        // if we are invincible at the moment, we cannot collect things
+        return;
+    }
+    
+    CCAction *blinkAction = [self getActionByTag:1000];
+    
+    if ( (blinkAction == nil) || [blinkAction isDone])
+    {
+        self.hitPoints --;
+        CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
+        blink.tag = 1000;
+        [self runAction:blink];
+    }
+}
+
 - (void)update:(ccTime)delta
 {
     // only execute the block, if the game is in 'running' mode

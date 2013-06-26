@@ -165,10 +165,14 @@ float fatness;
         
         // set up toolbar
         CCSprite *toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
-//        CCSprite *pointer = [CCSprite spriteWithFile:@"toolbar.png"];
+        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
         
         toolBar.position = ccp(239.5, 25);
         [self addChild:toolBar];
+        
+        pointer.position = ccp(239.5, 25);
+        [self addChild:pointer];
+        
         //float [[toolBar boundingBox].size.height];
         
         

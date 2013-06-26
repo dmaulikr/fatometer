@@ -42,5 +42,6 @@
 - (void)gotHit;
 - (void)jump;
 - (void)stab;
+- (void)collect;
 
 @end
