@@ -13,7 +13,7 @@
  Class for ghost enemy.
  */
 
-@interface BasicMonster : Monster
+@interface UnhealthyFood : Monster
 
 @property (nonatomic, assign) NSInteger hitPoints;
 // velocity in pixels per second

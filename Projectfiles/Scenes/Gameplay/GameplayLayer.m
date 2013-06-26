@@ -253,7 +253,7 @@ float fatness;
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[BasicMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
 //    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
     
