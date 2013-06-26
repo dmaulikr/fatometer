@@ -54,6 +54,8 @@
 
 @implementation GameplayLayer
 
+float fatness;
+
 + (id)scene
 {
     CCScene *scene = [CCScene node];
@@ -94,6 +96,7 @@
     
     if (self)
     {
+                
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
@@ -159,6 +162,17 @@
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
         pauseButtonMenu.position = ccp(self.contentSize.width - pauseButtonMenuItem.contentSize.width - 4, self.contentSize.height - 58);
         [hudNode addChild:pauseButtonMenu];
+        
+        // set up toolbar
+        CCSprite *toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
+//        CCSprite *pointer = [CCSprite spriteWithFile:@"toolbar.png"];
+        
+        toolBar.position = ccp(239.5, 25);
+        [self addChild:toolBar];
+        //float [[toolBar boundingBox].size.height];
+        
+        
+        
         
         // add the enemy cache containing all spawned enemies
         [self addChild:[EnemyCache node]];
@@ -235,9 +249,9 @@
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-    [[GameMechanics sharedGameMechanics] setSpawnRate:25 forMonsterType:[BasicMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[SlowMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[BasicMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[SlowMonster class]];
+//    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
@@ -320,7 +334,7 @@
 - (void)updateRunning:(ccTime)delta
 {
     // distance depends on the current scrolling speed
-    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 5;
+    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 1;
     game.meters = (int) (gainedDistance);
     // update the score display
     pointsDisplayNode.score = game.meters;
@@ -336,7 +350,7 @@
         // TODO: this needs to be fixed, kobold 2d autotransforms the touches, depending on the device orientation, which is no good for games not supporting all orientations
         switch (dir)
         {
-            case KKSwipeGestureDirectionRight:
+            case KKSwipeGestureDirectionUp:
                 [knight jump];
                 break;
             case KKSwipeGestureDirectionDown:

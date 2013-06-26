@@ -11,7 +11,7 @@
 #import "GameMechanics.h"
 #import "Knight.h"
 
-#define ENEMY_MAX 300
+#define ENEMY_MAX 5
 
 @implementation EnemyCache
 
@@ -44,7 +44,7 @@
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
          Here we sign up for the 'GamePaused' and 'GameResumed' information, that is broadcasted by the GameMechanics class. Whenever the game pauses or resumes, we get informed and can react accordingly.
          **/
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
 	}
 	
