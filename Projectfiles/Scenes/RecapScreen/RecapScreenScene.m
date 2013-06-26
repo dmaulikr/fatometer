@@ -58,14 +58,14 @@
          */
         
         /********** Statistics Panel *********/
-        NSString *highscore = [NSString stringWithFormat:@"%d points", game.score];
-        NSString *distance = [NSString stringWithFormat:@"%d meters", game.meters];
-        NSString *enemiesKilled = [NSString stringWithFormat:@"%d enemies killed", game.enemiesKilled];
+        NSString *highscore = [NSString stringWithFormat:@"%d Points", game.score];
+        NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
+        NSString *enemiesKilled = [NSString stringWithFormat:@"%d Enemy's Killed", game.enemiesKilled];
         
         NSArray *highScoreStrings = [NSArray arrayWithObjects:highscore, distance, enemiesKilled, nil];
 
         // setup the statistics panel with the current game information of the user
-        statisticsNode = [[StatisticsNode alloc] initWithTitle:@"GAME OVER" highScoreStrings:highScoreStrings];
+        statisticsNode = [[StatisticsNode alloc] initWithTitle:@"YOU LOST" highScoreStrings:highScoreStrings];
         statisticsNode.contentSize = CGSizeMake(200, 200);
         statisticsNode.anchorPoint = ccp(0, 1);
         statisticsNode.position = ccp(20 ,screenSize.height - 70);

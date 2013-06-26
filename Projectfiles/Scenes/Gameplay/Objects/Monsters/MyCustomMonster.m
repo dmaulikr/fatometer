@@ -25,13 +25,15 @@
 
 - (void)spawn
 {
-    self.position = CGPointMake(250, 50);
+//    self.position = CGPointMake(250, 50);
 	
 	// Finally set yourself to be visible, this also flag the enemy as "in use"
-	self.visible = YES;
+//	self.visible = YES;
+    self.visible = NO;
+
 }
 
-- (void)gotHit
+- (void)gotCollected
 {
     // mark as unvisible and move off screen
     self.visible = FALSE;

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "BasicMonster.h"
+#import "UnhealthyFood.h"
 
 @interface SlowMonster : BasicMonster
 

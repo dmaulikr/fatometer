@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Monster.h"
+#import "Food.h"
 
 @implementation Monster
 
@@ -20,7 +20,7 @@
     @throw @"- (void)spawn has to be implemented in Subclass.";
 }
 
-- (void)gotHit
+- (void)gotCollected
 {
     @throw @"- (void)gotHit has to be implemented in Subclass.";
 }

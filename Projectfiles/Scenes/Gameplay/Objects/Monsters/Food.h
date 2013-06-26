@@ -14,6 +14,6 @@
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
-- (void)gotHit;
+- (void)gotCollected;
 
 @end

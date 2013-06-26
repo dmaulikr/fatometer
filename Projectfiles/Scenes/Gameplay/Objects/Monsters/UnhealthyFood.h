@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "BasicMonster.h"
-#import "Monster.h"
+#import "UnhealthyFood.h"
+#import "Food.h"
 
 /**
  Class for ghost enemy.

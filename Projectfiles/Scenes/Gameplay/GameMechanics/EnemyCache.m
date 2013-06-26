@@ -7,7 +7,7 @@
 //
 
 #import "EnemyCache.h"
-#import "Monster.h"
+#import "Food.h"
 #import "GameMechanics.h"
 #import "Knight.h"
 
@@ -152,7 +152,7 @@
                 // if the knight is stabbing, or the knight is in invincible mode, the enemy will be destroyed...
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
-                    [enemy gotHit];
+                    [enemy gotCollected];
                     // since the enemy was hit, we can skip the second check, using 'continue'.
                     continue;
                 }
@@ -165,11 +165,14 @@
                 // if the knight is stabbing, or the knight is in invincible mode, the enemy will be destroyed...
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
-                    [enemy gotHit];
+                    [enemy gotCollected];
                 } else
                 {
                     // if the kight is not stabbing, he will be hit
                     [knight gotHit];
+                    
+                    
+//                    [enemy gotCollected];
                 }
             }
 		}
@@ -184,7 +187,7 @@
     {
         updateCount++;
         
-        // first we get all available monster types
+        // first we get all available spawnFrequency types
         NSArray *monsterTypes = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
         
         for (Class monsterTypeClass in monsterTypes)

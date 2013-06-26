@@ -1,43 +1,44 @@
 //
-//  GhostMonster.m
+//  SlowMonster.m
 //  _MGWU-SideScroller-Template_
 //
-//  Created by Benjamin Encz on 5/16/13.
+//  Created by Benjamin Encz on 5/18/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "BasicMonster.h"
+#import "HealthyFood.h"
 #import "GameMechanics.h"
 
-@implementation BasicMonster
+@implementation SlowMonster
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithSpriteFrameName:@"monster1_1.png"];
+    self = [super initWithSpriteFrameName:@"monster2_1.png"];
     
     if (self)
     {
         self.initialHitPoints = 1;
-		self.velocity = CGPointMake(-30, 0);
+        // This line of code makes the monsters (a.k.a foods) move towards the knight (a.k.a the fat man)
+//		self.velocity = CGPointMake(-10, 0);
         
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"monster-animations.plist"];
         
         self.animationFrames = [NSMutableArray array];
         
-        for(int i = 1; i <= 5; ++i)
+        for(int i = 1; i <= 3; ++i)
         {
             [self.animationFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster1_%d.png", i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster2_%d.png", i]]];
         }
         
         //Create an animation from the set of frames you created earlier
-        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
-        
-        //Create an action with the animation that can then be assigned to a sprite
-        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-        
-        // run the animation
-        [self runAction:self.run];
+//        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
+//        
+//        //Create an action with the animation that can then be assigned to a sprite
+//        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
+//        
+//        // run the animation
+//        [self runAction:self.run];
         
         [self scheduleUpdate];
     }
@@ -45,24 +46,8 @@
     return self;
 }
 
-- (void)spawn
-{
-	// Select a spawn location just outside the right side of the screen, with random y position
-	CGRect screenRect = [[CCDirector sharedDirector] screenRect];
-	CGSize spriteSize = [self contentSize];
-	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
-	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
-	self.position = CGPointMake(xPos, yPos);
-	
-	// Finally set yourself to be visible, this also flag the enemy as "in use"
-	self.visible = YES;
-	
-	// reset health
-	self.hitPoints = self.initialHitPoints;
-}
 
-- (void)gotHit {
-    
+- (void)gotCollected {    
     CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
     
     // Set some parameters that can't be set in Particle Designer
@@ -85,7 +70,7 @@
     id easeMove = [CCEaseBackInOut actionWithAction:move];
     
     CCAction *movementCompleted = [CCCallBlock actionWithBlock:^{
-        // this code is called when the movement is completed, then we we want to clean up the coinSprite
+        // cleanup
         coinSprite.visible = FALSE;
         [coinSprite removeFromParent];
         coinSprite.zOrder = MAX_INT -1;
@@ -99,33 +84,7 @@
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
-    [[GameMechanics sharedGameMechanics] game].score += 50;
-}
-
-- (void)update:(ccTime)delta
-{
-    // only execute the block, if the game is in 'running' mode
-    if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
-    {
-        [self updateRunningMode:delta];
-    }
-}
-
-- (void)updateRunningMode:(ccTime)delta
-{
-    // apply background scroll speed
-    float xVelocity = self.velocity.x;
-    float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
-    
-    xVelocity -= backgroundScrollSpeedX;
-    CGPoint combinedVelocity = ccp(xVelocity, self.velocity.y);
-    
-    
-    // move the monster until it leaves the left edge of the screen
-    if (self.position.x > (self.contentSize.width * (-1)))
-    {
-        [self setPosition:ccpAdd(self.position, ccpMult(combinedVelocity,delta))];
-    }
+    [[GameMechanics sharedGameMechanics] game].score += 1;
 }
 
 @end
