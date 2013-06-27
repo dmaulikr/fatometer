@@ -142,7 +142,7 @@
 {
     if (self.invincible)
     {
-        // if we are invincible at the moment, we cannot collect things
+        // if we are invincible at the moment, we cannot be hit
         return;
     }
     

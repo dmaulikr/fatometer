@@ -55,6 +55,7 @@
     system.autoRemoveOnFinish = YES;
     system.position = self.position;
     
+    
     // Add the particle effect to the GameScene, for these reasons:
     // - self is a sprite added to a spritebatch and will only allow CCSprite nodes (it crashes if you try)
     // - self is now invisible which might affect rendering of the particle effect
