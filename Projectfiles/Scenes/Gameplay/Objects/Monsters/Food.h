@@ -8,7 +8,7 @@
 
 #import "CCSprite.h"
 
-@interface Monster : CCSprite
+@interface Food : CCSprite
 
 @property (nonatomic, assign) BOOL visible;
 

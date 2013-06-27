@@ -61,7 +61,7 @@
     {
         NSArray *enemiesOfType = [enemies objectForKey:key];
         
-        for (Monster *monster in enemiesOfType)
+        for (Food *monster in enemiesOfType)
         {
             [monster pauseSchedulerAndActions];
         }
@@ -78,7 +78,7 @@
     {
         NSArray *enemiesOfType = [enemies objectForKey:key];
         
-        for (Monster *monster in enemiesOfType)
+        for (Food *monster in enemiesOfType)
         {
             [monster resumeSchedulerAndActions];
         }
@@ -91,7 +91,7 @@
      We use the class of the enemy as key for the dictionary, to receive an array of all existing enimies of that type.
      We use a CCArray since it has a better performance than an NSArray. */
 	CCArray* enemiesOfType = [enemies objectForKey:enemyTypeClass];
-    Monster* enemy;
+    Food* enemy;
     
     /* we try to reuse existing enimies, therefore we use this flag, to keep track if we found an enemy we can
      respawn or if we need to create a new one */
@@ -121,7 +121,7 @@
     if (!foundAvailableEnemyToSpawn)
     {
         // initialize an enemy of the provided class
-        Monster *enemy =  [(Monster *) [enemyTypeClass alloc] initWithMonsterPicture];
+        Food *enemy =  [(Food *) [enemyTypeClass alloc] initWithMonsterPicture];
         [enemy spawn];
         [enemiesOfType addObject:enemy];
         [self addChild:enemy];
@@ -130,7 +130,7 @@
 
 -(void) checkForCollisions
 {
-	Monster* enemy;
+	Food* enemy;
     Knight *knight = [[GameMechanics sharedGameMechanics] knight];
     CGRect knightBoundingBox = [knight boundingBox];
     CGRect knightHitZone = [knight hitZone];

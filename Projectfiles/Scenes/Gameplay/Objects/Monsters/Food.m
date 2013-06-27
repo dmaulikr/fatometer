@@ -8,7 +8,7 @@
 
 #import "Food.h"
 
-@implementation Monster
+@implementation Food
 
 - (id)initWithMonsterPicture
 {

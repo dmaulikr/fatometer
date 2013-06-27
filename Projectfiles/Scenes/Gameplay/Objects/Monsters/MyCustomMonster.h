@@ -8,6 +8,6 @@
 
 #import "Food.h"
 
-@interface MyCustomMonster : Monster
+@interface MyCustomMonster : Food
 
 @end
