@@ -1,10 +1,8 @@
 # Xcode
-<<<<<<< HEAD
 build/*
 =======
 .DS_Store
 build/
->>>>>>> f33c2a832c9b3a2675f1b1bc16e1e4c8ca136248
 *.pbxuser
 !default.pbxuser
 *.mode1v3
