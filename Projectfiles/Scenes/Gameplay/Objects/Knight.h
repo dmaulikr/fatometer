@@ -21,6 +21,9 @@
     CCSequence *stab;
     
     BOOL stabDidRun;
+    float fatness;
+
+    
 }
 
 // defines a hit zone, which is smaller as the sprite, only if this hit zone is hit the knight is injured
@@ -37,6 +40,7 @@
 
 // indicates if the knight is invincible at the moment
 @property (nonatomic, assign) BOOL invincible;
+
 
 - (id)initWithKnightPicture;
 - (void)gotHit;

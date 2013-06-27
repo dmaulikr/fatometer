@@ -7,6 +7,7 @@
 //
 
 #import "Knight.h"
+#import "GameplayLayer.h"
 #import "GameMechanics.h"
 
 @implementation Knight
@@ -85,6 +86,8 @@
          **/
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
+        
+        fatness = 50;
     }
     
     return self;
@@ -129,9 +132,11 @@
     
     CCAction *blinkAction = [self getActionByTag:1000];
     
+    
     if ( (blinkAction == nil) || [blinkAction isDone])
     {
-        self.hitPoints --;
+        fatness = fatness - 2;
+        fatness--;
         CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
         blink.tag = 1000;
         [self runAction:blink];
@@ -163,7 +168,10 @@
     if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
     {
         [self updateRunningMode:delta];
-    } 
+    }
+    
+    NSNumber *toolbarPointer = [NSNumber numberWithInteger:fatness];
+    [[NSUserDefaults standardUserDefaults] setObject:toolbarPointer forKey:@"toolbarPointer"];
 }
 
 - (void)updateRunningMode:(ccTime)delta

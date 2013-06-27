@@ -54,7 +54,6 @@
 
 @implementation GameplayLayer
 
-float fatness;
 
 + (id)scene
 {
@@ -164,14 +163,26 @@ float fatness;
         [hudNode addChild:pauseButtonMenu];
         
         // set up toolbar
-        CCSprite *toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
-        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
+        toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
+        pointer = [CCSprite spriteWithFile:@"pointer.png"];
         
         toolBar.position = ccp(239.5, 25);
         [self addChild:toolBar];
         
-        pointer.position = ccp(239.5, 25);
+
+        [self convertFromPercent:fatness];
         [self addChild:pointer];
+        
+        // set up toolbar
+//        CCSprite *healthBar = [CCSprite spriteWithFile:@"actualhealth.jpg"];
+//        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
+//        
+//        healthBar.position = ccp(230, 300);
+//        [self addChild:healthBar];
+//        
+//        pointer.position = ccp(239.5, 25);
+//        [self addChild:pointer];
+
         
         //float [[toolBar boundingBox].size.height];
         
@@ -198,6 +209,13 @@ float fatness;
     }
     
     return self;
+}
+
+-(void) convertFromPercent:(float) floatToConvert
+{
+    float percentVal = [toolBar boundingBox].size.width/100;
+    float percent = floatToConvert * percentVal;
+    pointerPosition = ccp(percent, toolBar.position.y);
 }
 
 - (void)gamePaused
@@ -317,8 +335,25 @@ float fatness;
     }
 }
 
+
+
+-(void) updatePointer
+{
+    if (fatness > 100) {
+        fatness = 100;
+    }
+    
+    if (fatness < 0) {
+        fatness = 0;
+    }
+
+    [self convertFromPercent:fatness];
+    pointer.position = pointerPosition;
+}
+
 - (void) update:(ccTime)delta
 {
+    [self updatePointer];
     // update the amount of in-App currency in pause mode, too
     inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
     
@@ -370,6 +405,9 @@ float fatness;
         // knight died, present screen with option to GO ON for paying some coins
         [self presentGoOnPopUp];
     }
+    
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
 }
 
 

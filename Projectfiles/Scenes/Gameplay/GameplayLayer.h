@@ -48,6 +48,14 @@
     
     /* stores the exact distance the knight has ran */
     float gainedDistance;
+    
+    CCSprite *toolBar;
+    CCSprite *pointer;
+    
+    CGPoint pointerPosition;
+    
+    float fatness;
+    
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.

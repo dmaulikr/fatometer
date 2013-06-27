@@ -35,7 +35,8 @@
             healthSprite.anchorPoint = ccp(0,1);
             healthSprite.position = ccp(xPos,healthSprite.contentSize.height);
             xPos += healthSprite.contentSize.width;
-            [self addChild:healthSprite];
+//            [self addChild:healthSprite];
+            
             [healthSprites addObject:healthSprite];
         }
         
