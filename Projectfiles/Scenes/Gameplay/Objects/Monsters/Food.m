@@ -186,7 +186,6 @@
 	self.hitPoints = self.initialHitPoints;
 }
 
-<<<<<<< HEAD
 
 
 - (void)update:(ccTime)delta
@@ -221,7 +220,4 @@
     }
 }
 
-
-=======
->>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
