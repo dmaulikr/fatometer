@@ -25,4 +25,11 @@
     @throw @"- (void)gotHit has to be implemented in Subclass.";
 }
 
+- (void)update:(ccTime)delta
+{
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
+    
+}
+
 @end

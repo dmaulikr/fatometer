@@ -10,4 +10,5 @@
 
 @interface HealthyFood : UnhealthyFood
 
+
 @end

@@ -10,10 +10,18 @@
 
 @interface Food : CCSprite
 
+{
+    float fatness;
+    bool healthy;
+}
+
 @property (nonatomic, assign) BOOL visible;
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
+
+
+
 
 @end

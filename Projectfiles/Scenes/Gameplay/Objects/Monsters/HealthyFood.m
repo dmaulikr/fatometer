@@ -7,7 +7,9 @@
 //
 
 #import "HealthyFood.h"
+#import "GameplayLayer.h"
 #import "GameMechanics.h"
+#import "Food.h"
 
 @implementation HealthyFood
 
@@ -84,8 +86,12 @@
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
-    [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
-    [[GameMechanics sharedGameMechanics] game].score += 1;
+    
+    
+    fatness = fatness + 10;
+    fatness++;
+
 }
+
 
 @end
