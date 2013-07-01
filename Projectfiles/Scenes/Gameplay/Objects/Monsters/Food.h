@@ -11,10 +11,13 @@
 @interface Food : CCSprite
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     float fatness;
 }
 
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 =======
 >>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @property (nonatomic, assign) BOOL visible;

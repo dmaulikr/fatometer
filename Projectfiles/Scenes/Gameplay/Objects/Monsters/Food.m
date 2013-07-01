@@ -26,6 +26,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - (void)update:(ccTime)delta
 {
 //    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
@@ -33,6 +34,8 @@
     
 }
 
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
 =======
 @end
