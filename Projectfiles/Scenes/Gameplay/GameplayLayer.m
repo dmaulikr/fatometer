@@ -9,6 +9,8 @@
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
+#import "UnhealthyFood.h"
+#import "HealthyFood.h"
 #import "GameMechanics.h"
 #import "EnemyCache.h"
 #import "MainMenuLayer.h"
@@ -294,7 +296,7 @@
     
 	// adjust velocity based on current accelerometer acceleration
 	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
-	
+    
 	// we must limit the maximum velocity of the player sprite, in both directions
 	if (knight.velocity.x > maxVelocity)
 	{
@@ -338,11 +340,11 @@
 -(void) updatePointer
 {
     if (fatness > 100) {
-        fatness = 100;
+        fatness = 95;
     }
     
     if (fatness < 0) {
-        fatness = 0;
+        fatness = 5;
     }
     
     [self convertFromPercent:fatness];
@@ -368,6 +370,7 @@
     }
     NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
     fatness = [updateToolbarPointer intValue];
+    
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -406,8 +409,6 @@
         [self presentGoOnPopUp];
     }
     
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
 }
 
 
@@ -468,7 +469,6 @@
     skipAheadMenu.opacity = 0.f;
     CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:0.5f];
     [skipAheadMenu runAction:fadeIn];
-    
     [self scheduleOnce: @selector(hideSkipAheadButton) delay:duration];
 }
 

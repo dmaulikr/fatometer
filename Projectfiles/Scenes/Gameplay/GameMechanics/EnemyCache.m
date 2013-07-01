@@ -47,7 +47,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
 	}
-	
+    
 	return self;
 }
 
@@ -188,9 +188,9 @@
         updateCount++;
         
         // first we get all available spawnFrequency types
-        NSArray *healthy = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
+        NSArray *monsterTypes = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
         
-        for (Class monsterTypeClass in healthy)
+        for (Class monsterTypeClass in monsterTypes)
         {
             // we get the spawn frequency for this specific monster type
             int spawnFrequency = [[GameMechanics sharedGameMechanics] spawnRateForMonsterType:monsterTypeClass];

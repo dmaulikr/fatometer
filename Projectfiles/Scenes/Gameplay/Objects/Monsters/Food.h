@@ -10,18 +10,17 @@
 
 @interface Food : CCSprite
 
+{
+    float fatness;
+}
+
 @property (nonatomic, assign) BOOL visible;
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
 
-@property (nonatomic, assign) NSInteger hitPoints;
-// velocity in pixels per second
-@property (nonatomic, assign) CGPoint velocity;
 
-@property (nonatomic, strong) NSMutableArray *animationFrames;
-@property (nonatomic, strong) CCAction *run;
-@property (nonatomic, assign) NSInteger initialHitPoints;
+
 
 @end

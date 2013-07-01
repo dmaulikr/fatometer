@@ -12,6 +12,7 @@
 
 @synthesize spawnRatesByMonsterType = _spawnRatesByMonsterType;
 @synthesize gameState = _gameState;
+@synthesize changeFatnessByFoodType = _changeFatnessByFoodType;
 
 + (id)sharedGameMechanics
 {
@@ -32,21 +33,22 @@
     if (self)
     {
         _spawnRatesByMonsterType = [NSMutableDictionary dictionary];
+        _changeFatnessByFoodType = [NSMutableDictionary dictionary];
+        
     }
     
     return self;
 }
 
-- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)healthy
-{
+- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)monsterType {
     NSNumber *spawnRateNumber = [NSNumber numberWithInt:spawnRate];
-    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id)healthy];
-    
-}  
-
-- (int)spawnRateForMonsterType:(Class)healthy {
-    return [[_spawnRatesByMonsterType objectForKey:(id)healthy] intValue];
+    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id<NSCopying>)monsterType];
 }
+
+- (int)spawnRateForMonsterType:(Class)monsterType {
+    return [[_spawnRatesByMonsterType objectForKey:(id<NSCopying>)monsterType] intValue];
+}
+
 
 - (void)resetGame
 {

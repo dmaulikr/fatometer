@@ -307,7 +307,6 @@
 		3803A83417823EAE002E023A /* HealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyFood.h; sourceTree = "<group>"; };
 		3803A83517823EAE002E023A /* HealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyFood.m; sourceTree = "<group>"; };
 		3803A83A17823FBC002E023A /* UnhealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnhealthyFood.m; sourceTree = "<group>"; };
-		3803A83B17823FBD002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
 		3803A83D1782457F002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
 		38130D90177CB66A00FC2574 /* FatometerDisplayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FatometerDisplayNode.h; path = Scenes/Gameplay/HUD/FatometerDisplayNode.h; sourceTree = "<group>"; };
 		38130D91177CB66A00FC2574 /* FatometerDisplayNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FatometerDisplayNode.m; path = Scenes/Gameplay/HUD/FatometerDisplayNode.m; sourceTree = "<group>"; };
@@ -937,7 +936,6 @@
 			children = (
 				3803A83A17823FBC002E023A /* UnhealthyFood.m */,
 				3803A83D1782457F002E023A /* UnhealthyFood.h */,
-				3803A83B17823FBD002E023A /* UnhealthyFood.h */,
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
 				6212B6F6177114800040386F /* MyCustomMonster.h */,
