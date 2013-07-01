@@ -56,10 +56,6 @@ typedef NS_ENUM(NSInteger, GameState) {
 // stores the individual spawn rates for all monster types
 @property (nonatomic, strong, readonly) NSMutableDictionary *spawnRatesByMonsterType;
 
-// stores the individual spawn rates for all monster types
-@property (nonatomic, strong, readonly) NSMutableDictionary *changeFatnessByFoodType;
-
-
 // gives access to the shared instance of this class
 + (id)sharedGameMechanics;
 

@@ -1,20 +1,19 @@
 //
-//  Monster.h
+//  GhostMonster.h
 //  _MGWU-SideScroller-Template_
 //
-//  Created by Benjamin Encz on 6/18/13.
-//  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
+//  Created by Benjamin Encz on 5/16/13.
+//  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "CCSprite.h"
+#import "UnhealthyFood.h"
+#import "Food.h"
 
-@interface Food : CCSprite
+/**
+ Class for ghost enemy.
+ */
 
-@property (nonatomic, assign) BOOL visible;
-
-- (id)initWithMonsterPicture;
-- (void)spawn;
-- (void)gotCollected;
+@interface UnhealthyFood : Food
 
 @property (nonatomic, assign) NSInteger hitPoints;
 // velocity in pixels per second

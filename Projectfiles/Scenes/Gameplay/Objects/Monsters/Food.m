@@ -6,13 +6,10 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-<<<<<<< HEAD
-=======
 #import "GameplayLayer.h"
 #import "GameMechanics.h"
 #import "Food.h"
 
->>>>>>> parent of 5e8464c... Revert "Sh** Happens :("
 @implementation Food
 
 - (id)initWithUnhealthyPicture
@@ -189,9 +186,7 @@
 	self.hitPoints = self.initialHitPoints;
 }
 
-<<<<<<< HEAD
 @end
-=======
 
 
 - (void)update:(ccTime)delta
@@ -228,5 +223,7 @@
 
 
 
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
 >>>>>>> parent of 5e8464c... Revert "Sh** Happens :("
