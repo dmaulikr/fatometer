@@ -135,8 +135,10 @@
 		6212B6E2176E9ED30040386F /* topMissionCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6E1176E9ECD0040386F /* topMissionCellBackground.png */; };
 		6212B6EF177108710040386F /* basicbarrell-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6ED177108700040386F /* basicbarrell-hd.png */; };
 		6212B6F0177108710040386F /* basicbarrell.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6EE177108710040386F /* basicbarrell.png */; };
+		6212B6FA177114800040386F /* UnhealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F3177114800040386F /* UnhealthyFood.m */; };
 		6212B6FB177114800040386F /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F5177114800040386F /* Food.m */; };
 		6212B6FC177114800040386F /* MyCustomMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F7177114800040386F /* MyCustomMonster.m */; };
+		6212B6FD177114800040386F /* HealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F9177114800040386F /* HealthyFood.m */; };
 		6212B700177115D10040386F /* tree-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6FE177115D10040386F /* tree-hd.png */; };
 		6212B701177115D10040386F /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6FF177115D10040386F /* tree.png */; };
 		6212B706177116A70040386F /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B705177116A70040386F /* Tree.m */; };
@@ -457,10 +459,14 @@
 		6212B6E1176E9ECD0040386F /* topMissionCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topMissionCellBackground.png; sourceTree = "<group>"; };
 		6212B6ED177108700040386F /* basicbarrell-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "basicbarrell-hd.png"; path = "Objects/basicbarrell-hd.png"; sourceTree = "<group>"; };
 		6212B6EE177108710040386F /* basicbarrell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = basicbarrell.png; path = Objects/basicbarrell.png; sourceTree = "<group>"; };
+		6212B6F2177114800040386F /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
+		6212B6F3177114800040386F /* UnhealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnhealthyFood.m; sourceTree = "<group>"; };
 		6212B6F4177114800040386F /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		6212B6F5177114800040386F /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
 		6212B6F6177114800040386F /* MyCustomMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomMonster.h; sourceTree = "<group>"; };
 		6212B6F7177114800040386F /* MyCustomMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomMonster.m; sourceTree = "<group>"; };
+		6212B6F8177114800040386F /* HealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyFood.h; sourceTree = "<group>"; };
+		6212B6F9177114800040386F /* HealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyFood.m; sourceTree = "<group>"; };
 		6212B6FE177115D10040386F /* tree-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree-hd.png"; path = "Objects/tree-hd.png"; sourceTree = "<group>"; };
 		6212B6FF177115D10040386F /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Objects/tree.png; sourceTree = "<group>"; };
 		6212B704177116A70040386F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -925,10 +931,14 @@
 		6212B6F1177114800040386F /* Foods (a.k.a Monsters) */ = {
 			isa = PBXGroup;
 			children = (
+				6212B6F2177114800040386F /* UnhealthyFood.h */,
+				6212B6F3177114800040386F /* UnhealthyFood.m */,
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
 				6212B6F6177114800040386F /* MyCustomMonster.h */,
 				6212B6F7177114800040386F /* MyCustomMonster.m */,
+				6212B6F8177114800040386F /* HealthyFood.h */,
+				6212B6F9177114800040386F /* HealthyFood.m */,
 			);
 			name = "Foods (a.k.a Monsters)";
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1720,8 +1730,10 @@
 				6212B6C2176E4ED50040386F /* CCLabelTTF+adjustToFitRequiredSize.m in Sources */,
 				6212B6C5176E546D0040386F /* MissionProvider.m in Sources */,
 				6212B6C8176E6F850040386F /* KillAmountOfEnemiesInDistance.m in Sources */,
+				6212B6FA177114800040386F /* UnhealthyFood.m in Sources */,
 				6212B6FB177114800040386F /* Food.m in Sources */,
 				6212B6FC177114800040386F /* MyCustomMonster.m in Sources */,
+				6212B6FD177114800040386F /* HealthyFood.m in Sources */,
 				6212B706177116A70040386F /* Tree.m in Sources */,
 				6212B70917711AAD0040386F /* DecorativeObjectsNode.m in Sources */,
 				54170990177124400021A8C5 /* CCControl.m in Sources */,

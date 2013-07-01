@@ -9,6 +9,8 @@
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
+#import "UnhealthyFood.h"
+#import "HealthyFood.h"
 #import "GameMechanics.h"
 #import "EnemyCache.h"
 #import "MainMenuLayer.h"
