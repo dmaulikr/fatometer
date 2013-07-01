@@ -40,15 +40,16 @@
     return self;
 }
 
-- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)monsterType {
+- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)healthy
+{
     NSNumber *spawnRateNumber = [NSNumber numberWithInt:spawnRate];
-    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id<NSCopying>)monsterType];
-}
+    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id)healthy];
+    
+}  
 
-- (int)spawnRateForMonsterType:(Class)monsterType {
-    return [[_spawnRatesByMonsterType objectForKey:(id<NSCopying>)monsterType] intValue];
+- (int)spawnRateForMonsterType:(Class)healthy {
+    return [[_spawnRatesByMonsterType objectForKey:(id)healthy] intValue];
 }
-
 
 - (void)resetGame
 {

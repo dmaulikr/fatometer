@@ -188,9 +188,9 @@
         updateCount++;
         
         // first we get all available spawnFrequency types
-        NSArray *monsterTypes = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
+        NSArray *healthy = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
         
-        for (Class monsterTypeClass in monsterTypes)
+        for (Class monsterTypeClass in healthy)
         {
             // we get the spawn frequency for this specific monster type
             int spawnFrequency = [[GameMechanics sharedGameMechanics] spawnRateForMonsterType:monsterTypeClass];
