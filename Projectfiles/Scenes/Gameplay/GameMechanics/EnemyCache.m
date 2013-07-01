@@ -23,7 +23,7 @@
 
 - (void)dealloc
 {
-    /* 
+    /*
      When our object is removed, we need to unregister from all notifications.
      */
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -36,7 +36,7 @@
         // load all the enemies in a sprite cache, all monsters need to be part of this sprite file
         CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
 		[frameCache addSpriteFramesWithFile:@"monster-animations.plist"];
-
+        
         [self scheduleUpdate];
         enemies = [[NSMutableDictionary alloc] init];
         
@@ -44,7 +44,7 @@
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
          Here we sign up for the 'GamePaused' and 'GameResumed' information, that is broadcasted by the GameMechanics class. Whenever the game pauses or resumes, we get informed and can react accordingly.
          **/
-         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
 	}
 	
@@ -71,7 +71,7 @@
 - (void)gameResumed
 {
     // first resume this CCNode, then pause all monsters
-
+    
     [self resumeSchedulerAndActions];
     
     for (id key in [enemies allKeys])
@@ -87,7 +87,7 @@
 
 -(void) spawnEnemyOfType:(Class)enemyTypeClass
 {
-    /* the 'enemies' dictionary stores an array of available enemies for each enemy type. 
+    /* the 'enemies' dictionary stores an array of available enemies for each enemy type.
      We use the class of the enemy as key for the dictionary, to receive an array of all existing enimies of that type.
      We use a CCArray since it has a better performance than an NSArray. */
 	CCArray* enemiesOfType = [enemies objectForKey:enemyTypeClass];
@@ -144,7 +144,7 @@
 			CGRect bbox = [enemy boundingBox];
             /*
              1) check collision between Bounding Box of the knight and Bounding Box of the enemy.
-                If a collision occurs here, only the knight can kill the enemy. The knight can not be injured by this colission. The knight can only be injured if his hit zone collides with an enemy (checked in step 2) )
+             If a collision occurs here, only the knight can kill the enemy. The knight can not be injured by this colission. The knight can only be injured if his hit zone collides with an enemy (checked in step 2) )
              */
             // if we detect an intersection, a collision occured
             if (CGRectIntersectsRect(knightBoundingBox, bbox))
@@ -157,7 +157,7 @@
                     continue;
                 }
 			}
-            /* 
+            /*
              2) now we check if the knights Hit Zone collided with the enemy. If this happens, and he is not stabbing, he will be injured.
              */
             if (CGRectIntersectsRect(knightHitZone, bbox))
@@ -172,7 +172,7 @@
                     [knight gotHit];
                     
                     
-//                    [enemy gotCollected];
+                    //                    [enemy gotCollected];
                 }
             }
 		}
@@ -188,9 +188,9 @@
         updateCount++;
         
         // first we get all available spawnFrequency types
-        NSArray *healthy = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
+        NSArray *monsterTypes = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
         
-        for (Class monsterTypeClass in healthy)
+        for (Class monsterTypeClass in monsterTypes)
         {
             // we get the spawn frequency for this specific monster type
             int spawnFrequency = [[GameMechanics sharedGameMechanics] spawnRateForMonsterType:monsterTypeClass];

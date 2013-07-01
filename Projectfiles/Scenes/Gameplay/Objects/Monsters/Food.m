@@ -6,126 +6,21 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Food.h"
-
 @implementation Food
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithSpriteFrameName:@"monster1_1.png"];
-    
-    if (self)
-    {
-        self.initialHitPoints = 1;
-        // The line of code make the foods (a.k.a monsters) move towards the fast man (a.k.a knight).
-        //		self.velocity = CGPointMake(-30, 0);
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"monster-animations.plist"];
-        
-        self.animationFrames = [NSMutableArray array];
-        
-        for(int i = 1; i <= 5; ++i)
-        {
-            [self.animationFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster1_%d.png", i]]];
-        }
-        
-        //Create an animation from the set of frames you created earlier
-        //        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
-        //
-        //        //Create an action with the animation that can then be assigned to a sprite
-        //        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-        //
-        //        // run the animation
-        //        [self runAction:self.run];
-        
-        [self scheduleUpdate];
-    }
-    
-    return self;
+    @throw @"- (id)initWithMonsterPicture has to be implemented in Subclass.";
 }
 
-
-
-
--(id) initWithHealthyPicture
+- (void)spawn
 {
-    self = [super initWithSpriteFrameName:@"monster2_1.png"];
-    
-    if (self)
-    {
-        self.initialHitPoints = 1;
-        // This line of code makes the monsters (a.k.a foods) move towards the knight (a.k.a the fat man)
-        //		self.velocity = CGPointMake(-10, 0);
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"monster-animations.plist"];
-        
-        self.animationFrames = [NSMutableArray array];
-        
-        for(int i = 1; i <= 3; ++i)
-        {
-            [self.animationFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster2_%d.png", i]]];
-        }
-        
-        //Create an animation from the set of frames you created earlier
-        //        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
-        //
-        //        //Create an action with the animation that can then be assigned to a sprite
-        //        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-        //
-        //        // run the animation
-        //        [self runAction:self.run];
-        
-        [self scheduleUpdate];
-    }
-    
-    return self;
+    @throw @"- (void)spawn has to be implemented in Subclass.";
 }
 
-
-- (void)healthyFoodGotCollected {
-    CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
-    
-    // Set some parameters that can't be set in Particle Designer
-    system.positionType = kCCPositionTypeFree;
-    system.autoRemoveOnFinish = YES;
-    system.position = self.position;
-    
-    
-    // Add the particle effect to the GameScene, for these reasons:
-    // - self is a sprite added to a spritebatch and will only allow CCSprite nodes (it crashes if you try)
-    // - self is now invisible which might affect rendering of the particle effect
-    // - since the particle effects are short lived, there is no harm done by adding them directly to the GameScene
-    [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
-    
-    CCSprite *coinSprite = [CCSprite spriteWithFile:@"coin.png"];
-    coinSprite.position = self.position;
-    [[[GameMechanics sharedGameMechanics] gameScene] addChild:coinSprite];
-    CGSize screenSize = [[GameMechanics sharedGameMechanics] gameScene].contentSize;
-    CGPoint coinDestination = ccp(21, screenSize.height-27);
-    CCMoveTo *move = [CCMoveTo actionWithDuration:2.f position:coinDestination];
-    id easeMove = [CCEaseBackInOut actionWithAction:move];
-    
-    CCAction *movementCompleted = [CCCallBlock actionWithBlock:^{
-        // cleanup
-        coinSprite.visible = FALSE;
-        [coinSprite removeFromParent];
-        coinSprite.zOrder = MAX_INT -1;
-    }];
-    
-    CCSequence *coinMovementSequence = [CCSequence actions:easeMove, movementCompleted, nil];
-    
-    [coinSprite runAction: coinMovementSequence];
-    
-    // mark as unvisible and move off screen
-    self.visible = FALSE;
-    self.position = ccp(-MAX_INT, 0);
-    
-    
-//    fatness = fatness + 10;
-//    fatness++;
-    
+- (void)gotCollected
+{
+    @throw @"- (void)gotHit has to be implemented in Subclass.";
 }
 
 @end

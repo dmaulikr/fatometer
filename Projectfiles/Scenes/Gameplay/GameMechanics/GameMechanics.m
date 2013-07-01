@@ -12,13 +12,14 @@
 
 @synthesize spawnRatesByMonsterType = _spawnRatesByMonsterType;
 @synthesize gameState = _gameState;
+@synthesize changeFatnessByFoodType = _changeFatnessByFoodType;
 
 + (id)sharedGameMechanics
 {
     static dispatch_once_t once;
     static id sharedInstance;
     /*  Uses GCD (Grand Central Dispatch) to restrict this piece of code to only be executed once
-        This code doesn't need to be touched by the game developer.
+     This code doesn't need to be touched by the game developer.
      */
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
@@ -32,21 +33,22 @@
     if (self)
     {
         _spawnRatesByMonsterType = [NSMutableDictionary dictionary];
+        _changeFatnessByFoodType = [NSMutableDictionary dictionary];
+        
     }
-
+    
     return self;
 }
 
-- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)healthy
-{
+- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)monsterType {
     NSNumber *spawnRateNumber = [NSNumber numberWithInt:spawnRate];
-    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id)healthy];
-    
-}  
-
-- (int)spawnRateForMonsterType:(Class)healthy {
-    return [[_spawnRatesByMonsterType objectForKey:(id)healthy] intValue];
+    [_spawnRatesByMonsterType setObject:spawnRateNumber forKey:(id<NSCopying>)monsterType];
 }
+
+- (int)spawnRateForMonsterType:(Class)monsterType {
+    return [[_spawnRatesByMonsterType objectForKey:(id<NSCopying>)monsterType] intValue];
+}
+
 
 - (void)resetGame
 {
@@ -71,7 +73,7 @@
     // we are leaving the paused mode and need to resume animations
     if ((_gameState == GameStatePaused) && (gameState != GameStatePaused))
     {
-        // post a notification informing all screens and entities, that game is resumed        
+        // post a notification informing all screens and entities, that game is resumed
         [[NSNotificationCenter defaultCenter] postNotificationName:@"GameResumed" object:nil];
     }
     
@@ -83,6 +85,6 @@
     }
     
     _gameState = gameState;
-
+    
 }
 @end

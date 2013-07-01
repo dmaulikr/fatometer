@@ -72,7 +72,7 @@
             // restart running animation
             [self runAction:run];
         }];
-
+        
         stab = [CCSequence actions:startStab, stabAction, finishStab, nil];
         
         // run knight running animation
@@ -141,6 +141,7 @@
         blink.tag = 1000;
         [self runAction:blink];
     }
+    
 }
 
 - (void)collect
@@ -155,6 +156,8 @@
     
     if ( (blinkAction == nil) || [blinkAction isDone])
     {
+        fatness = fatness + 2;
+        fatness++;
         self.hitPoints --;
         CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
         blink.tag = 1000;
@@ -220,7 +223,7 @@
     {
         self.position = ccp(0, self.position.y);
     }
-
+    
     // check that knight does not leave right screen border
     CGSize sceneSize = [[[GameMechanics sharedGameMechanics] gameScene] contentSize];
     int rightBorder = sceneSize.width - self.contentSize.width;
@@ -241,12 +244,12 @@
 #ifdef DEBUG
     // visualize the hit zone
     /*
-    ccDrawColor4B(100, 0, 255, 255); //purple, values range from 0 to 255
-    CGPoint origin = ccp(self.hitZone.origin.x - self.position.x, self.hitZone.origin.y - self.position.y);
-    CGPoint destination = ccp(origin.x + self.hitZone.size.width, origin.y + self.hitZone.size.height);
-    ccDrawRect(origin, destination);
+     ccDrawColor4B(100, 0, 255, 255); //purple, values range from 0 to 255
+     CGPoint origin = ccp(self.hitZone.origin.x - self.position.x, self.hitZone.origin.y - self.position.y);
+     CGPoint destination = ccp(origin.x + self.hitZone.size.width, origin.y + self.hitZone.size.height);
+     ccDrawRect(origin, destination);
      */
-     
+    
 #endif
 }
 

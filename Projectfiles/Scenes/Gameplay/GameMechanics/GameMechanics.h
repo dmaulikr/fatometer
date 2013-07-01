@@ -20,11 +20,11 @@ typedef NS_ENUM(NSInteger, GameState) {
 };
 
 /**
- This class stores several global game parameters. It stores 
+ This class stores several global game parameters. It stores
  references to several entities and sets up e.g. the 'floorHeight'.
  
  This class is used by all entities in the game to access shared ressources.
-**/
+ **/
 
 #define SCROLL_SPEED_DEFAULT 20.f
 #define SCROLL_SPEED_SKIP_AHEAD 50.f
@@ -56,12 +56,16 @@ typedef NS_ENUM(NSInteger, GameState) {
 // stores the individual spawn rates for all monster types
 @property (nonatomic, strong, readonly) NSMutableDictionary *spawnRatesByMonsterType;
 
+// stores the individual spawn rates for all monster types
+@property (nonatomic, strong, readonly) NSMutableDictionary *changeFatnessByFoodType;
+
+
 // gives access to the shared instance of this class
 + (id)sharedGameMechanics;
 
 
-- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)healthy;
-- (int)spawnRateForMonsterType:(Class)healthy;
+- (void)setSpawnRate:(int)spawnRate forMonsterType:(Class)monsterType;
+- (int)spawnRateForMonsterType:(Class)monsterType;
 
 // Resets the complete State of the sharedGameMechanics. Should be called whenever a new game is started.
 - (void)resetGame;

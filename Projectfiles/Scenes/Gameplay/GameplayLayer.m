@@ -9,6 +9,8 @@
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
+#import "UnhealthyFood.h"
+#import "HealthyFood.h"
 #import "GameMechanics.h"
 #import "EnemyCache.h"
 #import "MainMenuLayer.h"
@@ -93,7 +95,7 @@
     
     if (self)
     {
-                
+        
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
@@ -167,20 +169,20 @@
         toolBar.position = ccp(239.5, 25);
         [self addChild:toolBar];
         
-
+        
         [self convertFromPercent:fatness];
         [self addChild:pointer];
         
         // set up toolbar
-//        CCSprite *healthBar = [CCSprite spriteWithFile:@"actualhealth.jpg"];
-//        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
-//        
-//        healthBar.position = ccp(230, 300);
-//        [self addChild:healthBar];
-//        
-//        pointer.position = ccp(239.5, 25);
-//        [self addChild:pointer];
-
+        //        CCSprite *healthBar = [CCSprite spriteWithFile:@"actualhealth.jpg"];
+        //        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
+        //
+        //        healthBar.position = ccp(230, 300);
+        //        [self addChild:healthBar];
+        //
+        //        pointer.position = ccp(239.5, 25);
+        //        [self addChild:pointer];
+        
         
         //float [[toolBar boundingBox].size.height];
         
@@ -233,7 +235,7 @@
     [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
     [self enableGamePlayButtons];
     [self presentSkipAheadButtonWithDuration:5.f];
-
+    
     /*
      inform all missions, that they have started
      */
@@ -252,7 +254,7 @@
     [[GameMechanics sharedGameMechanics] setKnight:knight];
     // add a reference to this gamePlay scene to the gameMechanics, which allows accessing the scene from other classes
     [[GameMechanics sharedGameMechanics] setGameScene:self];
-
+    
     // set the default background scroll speed
     [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:SCROLL_SPEED_DEFAULT];
     
@@ -269,9 +271,9 @@
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
+    //    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
@@ -291,7 +293,7 @@
 	float sensitivity = 300.0f;
 	// how fast the velocity can be at most
 	float maxVelocity = 500;
-    	
+    
 	// adjust velocity based on current accelerometer acceleration
 	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
 	
@@ -338,13 +340,13 @@
 -(void) updatePointer
 {
     if (fatness > 100) {
-        fatness = 100;
+        fatness = 95;
     }
     
     if (fatness < 0) {
-        fatness = 0;
+        fatness = 5;
     }
-
+    
     [self convertFromPercent:fatness];
     pointer.position = pointerPosition;
 }
@@ -366,6 +368,9 @@
             [self pushGameStateToMissions];
         }
     }
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
+    
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -404,8 +409,6 @@
         [self presentGoOnPopUp];
     }
     
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
 }
 
 
@@ -466,7 +469,6 @@
     skipAheadMenu.opacity = 0.f;
     CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:0.5f];
     [skipAheadMenu runAction:fadeIn];
-    
     [self scheduleOnce: @selector(hideSkipAheadButton) delay:duration];
 }
 
@@ -481,7 +483,7 @@
     }];
     
     CCSequence *fadeOutAndHide = [CCSequence actions:fadeOut, hide, nil];
-
+    
     [skipAheadMenu runAction:fadeOutAndHide];
 }
 
@@ -498,7 +500,7 @@
 
 #pragma mark - Delegate Methods
 
-/* 
+/*
  This method is called, when purchases on the In-Game-Store occur.
  Then we need to update the coins display on the HUD.
  */
@@ -518,7 +520,7 @@
 - (void)skipAheadButtonPressed
 {
     if ([Store hasSufficientFundsForSkipAheadAction])
-    {    
+    {
         skipAheadMenu.enabled = FALSE;
         CCLOG(@"Skip Ahead!");
         [self startSkipAheadMode];
@@ -531,7 +533,7 @@
         [self hideSkipAheadButton];
     } else
     {
-        // pause the game, to allow the player to buy coins 
+        // pause the game, to allow the player to buy coins
         [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
         [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromSkipAheadAction)];
     }
@@ -572,7 +574,7 @@
 - (void)pauseButtonPressed
 {
     CCLOG(@"Pause");
-    // disable pause button while the pause menu is shown, since we want to avoid, that the pause button can be hit twice. 
+    // disable pause button while the pause menu is shown, since we want to avoid, that the pause button can be hit twice.
     [self disableGameplayButtons];
     
     PauseScreen *pauseScreen = [[PauseScreen alloc] initWithGame:game];
@@ -596,7 +598,7 @@
 {
     BOOL successful = [Store purchaseSkipAheadAction];
     
-    /* 
+    /*
      Only enter the skip ahead mode if the purchase was successful (player had enough coins).
      This is checked previously, but we want to got sure that the player can never access this item
      without paying.
@@ -623,7 +625,7 @@
     CCLOG(@"You need more coins!");
     NSArray *inGameStoreItems = [Store inGameStoreStoreItems];
     
-    /* 
+    /*
      The inGameStore is initialized with a callback method, which is called,
      once the closebutton is pressed.
      */
@@ -642,7 +644,7 @@
 
 
 /* called when the 'More Coins Screen' has been closed, after previously beeing opened by
-   attempting to buy a 'Skip Ahead' action */
+ attempting to buy a 'Skip Ahead' action */
 - (void)returnedFromMoreCoinsScreenFromSkipAheadAction
 {
     // hide store and resume game

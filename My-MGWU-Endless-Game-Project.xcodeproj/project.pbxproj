@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3803A83817823EAE002E023A /* HealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83517823EAE002E023A /* HealthyFood.m */; };
+		3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* UnhealthyFood.m */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
@@ -301,6 +303,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3803A83417823EAE002E023A /* HealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthyFood.h; sourceTree = "<group>"; };
+		3803A83517823EAE002E023A /* HealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyFood.m; sourceTree = "<group>"; };
+		3803A83A17823FBC002E023A /* UnhealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnhealthyFood.m; sourceTree = "<group>"; };
+		3803A83B17823FBD002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
@@ -925,10 +931,14 @@
 		6212B6F1177114800040386F /* Foods (a.k.a Monsters) */ = {
 			isa = PBXGroup;
 			children = (
+				3803A83A17823FBC002E023A /* UnhealthyFood.m */,
+				3803A83B17823FBD002E023A /* UnhealthyFood.h */,
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
 				6212B6F6177114800040386F /* MyCustomMonster.h */,
 				6212B6F7177114800040386F /* MyCustomMonster.m */,
+				3803A83417823EAE002E023A /* HealthyFood.h */,
+				3803A83517823EAE002E023A /* HealthyFood.m */,
 			);
 			name = "Foods (a.k.a Monsters)";
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1741,6 +1751,8 @@
 				541709A6177124400021A8C5 /* SWSorting.m in Sources */,
 				541709A7177124400021A8C5 /* SWTableView.m in Sources */,
 				541709A8177124400021A8C5 /* SWTableViewCell.m in Sources */,
+				3803A83817823EAE002E023A /* HealthyFood.m in Sources */,
+				3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
