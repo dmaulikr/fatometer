@@ -40,11 +40,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // call on didEnterForeground for the currently active scene
-//    if ([[[CCDirector sharedDirector] runningScene] respondsToSelector:@selector(didEnterForeground)])
-//    {
-//        id currentScene = (id) [[CCDirector sharedDirector] runningScene];
-//        [currentScene performSelector:@selector(didEnterForeground)];
-//    }
+    if ([[[CCDirector sharedDirector] runningScene] respondsToSelector:@selector(didEnterForeground)])
+    {
+        id currentScene = (id) [[CCDirector sharedDirector] runningScene];
+        [currentScene performSelector:@selector(didEnterForeground)];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
