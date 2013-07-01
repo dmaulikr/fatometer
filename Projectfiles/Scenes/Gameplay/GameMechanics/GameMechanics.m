@@ -12,7 +12,6 @@
 
 @synthesize spawnRatesByMonsterType = _spawnRatesByMonsterType;
 @synthesize gameState = _gameState;
-@synthesize changeFatnessByFoodType = _changeFatnessByFoodType;
 
 + (id)sharedGameMechanics
 {
@@ -33,8 +32,6 @@
     if (self)
     {
         _spawnRatesByMonsterType = [NSMutableDictionary dictionary];
-        _changeFatnessByFoodType = [NSMutableDictionary dictionary];
-
     }
 
     return self;
