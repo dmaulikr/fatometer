@@ -10,20 +10,16 @@
 
 @interface Food : CCSprite
 
-<<<<<<< HEAD
 {
 
 }
 
-=======
->>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @property (nonatomic, assign) BOOL visible;
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
 
-<<<<<<< HEAD
 @property (nonatomic, assign) NSInteger hitPoints;
 // velocity in pixels per second
 @property (nonatomic, assign) CGPoint velocity;
@@ -33,6 +29,4 @@
 @property (nonatomic, assign) NSInteger initialHitPoints;
 
 
-=======
->>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
