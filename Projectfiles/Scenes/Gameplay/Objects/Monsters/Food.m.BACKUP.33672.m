@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
+#import "GameplayLayer.h"
+#import "GameMechanics.h"
 #import "Food.h"
 
 @implementation Food
@@ -184,4 +186,41 @@
 	self.hitPoints = self.initialHitPoints;
 }
 
+<<<<<<< HEAD
+
+
+- (void)update:(ccTime)delta
+{
+    
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
+    
+    // only execute the block, if the game is in 'running' mode
+    if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
+    {
+        [self updateRunningMode:delta];
+    }
+
+    
+}
+
+- (void)updateRunningMode:(ccTime)delta
+{
+    // apply background scroll speed
+    float xVelocity = self.velocity.x;
+    float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
+    
+    xVelocity -= backgroundScrollSpeedX;
+    CGPoint combinedVelocity = ccp(xVelocity, self.velocity.y);
+    
+    
+    // move the monster until it leaves the left edge of the screen
+    if (self.position.x > (self.contentSize.width * (-1)))
+    {
+        [self setPosition:ccpAdd(self.position, ccpMult(combinedVelocity,delta))];
+    }
+}
+
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
