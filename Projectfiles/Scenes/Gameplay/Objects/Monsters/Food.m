@@ -25,6 +25,7 @@
     @throw @"- (void)gotHit has to be implemented in Subclass.";
 }
 
+<<<<<<< HEAD
 - (void)update:(ccTime)delta
 {
 //    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
@@ -33,3 +34,6 @@
 }
 
 @end
+=======
+@end
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything

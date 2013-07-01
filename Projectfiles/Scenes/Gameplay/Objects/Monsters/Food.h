@@ -10,17 +10,17 @@
 
 @interface Food : CCSprite
 
+<<<<<<< HEAD
 {
     float fatness;
 }
 
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @property (nonatomic, assign) BOOL visible;
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
-
-
-
 
 @end

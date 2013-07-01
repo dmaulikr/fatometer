@@ -340,11 +340,11 @@
 -(void) updatePointer
 {
     if (fatness > 100) {
-        fatness = 95;
+        fatness = 100;
     }
     
     if (fatness < 0) {
-        fatness = 5;
+        fatness = 0;
     }
     
     [self convertFromPercent:fatness];
@@ -368,9 +368,12 @@
             [self pushGameStateToMissions];
         }
     }
+<<<<<<< HEAD
     NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
     fatness = [updateToolbarPointer intValue];
     
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -409,6 +412,8 @@
         [self presentGoOnPopUp];
     }
     
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
 }
 
 
@@ -469,6 +474,7 @@
     skipAheadMenu.opacity = 0.f;
     CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:0.5f];
     [skipAheadMenu runAction:fadeIn];
+    
     [self scheduleOnce: @selector(hideSkipAheadButton) delay:duration];
 }
 
