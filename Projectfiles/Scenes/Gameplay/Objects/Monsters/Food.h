@@ -10,17 +10,13 @@
 
 @interface Food : CCSprite
 
-{
-    float fatness;
-    bool healthy;
-}
-
 @property (nonatomic, assign) BOOL visible;
 
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
 
+<<<<<<< HEAD
 @property (nonatomic, assign) NSInteger hitPoints;
 // velocity in pixels per second
 @property (nonatomic, assign) CGPoint velocity;
@@ -29,4 +25,6 @@
 @property (nonatomic, strong) CCAction *run;
 @property (nonatomic, assign) NSInteger initialHitPoints;
 
+=======
+>>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
 @end
