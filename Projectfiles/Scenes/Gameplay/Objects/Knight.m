@@ -141,7 +141,6 @@
         blink.tag = 1000;
         [self runAction:blink];
     }
-    
 }
 
 - (void)collect
@@ -156,8 +155,6 @@
     
     if ( (blinkAction == nil) || [blinkAction isDone])
     {
-        fatness = fatness + 2;
-        fatness++;
         self.hitPoints --;
         CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
         blink.tag = 1000;
