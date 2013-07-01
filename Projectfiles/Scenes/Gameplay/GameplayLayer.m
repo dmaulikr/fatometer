@@ -338,11 +338,11 @@
 -(void) updatePointer
 {
     if (fatness > 100) {
-        fatness = 100;
+        fatness = 95;
     }
     
     if (fatness < 0) {
-        fatness = 0;
+        fatness = 5;
     }
 
     [self convertFromPercent:fatness];
@@ -366,6 +366,9 @@
             [self pushGameStateToMissions];
         }
     }
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
+
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -404,8 +407,6 @@
         [self presentGoOnPopUp];
     }
     
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
 }
 
 
@@ -466,7 +467,6 @@
     skipAheadMenu.opacity = 0.f;
     CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:0.5f];
     [skipAheadMenu runAction:fadeIn];
-    
     [self scheduleOnce: @selector(hideSkipAheadButton) delay:duration];
 }
 
