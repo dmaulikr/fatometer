@@ -264,7 +264,6 @@
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
     
-    [[GameMechanics sharedGameMechanics] setFatness:50];
 }
 
 #pragma mark - Update & Input Events

@@ -130,19 +130,16 @@
         return;
     }
     
-    CCAction *blinkAction = [self getActionByTag:1000];
-    
-    
-    if ( (blinkAction == nil) || [blinkAction isDone])
-    {
-        
-        [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness - 5;
-        [[GameMechanics sharedGameMechanics] game].fatness--;
-        
-        CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
-        blink.tag = 1000;
-        [self runAction:blink];
-    }
+//    CCAction *blinkAction = [self getActionByTag:1000];
+//    
+//    
+//    if ( (blinkAction == nil) || [blinkAction isDone])
+//    {
+//        
+//        CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
+//        blink.tag = 1000;
+//        [self runAction:blink];
+//    }
 }
 
 - (void)collect
