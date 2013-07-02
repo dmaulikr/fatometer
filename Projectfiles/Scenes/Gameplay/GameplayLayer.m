@@ -162,13 +162,13 @@
         pauseButtonMenu.position = ccp(self.contentSize.width - pauseButtonMenuItem.contentSize.width - 4, self.contentSize.height - 58);
         [hudNode addChild:pauseButtonMenu];
         
-        // set up toolbar, pointer, and fatness
+        // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(239.5, 25);
         [self addChild:toolBar];  
-        [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
         [self addChild:pointer];
+        [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
         
         // add the enemy cache containing all spawned enemies
         [self addChild:[EnemyCache node]];
@@ -224,6 +224,8 @@
     {
         [m missionStart:game];
     }
+    
+    [[GameMechanics sharedGameMechanics] game].fatness = 50;
 }
 
 - (void)resetGame
@@ -261,6 +263,8 @@
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
+    
+    [[GameMechanics sharedGameMechanics] setFatness:50];
 }
 
 #pragma mark - Update & Input Events
