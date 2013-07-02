@@ -87,15 +87,12 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
         
-        fatness = 50;
+        [[GameMechanics sharedGameMechanics] game].fatness = 50;
+
     }
     
     return self;
 }
-
-//- (void)healthyFood {
-//    [[GameMechanics sharedGameMechanics] makeFatnessLower forMonsterType:[HealthyFood class]];
-//}
 
 - (void)gamePaused
 {
@@ -139,8 +136,12 @@
     
     if ( (blinkAction == nil) || [blinkAction isDone])
     {
-        fatness = fatness - 2;
-        fatness--;
+//        float fatness = [[GameMechanics sharedGameMechanics] game].fatness;
+        
+        [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness - 3;
+        [[GameMechanics sharedGameMechanics] game].fatness++;
+//        fatness = fatness - 2;
+//        fatness--;
         CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
         blink.tag = 1000;
         [self runAction:blink];
@@ -174,8 +175,8 @@
         [self updateRunningMode:delta];
     }
     
-    NSNumber *toolbarPointer = [NSNumber numberWithInteger:fatness];
-    [[NSUserDefaults standardUserDefaults] setObject:toolbarPointer forKey:@"toolbarPointer"];
+//    NSNumber *toolbarPointer = [NSNumber numberWithInteger:[[GameMechanics sharedGameMechanics] game].fatness];
+//    [[NSUserDefaults standardUserDefaults] setObject:toolbarPointer forKey:@"toolbarPointer"];
 }
 
 - (void)updateRunningMode:(ccTime)delta

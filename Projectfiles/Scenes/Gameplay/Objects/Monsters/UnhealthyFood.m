@@ -63,7 +63,8 @@
 	self.hitPoints = self.initialHitPoints;
 }
 
-- (void)gotCollected {
+- (void)gotCollected
+{
     
     CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
     
@@ -103,6 +104,8 @@
     [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 50;
     
+    [[GameMechanics sharedGameMechanics] game].fatness += 6;
+    
 }
 
 - (void)update:(ccTime)delta
@@ -113,11 +116,13 @@
         [self updateRunningMode:delta];
     }
     
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
+//    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+//    [[GameMechanics sharedGameMechanics] game].fatness = [updateToolbarPointer intValue];
+//    
+//    NSNumber *toolbarPointer = [NSNumber numberWithInteger: [[GameMechanics sharedGameMechanics] game].fatness];
+//    [[NSUserDefaults standardUserDefaults] setObject:toolbarPointer forKey:@"toolbarPointer"];
+ 
     
-    fatness = fatness + 6;
-    fatness++;
 }
 
 - (void)updateRunningMode:(ccTime)delta

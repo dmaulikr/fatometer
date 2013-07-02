@@ -28,8 +28,6 @@
 
 - (void)update:(ccTime)delta
 {
-//    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-//    fatness = [updateToolbarPointer intValue];
     
 }
 

@@ -54,7 +54,7 @@
     
     CGPoint pointerPosition;
     
-    float fatness;
+//    float fatness;
     
 }
 

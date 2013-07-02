@@ -11,6 +11,7 @@
 		3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* UnhealthyFood.m */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
+		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -263,7 +264,6 @@
 		62F018DF174574AC00BAF979 /* heart_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F018D7174574AC00BAF979 /* heart_filled.png */; };
 		62F018E2174583EA00BAF979 /* coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F018E0174583EA00BAF979 /* coin-hd.png */; };
 		62F018E3174583EA00BAF979 /* coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F018E1174583EA00BAF979 /* coin.png */; };
-		62F018E71745A3FC00BAF979 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F018E61745A3FC00BAF979 /* Knight.m */; };
 		62F018EB1745A8FE00BAF979 /* animation_knight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62F018E91745A8FE00BAF979 /* animation_knight.plist */; };
 		62F018EC1745A8FE00BAF979 /* animation_knight.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F018EA1745A8FE00BAF979 /* animation_knight.png */; };
 		62F018EE1745AB4200BAF979 /* animation_knight-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 62F018ED1745AB4200BAF979 /* animation_knight-1.png */; };
@@ -309,6 +309,7 @@
 		3803A83D1782457F002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -620,7 +621,6 @@
 		62F018E0174583EA00BAF979 /* coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coin-hd.png"; path = "HUD/coin-hd.png"; sourceTree = "<group>"; };
 		62F018E1174583EA00BAF979 /* coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coin.png; path = HUD/coin.png; sourceTree = "<group>"; };
 		62F018E51745A3FC00BAF979 /* Knight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Knight.h; path = Scenes/Gameplay/Objects/Knight.h; sourceTree = "<group>"; };
-		62F018E61745A3FC00BAF979 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Knight.m; sourceTree = "<group>"; };
 		62F018E91745A8FE00BAF979 /* animation_knight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = animation_knight.plist; path = Objects/animation_knight.plist; sourceTree = "<group>"; };
 		62F018EA1745A8FE00BAF979 /* animation_knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animation_knight.png; path = Objects/animation_knight.png; sourceTree = "<group>"; };
 		62F018ED1745AB4200BAF979 /* animation_knight-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "animation_knight-1.png"; path = "Objects/animation_knight-1.png"; sourceTree = "<group>"; };
@@ -1276,7 +1276,7 @@
 				6212B703177116860040386F /* DecorativeObjects */,
 				6212B6F1177114800040386F /* Foods (a.k.a Monsters) */,
 				62F018E51745A3FC00BAF979 /* Knight.h */,
-				62F018E61745A3FC00BAF979 /* Knight.m */,
+				38F9E5DE178376F600393233 /* Knight.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -1702,7 +1702,6 @@
 				62F018BF1744630400BAF979 /* ParallaxBackground.m in Sources */,
 				62F018C3174563BC00BAF979 /* HealthDisplayNode.m in Sources */,
 				62F018CE174570D500BAF979 /* ScoreboardEntryNode.m in Sources */,
-				62F018E71745A3FC00BAF979 /* Knight.m in Sources */,
 				62F018FB17469E4E00BAF979 /* GameMechanics.m in Sources */,
 				62F018FE1746A13E00BAF979 /* EnemyCache.m in Sources */,
 				62AE15A4174C27E3007AC0B7 /* PersonalBestNode.m in Sources */,
@@ -1753,6 +1752,7 @@
 				541709A8177124400021A8C5 /* SWTableViewCell.m in Sources */,
 				3803A83817823EAE002E023A /* HealthyFood.m in Sources */,
 				3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */,
+				38F9E5DF178376F600393233 /* Knight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

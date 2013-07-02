@@ -20,9 +20,7 @@
     NSMutableArray *animationFramesStab;
     CCSequence *stab;
     
-    BOOL stabDidRun;
-    float fatness;
-    
+    BOOL stabDidRun;    
     
 }
 

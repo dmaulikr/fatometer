@@ -11,7 +11,6 @@
 @interface Food : CCSprite
 
 {
-    float fatness;
 }
 
 

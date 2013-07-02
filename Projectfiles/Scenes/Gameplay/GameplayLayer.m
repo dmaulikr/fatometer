@@ -162,28 +162,13 @@
         pauseButtonMenu.position = ccp(self.contentSize.width - pauseButtonMenuItem.contentSize.width - 4, self.contentSize.height - 58);
         [hudNode addChild:pauseButtonMenu];
         
-        // set up toolbar
+        // set up toolbar, pointer, and fatness
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        
         toolBar.position = ccp(239.5, 25);
-        [self addChild:toolBar];
-        
-        
-        [self convertFromPercent:fatness];
+        [self addChild:toolBar];  
+        [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
         [self addChild:pointer];
-        
-        // set up toolbar
-        //        CCSprite *healthBar = [CCSprite spriteWithFile:@"actualhealth.jpg"];
-        //        CCSprite *pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        //
-        //        healthBar.position = ccp(230, 300);
-        //        [self addChild:healthBar];
-        //
-        //        pointer.position = ccp(239.5, 25);
-        //        [self addChild:pointer];
-        
-        
         
         // add the enemy cache containing all spawned enemies
         [self addChild:[EnemyCache node]];
@@ -334,16 +319,17 @@
 
 
 -(void) updatePointer
-{
-    if (fatness > 100) {
-        fatness = 100;
+{    
+    if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
+    {
+        [[GameMechanics sharedGameMechanics] game].fatness = 100;
+    }
+    if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
+    {
+        [[GameMechanics sharedGameMechanics] game].fatness = 0;
     }
     
-    if (fatness < 0) {
-        fatness = 0;
-    }
-    
-    [self convertFromPercent:fatness];
+    [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
 }
 
@@ -365,8 +351,9 @@
         }
     }
 
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
+//    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+//    [[GameMechanics sharedGameMechanics] game].fatness = [updateToolbarPointer intValue];
+    [self updatePointer];
     
 
 }
@@ -406,9 +393,6 @@
         // knight died, present screen with option to GO ON for paying some coins
         [self presentGoOnPopUp];
     }
-    
-    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-    fatness = [updateToolbarPointer intValue];
 }
 
 
