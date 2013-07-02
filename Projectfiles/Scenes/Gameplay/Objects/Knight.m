@@ -93,6 +93,10 @@
     return self;
 }
 
+//- (void)healthyFood {
+//    [[GameMechanics sharedGameMechanics] makeFatnessLower forMonsterType:[HealthyFood class]];
+//}
+
 - (void)gamePaused
 {
     [self pauseSchedulerAndActions];

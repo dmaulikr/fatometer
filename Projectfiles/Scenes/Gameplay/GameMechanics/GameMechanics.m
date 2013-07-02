@@ -32,14 +32,6 @@
     if (self)
     {
         _spawnRatesByMonsterType = [NSMutableDictionary dictionary];
-<<<<<<< HEAD
-<<<<<<< HEAD
-        _changeFatnessByFoodType = [NSMutableDictionary dictionary];
-        
-=======
->>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
-=======
->>>>>>> parent of 604b170... Might as well commit before (possibly) breaking everything
     }
     
     return self;

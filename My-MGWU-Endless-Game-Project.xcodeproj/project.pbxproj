@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3803A83817823EAE002E023A /* HealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83517823EAE002E023A /* HealthyFood.m */; };
 		3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* UnhealthyFood.m */; };
-		38130D92177CB66A00FC2574 /* FatometerDisplayNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 38130D91177CB66A00FC2574 /* FatometerDisplayNode.m */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
@@ -308,8 +307,6 @@
 		3803A83517823EAE002E023A /* HealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyFood.m; sourceTree = "<group>"; };
 		3803A83A17823FBC002E023A /* UnhealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnhealthyFood.m; sourceTree = "<group>"; };
 		3803A83D1782457F002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
-		38130D90177CB66A00FC2574 /* FatometerDisplayNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FatometerDisplayNode.h; path = Scenes/Gameplay/HUD/FatometerDisplayNode.h; sourceTree = "<group>"; };
-		38130D91177CB66A00FC2574 /* FatometerDisplayNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FatometerDisplayNode.m; path = Scenes/Gameplay/HUD/FatometerDisplayNode.m; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
@@ -1240,8 +1237,6 @@
 			children = (
 				62F018C1174563BC00BAF979 /* HealthDisplayNode.h */,
 				62F018C2174563BC00BAF979 /* HealthDisplayNode.m */,
-				38130D90177CB66A00FC2574 /* FatometerDisplayNode.h */,
-				38130D91177CB66A00FC2574 /* FatometerDisplayNode.m */,
 				62F018CC174570D500BAF979 /* ScoreboardEntryNode.h */,
 				62F018CD174570D500BAF979 /* ScoreboardEntryNode.m */,
 			);
@@ -1758,7 +1753,6 @@
 				541709A8177124400021A8C5 /* SWTableViewCell.m in Sources */,
 				3803A83817823EAE002E023A /* HealthyFood.m in Sources */,
 				3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */,
-				38130D92177CB66A00FC2574 /* FatometerDisplayNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "UnhealthyFood.h"
 #import "GameMechanics.h"
+#import "GameplayLayer.h"
 
 @implementation UnhealthyFood
 
@@ -101,6 +102,7 @@
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 50;
+    
 }
 
 - (void)update:(ccTime)delta
@@ -110,6 +112,12 @@
     {
         [self updateRunningMode:delta];
     }
+    
+    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
+    fatness = [updateToolbarPointer intValue];
+    
+    fatness = fatness + 6;
+    fatness++;
 }
 
 - (void)updateRunningMode:(ccTime)delta
@@ -127,6 +135,8 @@
     {
         [self setPosition:ccpAdd(self.position, ccpMult(combinedVelocity,delta))];
     }
+    
+    
 }
 
 @end
