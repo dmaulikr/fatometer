@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # FAQ
 
 This **FAQ** will answer some basic questions for developers building a game on the endless template game.
@@ -392,9 +391,8 @@ Simplay add one line to the init method in `GameplayLayer.m`:
         
 Now, the not moving tree is displayed on screen again.
 **For your game, you can add custom nodes for all groups of objects (e.g. PowerUps, Collectables, Platforms, etc.)**.
-=======
+=========
 Fatometer
 =========
 
 My iOS game
->>>>>>> f33c2a832c9b3a2675f1b1bc16e1e4c8ca136248
