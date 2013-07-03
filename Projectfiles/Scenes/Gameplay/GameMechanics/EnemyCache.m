@@ -169,10 +169,8 @@
                 } else
                 {
                     // if the kight is not stabbing, he will be hit
-                    [knight gotHit];
-                    
-                    
-                    //                    [enemy gotCollected];
+//                    [knight gotHit];
+                    [enemy gotCollected];
                 }
             }
 		}
