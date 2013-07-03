@@ -1449,7 +1449,7 @@
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "MakeGamesWithUs Inc.";
 			};
-			buildConfigurationList = DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "My-MGWU-Endless-Game-Project" */;
+			buildConfigurationList = DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Fat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1816,7 +1816,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "My-MGWU-Endless-Game-Project" */ = {
+		DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Fat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCC1A0DD13A94EC0005BD75D /* Debug */,

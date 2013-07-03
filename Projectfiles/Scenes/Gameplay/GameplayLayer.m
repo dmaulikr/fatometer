@@ -325,11 +325,11 @@
 {    
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
-        [[GameMechanics sharedGameMechanics] game].fatness = 100;
+//        [[GameMechanics sharedGameMechanics] game].fatness = 100;
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-        [[GameMechanics sharedGameMechanics] game].fatness = 0;
+//        [[GameMechanics sharedGameMechanics] game].fatness = 0;
     }
     
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
