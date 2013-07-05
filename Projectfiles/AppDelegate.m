@@ -19,7 +19,7 @@
 #endif
     
     [MGWU loadMGWU:@"comshalinshahfoodgonewildawesomenamegamesidescrollermadefromtheintershipiamawesomeandsmartjustkiddingbutno12313"];
-//    [MGWU dark];
+    [MGWU dark];
 }
 
 -(id) alternateView
