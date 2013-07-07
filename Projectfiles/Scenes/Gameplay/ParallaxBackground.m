@@ -77,13 +77,11 @@
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
         
-        
         /*
          The Below Code is Only for Parralax Backgrounds. Uncomment this if you want to use a parralax background.
          Also, you need to add a number in front of the png file name.
          For Example, the file name will be bg0.png, and then bg1.png, and bg2.png
          */
-        
         
 //		// Add the 4 different layers and position them on the screen
 //		for (NSUInteger i = 0; i < numStripes; i++)
