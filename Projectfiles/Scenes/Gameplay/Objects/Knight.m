@@ -46,25 +46,25 @@
         
         // ************* STABBING ANIMATION ********************
         
-        animationFramesStab = [NSMutableArray array];
-        for (int i = 1; i <= 2; i++)
-        {
-            [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"animation_knight-stab-%d.png", i]]];
-        }
-        CCAnimation *stabbing = [CCAnimation animationWithSpriteFrames:animationFramesStab delay:0.5f];
-        CCAction *stabAction = [CCRepeat actionWithAction:[CCAnimate actionWithAnimation:stabbing] times:1];
-        CCFiniteTimeAction *startStab = [CCCallBlock actionWithBlock:^{
-            // stop running animation
-            self.stabbing = TRUE;
-            [self stopAction:run];
-        }];
-        CCFiniteTimeAction *finishStab = [CCCallBlock actionWithBlock:^{
-            self.stabbing = FALSE;
-            // restart running animation
-            [self runAction:run];
-        }];
-        stab = [CCSequence actions:startStab, stabAction, finishStab, nil];
+//        animationFramesStab = [NSMutableArray array];
+//        for (int i = 1; i <= 2; i++)
+//        {
+//            [animationFramesRun addObject:
+//             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"animation_knight-stab-%d.png", i]]];
+//        }
+//        CCAnimation *stabbing = [CCAnimation animationWithSpriteFrames:animationFramesStab delay:0.5f];
+//        CCAction *stabAction = [CCRepeat actionWithAction:[CCAnimate actionWithAnimation:stabbing] times:1];
+//        CCFiniteTimeAction *startStab = [CCCallBlock actionWithBlock:^{
+//            // stop running animation
+//            self.stabbing = TRUE;
+//            [self stopAction:run];
+//        }];
+//        CCFiniteTimeAction *finishStab = [CCCallBlock actionWithBlock:^{
+//            self.stabbing = FALSE;
+//            // restart running animation
+//            [self runAction:run];
+//        }];
+//        stab = [CCSequence actions:startStab, stabAction, finishStab, nil];
         
         // run knight running animation
         [self runAction:run];
