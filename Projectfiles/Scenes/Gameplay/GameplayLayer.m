@@ -165,7 +165,7 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        toolBar.position = ccp(239.5, 25);
+        toolBar.position = ccp(239.5, 298);
         [self addChild:toolBar];  
         [self addChild:pointer];
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
@@ -373,8 +373,6 @@
         }
     }
 
-//    NSNumber *updateToolbarPointer = [[NSUserDefaults standardUserDefaults] objectForKey:@"toolbarPointer"];
-//    [[GameMechanics sharedGameMechanics] game].fatness = [updateToolbarPointer intValue];
     [self updatePointer];
     
 
