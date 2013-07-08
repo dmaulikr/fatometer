@@ -148,7 +148,7 @@
     // set game state to "MenuState" when this menu appears
     [[GameMechanics sharedGameMechanics] setGameState:GameStateMenu];
     
-    // hide the HUD of the gamePlayLayer
+    // hide the HUD of the gamePlayLayer (otherwise, the game will be playable with the menu still up)
     [[[GameMechanics sharedGameMechanics] gameScene] hideHUD:FALSE];
 }
 
