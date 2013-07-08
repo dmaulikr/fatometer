@@ -327,27 +327,27 @@
 
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
-        // EXTERMINATE EXTERMINATE        
+        // Explode Knight        
         system.positionType = kCCPositionTypeFree;
         system.autoRemoveOnFinish = YES;
         system.position = self.position;
         
-        [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
+        [knight addChild:system];
+        knight.visible = FALSE;
         
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
         [self presentGoOnPopUp];
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-        // EXTERMINATE EXTERMINATE        
         system.positionType = kCCPositionTypeFree;
         system.autoRemoveOnFinish = YES;
         system.position = self.position;
         
-        [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
-
+        [knight addChild:system];
+        knight.visible = FALSE;
         
-        [[GameMechanics sharedGameMechanics] game].fatness = 0;
+        [[GameMechanics sharedGameMechanics] game].fatness = 100;
         [self presentGoOnPopUp];
     }
     
@@ -455,6 +455,7 @@
     CCScale9Sprite *backgroundImage = [StyleManager goOnPopUpBackground];
     goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked:) buttonTitles:@[@"OK", @"No"]];
     [self disableGameplayButtons];
+    
 }
 
 - (void)showHUD:(BOOL)animated
@@ -557,6 +558,8 @@
             [goOnPopUp dismiss];
             [self executeGoOnAction];
             [self enableGamePlayButtons];
+            knight.visible = TRUE;
+            
         } else
         {
             // game is paused in this state already, we only need to present the more coins screen
