@@ -7,6 +7,20 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
+               BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
+               BlueprintName = "My-MGWU-Endless-Game-Project-iOS"
+               ReferencedContainer = "container:FattyCake.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
             buildForProfiling = "YES"
@@ -17,7 +31,7 @@
                BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
                BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
                BlueprintName = "My-MGWU-Endless-Game-Project-iOS"
-               ReferencedContainer = "container:FattyCake.xcodeproj">
+               ReferencedContainer = "container:Fat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -54,7 +68,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
             BlueprintName = "My-MGWU-Endless-Game-Project-iOS"
-            ReferencedContainer = "container:FattyCake.xcodeproj">
+            ReferencedContainer = "container:Fat.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

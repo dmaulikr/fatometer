@@ -104,7 +104,7 @@
     [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 50;
     
-    [[GameMechanics sharedGameMechanics] game].fatness += 6;
+    [[GameMechanics sharedGameMechanics] game].fatness += 20;
     
 }
 

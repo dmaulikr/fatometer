@@ -322,14 +322,33 @@
 
 
 -(void) updatePointer
-{    
+{
+    CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
+
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
-//        [[GameMechanics sharedGameMechanics] game].fatness = 100;
+        // EXTERMINATE EXTERMINATE        
+        system.positionType = kCCPositionTypeFree;
+        system.autoRemoveOnFinish = YES;
+        system.position = self.position;
+        
+        [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
+        
+        [[GameMechanics sharedGameMechanics] game].fatness = 100;
+        [self presentGoOnPopUp];
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-//        [[GameMechanics sharedGameMechanics] game].fatness = 0;
+        // EXTERMINATE EXTERMINATE        
+        system.positionType = kCCPositionTypeFree;
+        system.autoRemoveOnFinish = YES;
+        system.position = self.position;
+        
+        [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
+
+        
+        [[GameMechanics sharedGameMechanics] game].fatness = 0;
+        [self presentGoOnPopUp];
     }
     
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
