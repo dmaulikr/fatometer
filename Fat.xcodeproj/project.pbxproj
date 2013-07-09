@@ -17,6 +17,8 @@
 		38ACA132178CAEDF00170550 /* Apples.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ACA131178CAEDF00170550 /* Apples.m */; };
 		38ACA135178CC42500170550 /* unhealthy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA133178CC42500170550 /* unhealthy-hd.png */; };
 		38ACA136178CC42500170550 /* unhealthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA134178CC42500170550 /* unhealthy.png */; };
+		38ACA139178CC6DA00170550 /* healthy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA137178CC6D900170550 /* healthy-hd.png */; };
+		38ACA13A178CC6DA00170550 /* healthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA138178CC6D900170550 /* healthy.png */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
@@ -324,6 +326,8 @@
 		38ACA131178CAEDF00170550 /* Apples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apples.m; sourceTree = "<group>"; };
 		38ACA133178CC42500170550 /* unhealthy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unhealthy-hd.png"; path = "Objects/unhealthy-hd.png"; sourceTree = "<group>"; };
 		38ACA134178CC42500170550 /* unhealthy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unhealthy.png; path = Objects/unhealthy.png; sourceTree = "<group>"; };
+		38ACA137178CC6D900170550 /* healthy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "healthy-hd.png"; path = "Objects/healthy-hd.png"; sourceTree = "<group>"; };
+		38ACA138178CC6D900170550 /* healthy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = healthy.png; path = Objects/healthy.png; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
@@ -1304,6 +1308,8 @@
 		62F018E81745A8EE00BAF979 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				38ACA137178CC6D900170550 /* healthy-hd.png */,
+				38ACA138178CC6D900170550 /* healthy.png */,
 				38ACA133178CC42500170550 /* unhealthy-hd.png */,
 				38ACA134178CC42500170550 /* unhealthy.png */,
 				38ACA12C178CAD7000170550 /* apple-hd.png */,
@@ -1709,6 +1715,8 @@
 				38ACA12F178CAD7000170550 /* apple.png in Resources */,
 				38ACA135178CC42500170550 /* unhealthy-hd.png in Resources */,
 				38ACA136178CC42500170550 /* unhealthy.png in Resources */,
+				38ACA139178CC6DA00170550 /* healthy-hd.png in Resources */,
+				38ACA13A178CC6DA00170550 /* healthy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
