@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3803A83817823EAE002E023A /* HealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83517823EAE002E023A /* HealthyFood.m */; };
 		3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* UnhealthyFood.m */; };
+		38ACA128178C9D1F00170550 /* banana-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA126178C9D1F00170550 /* banana-hd.png */; };
+		38ACA129178C9D1F00170550 /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA127178C9D1F00170550 /* banana.png */; };
+		38ACA12B178C9DBE00170550 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12A178C9DBE00170550 /* fire.png */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
@@ -307,6 +310,9 @@
 		3803A83517823EAE002E023A /* HealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthyFood.m; sourceTree = "<group>"; };
 		3803A83A17823FBC002E023A /* UnhealthyFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnhealthyFood.m; sourceTree = "<group>"; };
 		3803A83D1782457F002E023A /* UnhealthyFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnhealthyFood.h; sourceTree = "<group>"; };
+		38ACA126178C9D1F00170550 /* banana-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "banana-hd.png"; path = "Objects/banana-hd.png"; sourceTree = "<group>"; };
+		38ACA127178C9D1F00170550 /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banana.png; path = Objects/banana.png; sourceTree = "<group>"; };
+		38ACA12A178C9DBE00170550 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
@@ -1188,6 +1194,7 @@
 		62F018A517445BEC00BAF979 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				38ACA12A178C9DBE00170550 /* fire.png */,
 				38BE2B9F177BAED80009AEE6 /* pointer.png */,
 				38BE2B9D177BA2080009AEE6 /* toolbar.png */,
 				6212B4F4176671A50040386F /* monster-animations.plist */,
@@ -1284,6 +1291,8 @@
 		62F018E81745A8EE00BAF979 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				38ACA126178C9D1F00170550 /* banana-hd.png */,
+				38ACA127178C9D1F00170550 /* banana.png */,
 				6212B6FE177115D10040386F /* tree-hd.png */,
 				6212B6FF177115D10040386F /* tree.png */,
 				6212B6ED177108700040386F /* basicbarrell-hd.png */,
@@ -1676,6 +1685,9 @@
 				5417099B177124400021A8C5 /* README.md in Resources */,
 				38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */,
 				38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */,
+				38ACA128178C9D1F00170550 /* banana-hd.png in Resources */,
+				38ACA129178C9D1F00170550 /* banana.png in Resources */,
+				38ACA12B178C9DBE00170550 /* fire.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

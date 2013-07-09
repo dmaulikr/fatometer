@@ -256,7 +256,7 @@
     // set spwan rate for monsters
     [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
-    //    [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];

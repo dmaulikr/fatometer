@@ -13,33 +13,39 @@
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"basicbarrell.png"];
+    self = [super initWithFile:@"banana.png"];
 
     if (self)
     {
+        
         [self scheduleUpdate];
     }
 
     return self;
 }
 
+
 - (void)spawn
 {
-//    self.position = CGPointMake(250, 50);
+    self.position = CGPointMake(250, 50);
 	
 	// Finally set yourself to be visible, this also flag the enemy as "in use"
-//	self.visible = YES;
-    self.visible = NO;
+	self.visible = YES;
 
 }
 
 - (void)gotCollected
 {
+    
+        
+    
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 1;
+    
+    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 5;
 }
 
 - (void)update:(ccTime)delta
