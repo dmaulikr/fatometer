@@ -255,10 +255,10 @@
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-    [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[UnhealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
