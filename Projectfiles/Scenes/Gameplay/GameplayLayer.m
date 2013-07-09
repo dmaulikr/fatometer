@@ -323,16 +323,17 @@
 
 -(void) updatePointer
 {
-    CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
+    // Specify the explosion before actually initializing it
+    CCParticleSystem* system; // create the system
+    system = [CCParticleExplosion node]; // specify what type of effect
+    system.position = knight.position;
+    
 
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
         // Explode Knight        
-        system.positionType = kCCPositionTypeFree;
-        system.autoRemoveOnFinish = YES;
-        system.position = self.position;
-        
-        [knight addChild:system];
+        [self addChild:system z:101 tag:7]; // execute the explosion
+
         knight.visible = FALSE;
         
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
@@ -340,14 +341,12 @@
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-        system.positionType = kCCPositionTypeFree;
-        system.autoRemoveOnFinish = YES;
-        system.position = self.position;
+        // Explode Knight
+        [self addChild:system z:101 tag:7]; // execute the explosion
         
-        [knight addChild:system];
         knight.visible = FALSE;
         
-        [[GameMechanics sharedGameMechanics] game].fatness = 100;
+        [[GameMechanics sharedGameMechanics] game].fatness = 0;
         [self presentGoOnPopUp];
     }
     
@@ -557,6 +556,7 @@
             [self executeGoOnAction];
             [self enableGamePlayButtons];
             knight.visible = TRUE;
+            [[GameMechanics sharedGameMechanics] game].fatness = 50;
             
         } else
         {
