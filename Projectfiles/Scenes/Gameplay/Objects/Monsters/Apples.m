@@ -90,7 +90,7 @@
 {
     // apply background scroll speed
     float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
-    float xSpeed = 1.1 * backgroundScrollSpeedX;
+    float xSpeed = 1.6 * backgroundScrollSpeedX;
     
     // move the monster until it leaves the left edge of the screen
     if (self.position.x > (self.contentSize.width * (-1)))
