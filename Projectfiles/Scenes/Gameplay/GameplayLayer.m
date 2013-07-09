@@ -125,7 +125,7 @@
         [hudNode addChild:healthDisplayNode z:MAX_INT-1];
         healthDisplayNode.position = ccp(screenCenter.x, self.contentSize.height - 18);
         
-        // add scoreboard entry for coins
+        // add scoreboard entry for coins   
         coinsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
         coinsDisplayNode.scoreStringFormat = @"%d";
         coinsDisplayNode.position = ccp(20, self.contentSize.height - 26);
@@ -165,7 +165,7 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        toolBar.position = ccp(239.5, 298);
+        toolBar.position = ccp(239.5, 300);
         [self addChild:toolBar];  
         [self addChild:pointer];
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
