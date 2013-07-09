@@ -28,7 +28,7 @@
 		[self addChild:backgroundNode];
 
         // number of background layers
-		numStripes = 1;
+		numStripes = 2;
 		
 		// Add the 4 different layers and position them on the screen
 		for (NSUInteger i = 0; i < numStripes; i++)
@@ -53,8 +53,8 @@
         		
 		// Initialize the array that contains the scroll factors for individual layers.
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.3f]];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.3f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
 		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
