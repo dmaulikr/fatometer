@@ -15,6 +15,8 @@
 		38ACA12E178CAD7000170550 /* apple-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12C178CAD7000170550 /* apple-hd.png */; };
 		38ACA12F178CAD7000170550 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12D178CAD7000170550 /* apple.png */; };
 		38ACA132178CAEDF00170550 /* Apples.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ACA131178CAEDF00170550 /* Apples.m */; };
+		38ACA135178CC42500170550 /* unhealthy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA133178CC42500170550 /* unhealthy-hd.png */; };
+		38ACA136178CC42500170550 /* unhealthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA134178CC42500170550 /* unhealthy.png */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
@@ -320,6 +322,8 @@
 		38ACA12D178CAD7000170550 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = Objects/apple.png; sourceTree = "<group>"; };
 		38ACA130178CAEDF00170550 /* Apples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apples.h; sourceTree = "<group>"; };
 		38ACA131178CAEDF00170550 /* Apples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apples.m; sourceTree = "<group>"; };
+		38ACA133178CC42500170550 /* unhealthy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unhealthy-hd.png"; path = "Objects/unhealthy-hd.png"; sourceTree = "<group>"; };
+		38ACA134178CC42500170550 /* unhealthy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unhealthy.png; path = Objects/unhealthy.png; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
 		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
@@ -1300,6 +1304,8 @@
 		62F018E81745A8EE00BAF979 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				38ACA133178CC42500170550 /* unhealthy-hd.png */,
+				38ACA134178CC42500170550 /* unhealthy.png */,
 				38ACA12C178CAD7000170550 /* apple-hd.png */,
 				38ACA12D178CAD7000170550 /* apple.png */,
 				38ACA126178C9D1F00170550 /* banana-hd.png */,
@@ -1701,6 +1707,8 @@
 				38ACA12B178C9DBE00170550 /* fire.png in Resources */,
 				38ACA12E178CAD7000170550 /* apple-hd.png in Resources */,
 				38ACA12F178CAD7000170550 /* apple.png in Resources */,
+				38ACA135178CC42500170550 /* unhealthy-hd.png in Resources */,
+				38ACA136178CC42500170550 /* unhealthy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

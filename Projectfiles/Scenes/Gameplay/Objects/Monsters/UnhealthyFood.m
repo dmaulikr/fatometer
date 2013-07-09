@@ -14,33 +14,12 @@
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithSpriteFrameName:@"monster1_1.png"];
+    self = [super initWithFile:@"unhealthy.png"];
     
     if (self)
     {
         self.initialHitPoints = 1;
-        // The line of code make the foods (a.k.a monsters) move towards the fast man (a.k.a knight).
-        //		self.velocity = CGPointMake(-30, 0);
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"monster-animations.plist"];
-        
         self.animationFrames = [NSMutableArray array];
-        
-        for(int i = 1; i <= 5; ++i)
-        {
-            [self.animationFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster1_%d.png", i]]];
-        }
-        
-        //Create an animation from the set of frames you created earlier
-        //        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
-        //
-        //        //Create an action with the animation that can then be assigned to a sprite
-        //        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-        //
-        //        // run the animation
-        //        [self runAction:self.run];
-        
         [self scheduleUpdate];
     }
     
