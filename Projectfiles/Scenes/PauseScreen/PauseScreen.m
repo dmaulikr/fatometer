@@ -52,7 +52,7 @@
         
         menu = [CCMenu menuWithItems:resumeMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, - (0.5 * self.contentSize.height) + resumeButtonNormal.contentSize.height * 0.75);
+        menu.position = ccp(0, - (0.5 * self.contentSize.height) + resumeButtonNormal.contentSize.height * 0.55);
         [self addChild:menu];
         
         // add a missions node
