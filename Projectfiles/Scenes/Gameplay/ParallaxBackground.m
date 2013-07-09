@@ -28,7 +28,7 @@
 		[self addChild:backgroundNode];
 
         // number of background layers
-		numStripes = 4;
+		numStripes = 1;
 		
 		// Add the 4 different layers and position them on the screen
 		for (NSUInteger i = 0; i < numStripes; i++)
