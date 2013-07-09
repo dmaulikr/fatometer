@@ -10,6 +10,7 @@
 #import "ParallaxBackground.h"
 #import "Game.h"
 #import "UnhealthyFood.h"
+#import "Apples.h"
 #import "HealthyFood.h"
 #import "GameMechanics.h"
 #import "EnemyCache.h"
@@ -257,6 +258,7 @@
     [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
