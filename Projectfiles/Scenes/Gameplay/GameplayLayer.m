@@ -350,6 +350,11 @@
         [self presentGoOnPopUp];
     }
     
+//    if ([[GameMechanics sharedGameMechanics] game].fatness > 50)
+//    {
+//        [self setDimensionsInPixelsOnSprite:knight width:500 height:300];
+//    }
+    
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
 }
@@ -577,6 +582,11 @@
         RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
         [[CCDirector sharedDirector] replaceScene:recap];
     }
+}
+
+-(void) setDimensionsInPixelsOnSprite:(CCSprite *) spriteToSetDimensions width:(int) width height:(int) height
+{
+    spriteToSetDimensions.scaleX = width/[spriteToSetDimensions boundingBox].size.width; spriteToSetDimensions.scaleY = height/[spriteToSetDimensions boundingBox].size.height;
 }
 
 - (void)pauseButtonPressed
