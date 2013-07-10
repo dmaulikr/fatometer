@@ -170,7 +170,7 @@
         [self addChild:toolBar];  
         [self addChild:pointer];
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
-        
+                
         // add the enemy cache containing all spawned enemies
         [self addChild:[EnemyCache node]];
         
@@ -227,6 +227,7 @@
     }
     
     [[GameMechanics sharedGameMechanics] game].fatness = 50;
+
 }
 
 - (void)resetGame
@@ -379,8 +380,7 @@
         }
     }
 
-    [self updatePointer];
-    
+    [self updatePointer];    
 
 }
 
