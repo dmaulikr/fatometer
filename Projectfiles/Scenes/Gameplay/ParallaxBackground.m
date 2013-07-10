@@ -28,13 +28,12 @@
 		[self addChild:backgroundNode];
 
         // number of background layers
-		numStripes = 2;
+		numStripes = 1;
 		
 		// Add the 4 different layers and position them on the screen
 		for (NSUInteger i = 0; i < numStripes; i++)
-		{
-			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
-			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+		{            
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg3.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(0, screenSize.height / 2);
 			[backgroundNode addChild:sprite z:i tag:i];
@@ -43,8 +42,7 @@
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         for (NSUInteger i = 0; i < numStripes; i++)
 		{
-			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
-			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg3.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
             
@@ -55,7 +53,7 @@
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
 //		[speedFactors addObject:[NSNumber numberWithFloat:0.3f]];
 //		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
 
