@@ -256,10 +256,10 @@
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[UnhealthyFood class]];
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
-//    [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[UnhealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
@@ -335,7 +335,7 @@
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
         // Explode Knight        
-        [self addChild:system z:101 tag:7]; // execute the explosion
+//        [self addChild:system z:101 tag:7]; // execute the explosion
 
         knight.visible = FALSE;
         
@@ -345,7 +345,7 @@
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
         // Explode Knight
-        [self addChild:system z:101 tag:7]; // execute the explosion
+//        [self addChild:system z:101 tag:7]; // execute the explosion
         
         knight.visible = FALSE;
         
