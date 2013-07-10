@@ -49,7 +49,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
             BlueprintName = "My-MGWU-Endless-Game-Project-iOS"
-            ReferencedContainer = "container:FattyCake.xcodeproj">
+            ReferencedContainer = "container:Fat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
