@@ -13,33 +13,12 @@
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithSpriteFrameName:@"monster2_1.png"];
+    self = [super initWithFile:@"healthy.png"];
     
     if (self)
-    {
+    {        
         self.initialHitPoints = 1;
-        // This line of code makes the monsters (a.k.a foods) move towards the knight (a.k.a the fat man)
-//		self.velocity = CGPointMake(-10, 0);
-        
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"monster-animations.plist"];
-        
         self.animationFrames = [NSMutableArray array];
-        
-        for(int i = 1; i <= 3; ++i)
-        {
-            [self.animationFrames addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"monster2_%d.png", i]]];
-        }
-        
-        //Create an animation from the set of frames you created earlier
-//        CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.2f];
-//        
-//        //Create an action with the animation that can then be assigned to a sprite
-//        self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-//        
-//        // run the animation
-//        [self runAction:self.run];
-        
         [self scheduleUpdate];
     }
     

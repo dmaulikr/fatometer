@@ -32,7 +32,8 @@
 	CGRect screenRect = [[CCDirector sharedDirector] screenRect];
 	CGSize spriteSize = [self contentSize];
 	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
-	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
+//	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
+    float yPos = 0.25 * screenRect.size.height - spriteSize.height;
 	self.position = CGPointMake(xPos, yPos);
     
 	// Finally set yourself to be visible, this also flag the enemy as "in use"
