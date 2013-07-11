@@ -266,7 +266,6 @@
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
-    
 }
 
 #pragma mark - Update & Input Events
@@ -327,10 +326,9 @@
 -(void) updatePointer
 {
     // Specify the explosion before actually initializing it
-    CCParticleSystem* system; // create the system
-    system = [CCParticleExplosion node]; // specify what type of effect
-    system.position = knight.position;
-    
+//    CCParticleSystem* system; // create the system
+//    system = [CCParticleExplosion node]; // specify what type of effect
+//    system.position = knight.position;
 
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {
@@ -352,11 +350,6 @@
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
         [self presentGoOnPopUp];
     }
-    
-//    if ([[GameMechanics sharedGameMechanics] game].fatness > 50)
-//    {
-//        [self setDimensionsInPixelsOnSprite:knight width:500 height:300];
-//    }
     
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
@@ -584,11 +577,6 @@
         RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
         [[CCDirector sharedDirector] replaceScene:recap];
     }
-}
-
--(void) setDimensionsInPixelsOnSprite:(CCSprite *) spriteToSetDimensions width:(int) width height:(int) height
-{
-    spriteToSetDimensions.scaleX = width/[spriteToSetDimensions boundingBox].size.width; spriteToSetDimensions.scaleY = height/[spriteToSetDimensions boundingBox].size.height;
 }
 
 - (void)pauseButtonPressed
