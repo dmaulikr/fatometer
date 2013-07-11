@@ -389,22 +389,10 @@
     
     // the gesture recognizer assumes portrait mode, so we need to use rotated swipe directions
     KKInput* input = [KKInput sharedInput];
-    if ([input gestureSwipeRecognizedThisFrame])
+    if ([input anyTouchBeganThisFrame])
     {
-        KKSwipeGestureDirection dir = input.gestureSwipeDirection;
         
-        // TODO: this needs to be fixed, kobold 2d autotransforms the touches, depending on the device orientation, which is no good for games not supporting all orientations
-        switch (dir)
-        {
-            case KKSwipeGestureDirectionUp:
-                [knight jump];
-                break;
-            case KKSwipeGestureDirectionDown:
-                [knight stab];
-                break;
-            default:
-                break;
-        }
+        [knight jump];
     }
     
     if (knight.hitPoints == 0)
