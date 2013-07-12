@@ -17,7 +17,7 @@
 #import "GameMechanics.h"
 
 #define TITLE_LABEL @"Food Gone Wild"
-#define TITLE_AS_SPRITE TRUE
+#define TITLE_AS_SPRITE FALSE
 
 @interface MainMenuLayer ()
 
@@ -50,13 +50,13 @@
             // OPTION 1: Title as Text
             CCLabelTTF *tempStartTitleLabel = [CCLabelTTF labelWithString:TITLE_LABEL
                                                    fontName:@"Arial"
-                                                   fontSize:20];
+                                                   fontSize:30];
             tempStartTitleLabel.color = DEFAULT_FONT_COLOR;
             startTitleLabel = tempStartTitleLabel;
         } else {
             // OPTION 2: Title as Sprite
-//            CCSprite *startLabelSprite = [CCSprite spriteWithFile:@"title.png"];
-//            startTitleLabel = startLabelSprite;
+            CCSprite *startLabelSprite = [CCSprite spriteWithFile:@"title.png"];
+            startTitleLabel = startLabelSprite;
         }
         
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
