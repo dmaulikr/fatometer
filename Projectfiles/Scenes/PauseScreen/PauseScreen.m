@@ -64,10 +64,8 @@
         
         menu2 = [CCMenu menuWithItems:quitMenuItem, nil];
         [menu2 alignItemsHorizontally];
-        menu2.position = ccp(0, -15);
+        menu2.position = ccp(0, -20);
         [self addChild:menu2];
-
-        
         
         // add a missions node
 //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
@@ -89,23 +87,10 @@
     [self.delegate resumeButtonPressed:self];
 }
 
-//- (void)quitButtonPressed
-//{
-//    
-//    [[[GameMechanics sharedGameMechanics] gameScene] startGame];
-//    
-//    NSLog(@"button pressed");
-//}
-
 - (void)quitButtonPressed
-{
-    
+{    
     [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5f scene:[GameplayLayer node]]];
-    
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
-    
-    
-    //[[GameMechanics sharedGameMechanics] resetGame];
     NSLog(@"button pressed");
 }
 

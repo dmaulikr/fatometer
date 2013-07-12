@@ -189,8 +189,7 @@
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(239.5, 300);
-        [self addChild:toolBar];  
-        [self addChild:pointer];
+
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
                 
         // add the enemy cache containing all spawned enemies
@@ -248,18 +247,14 @@
         [m missionStart:game];
     }
     
+    [self addChild:toolBar];
+    [self addChild:pointer];
     [[GameMechanics sharedGameMechanics] game].fatness = 50;
-
 }
 
 - (void)quit
 {
     self.showMainMenu = TRUE;
-//    
-//    MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
-//    [self addChild:mainMenuLayer z:MAX_INT];
-    
-    
 }
 
 
@@ -450,7 +445,8 @@
         MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
         [self addChild:mainMenuLayer z:MAX_INT];
         
-        [self showHUD:FALSE];
+        [self hideHUD:TRUE];
+
     } else
     {
         // start game directly
