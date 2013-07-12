@@ -9,6 +9,7 @@
 #import "PauseScreen.h"
 #import "GameMechanics.h"
 #import "STYLES.h"
+#import "MainMenuLayer.h"
 
 @interface PauseScreen()
 
@@ -50,20 +51,33 @@
         CCSprite *resumeButtonNormal = [CCSprite spriteWithFile:@"button_playbutton.png"];
         resumeMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:resumeButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(resumeButtonPressed)];
         
+        
+        // add a quit button
+        CCSprite *quitButtonNormal = [CCSprite spriteWithFile:@"InGameStore_close.png"];
+        quitMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:quitButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(quitButtonPressed)];
+
+        
         menu = [CCMenu menuWithItems:resumeMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, - (0.5 * self.contentSize.height) + resumeButtonNormal.contentSize.height * 0.55);
+        menu.position = ccp(0, 50);
         [self addChild:menu];
         
-        // add a missions node
-        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
-        missionNode.contentSize = CGSizeMake(240.f, 120.f);
-        missionNode.anchorPoint = ccp(0.5, 0.5);
-        missionNode.position = ccp(0, 0);
+        menu2 = [CCMenu menuWithItems:quitMenuItem, nil];
+        [menu2 alignItemsHorizontally];
+        menu2.position = ccp(0, -15);
+        [self addChild:menu2];
+
         
-        // we want to use the 9Patch background on the pause screen
-        missionNode.usesScaleSpriteBackground = TRUE;
-        [self addChild:missionNode];
+        
+        // add a missions node
+//        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
+//        missionNode.contentSize = CGSizeMake(240.f, 120.f);
+//        missionNode.anchorPoint = ccp(0.5, 0.5);
+//        missionNode.position = ccp(0, 0);
+//        
+//        // we want to use the 9Patch background on the pause screen
+//        missionNode.usesScaleSpriteBackground = TRUE;
+//        [self addChild:missionNode];
     }
     
     return self;
@@ -74,6 +88,27 @@
     [self hideAndResume];
     [self.delegate resumeButtonPressed:self];
 }
+
+//- (void)quitButtonPressed
+//{
+//    
+//    [[[GameMechanics sharedGameMechanics] gameScene] startGame];
+//    
+//    NSLog(@"button pressed");
+//}
+
+- (void)quitButtonPressed
+{
+    
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5f scene:[GameplayLayer node]]];
+    
+    [[[GameMechanics sharedGameMechanics] gameScene] quit];
+    
+    
+    //[[GameMechanics sharedGameMechanics] resetGame];
+    NSLog(@"button pressed");
+}
+
 
 - (void)present
 {

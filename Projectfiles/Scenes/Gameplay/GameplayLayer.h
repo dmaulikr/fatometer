@@ -17,7 +17,7 @@
 
 
 
-@interface GameplayLayer : CCLayer <StoreDisplayNeedsUpdate, PauseScreenDelegate>
+@interface GameplayLayer : CCLayer <StoreDisplayNeedsUpdate>
 {
     HealthDisplayNode *healthDisplayNode;
     ScoreboardEntryNode *coinsDisplayNode;
@@ -54,7 +54,7 @@
     
     CGPoint pointerPosition;
     
-//    float fatness;
+    //    float fatness;
     
 }
 
@@ -65,6 +65,8 @@
  Tells the game to start
  */
 - (void)startGame;
+
+- (void)quit;
 
 // returns a GamePlayLayer, with an overlayed MainMenu
 + (id)scene;

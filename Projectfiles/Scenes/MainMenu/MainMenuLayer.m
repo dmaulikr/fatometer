@@ -16,7 +16,7 @@
 #import "Store.h"
 #import "GameMechanics.h"
 
-#define TITLE_LABEL @"Endless Runner Demo Game"
+#define TITLE_LABEL @"Food Gone Wild"
 #define TITLE_AS_SPRITE TRUE
 
 @interface MainMenuLayer ()
@@ -25,6 +25,14 @@
 
 @implementation MainMenuLayer
 
++ (id)scene
+{
+    CCScene *scene = [CCScene node];
+    MainMenuLayer* layer = [MainMenuLayer node];
+    
+    [scene addChild:layer];
+    return scene;
+}
 
 -(id) init
 {

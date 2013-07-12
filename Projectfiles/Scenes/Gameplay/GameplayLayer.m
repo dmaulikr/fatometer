@@ -5,6 +5,26 @@
 //  Created by Benjamin Encz on 5/15/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
+//
+//
+//
+//  So this is the objective of the game: You are the last person remaining on earth all the food has gone bad. So you have to try and maintain your weight to save the human race from extinction. You have to try to not get too fat, or get too skinny and pass out, otherwise, the extinction of the human race will be blamed upon you.
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
 
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
@@ -96,11 +116,13 @@
     
     if (self)
     {
+
         
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
         // preload particle effects
+
         // To preload the textures, play each effect once off-screen
         CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
         system.positionType = kCCPositionTypeFree;
@@ -230,6 +252,17 @@
 
 }
 
+- (void)quit
+{
+    self.showMainMenu = TRUE;
+//    
+//    MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
+//    [self addChild:mainMenuLayer z:MAX_INT];
+    
+    
+}
+
+
 - (void)resetGame
 {
     [[GameMechanics sharedGameMechanics] resetGame];
@@ -325,15 +358,14 @@
 
 -(void) updatePointer
 {
-    // Specify the explosion before actually initializing it
-//    CCParticleSystem* system; // create the system
-//    system = [CCParticleExplosion node]; // specify what type of effect
-//    system.position = knight.position;
+//    CCParticleSystem* eksplosion; // create the system
+//    eksplosion = [CCParticleExplosion node]; // specify what type of effect
+//    eksplosion.position = knight.position;
 
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
-    {
+    {   
         // Explode Knight        
-//        [self addChild:system z:101 tag:7]; // execute the explosion
+//        [self addChild:eksplosion z:101 tag:7]; // execute the explosion
 
         knight.visible = FALSE;
         
@@ -343,7 +375,7 @@
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
         // Explode Knight
-//        [self addChild:system z:101 tag:7]; // execute the explosion
+//        [self addChild:eksplosion z:101 tag:7]; // execute the explosion
         
         knight.visible = FALSE;
         
@@ -417,6 +449,8 @@
         // add main menu
         MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
         [self addChild:mainMenuLayer z:MAX_INT];
+        
+        [self showHUD:FALSE];
     } else
     {
         // start game directly

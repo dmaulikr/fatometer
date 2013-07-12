@@ -8,9 +8,11 @@
 
 #import "CCLayer.h"
 #import "Game.h"
+#import "GameplayLayer.h"
 #import "CCSpriteBackgroundNode.h"
 #import "CCBackgroundColorNode.h"
 #import "MissionsNode.h"
+#import "MainMenuLayer.h"
 
 @class PauseScreen;
 /*
@@ -20,6 +22,7 @@
 @protocol PauseScreenDelegate <NSObject>
 
 - (void)resumeButtonPressed:(PauseScreen *)pauseScreen;
+- (void)quitButtonPressed:(PauseScreen *)pauseScreen;
 
 @end
 
@@ -27,7 +30,9 @@
 {
     CCBackgroundColorNode *backgroundNode;
     CCMenu *menu;
+    CCMenu *menu2;
     CCMenuItemSprite *resumeMenuItem;
+    CCMenuItemSprite *quitMenuItem;
     MissionsNode *missionNode;
 }
 

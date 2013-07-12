@@ -123,6 +123,7 @@
         CCMenu *menu = [CCMenu menuWithItems:resumeMenuItem, nil];
         [menu alignItemsHorizontally];
         menu.position = ccp(self.contentSize.width/2, 4 + resumeMenuItem.contentSize.height / 2);
+        
         [self addChild:menu];
         
         [self updateCashDisplay];
