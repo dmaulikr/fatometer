@@ -60,9 +60,9 @@
         /********** Statistics Panel *********/
         NSString *highscore = [NSString stringWithFormat:@"%d Points", game.score];
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
-        NSString *enemiesKilled = [NSString stringWithFormat:@"%d Enemy's Killed", game.enemiesKilled];
+//        NSString *enemiesKilled = [NSString stringWithFormat:@"%d Enemy's Killed", game.enemiesKilled];
         
-        NSArray *highScoreStrings = [NSArray arrayWithObjects:highscore, distance, enemiesKilled, nil];
+        NSArray *highScoreStrings = [NSArray arrayWithObjects:highscore, distance, nil];
 
         // setup the statistics panel with the current game information of the user
         statisticsNode = [[StatisticsNode alloc] initWithTitle:@"YOU LOST" highScoreStrings:highScoreStrings];

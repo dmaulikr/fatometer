@@ -52,10 +52,15 @@
     CCSprite *toolBar;
     CCSprite *pointer;
     
+    CCLayerColor* colorLayer;
+    
     CGPoint pointerPosition;
     
-    //    float fatness;
+    CCLabelTTF* label;
+    CCLabelBMFont* tut;
     
+    BOOL playedTutorial;
+
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
@@ -65,6 +70,7 @@
  Tells the game to start
  */
 - (void)startGame;
+- (void)startTutorial;
 
 - (void)quit;
 

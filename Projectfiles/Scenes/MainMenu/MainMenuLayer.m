@@ -55,8 +55,8 @@
             startTitleLabel = tempStartTitleLabel;
         } else {
             // OPTION 2: Title as Sprite
-            CCSprite *startLabelSprite = [CCSprite spriteWithFile:@"title.png"];
-            startTitleLabel = startLabelSprite;
+//            CCSprite *startLabelSprite = [CCSprite spriteWithFile:@"title.png"];
+//            startTitleLabel = startLabelSprite;
         }
         
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
@@ -73,6 +73,7 @@
         /* add a start button */
         CCSprite *normalStartButton = [CCSprite spriteWithFile:@"mainmenu.png"];
         CCSprite *selectedStartButton = [CCSprite spriteWithFile:@"mainmenu.png"];
+        
         startButton = [CCMenuItemSprite itemWithNormalSprite:normalStartButton selectedSprite:selectedStartButton target:self selector:@selector(startButtonPressed)];
         storeButton = [CCMenuItemFont itemWithString:@"Store" block:^(id sender) {
             CCScene *scene = [[StoreScreenScene alloc] init];

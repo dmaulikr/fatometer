@@ -17,7 +17,7 @@
 
 @property (nonatomic, assign) NSInteger score;
 @property (nonatomic, assign) NSInteger meters;
-@property (nonatomic, assign) NSInteger enemiesKilled;
+//@property (nonatomic, assign) NSInteger enemiesKilled;
 @property (nonatomic, assign) NSInteger fatness;
 
 // currently active missions

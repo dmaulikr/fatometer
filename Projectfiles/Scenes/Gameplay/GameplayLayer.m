@@ -15,17 +15,6 @@
 //
 //
 //
-
-
-
-
-
-
-
-
-
-
-
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
@@ -70,6 +59,7 @@
  called when the player has chosen if he wants to continue the game (for paying coins) or not
  */
 - (void)goOnPopUpButtonClicked:(CCControlButton *)sender;
+
 
 @end
 
@@ -189,6 +179,14 @@
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(239.5, 300);
+        
+        
+        // Set up Tutorial
+        tut = [CCLabelTTF labelWithString:@"derp" fontName:@"Arial" fontSize:28];
+        tut.position = screenCenter;
+        [self addChild:tut z:10000];
+        tut.visible = false;
+        
 
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
                 
@@ -212,6 +210,42 @@
     }
     
     return self;
+}
+
+-(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString
+{
+    if ([colorString isEqualToString:@"red"] == true) {
+        tut.color = ccc3(255,0,0);
+    }
+    if ([colorString isEqualToString:@"blue"] == true) {
+        tut.color = ccc3(0,0,255);
+    }
+    if ([colorString isEqualToString:@"green"] == true) {
+        tut.color = ccc3(0,255,0);
+    }
+    if ([colorString isEqualToString:@"black"] == true) {
+        tut.color = ccc3(0,0,0);
+    }
+    if ([colorString isEqualToString:@"white"] == true) {
+        tut.color = ccc3(255,255,255);
+    }
+
+    [tut setString:stringToFlashOnScreen];
+    id addVisibility = [CCCallFunc actionWithTarget:self selector:@selector(makeFlashLabelVisible)];
+    id delayInvis = [CCDelayTime actionWithDuration:numSecondsToFlash];
+    id addInvis = [CCCallFunc actionWithTarget:self selector:@selector(makeFlashLabelInvisible)];
+    CCSequence *showLabelSeq = [CCSequence actions:addVisibility, delayInvis, addInvis, nil];
+    [self runAction:showLabelSeq];
+}
+
+-(void) makeFlashLabelVisible
+{
+    tut.visible = true;
+}
+
+-(void) makeFlashLabelInvisible
+{
+    tut.visible = false;
 }
 
 -(void) convertFromPercent:(float) floatToConvert
@@ -250,6 +284,7 @@
     [self addChild:toolBar];
     [self addChild:pointer];
     [[GameMechanics sharedGameMechanics] game].fatness = 50;
+    [self startTutorial];
 }
 
 - (void)quit
@@ -295,6 +330,37 @@
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
 }
+
+
+
+-(void) startTutorial
+{
+//    if (playedTutorial == false) {
+//        playedTutorial = true;
+        id delay = [CCDelayTime actionWithDuration:4.0f];
+        id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
+        id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
+        id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
+        CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
+        [self runAction:tutorialSeq];
+        
+//        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
+//    }    
+}
+-(void) tutorial1
+{
+    [self flashLabel:@"Tap to jump" actionWithDuration:2.0f color:@"black"];
+}
+-(void) tutorial2
+{
+    [self flashLabel:@"Turn device to move" actionWithDuration:2.0f color:@"black"];
+}
+-(void) tutorial3
+{
+    [self flashLabel:@"Maintain your weight" actionWithDuration:4.0f color:@"black"];
+}
+
+
 
 #pragma mark - Update & Input Events
 
@@ -353,15 +419,9 @@
 
 -(void) updatePointer
 {
-//    CCParticleSystem* eksplosion; // create the system
-//    eksplosion = [CCParticleExplosion node]; // specify what type of effect
-//    eksplosion.position = knight.position;
-
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {   
-        // Explode Knight        
-//        [self addChild:eksplosion z:101 tag:7]; // execute the explosion
-
+        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.1f];
         knight.visible = FALSE;
         
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
@@ -369,9 +429,7 @@
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-        // Explode Knight
-//        [self addChild:eksplosion z:101 tag:7]; // execute the explosion
-        
+        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.1f];
         knight.visible = FALSE;
         
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
@@ -384,6 +442,7 @@
 
 - (void) update:(ccTime)delta
 {
+    
     [self updatePointer];
     // update the amount of in-App currency in pause mode, too
     inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
@@ -399,7 +458,7 @@
             [self pushGameStateToMissions];
         }
     }
-
+    
     [self updatePointer];    
 
 }
@@ -519,6 +578,22 @@
 {
     pauseButtonMenu.enabled = TRUE;
     skipAheadMenu.enabled = TRUE;
+}
+
+-(void) flashWithRed:(int) red green:(int) green blue:(int) blue alpha:(int) alpha actionWithDuration:(float) duration
+{
+    colorLayer = [CCLayerColor layerWithColor:ccc4(red, green, blue, alpha)];
+    [self addChild:colorLayer z:0];
+    id delay = [CCDelayTime actionWithDuration:duration];
+    id fadeOut = [CCFadeOut actionWithDuration:0.9f];
+    id remove = [CCCallFunc actionWithTarget:self selector:@selector(removeFlashColor)];
+    [colorLayer runAction:[CCSequence actions:delay, fadeOut, remove, nil]];
+    
+}
+
+-(void) removeFlashColor
+{
+    [self removeChild:colorLayer cleanup:YES];
 }
 
 #pragma mark - Delegate Methods
