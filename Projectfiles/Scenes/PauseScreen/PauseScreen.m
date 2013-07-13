@@ -76,6 +76,9 @@
         menu3.position = ccp(0, -100);
         [self addChild:menu3];
         
+        scene = [GameplayLayer node];
+
+        
         // add a missions node
 //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
 //        missionNode.contentSize = CGSizeMake(240.f, 120.f);
@@ -98,14 +101,15 @@
 
 - (void)quitButtonPressed
 {    
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5f scene:[GameplayLayer node]]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:scene]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
 }
 
 - (void)resetButtonPressed
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:[GameplayLayer node]]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:scene]];
+    [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
 }
 

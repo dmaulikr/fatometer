@@ -73,6 +73,7 @@
 - (void)startTutorial;
 
 - (void)quit;
+- (void)reset;
 
 // returns a GamePlayLayer, with an overlayed MainMenu
 + (id)scene;

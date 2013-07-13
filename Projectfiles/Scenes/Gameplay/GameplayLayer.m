@@ -184,7 +184,7 @@
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:28];
         tut.position = screenCenter;
         [self addChild:tut z:10000];
-        tut.visible = false;
+        tut.visible = FALSE;
         
 
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
@@ -200,7 +200,7 @@
         
         [self scheduleUpdate];
         
-//        if (tut.visible == true) {
+//        if (tut.visible == TRUE) {
 //            [self showHUD:FALSE];
 //        }
 //        else
@@ -221,19 +221,19 @@
 
 -(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString
 {
-    if ([colorString isEqualToString:@"red"] == true) {
+    if ([colorString isEqualToString:@"red"] == TRUE) {
         tut.color = ccc3(255,0,0);
     }
-    if ([colorString isEqualToString:@"blue"] == true) {
+    if ([colorString isEqualToString:@"blue"] == TRUE) {
         tut.color = ccc3(0,0,255);
     }
-    if ([colorString isEqualToString:@"green"] == true) {
+    if ([colorString isEqualToString:@"green"] == TRUE) {
         tut.color = ccc3(0,255,0);
     }
-    if ([colorString isEqualToString:@"black"] == true) {
+    if ([colorString isEqualToString:@"black"] == TRUE) {
         tut.color = ccc3(0,0,0);
     }
-    if ([colorString isEqualToString:@"white"] == true) {
+    if ([colorString isEqualToString:@"white"] == TRUE) {
         tut.color = ccc3(255,255,255);
     }
 
@@ -247,12 +247,12 @@
 
 -(void) makeFlashLabelVisible
 {
-    tut.visible = true;
+    tut.visible = TRUE;
 }
 
 -(void) makeFlashLabelInvisible
 {
-    tut.visible = false;
+    tut.visible = FALSE;
 }
 
 -(void) convertFromPercent:(float) floatToConvert
@@ -264,13 +264,13 @@
 
 - (void)gamePaused
 {
-    tut.visible = false;
+    tut.visible = FALSE;
     [self pauseSchedulerAndActions];
 }
 
 - (void)gameResumed
 {
-    tut.visible = true;
+    tut.visible = TRUE;
     [self resumeSchedulerAndActions];
 }
 
@@ -300,8 +300,10 @@
 {
     self.showMainMenu = TRUE;
 }
-
-
+- (void)reset {
+    [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
+    tut.visible = FALSE;
+}
 - (void)resetGame
 {
     [[GameMechanics sharedGameMechanics] resetGame];
@@ -340,17 +342,17 @@
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
 }
 
-
-
 -(void) startTutorial
 {
-//    if (playedTutorial == false) {
-//        playedTutorial = true;
+// Commented out the NSUserDefaults
+//    if (playedTutorial == FALSE) {
+//        playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
+        id delay2 = [CCDelayTime actionWithDuration:1.5f];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
-        CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
+        CCSequence *tutorialSeq = [CCSequence actions:delay2, part1, delay, part2, delay, part3, delay, nil];
         [self runAction:tutorialSeq];
         
 //        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
@@ -511,8 +513,8 @@
         // add main menu
         MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
         [self addChild:mainMenuLayer z:MAX_INT];
-        
         [self hideHUD:TRUE];
+        [self disableGameplayButtons];
 
     } else
     {
@@ -682,7 +684,7 @@
 
 - (void)pauseButtonPressed
 {
-    CCLOG(@"Pause");
+    NSLog(@"Pause");
     // disable pause button while the pause menu is shown, since we want to avoid, that the pause button can be hit twice.
     [self disableGameplayButtons];
     
