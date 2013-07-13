@@ -1248,8 +1248,8 @@
 				62F018C01745638900BAF979 /* HUD */,
 				62F018BD1744630400BAF979 /* ParallaxBackground.h */,
 				62F018BE1744630400BAF979 /* ParallaxBackground.m */,
-				62F018BA17445C7D00BAF979 /* GameplayLayer.h */,
 				62F018BB17445C7D00BAF979 /* GameplayLayer.m */,
+				62F018BA17445C7D00BAF979 /* GameplayLayer.h */,
 				6212B70717711AA60040386F /* DecorativeObjectsNode.h */,
 				6212B70817711AA90040386F /* DecorativeObjectsNode.m */,
 			);

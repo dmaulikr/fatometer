@@ -256,11 +256,13 @@
 
 - (void)gamePaused
 {
+    tut.visible = false;
     [self pauseSchedulerAndActions];
 }
 
 - (void)gameResumed
 {
+    tut.visible = true;
     [self resumeSchedulerAndActions];
 }
 
