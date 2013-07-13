@@ -23,6 +23,7 @@
 
 - (void)resumeButtonPressed:(PauseScreen *)pauseScreen;
 - (void)quitButtonPressed:(PauseScreen *)pauseScreen;
+- (void)resetButtonPressed:(PauseScreen *)pauseScreen;
 
 @end
 
@@ -31,8 +32,10 @@
     CCBackgroundColorNode *backgroundNode;
     CCMenu *menu;
     CCMenu *menu2;
+    CCMenu *menu3;
     CCMenuItemSprite *resumeMenuItem;
     CCMenuItemSprite *quitMenuItem;
+    CCMenuItemSprite *resetMenuItem;
     MissionsNode *missionNode;
 }
 

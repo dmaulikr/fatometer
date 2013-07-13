@@ -40,8 +40,8 @@
         backgroundNode.anchorPoint = ccp(0.5, 0.5);
         
         // add title label
-        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"PAUSED"
-                                                        fontName:DEFAULT_FONT
+        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
+                                                        fontName:@"Arial"
                                                         fontSize:32];
         storeItemLabel.color = DEFAULT_FONT_COLOR;
         storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 25);
@@ -53,8 +53,12 @@
         
         
         // add a quit button
-        CCSprite *quitButtonNormal = [CCSprite spriteWithFile:@"InGameStore_close.png"];
+        CCSprite *quitButtonNormal = [CCSprite spriteWithFile:@"close.png"];
         quitMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:quitButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(quitButtonPressed)];
+        
+        // add a reset button
+        CCSprite *resetButtonNormal = [CCSprite spriteWithFile:@"reset.png"];
+        resetMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:resetButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(resetButtonPressed)];
 
         
         menu = [CCMenu menuWithItems:resumeMenuItem, nil];
@@ -62,10 +66,15 @@
         menu.position = ccp(0, 50);
         [self addChild:menu];
         
-        menu2 = [CCMenu menuWithItems:quitMenuItem, nil];
+        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
         [menu2 alignItemsHorizontally];
-        menu2.position = ccp(0, -20);
+        menu2.position = ccp(0, -25);
         [self addChild:menu2];
+        
+        menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
+        [menu3 alignItemsHorizontally];
+        menu3.position = ccp(0, -100);
+        [self addChild:menu3];
         
         // add a missions node
 //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
@@ -91,8 +100,15 @@
 {    
     [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:0.5f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
-    NSLog(@"button pressed");
+    NSLog(@"quit button pressed");
 }
+
+- (void)resetButtonPressed
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:[GameplayLayer node]]];
+    NSLog(@"reset button pressed");
+}
+
 
 
 - (void)present

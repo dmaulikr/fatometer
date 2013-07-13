@@ -112,7 +112,6 @@
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
         // preload particle effects
-
         // To preload the textures, play each effect once off-screen
         CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
         system.positionType = kCCPositionTypeFree;
@@ -172,7 +171,7 @@
         CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause-pressed.png"];
         pauseButtonMenuItem = [CCMenuItemSprite itemWithNormalSprite:pauseButton selectedSprite:pauseButtonPressed target:self selector:@selector(pauseButtonPressed)];
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
-        pauseButtonMenu.position = ccp(self.contentSize.width - pauseButtonMenuItem.contentSize.width - 4, self.contentSize.height - 58);
+        pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 70);
         [hudNode addChild:pauseButtonMenu];
         
         // SET UP TOOLBAR, POINTER, AND FATNESS
