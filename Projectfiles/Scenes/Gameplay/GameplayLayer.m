@@ -181,7 +181,7 @@
         
         
         // Set up Tutorial
-        tut = [CCLabelTTF labelWithString:@"derp" fontName:@"Arial" fontSize:28];
+        tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:28];
         tut.position = screenCenter;
         [self addChild:tut z:10000];
         tut.visible = false;
@@ -199,6 +199,14 @@
         [self resetGame];
         
         [self scheduleUpdate];
+        
+//        if (tut.visible == true) {
+//            [self showHUD:FALSE];
+//        }
+//        else
+//        {
+//            [self showHUD:TRUE];
+//        }
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -444,7 +452,6 @@
 - (void) update:(ccTime)delta
 {
     
-    [self updatePointer];
     // update the amount of in-App currency in pause mode, too
     inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
     
