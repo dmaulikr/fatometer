@@ -15,6 +15,7 @@
 //
 //
 //
+#import "SimpleAudioEngine.h"
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
@@ -110,6 +111,10 @@
         
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
+        
+        //Preload the music
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"background.mp3"];
+//        [[SimpleAudioEngine sharedEngine] playEffect:@"background.mp3" loop:TRUE];
         
         // preload particle effects
         // To preload the textures, play each effect once off-screen
@@ -298,6 +303,7 @@
 
 - (void)quit
 {
+    [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
     self.showMainMenu = TRUE;
 }
 - (void)reset {
@@ -469,7 +475,7 @@
         }
     }
     
-    [self updatePointer];    
+    [self updatePointer];
 
 }
 

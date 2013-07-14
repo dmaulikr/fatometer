@@ -27,6 +27,7 @@
 		38ACA13A178CC6DA00170550 /* healthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA138178CC6D900170550 /* healthy.png */; };
 		38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9D177BA2080009AEE6 /* toolbar.png */; };
 		38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */ = {isa = PBXBuildFile; fileRef = 38BE2B9F177BAED80009AEE6 /* pointer.png */; };
+		38F25EF8179238BD00F76665 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38F25EF7179238BD00F76665 /* background.mp3 */; };
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
@@ -336,6 +337,7 @@
 		38ACA138178CC6D900170550 /* healthy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = healthy.png; path = Objects/healthy.png; sourceTree = "<group>"; };
 		38BE2B9D177BA2080009AEE6 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		38BE2B9F177BAED80009AEE6 /* pointer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointer.png; sourceTree = "<group>"; };
+		38F25EF7179238BD00F76665 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
@@ -732,6 +734,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38A9BBE61791DAA8002A656B /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				38F25EF7179238BD00F76665 /* background.mp3 */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 		541708DC177123A90021A8C5 /* mgwuSDK.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -1417,6 +1427,7 @@
 			isa = PBXGroup;
 			children = (
 				6212B682176E109A0040386F /* StoreScreen */,
+				38A9BBE61791DAA8002A656B /* Music */,
 				62E4B15517664E2700D0A8D9 /* PauseScreen */,
 				62B741491763779400D9BD34 /* InGameStore */,
 				62F0C62C174E94FC00FB096E /* Missions */,
@@ -1717,6 +1728,7 @@
 				38A9BBE11790BE5C002A656B /* close.png in Resources */,
 				38A9BBE41790D4A5002A656B /* reset-hd.png in Resources */,
 				38A9BBE51790D4A5002A656B /* reset.png in Resources */,
+				38F25EF8179238BD00F76665 /* background.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
