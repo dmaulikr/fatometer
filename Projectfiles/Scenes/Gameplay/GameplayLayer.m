@@ -35,6 +35,7 @@
 #import "PauseScreen.h"
 #import "MyCustomMonster.h"
 #import "DecorativeObjectsNode.h"
+#import "STYLES.h"  
 
 // defines how many update cycles run, before the missions get an update about the current game state
 #define MISSION_UPDATE_FREQUENCY 10
@@ -186,7 +187,7 @@
         
         
         // Set up Tutorial
-        tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:28];
+        tut = [CCLabelTTF labelWithString:@"" fontName:DEFAULT_FONT fontSize:28];
         tut.position = screenCenter;
         [self addChild:tut z:10000];
         tut.visible = FALSE;

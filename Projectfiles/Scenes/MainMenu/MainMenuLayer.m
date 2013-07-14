@@ -49,7 +49,7 @@
         if (!TITLE_AS_SPRITE) {
             // OPTION 1: Title as Text
             CCLabelTTF *tempStartTitleLabel = [CCLabelTTF labelWithString:TITLE_LABEL
-                                                   fontName:@"Arial"
+                                                   fontName:DEFAULT_FONT
                                                    fontSize:30];
             tempStartTitleLabel.color = DEFAULT_FONT_COLOR;
             startTitleLabel = tempStartTitleLabel;

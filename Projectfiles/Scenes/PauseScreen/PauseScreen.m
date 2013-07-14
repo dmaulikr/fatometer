@@ -41,7 +41,7 @@
         
         // add title label
         CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
-                                                        fontName:@"Arial"
+                                                        fontName:DEFAULT_FONT
                                                         fontSize:32];
         storeItemLabel.color = DEFAULT_FONT_COLOR;
         storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 25);
