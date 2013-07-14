@@ -171,7 +171,6 @@
                 {
                     // if the kight is not stabbing, he will be hit
 //                    [knight gotHit];
-//                    [enemy gotCollected];
                     [enemy gotCollected];
 
                 }
