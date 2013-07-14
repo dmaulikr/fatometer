@@ -26,8 +26,8 @@ typedef NS_ENUM(NSInteger, GameState) {
  This class is used by all entities in the game to access shared ressources.
  **/
 
-#define SCROLL_SPEED_DEFAULT 200.f
-#define SCROLL_SPEED_SKIP_AHEAD 250.f
+#define SCROLL_SPEED_DEFAULT 240.f
+#define SCROLL_SPEED_SKIP_AHEAD 320.f
 #define KNIGHT_HIT_POINTS 5
 
 @interface GameMechanics : NSObject
