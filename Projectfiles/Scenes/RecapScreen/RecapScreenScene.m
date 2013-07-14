@@ -65,7 +65,7 @@
         NSArray *highScoreStrings = [NSArray arrayWithObjects:highscore, distance, nil];
 
         // setup the statistics panel with the current game information of the user
-        statisticsNode = [[StatisticsNode alloc] initWithTitle:@"YOU LOST" highScoreStrings:highScoreStrings];
+        statisticsNode = [[StatisticsNode alloc] initWithTitle:@"Game Over" highScoreStrings:highScoreStrings];
         statisticsNode.contentSize = CGSizeMake(200, 200);
         statisticsNode.anchorPoint = ccp(0, 1);
         statisticsNode.position = ccp(20 ,screenSize.height - 70);

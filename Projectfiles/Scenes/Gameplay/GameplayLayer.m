@@ -187,7 +187,7 @@
         
         
         // Set up Tutorial
-        tut = [CCLabelTTF labelWithString:@"" fontName:DEFAULT_FONT fontSize:28];
+        tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
         tut.position = screenCenter;
         [self addChild:tut z:10000];
         tut.visible = FALSE;

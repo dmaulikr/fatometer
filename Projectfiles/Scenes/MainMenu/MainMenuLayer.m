@@ -50,7 +50,7 @@
             // OPTION 1: Title as Text
             CCLabelTTF *tempStartTitleLabel = [CCLabelTTF labelWithString:TITLE_LABEL
                                                    fontName:DEFAULT_FONT
-                                                   fontSize:30];
+                                                   fontSize:45];
             tempStartTitleLabel.color = DEFAULT_FONT_COLOR;
             startTitleLabel = tempStartTitleLabel;
         } else {
