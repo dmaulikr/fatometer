@@ -165,13 +165,15 @@
                 // if the knight is stabbing, or the knight is in invincible mode, the enemy will be destroyed...
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
-                    [enemy gotCollected];
+                    enemy.visible = FALSE;
+
                 } else
                 {
                     // if the kight is not stabbing, he will be hit
 //                    [knight gotHit];
 //                    [enemy gotCollected];
-                    enemy.visible = FALSE;
+                    [enemy gotCollected];
+
                 }
             }
 		}
