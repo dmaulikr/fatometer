@@ -111,6 +111,13 @@
     
     if (self)
     {
+        scrollSpeed = 300.0f;
+        
+        if (pointsDisplayNode.score > 3000) {
+            scrollSpeed += 200;
+            NSLog(@"Speed Changed");
+        }
+
 
         
         // get screen center
@@ -335,7 +342,7 @@
     [[GameMechanics sharedGameMechanics] setGameScene:self];
     
     // set the default background scroll speed
-    [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:SCROLL_SPEED_DEFAULT];
+    [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
     
     /* setup initial values */
     
@@ -498,7 +505,7 @@
 - (void)updateRunning:(ccTime)delta
 {
     // distance depends on the current scrolling speed
-    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 1;
+    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 2;
     game.meters = (int) (gainedDistance);
     // update the score display
     pointsDisplayNode.score = game.meters;
@@ -518,6 +525,9 @@
         // knight died, present screen with option to GO ON for paying some coins
         [self presentGoOnPopUp];
     }
+    
+    // HERE: make if statement. If time%1000 == 0, scrollspeed += x;
+    
 }
 
 
@@ -672,7 +682,7 @@
 
 - (void)goOnPopUpButtontaped:(CCControlButton *)sender
 {
-    CCLOG(@"Button taped.");
+    CCLOG(@"Button tapped.");
     if (sender.tag == 0)
     {
         if ([Store hasSufficientFundsForGoOnAction])
@@ -754,8 +764,10 @@
 }
 
 - (void)endSkipAheadMode
-{
-    [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:SCROLL_SPEED_DEFAULT];
+{    
+ 
+    [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
+    
     [[GameMechanics sharedGameMechanics] knight].invincible = FALSE;
 }
 

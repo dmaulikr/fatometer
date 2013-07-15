@@ -19,6 +19,8 @@
 
 @interface GameplayLayer : CCLayer <StoreDisplayNeedsUpdate>
 {
+    float scrollSpeed;
+    
     HealthDisplayNode *healthDisplayNode;
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;

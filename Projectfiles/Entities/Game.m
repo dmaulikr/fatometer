@@ -22,6 +22,7 @@ static NSArray *_allMissions;
 
 @interface Game()
 
+
 // lets the game load missions
 + (void)loadMissions;
 
