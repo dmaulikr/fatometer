@@ -62,7 +62,16 @@
     CCLabelBMFont* tut;
     
     BOOL playedTutorial;
-
+    BOOL fasterSpeed;
+    BOOL fasterSpeed2;
+    BOOL fasterSpeed3;
+    BOOL fasterSpeed4;
+    BOOL fasterSpeed5;
+    BOOL fasterSpeed6;
+    BOOL fasterSpeed7;
+    BOOL fasterSpeed8;
+    BOOL fasterSpeed9;
+    BOOL fasterSpeed10;
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
