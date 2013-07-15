@@ -114,11 +114,18 @@
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
         //Preload the music
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"background.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"background.mp3"];
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         // Play the Music
-        [[SimpleAudioEngine sharedEngine] playEffect:@"background.mp3" loop:TRUE];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background.mp3" loop:TRUE];
+        
+        if([[SimpleAudioEngine sharedEngine]isBackgroundMusicPlaying])
+        {
+            NSLog(@"Music Played");
+        } else {
+            NSLog(@"");
+        }
         
         // preload particle effects
         // To preload the textures, play each effect once off-screen
