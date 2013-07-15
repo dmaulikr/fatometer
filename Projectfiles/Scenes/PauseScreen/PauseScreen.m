@@ -10,6 +10,8 @@
 #import "GameMechanics.h"
 #import "STYLES.h"
 #import "MainMenuLayer.h"
+#import "SimpleAudioEngine.h"
+
 
 @interface PauseScreen()
 
@@ -25,6 +27,9 @@
     
     if (self)
     {
+        // Preload Sound
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+
         self.contentSize = [[CCDirector sharedDirector] winSize];
         // position of screen, animate to screen
         self.position = ccp(self.contentSize.width / 2, self.contentSize.height * 1.5);
@@ -97,6 +102,7 @@
 {
     [self hideAndResume];
     [self.delegate resumeButtonPressed:self];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)quitButtonPressed
@@ -104,6 +110,8 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:scene]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+
 }
 
 - (void)resetButtonPressed
@@ -111,6 +119,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:scene]];
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 

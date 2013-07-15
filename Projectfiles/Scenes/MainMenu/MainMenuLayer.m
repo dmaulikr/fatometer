@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
+#import "SimpleAudioEngine.h"
 #import "MainMenuLayer.h"
 #import "RecapScreenScene.h"
 #import "StoreScreenScene.h"
@@ -38,6 +39,9 @@
 {
 	if (self = [super init])
     {
+        // Preload Sound
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+        
         // setup In-App-Purchase Store
         [Store setupDefault];
         
@@ -107,6 +111,9 @@
     /** Start the game and display the HUD */
     [[[GameMechanics sharedGameMechanics] gameScene] startGame];
     [[[GameMechanics sharedGameMechanics] gameScene] showHUD:TRUE];
+    
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+
 }
 
 #pragma mark - Scene Lifecyle

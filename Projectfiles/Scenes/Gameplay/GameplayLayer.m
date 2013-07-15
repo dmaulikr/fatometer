@@ -60,7 +60,7 @@
 /*
  called when the player has chosen if he wants to continue the game (for paying coins) or not
  */
-- (void)goOnPopUpButtonClicked:(CCControlButton *)sender;
+- (void)goOnPopUpButtontaped:(CCControlButton *)sender;
 
 
 @end
@@ -115,7 +115,10 @@
         
         //Preload the music
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"background.mp3"];
-//        [[SimpleAudioEngine sharedEngine] playEffect:@"background.mp3" loop:TRUE];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+        
+        // Play the Music
+        [[SimpleAudioEngine sharedEngine] playEffect:@"background.mp3" loop:TRUE];
         
         // preload particle effects
         // To preload the textures, play each effect once off-screen
@@ -544,7 +547,7 @@
 {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
     CCScale9Sprite *backgroundImage = [StyleManager goOnPopUpBackground];
-    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked:) buttonTitles:@[@"OK", @"No"]];
+    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtontaped:) buttonTitles:@[@"OK", @"No"]];
     [self disableGameplayButtons];
     
 }
@@ -652,11 +655,12 @@
         [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
         [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromSkipAheadAction)];
     }
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
-- (void)goOnPopUpButtonClicked:(CCControlButton *)sender
+- (void)goOnPopUpButtontaped:(CCControlButton *)sender
 {
-    CCLOG(@"Button clicked.");
+    CCLOG(@"Button taped.");
     if (sender.tag == 0)
     {
         if ([Store hasSufficientFundsForGoOnAction])
@@ -691,6 +695,7 @@
 
 - (void)pauseButtonPressed
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
     NSLog(@"Pause");
     // disable pause button while the pause menu is shown, since we want to avoid, that the pause button can be hit twice.
     [self disableGameplayButtons];
