@@ -71,6 +71,7 @@
  */
 - (void)startGame;
 - (void)startTutorial;
+- (void)resetFatness;
 
 - (void)quit;
 - (void)reset;

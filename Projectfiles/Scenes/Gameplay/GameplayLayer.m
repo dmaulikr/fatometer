@@ -311,7 +311,7 @@
     
     [self addChild:toolBar];
     [self addChild:pointer];
-    [[GameMechanics sharedGameMechanics] game].fatness = 50;
+    [self resetFatness];
     [self startTutorial];
 }
 
@@ -454,7 +454,6 @@
     {   
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
-        
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
         [self presentGoOnPopUp];
     }
@@ -462,17 +461,13 @@
     {
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
-        
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
         [self presentGoOnPopUp];
     }
     
     
     // Implement the score here
-//    if ([[GameMechanics sharedGameMechanics] game].fatness >= 55) {
-//        [[GameMechanics sharedGameMechanics] game].score += 50;
-//
-//    }
+
     
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
@@ -687,7 +682,7 @@
             [self executeGoOnAction];
             [self enableGamePlayButtons];
             knight.visible = TRUE;
-            [[GameMechanics sharedGameMechanics] game].fatness = 50;
+            [self resetFatness];
             
         } else
         {
@@ -708,6 +703,10 @@
         RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
         [[CCDirector sharedDirector] replaceScene:recap];
     }
+}
+
+-(void)resetFatness {
+    [[GameMechanics sharedGameMechanics] game].fatness = 50;
 }
 
 - (void)pauseButtonPressed
