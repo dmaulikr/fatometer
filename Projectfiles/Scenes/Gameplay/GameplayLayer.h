@@ -72,6 +72,16 @@
     BOOL fasterSpeed8;
     BOOL fasterSpeed9;
     BOOL fasterSpeed10;
+    BOOL fasterSpeed11;
+    BOOL fasterSpeed12;
+    BOOL fasterSpeed13;
+    BOOL fasterSpeed14;
+    BOOL fasterSpeed15;
+    BOOL fasterSpeed16;
+    BOOL fasterSpeed17;
+    BOOL fasterSpeed18;
+    BOOL fasterSpeed19;
+    BOOL fasterSpeed20;
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
