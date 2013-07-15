@@ -56,7 +56,6 @@
     [super onEnterTransitionDidFinish];
     
     storeItemLabel.position = ccp(10, self.contentSize.height / 2);
-    
     backgroundSprite.contentSize = self.contentSize;
     backgroundSprite.position = ccp(self.contentSize.width / 2, self.contentSize.height / 2);
 }

@@ -73,12 +73,12 @@
         
         menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
         [menu2 alignItemsHorizontally];
-        menu2.position = ccp(0, -25);
+        menu2.position = ccp(0, -35);
         [self addChild:menu2];
         
         menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
         [menu3 alignItemsHorizontally];
-        menu3.position = ccp(0, -100);
+        menu3.position = ccp(0, -115);
         [self addChild:menu3];
         
         scene = [GameplayLayer node];

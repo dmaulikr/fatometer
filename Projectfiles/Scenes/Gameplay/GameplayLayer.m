@@ -7,9 +7,12 @@
 //
 //
 //
-//
-//  So this is the objective of the game: You are the last person remaining on earth all the food has gone bad. So you have to try and maintain your weight to save the human race from extinction. You have to try to not get too fat, or get too skinny and pass out, otherwise, the extinction of the human race will be blamed upon you.
-//
+/*
+  So this is the objective of the game: You are the last person remaining on earth all the food has gone bad. So you have to try and maintain your weight to save the human race from extinction. You have to try to not get too fat, or get too skinny and pass out, otherwise, the extinction of the human race will be blamed upon you.
+ 
+ 
+ 
+*/
 //
 //
 //
@@ -463,6 +466,13 @@
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
         [self presentGoOnPopUp];
     }
+    
+    
+    // Implement the score here
+//    if ([[GameMechanics sharedGameMechanics] game].fatness >= 55) {
+//        [[GameMechanics sharedGameMechanics] game].score += 50;
+//
+//    }
     
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
