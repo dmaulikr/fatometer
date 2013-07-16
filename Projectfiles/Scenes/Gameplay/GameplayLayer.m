@@ -820,7 +820,7 @@
 - (void)updateRunning:(ccTime)delta
 {
     // distance depends on the current scrolling speed
-    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) *2;
+    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 3;
     game.meters = (int) (gainedDistance);
     // update the score display
     pointsDisplayNode.score = game.meters;
