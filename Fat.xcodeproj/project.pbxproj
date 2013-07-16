@@ -36,6 +36,7 @@
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
 		38FACD2A179519BD00823F00 /* Donuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD29179519BD00823F00 /* Donuts.m */; };
 		38FACD2D17951B5000823F00 /* Cake.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD2C17951B4F00823F00 /* Cake.m */; };
+		38FACD3017951BAF00823F00 /* Chicken.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD2F17951BAF00823F00 /* Chicken.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -355,6 +356,8 @@
 		38FACD29179519BD00823F00 /* Donuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donuts.m; sourceTree = "<group>"; };
 		38FACD2B17951B4F00823F00 /* Cake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cake.h; sourceTree = "<group>"; };
 		38FACD2C17951B4F00823F00 /* Cake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cake.m; sourceTree = "<group>"; };
+		38FACD2E17951BAF00823F00 /* Chicken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chicken.h; sourceTree = "<group>"; };
+		38FACD2F17951BAF00823F00 /* Chicken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chicken.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -1004,6 +1007,8 @@
 				3803A83517823EAE002E023A /* HealthyFood.m */,
 				38FACD2B17951B4F00823F00 /* Cake.h */,
 				38FACD2C17951B4F00823F00 /* Cake.m */,
+				38FACD2E17951BAF00823F00 /* Chicken.h */,
+				38FACD2F17951BAF00823F00 /* Chicken.m */,
 			);
 			name = "Foods (a.k.a Monsters)";
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1847,6 +1852,7 @@
 				38ACA132178CAEDF00170550 /* Apples.m in Sources */,
 				38FACD2A179519BD00823F00 /* Donuts.m in Sources */,
 				38FACD2D17951B5000823F00 /* Cake.m in Sources */,
+				38FACD3017951BAF00823F00 /* Chicken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
