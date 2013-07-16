@@ -14,7 +14,7 @@
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"unhealthy.png"];
+    self = [super initWithFile:@"burger.png"];
     
     if (self)
     {

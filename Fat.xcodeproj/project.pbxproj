@@ -34,6 +34,7 @@
 		38F25F0117933AA300F76665 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38F25EFD17933AA300F76665 /* CaviarDreams_Italic.ttf */; };
 		38F25F07179360C000F76665 /* select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38F25F06179360C000F76665 /* select.mp3 */; };
 		38F9E5DF178376F600393233 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F9E5DE178376F600393233 /* Knight.m */; };
+		38FACD2A179519BD00823F00 /* Donuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD29179519BD00823F00 /* Donuts.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -349,6 +350,8 @@
 		38F25EFD17933AA300F76665 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
 		38F25F06179360C000F76665 /* select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select.mp3; sourceTree = "<group>"; };
 		38F9E5DE178376F600393233 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Monsters/Knight.m; sourceTree = "<group>"; };
+		38FACD28179519BC00823F00 /* Donuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donuts.h; sourceTree = "<group>"; };
+		38FACD29179519BD00823F00 /* Donuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donuts.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -986,6 +989,8 @@
 			children = (
 				3803A83A17823FBC002E023A /* UnhealthyFood.m */,
 				3803A83D1782457F002E023A /* UnhealthyFood.h */,
+				38FACD28179519BC00823F00 /* Donuts.h */,
+				38FACD29179519BD00823F00 /* Donuts.m */,
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
 				6212B6F6177114800040386F /* MyCustomMonster.h */,
@@ -1835,6 +1840,7 @@
 				3803A83C17823FC1002E023A /* UnhealthyFood.m in Sources */,
 				38F9E5DF178376F600393233 /* Knight.m in Sources */,
 				38ACA132178CAEDF00170550 /* Apples.m in Sources */,
+				38FACD2A179519BD00823F00 /* Donuts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
