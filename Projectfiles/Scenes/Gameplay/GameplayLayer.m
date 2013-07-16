@@ -311,7 +311,6 @@
 
 - (void)gameResumed
 {
-    tut.visible = TRUE;
     [self resumeSchedulerAndActions];
 }
 
@@ -344,7 +343,6 @@
 }
 - (void)reset {
     [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
-    tut.visible = FALSE;
 }
 - (void)resetGame
 {
@@ -390,15 +388,13 @@
 //    if (playedTutorial == FALSE) {
 //        playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
-        id delay2 = [CCDelayTime actionWithDuration:1.5f];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
-        CCSequence *tutorialSeq = [CCSequence actions:delay2, part1, delay, part2, delay, part3, delay, nil];
+        CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
         [self runAction:tutorialSeq];
-        
 //        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
-//    }    
+//    }
 }
 -(void) tutorial1
 {
