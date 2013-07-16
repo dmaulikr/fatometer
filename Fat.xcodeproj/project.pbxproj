@@ -37,6 +37,8 @@
 		38FACD2A179519BD00823F00 /* Donuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD29179519BD00823F00 /* Donuts.m */; };
 		38FACD2D17951B5000823F00 /* Cake.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD2C17951B4F00823F00 /* Cake.m */; };
 		38FACD3017951BAF00823F00 /* Chicken.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD2F17951BAF00823F00 /* Chicken.m */; };
+		38FACD3317951C3E00823F00 /* Fries.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3217951C3D00823F00 /* Fries.m */; };
+		38FACD3617951C8D00823F00 /* Cupcake.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3517951C8C00823F00 /* Cupcake.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -358,6 +360,10 @@
 		38FACD2C17951B4F00823F00 /* Cake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cake.m; sourceTree = "<group>"; };
 		38FACD2E17951BAF00823F00 /* Chicken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chicken.h; sourceTree = "<group>"; };
 		38FACD2F17951BAF00823F00 /* Chicken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chicken.m; sourceTree = "<group>"; };
+		38FACD3117951C3D00823F00 /* Fries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fries.h; sourceTree = "<group>"; };
+		38FACD3217951C3D00823F00 /* Fries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fries.m; sourceTree = "<group>"; };
+		38FACD3417951C8C00823F00 /* Cupcake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cupcake.h; sourceTree = "<group>"; };
+		38FACD3517951C8C00823F00 /* Cupcake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cupcake.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -1009,6 +1015,10 @@
 				38FACD2C17951B4F00823F00 /* Cake.m */,
 				38FACD2E17951BAF00823F00 /* Chicken.h */,
 				38FACD2F17951BAF00823F00 /* Chicken.m */,
+				38FACD3117951C3D00823F00 /* Fries.h */,
+				38FACD3217951C3D00823F00 /* Fries.m */,
+				38FACD3417951C8C00823F00 /* Cupcake.h */,
+				38FACD3517951C8C00823F00 /* Cupcake.m */,
 			);
 			name = "Foods (a.k.a Monsters)";
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1853,6 +1863,8 @@
 				38FACD2A179519BD00823F00 /* Donuts.m in Sources */,
 				38FACD2D17951B5000823F00 /* Cake.m in Sources */,
 				38FACD3017951BAF00823F00 /* Chicken.m in Sources */,
+				38FACD3317951C3E00823F00 /* Fries.m in Sources */,
+				38FACD3617951C8D00823F00 /* Cupcake.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,19 +1,19 @@
 //
-//  Chicken.m
+//  Fries.m
 //  Fat
 //
 //  Created by Shalin Shah on 7/15/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Chicken.h"
+#import "Fries.h"
 #import "GameMechanics.h"
 
-@implementation Chicken
+@implementation Fries
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"chicken.png"];
+    self = [super initWithFile:@"fries.png"];
     
     if (self)
     {
@@ -40,7 +40,8 @@
     self.position = ccp(-MAX_INT, 0);
     //    [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 1;
-    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 7;
+    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness += 11;
 }
+
 
 @end
