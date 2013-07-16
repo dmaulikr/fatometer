@@ -65,6 +65,8 @@
 		38FACD711795C5BA00823F00 /* Knight.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD701795C5B900823F00 /* Knight.m */; };
 		38FACD741795CFFF00823F00 /* bubble-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38FACD721795CFFF00823F00 /* bubble-hd.png */; };
 		38FACD751795CFFF00823F00 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 38FACD731795CFFF00823F00 /* bubble.png */; };
+		38FACD781795FF8900823F00 /* toolbarip5-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38FACD761795FF8800823F00 /* toolbarip5-hd.png */; };
+		38FACD791795FF8900823F00 /* toolbarip5.png in Resources */ = {isa = PBXBuildFile; fileRef = 38FACD771795FF8800823F00 /* toolbarip5.png */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -418,6 +420,8 @@
 		38FACD701795C5B900823F00 /* Knight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Knight.m; path = Scenes/Gameplay/Objects/Knight.m; sourceTree = "<group>"; };
 		38FACD721795CFFF00823F00 /* bubble-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubble-hd.png"; path = "Objects/bubble-hd.png"; sourceTree = "<group>"; };
 		38FACD731795CFFF00823F00 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubble.png; path = Objects/bubble.png; sourceTree = "<group>"; };
+		38FACD761795FF8800823F00 /* toolbarip5-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbarip5-hd.png"; sourceTree = "<group>"; };
+		38FACD771795FF8800823F00 /* toolbarip5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarip5.png; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -1377,6 +1381,8 @@
 				62B7412A17631F6100D9BD34 /* skipahead.png */,
 				62B7412B17631F6100D9BD34 /* skipahead-pressed-hd.png */,
 				62B7412C17631F6100D9BD34 /* skipahead-hd.png */,
+				38FACD761795FF8800823F00 /* toolbarip5-hd.png */,
+				38FACD771795FF8800823F00 /* toolbarip5.png */,
 				62F018E81745A8EE00BAF979 /* Objects */,
 				62F018CF1745749400BAF979 /* HUD */,
 				62F018AC17445BEC00BAF979 /* bg3-hd.png */,
@@ -1890,6 +1896,8 @@
 				38FACD6C1795201800823F00 /* strawberries.png in Resources */,
 				38FACD741795CFFF00823F00 /* bubble-hd.png in Resources */,
 				38FACD751795CFFF00823F00 /* bubble.png in Resources */,
+				38FACD781795FF8900823F00 /* toolbarip5-hd.png in Resources */,
+				38FACD791795FF8900823F00 /* toolbarip5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

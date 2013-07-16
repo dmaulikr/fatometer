@@ -18,8 +18,6 @@
 @end
 
 int coinValue;
-int fromNumber;
-int toNumber;
 ScoreboardEntryNode *coinsDisplayNode;
 ScoreboardEntryNode *availableMoney;
 ScoreboardEntryNode *inAppCurrencyDisplayNode;

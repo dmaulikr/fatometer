@@ -182,21 +182,11 @@
         [self addChild:knight];
         knight.anchorPoint = ccp(0,0);
         
-        // add the health display
-        healthDisplayNode = [[HealthDisplayNode alloc] initWithHealthImage:@"heart_filled.png" lostHealthImage:@"heart_empty.png" maxHealth:5];
-        [hudNode addChild:healthDisplayNode z:MAX_INT-1];
-        healthDisplayNode.position = ccp(screenCenter.x, self.contentSize.height - 18);
-        
-        // add scoreboard entry for coins   
-        coinsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
-        coinsDisplayNode.scoreStringFormat = @"%d";
-        coinsDisplayNode.position = ccp(20, self.contentSize.height - 26);
-        [hudNode addChild:coinsDisplayNode z:MAX_INT-1];
         
         // add scoreboard entry for in-app currency
         inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
-        inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 150, self.contentSize.height - 85);
+        inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 220, self.contentSize.height - 70);
         inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
         [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
         
@@ -229,6 +219,11 @@
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(239.5, 300);
         
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+            toolBar = [CCSprite spriteWithFile:@"toolbarip5.png"];
+            toolBar.position = ccp(285, 300);
+        }
+        
         
         // Set up Tutorial
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
@@ -254,16 +249,7 @@
         
         // setup a new gaming session
         [self resetGame];
-        
         [self scheduleUpdate];
-        
-//        if (tut.visible == TRUE) {
-//            [self showHUD:FALSE];
-//        }
-//        else
-//        {
-//            [self showHUD:TRUE];
-//        }
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -379,7 +365,7 @@
     knight.position = ccp(50,20);
     knight.zOrder = 10;
     knight.hitPoints = KNIGHT_HIT_POINTS;
-    
+
     // setup HUD
     healthDisplayNode.health = knight.hitPoints;
     coinsDisplayNode.score = game.score;

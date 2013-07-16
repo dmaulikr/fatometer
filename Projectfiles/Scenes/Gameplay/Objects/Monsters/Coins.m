@@ -16,23 +16,25 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"bubble.png"];
-    
     if (self)
     {
         self.initialHitPoints = 1;
         self.animationFrames = [NSMutableArray array];
         [self scheduleUpdate];
         inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
-        
     }
+    coinValue = 3;
     return self;
-    
-    fromNumber = 4;
-    toNumber = 14;
-    coinValue = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
 }
-
-
+- (void)spawn
+{
+	CGRect screenRect = [[CCDirector sharedDirector] screenRect];
+	CGSize spriteSize = [self contentSize];
+	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+	float yPos = screenRect.size.height / 6 *4;
+	self.position = CGPointMake(xPos, yPos);
+	self.visible = YES;
+}
 - (void)gotCollected {
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
