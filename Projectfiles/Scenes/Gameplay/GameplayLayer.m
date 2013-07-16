@@ -22,6 +22,7 @@
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
+#import "Coins.h"
 #import "UnhealthyFood.h"
 #import "Apples.h"
 #import "Donuts.h"
@@ -187,15 +188,15 @@
         healthDisplayNode.position = ccp(screenCenter.x, self.contentSize.height - 18);
         
         // add scoreboard entry for coins   
-        coinsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
+        coinsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
         coinsDisplayNode.scoreStringFormat = @"%d";
         coinsDisplayNode.position = ccp(20, self.contentSize.height - 26);
         [hudNode addChild:coinsDisplayNode z:MAX_INT-1];
         
         // add scoreboard entry for in-app currency
-        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
+        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
-        inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 120, self.contentSize.height - 26);
+        inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 150, self.contentSize.height - 85);
         inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
         [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
         
@@ -388,6 +389,7 @@
     [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -740.f)];
@@ -535,6 +537,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
          }
     }
     if (pointsDisplayNode.score > 3000) {
@@ -547,6 +550,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
+             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
         }
     }
     if (pointsDisplayNode.score > 6000) {
