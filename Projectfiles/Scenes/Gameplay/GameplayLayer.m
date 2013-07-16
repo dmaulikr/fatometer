@@ -512,7 +512,10 @@
     }
     
     [self updatePointer];
-    
+    [self changeStuff];
+}
+
+- (void)changeStuff {
     if (pointsDisplayNode.score > 2500) {
         if (fasterSpeed == FALSE) {
             scrollSpeed += 50.f;
@@ -524,7 +527,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
-
+            
         }
     }
     if (pointsDisplayNode.score > 5000) {
@@ -539,7 +542,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 7500) {
@@ -554,7 +557,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:430 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 10000) {
@@ -569,7 +572,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 12500) {
@@ -584,7 +587,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 15000) {
@@ -599,7 +602,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 17500) {
@@ -614,7 +617,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 20000) {
@@ -629,7 +632,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 22500) {
@@ -644,13 +647,13 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 25000) {
         if (fasterSpeed10 == FALSE) {
             scrollSpeed += 50.f;
-            NSLog(@"Speed Changed 10");                                                              
+            NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed10 = TRUE;
             
@@ -659,7 +662,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 27500) {
@@ -674,7 +677,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 30000) {
@@ -689,7 +692,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 32500) {
@@ -704,7 +707,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 35000) {
@@ -719,7 +722,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 37500) {
@@ -734,7 +737,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 40000) {
@@ -749,7 +752,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 42500) {
@@ -764,7 +767,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 45000) {
@@ -779,7 +782,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 47500) {
@@ -794,7 +797,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
             
-
+            
         }
     }
     if (pointsDisplayNode.score > 50000) {
@@ -809,11 +812,9 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
             
-
+            
         }
     }
-    
-
 }
 
 - (void)updateRunning:(ccTime)delta
