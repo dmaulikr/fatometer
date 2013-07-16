@@ -40,6 +40,8 @@
 		38FACD3317951C3E00823F00 /* Fries.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3217951C3D00823F00 /* Fries.m */; };
 		38FACD3617951C8D00823F00 /* Cupcake.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3517951C8C00823F00 /* Cupcake.m */; };
 		38FACD3917951CED00823F00 /* Oranges.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3817951CED00823F00 /* Oranges.m */; };
+		38FACD3C17951D3200823F00 /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3B17951D3100823F00 /* Pizza.m */; };
+		38FACD3F17951D9F00823F00 /* Strawberries.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3E17951D9E00823F00 /* Strawberries.m */; };
 		54170919177123A90021A8C5 /* mgwuSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 541708DD177123A90021A8C5 /* mgwuSDK.framework */; };
 		5417091A177123A90021A8C5 /* aqua.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708DF177123A90021A8C5 /* aqua.png */; };
 		5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 541708E0177123A90021A8C5 /* bluechatbubble.png */; };
@@ -367,6 +369,10 @@
 		38FACD3517951C8C00823F00 /* Cupcake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cupcake.m; sourceTree = "<group>"; };
 		38FACD3717951CEC00823F00 /* Oranges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oranges.h; sourceTree = "<group>"; };
 		38FACD3817951CED00823F00 /* Oranges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oranges.m; sourceTree = "<group>"; };
+		38FACD3A17951D3100823F00 /* Pizza.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pizza.h; sourceTree = "<group>"; };
+		38FACD3B17951D3100823F00 /* Pizza.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pizza.m; sourceTree = "<group>"; };
+		38FACD3D17951D9D00823F00 /* Strawberries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Strawberries.h; sourceTree = "<group>"; };
+		38FACD3E17951D9E00823F00 /* Strawberries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Strawberries.m; sourceTree = "<group>"; };
 		541708DD177123A90021A8C5 /* mgwuSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = mgwuSDK.framework; sourceTree = "<group>"; };
 		541708DF177123A90021A8C5 /* aqua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aqua.png; sourceTree = "<group>"; };
 		541708E0177123A90021A8C5 /* bluechatbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluechatbubble.png; sourceTree = "<group>"; };
@@ -1024,6 +1030,10 @@
 				38FACD3517951C8C00823F00 /* Cupcake.m */,
 				38FACD3717951CEC00823F00 /* Oranges.h */,
 				38FACD3817951CED00823F00 /* Oranges.m */,
+				38FACD3A17951D3100823F00 /* Pizza.h */,
+				38FACD3B17951D3100823F00 /* Pizza.m */,
+				38FACD3D17951D9D00823F00 /* Strawberries.h */,
+				38FACD3E17951D9E00823F00 /* Strawberries.m */,
 			);
 			name = "Foods (a.k.a Monsters)";
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1871,6 +1881,8 @@
 				38FACD3317951C3E00823F00 /* Fries.m in Sources */,
 				38FACD3617951C8D00823F00 /* Cupcake.m in Sources */,
 				38FACD3917951CED00823F00 /* Oranges.m in Sources */,
+				38FACD3C17951D3200823F00 /* Pizza.m in Sources */,
+				38FACD3F17951D9F00823F00 /* Strawberries.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
