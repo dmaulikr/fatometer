@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Food.h"
+#import "UnhealthyFood.h"
 
-@interface Donuts : Food
+@interface Donuts : UnhealthyFood
 
 @end
