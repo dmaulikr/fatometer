@@ -24,6 +24,14 @@
 #import "Game.h"
 #import "UnhealthyFood.h"
 #import "Apples.h"
+#import "Donuts.h"
+#import "Cake.h"
+#import "Chicken.h"
+#import "Fries.h"
+#import "Cupcake.h"
+#import "Oranges.h"
+#import "Pizza.h"
+#import "Strawberries.h"
 #import "HealthyFood.h"
 #import "GameMechanics.h"
 #import "EnemyCache.h"
@@ -370,13 +378,12 @@
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
-    [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[UnhealthyFood class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
+    [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
-    [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -750.f)];
+    [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -730.f)];
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
@@ -514,21 +521,20 @@
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
         if (fasterSpeed == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 1");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed = TRUE;
             
-            [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
             
         }
     }
     if (pointsDisplayNode.score > 3000) {
         if (fasterSpeed2 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 2");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed2 = TRUE;
@@ -543,7 +549,7 @@
     }
     if (pointsDisplayNode.score > 6000) {
         if (fasterSpeed3 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 3");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed3 = TRUE;
@@ -552,13 +558,14 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:430 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Pizza class]];
             
             
         }
     }
     if (pointsDisplayNode.score > 7500) {
         if (fasterSpeed4 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 4");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed4 = TRUE;
@@ -567,13 +574,14 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:570 forMonsterType:[Pizza class]];
             
             
         }
     }
     if (pointsDisplayNode.score > 10000) {
         if (fasterSpeed5 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 5");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed5 = TRUE;
@@ -582,13 +590,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 13000) {
         if (fasterSpeed6 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 6");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed6 = TRUE;
@@ -597,13 +607,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 16500) {
         if (fasterSpeed7 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 7");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed7 = TRUE;
@@ -612,13 +624,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 20000) {
         if (fasterSpeed8 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 8");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed8 = TRUE;
@@ -627,13 +641,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 22500) {
         if (fasterSpeed9 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 9");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed9 = TRUE;
@@ -642,13 +658,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 25000) {
         if (fasterSpeed10 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed10 = TRUE;
@@ -657,13 +675,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 27500) {
         if (fasterSpeed11 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 11");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed11 = TRUE;
@@ -672,13 +692,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 30000) {
         if (fasterSpeed12 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 12");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed12 = TRUE;
@@ -687,13 +709,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 32500) {
         if (fasterSpeed13 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 13");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed13 = TRUE;
@@ -702,13 +726,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 35000) {
         if (fasterSpeed14 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 14");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed14 = TRUE;
@@ -717,13 +743,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 37500) {
         if (fasterSpeed15 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 15");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed15 = TRUE;
@@ -732,13 +760,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 40000) {
         if (fasterSpeed16 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 16");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed16 = TRUE;
@@ -747,13 +777,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 42500) {
         if (fasterSpeed17 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 17");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed17 = TRUE;
@@ -762,13 +794,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 45000) {
         if (fasterSpeed18 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 18");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed18 = TRUE;
@@ -777,13 +811,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 47500) {
         if (fasterSpeed19 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 19");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed19 = TRUE;
@@ -792,13 +828,15 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
     }
     if (pointsDisplayNode.score > 50000) {
         if (fasterSpeed20 == FALSE) {
-            scrollSpeed += 50.f;
+            scrollSpeed += 30.f;
             NSLog(@"Speed Changed 20");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed20 = TRUE;
@@ -807,6 +845,8 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+
             
             
         }
