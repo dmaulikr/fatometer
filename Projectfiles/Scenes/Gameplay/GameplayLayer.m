@@ -516,7 +516,7 @@
 }
 
 - (void)changeStuff {
-    if (pointsDisplayNode.score > 2500) {
+    if (pointsDisplayNode.score > 1500) {
         if (fasterSpeed == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 1");
@@ -530,7 +530,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 5000) {
+    if (pointsDisplayNode.score > 3000) {
         if (fasterSpeed2 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 2");
@@ -545,7 +545,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 7500) {
+    if (pointsDisplayNode.score > 6000) {
         if (fasterSpeed3 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 3");
@@ -560,7 +560,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 10000) {
+    if (pointsDisplayNode.score > 7500) {
         if (fasterSpeed4 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 4");
@@ -575,7 +575,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 12500) {
+    if (pointsDisplayNode.score > 10000) {
         if (fasterSpeed5 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 5");
@@ -590,7 +590,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 15000) {
+    if (pointsDisplayNode.score > 13000) {
         if (fasterSpeed6 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 6");
@@ -605,7 +605,7 @@
             
         }
     }
-    if (pointsDisplayNode.score > 17500) {
+    if (pointsDisplayNode.score > 16500) {
         if (fasterSpeed7 == FALSE) {
             scrollSpeed += 50.f;
             NSLog(@"Speed Changed 7");
@@ -614,7 +614,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
             
             
@@ -629,7 +629,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
             
             
@@ -644,7 +644,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Apples class]];
             
             
@@ -659,7 +659,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Apples class]];
             
             
@@ -674,7 +674,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Apples class]];
             
             
@@ -689,7 +689,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Apples class]];
             
             
@@ -704,7 +704,7 @@
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:80 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
             
             
@@ -718,8 +718,8 @@
             fasterSpeed14 = TRUE;
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
             
             
@@ -733,8 +733,8 @@
             fasterSpeed15 = TRUE;
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
             
             
@@ -748,8 +748,8 @@
             fasterSpeed16 = TRUE;
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Apples class]];
             
             
@@ -763,9 +763,9 @@
             fasterSpeed17 = TRUE;
             
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
             
             
         }
@@ -777,10 +777,10 @@
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed18 = TRUE;
             
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:30 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
             
             
         }
@@ -792,10 +792,10 @@
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed19 = TRUE;
             
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:20 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Apples class]];
             
             
         }
@@ -807,10 +807,10 @@
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed20 = TRUE;
             
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:550 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:10 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[Apples class]];
             
             
         }
