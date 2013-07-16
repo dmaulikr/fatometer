@@ -383,7 +383,7 @@
     [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
     
     // set gravity (used for jumps)
-    [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -730.f)];
+    [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -740.f)];
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
@@ -521,7 +521,7 @@
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
         if (fasterSpeed == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 1");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed = TRUE;
@@ -534,7 +534,7 @@
     }
     if (pointsDisplayNode.score > 3000) {
         if (fasterSpeed2 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 2");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed2 = TRUE;
@@ -549,7 +549,7 @@
     }
     if (pointsDisplayNode.score > 6000) {
         if (fasterSpeed3 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 3");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed3 = TRUE;
@@ -565,7 +565,7 @@
     }
     if (pointsDisplayNode.score > 7500) {
         if (fasterSpeed4 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 4");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed4 = TRUE;
@@ -581,7 +581,7 @@
     }
     if (pointsDisplayNode.score > 10000) {
         if (fasterSpeed5 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 5");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed5 = TRUE;
@@ -598,7 +598,7 @@
     }
     if (pointsDisplayNode.score > 13000) {
         if (fasterSpeed6 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 6");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed6 = TRUE;
@@ -616,7 +616,7 @@
     }
     if (pointsDisplayNode.score > 16500) {
         if (fasterSpeed7 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 7");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed7 = TRUE;
@@ -634,7 +634,7 @@
     }
     if (pointsDisplayNode.score > 20000) {
         if (fasterSpeed8 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 8");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed8 = TRUE;
@@ -652,7 +652,7 @@
     }
     if (pointsDisplayNode.score > 22500) {
         if (fasterSpeed9 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 9");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed9 = TRUE;
@@ -671,7 +671,7 @@
     }
     if (pointsDisplayNode.score > 25000) {
         if (fasterSpeed10 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed10 = TRUE;
@@ -690,7 +690,7 @@
     }
     if (pointsDisplayNode.score > 27500) {
         if (fasterSpeed11 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 11");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed11 = TRUE;
@@ -709,7 +709,7 @@
     }
     if (pointsDisplayNode.score > 30000) {
         if (fasterSpeed12 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 12");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed12 = TRUE;
@@ -728,7 +728,7 @@
     }
     if (pointsDisplayNode.score > 32500) {
         if (fasterSpeed13 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 13");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed13 = TRUE;
@@ -749,7 +749,7 @@
     }
     if (pointsDisplayNode.score > 35000) {
         if (fasterSpeed14 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 14");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed14 = TRUE;
@@ -771,7 +771,7 @@
     }
     if (pointsDisplayNode.score > 37500) {
         if (fasterSpeed15 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 15");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed15 = TRUE;
@@ -794,7 +794,7 @@
     }
     if (pointsDisplayNode.score > 40000) {
         if (fasterSpeed16 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 16");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed16 = TRUE;
@@ -817,7 +817,7 @@
     }
     if (pointsDisplayNode.score > 42500) {
         if (fasterSpeed17 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 17");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed17 = TRUE;
@@ -840,7 +840,7 @@
     }
     if (pointsDisplayNode.score > 45000) {
         if (fasterSpeed18 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 18");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed18 = TRUE;
@@ -863,7 +863,7 @@
     }
     if (pointsDisplayNode.score > 47500) {
         if (fasterSpeed19 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 19");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed19 = TRUE;
@@ -886,7 +886,7 @@
     }
     if (pointsDisplayNode.score > 50000) {
         if (fasterSpeed20 == FALSE) {
-            scrollSpeed += 30.f;
+            scrollSpeed += 40.f;
             NSLog(@"Speed Changed 20");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed20 = TRUE;
