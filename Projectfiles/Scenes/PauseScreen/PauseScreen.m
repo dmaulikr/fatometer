@@ -122,8 +122,6 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
-
-
 - (void)present
 {
     CCMoveTo *move = [CCMoveTo actionWithDuration:0.2f position:ccp(self.contentSize.width / 2, self.contentSize.height * 0.5)];
