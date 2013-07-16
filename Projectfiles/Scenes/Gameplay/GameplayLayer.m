@@ -406,7 +406,7 @@
 }
 -(void) tutorial3
 {
-    [self flashLabel:@"Maintain your weight" actionWithDuration:4.0f color:@"black"];
+    [self flashLabel:@"Maintain your weight" actionWithDuration:2.0f color:@"black"];
 }
 
 

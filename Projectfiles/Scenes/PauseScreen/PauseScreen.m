@@ -66,20 +66,20 @@
         resetMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:resetButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(resetButtonPressed)];
 
         
-        menu = [CCMenu menuWithItems:resumeMenuItem, nil];
+        menu = [CCMenu menuWithItems:resumeMenuItem, resetMenuItem, quitMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, 65);
+        menu.position = ccp(0, 0);
         [self addChild:menu];
         
-        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
-        [menu2 alignItemsHorizontally];
-        menu2.position = ccp(0, -15);
-        [self addChild:menu2];
-        
-        menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
-        [menu3 alignItemsHorizontally];
-        menu3.position = ccp(0, -95);
-        [self addChild:menu3];
+//        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
+//        [menu2 alignItemsHorizontally];
+//        menu2.position = ccp(0, -15);
+//        [self addChild:menu2];
+//        
+//        menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
+//        [menu3 alignItemsHorizontally];
+//        menu3.position = ccp(0, -95);
+//        [self addChild:menu3];
         
         scene = [GameplayLayer node];
 
