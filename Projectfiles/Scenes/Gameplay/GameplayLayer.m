@@ -234,7 +234,14 @@
         tut.position = screenCenter;
         [self addChild:tut z:10000];
         tut.visible = FALSE;
-        
+        bool tutorialStatusCheck = [[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialStatus"];
+        if (tutorialStatusCheck == FALSE) {
+            playedTutorial = FALSE;
+        }
+        else {
+            playedTutorial = [[NSUserDefaults standardUserDefaults] objectForKey:@"tutorialStatus"];
+        }
+                
 
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
                 
@@ -392,16 +399,16 @@
 -(void) startTutorial
 {
 // Commented out the NSUserDefaults
-//    if (playedTutorial == FALSE) {
-//        playedTutorial = TRUE;
+    if (playedTutorial == FALSE) {
+        playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
         CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
         [self runAction:tutorialSeq];
-//        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
-//    }
+        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
+    }
 }
 -(void) tutorial1
 {
