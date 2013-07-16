@@ -591,7 +591,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-
+            [[GameMechanics sharedGameMechanics] setSpawnRate:480 forMonsterType:[Cupcake class]];
             
             
         }
@@ -608,6 +608,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:460 forMonsterType:[Cupcake class]];
 
             
             
@@ -625,6 +626,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Cupcake class]];
 
             
             
@@ -642,6 +644,7 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Cupcake class]];
 
             
             
@@ -659,6 +662,8 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
 
             
             
@@ -676,6 +681,8 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
 
             
             
@@ -693,6 +700,8 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
 
             
             
@@ -710,7 +719,9 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-
+            [[GameMechanics sharedGameMechanics] setSpawnRate:560 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
             
             
         }
@@ -727,6 +738,10 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
 
             
             
@@ -744,6 +759,11 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:640 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
 
             
             
@@ -761,6 +781,12 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:740 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:640 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
 
             
             
@@ -778,6 +804,12 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:720 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
 
             
             
@@ -795,6 +827,12 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Strawberries class]];
 
             
             
@@ -812,6 +850,12 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
 
             
             
@@ -829,6 +873,12 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
 
             
             
@@ -845,8 +895,13 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[Apples class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-
+            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
             
             
         }
