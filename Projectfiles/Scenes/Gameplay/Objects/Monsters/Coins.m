@@ -28,6 +28,11 @@
 }
 - (void)spawn
 {
+//    for(int i =0; i < 20; i++){
+//        /// spawn coin
+//        ///coin.position = ccp(400 + (5*i), something.y + (2*i)
+//        
+//    }
 	CGRect screenRect = [[CCDirector sharedDirector] screenRect];
 	CGSize spriteSize = [self contentSize];
 	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
