@@ -20,6 +20,8 @@
     
     // count the updates (used to determine when monsters should be spawned)
     int updateCount;
+    
+    CGRect tempKnight;
 }
 
 @end

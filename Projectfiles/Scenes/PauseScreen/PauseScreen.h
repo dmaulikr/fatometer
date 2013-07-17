@@ -31,8 +31,8 @@
 {
     CCBackgroundColorNode *backgroundNode;
     CCMenu *menu;
-    CCMenu *menu2;
-    CCMenu *menu3;
+//    CCMenu *menu2;
+//    CCMenu *menu3;
     CCMenuItemSprite *resumeMenuItem;
     CCMenuItemSprite *quitMenuItem;
     CCMenuItemSprite *resetMenuItem;

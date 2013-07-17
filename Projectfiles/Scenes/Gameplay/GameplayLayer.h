@@ -90,9 +90,12 @@
 /**
  Tells the game to start
  */
+- (id) setKnight;
 - (void)startGame;
 - (void)startTutorial;
 - (void)resetFatness;
+
+-(void)resizeSprite;
 
 - (void)quit;
 - (void)reset;

@@ -47,9 +47,9 @@
         // add title label
         CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
                                                         fontName:DEFAULT_FONT
-                                                        fontSize:40];
+                                                        fontSize:50];
         storeItemLabel.color = DEFAULT_FONT_COLOR;
-        storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 25);
+        storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 45);
         [self addChild:storeItemLabel];
         
         // add a resume button
@@ -98,13 +98,6 @@
     return self;
 }
 
-- (void)resumeButtonPressed
-{
-    [self hideAndResume];
-    [self.delegate resumeButtonPressed:self];
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
-}
-
 - (void)quitButtonPressed
 {    
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:scene]];
@@ -120,6 +113,12 @@
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
     [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+}
+
+- (void)resumeButtonPressed
+{
+    [self hideAndResume];
+    [self.delegate resumeButtonPressed:self];
 }
 
 - (void)present

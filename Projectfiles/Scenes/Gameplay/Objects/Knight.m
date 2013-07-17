@@ -28,13 +28,10 @@
         // knight is initally not moving
         self.velocity = ccp(0,0);
         self.invincible = FALSE;
-        
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"animation_knight.plist"];
         
         // ************* RUNNING ANIMATION ********************
-        
         animationFramesRun = [NSMutableArray array];
-        
         for(int i = 1; i <= 4; ++i)
         {
             [animationFramesRun addObject:
@@ -47,37 +44,30 @@
         //Create an action with the animation that can then be assigned to a sprite
         run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
         
-        
         // ************* STABBING ANIMATION ********************
         
         animationFramesStab = [NSMutableArray array];
-        
         for (int i = 1; i <= 2; i++)
         {
             [animationFramesRun addObject:
              [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"animation_knight-stab-%d.png", i]]];
         }
-        
         CCAnimation *stabbing = [CCAnimation animationWithSpriteFrames:animationFramesStab delay:0.5f];
         CCAction *stabAction = [CCRepeat actionWithAction:[CCAnimate actionWithAnimation:stabbing] times:1];
-        
         CCFiniteTimeAction *startStab = [CCCallBlock actionWithBlock:^{
             // stop running animation
             self.stabbing = TRUE;
             [self stopAction:run];
         }];
-        
         CCFiniteTimeAction *finishStab = [CCCallBlock actionWithBlock:^{
             self.stabbing = FALSE;
             // restart running animation
             [self runAction:run];
         }];
-        
         stab = [CCSequence actions:startStab, stabAction, finishStab, nil];
         
         // run knight running animation
         [self runAction:run];
-        
         [self scheduleUpdate];
         
         /**
@@ -86,10 +76,7 @@
          **/
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
-        
-
     }
-    
     return self;
 }
 
@@ -126,14 +113,14 @@
 {
     if (self.invincible)
     {
-//        pointerUpdate = nil;
+        //        pointerUpdate = nil;
     }
     
     CCAction *blinkAction = [self getActionByTag:1000];
     
     if ( (blinkAction == nil) || [blinkAction isDone])
     {
-//        self.hitPoints --;
+        //        self.hitPoints --;
         CCBlink *blink = [CCBlink actionWithDuration:1.5f blinks:5];
         blink.tag = 1000;
         [self runAction:blink];

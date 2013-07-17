@@ -7,17 +7,12 @@
 //
 //
 //
+
 /*
   So this is the objective of the game: You are the last person remaining on earth all the food has gone bad. So you have to try and maintain your weight to save the human race from extinction. You have to try to not get too fat, or get too skinny and pass out, otherwise, the extinction of the human race will be blamed upon you.
- 
- 
- 
 */
-//
-//
-//
-//
-//
+
+
 #import "SimpleAudioEngine.h"
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
@@ -153,7 +148,6 @@
         
         // Play the Music
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background.mp3" loop:TRUE];
-        
         if([[SimpleAudioEngine sharedEngine]isBackgroundMusicPlaying])
         {
             NSLog(@"Music Played");
@@ -208,7 +202,7 @@
         
         // set up pause button
         CCSprite *pauseButton = [CCSprite spriteWithFile:@"pause.png"];
-        CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause-pressed.png"];
+        CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause.png"];
         pauseButtonMenuItem = [CCMenuItemSprite itemWithNormalSprite:pauseButton selectedSprite:pauseButtonPressed target:self selector:@selector(pauseButtonPressed)];
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
         pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 70);
@@ -257,9 +251,19 @@
          **/
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
-    }
-    
+        
+        [self resizeSprite:knight toWidth:80 toHeight:70];
+    }    
     return self;
+}
+/*
+ Useful Little Code Snippets that make my life easier
+*/
+
+-(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
+    sprite.scaleX = width / sprite.contentSize.width;
+    sprite.scaleY = height / sprite.contentSize.height;
+    NSLog(@"Resized Sprite");  
 }
 
 -(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString
@@ -279,7 +283,6 @@
     if ([colorString isEqualToString:@"white"] == TRUE) {
         tut.color = ccc3(255,255,255);
     }
-
     [tut setString:stringToFlashOnScreen];
     id addVisibility = [CCCallFunc actionWithTarget:self selector:@selector(makeFlashLabelVisible)];
     id delayInvis = [CCDelayTime actionWithDuration:numSecondsToFlash];
@@ -387,16 +390,16 @@
 -(void) startTutorial
 {
 // Commented out the NSUserDefaults
-    if (playedTutorial == FALSE) {
-        playedTutorial = TRUE;
+//    if (playedTutorial == FALSE) {
+//        playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
         CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
         [self runAction:tutorialSeq];
-        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
-    }
+//        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
+//    }
 }
 -(void) tutorial1
 {
@@ -419,11 +422,11 @@
         didAccelerate:(UIAcceleration *)acceleration
 {
 	// controls how quickly velocity decelerates (lower = quicker to change direction)
-	float deceleration = 0.2f;
+	float deceleration = 0.0001f;
 	// determines how sensitive the accelerometer reacts (higher = more sensitive)
 	float sensitivity = 300.0f;
 	// how fast the velocity can be at most
-	float maxVelocity = 500;
+	float maxVelocity = 700;
     
 	// adjust velocity based on current accelerometer acceleration
 	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
@@ -1135,6 +1138,7 @@
     [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
     [self enableGamePlayButtons];
 }
+
 
 - (void)returnedFromMoreCoinsScreenFromGoOnAction
 {
