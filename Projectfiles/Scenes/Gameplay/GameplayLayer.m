@@ -18,6 +18,8 @@
 #import "ParallaxBackground.h"
 #import "Game.h"
 #import "Coins.h"
+#import "Coins2.h"
+#import "Coins3.h"
 #import "UnhealthyFood.h"
 #import "Apples.h"
 #import "Donuts.h"
@@ -74,6 +76,7 @@
 
 @implementation GameplayLayer
 
+@synthesize coinArray = _coinArray;
 
 + (id)scene
 {
@@ -114,7 +117,7 @@
     self = [super init];
     
     if (self)
-    {
+    {        
         scrollSpeed = 200.0f;
         
         // This is to update the speed and make it faster
@@ -138,6 +141,30 @@
         fasterSpeed18 = FALSE;
         fasterSpeed19 = FALSE;
         fasterSpeed20 = FALSE;
+        
+        coinSide1 = FALSE;
+        coinSide2 = FALSE;
+        coinSide3 = FALSE;
+        coinSide4 = FALSE;
+        coinSide5 = FALSE;
+        coinSide6 = FALSE;
+        coinSide7 = FALSE;
+        coinSide8 = FALSE;
+        coinSide9 = FALSE;
+        coinSide10 = FALSE;
+        
+        coinUp1 = FALSE;
+        coinUp2 = FALSE;
+        coinUp3 = FALSE;
+        coinUp4 = FALSE;
+        coinUp5 = FALSE;
+        coinUp6 = FALSE;
+        coinUp7 = FALSE;
+        coinUp8 = FALSE;
+        coinUp9 = FALSE;
+        coinUp10 = FALSE;
+        
+        sidewaysCoins = 7;
         
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
@@ -208,6 +235,7 @@
         pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 70);
         [hudNode addChild:pauseButtonMenu];
         
+        
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
@@ -253,6 +281,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
         
         [self resizeSprite:knight toWidth:80 toHeight:70];
+        
     }    
     return self;
 }
@@ -378,7 +407,10 @@
     [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
     [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
-    [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
+//    [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
+//    [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins2 class]];
+//    [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins3 class]];
+
     
     // set gravity (used for jumps)
     [[GameMechanics sharedGameMechanics] setWorldGravity:ccp(0.f, -740.f)];
@@ -389,17 +421,17 @@
 
 -(void) startTutorial
 {
-// Commented out the NSUserDefaults
-//    if (playedTutorial == FALSE) {
-//        playedTutorial = TRUE;
+// Uses NSUserDefaults so doesn't appear twice
+    if (playedTutorial == FALSE) {
+        playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
         CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
         [self runAction:tutorialSeq];
-//        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
-//    }
+        [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
+    }
 }
 -(void) tutorial1
 {
@@ -513,20 +545,357 @@
     }
     
     [self updatePointer];
+    [self coinSidewaysRowOne];
+    [self coinSidewaysRowTwo];
+    [self coinSidewaysRowThree];
+    [self coinSidewaysRowFour];
     [self changeStuff];
+}
+
+/*
+    These are the methods for displaying the different horizontal rows of coins to generate a horizontal pattern
+*/
+- (void)coinSidewaysRowOne {
+if (coinSide1 == FALSE)
+{
+    coinSide1 = TRUE;
+    NSLog(@"This is too much");
+    NSInteger originalX = 150;
+    for(int i = 0; i < 8; i++)
+    {
+        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+        coinHorizontal.position = ccp(originalX, 150);
+        originalX += 20;
+        [self addChild:coinHorizontal];
+        [self.coinArray addObject:coinHorizontal];
+    }
+}
+}
+
+- (void)coinSidewaysRowTwo {
+    if (coinSide2 == FALSE)
+    {
+        coinSide2 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 170);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+
+- (void)coinSidewaysRowThree {
+    if (coinSide3 == FALSE)
+    {
+        coinSide3 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 190);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowFour {
+    if (coinSide4 == FALSE)
+    {
+        coinSide4 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 210);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowFive {
+    if (coinSide5 == FALSE)
+    {
+        coinSide5 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 230);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowSix {
+    if (coinSide6 == FALSE)
+    {
+        coinSide6 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 250);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowSeven {
+    if (coinSide7 == FALSE)
+    {
+        coinSide7 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 270);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowEight {
+    if (coinSide8 == FALSE)
+    {
+        coinSide8 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 290);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowNine {
+    if (coinSide9 == FALSE)
+    {
+        coinSide9 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 310);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+- (void)coinSidewaysRowTen {
+    if (coinSide10 == FALSE)
+    {
+        coinSide10 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalX = 150;
+        for(int i = 0; i < 8; i++)
+        {
+            CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+            coinHorizontal.position = ccp(originalX, 330);
+            originalX += 20;
+            [self addChild:coinHorizontal];
+            [self.coinArray addObject:coinHorizontal];
+        }
+    }
+}
+
+/*
+ These are the methods for displaying the different vertical columns of coins to generate a vertical pattern
+*/
+- (void)coinUpwardsColumnOne {
+    if (coinUp1 == FALSE)
+    {
+        coinUp1 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(150, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnTwo {
+    if (coinUp2 == FALSE)
+    {
+        coinUp2 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(170, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnThree {
+    if (coinUp3 == FALSE)
+    {
+        coinUp3 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(190, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnFour {
+    if (coinUp4 == FALSE)
+    {
+        coinUp4 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(210, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnFive {
+    if (coinUp5 == FALSE)
+    {
+        coinUp5 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(230, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnSix {
+    if (coinUp6 == FALSE)
+    {
+        coinUp6 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(250, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnSeven {
+    if (coinUp7 == FALSE)
+    {
+        coinUp7 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(270, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnEight {
+    if (coinUp8 == FALSE)
+    {
+        coinUp8 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(290, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnNine {
+    if (coinUp9 == FALSE)
+    {
+        coinUp9 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(310, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
+}
+- (void)coinUpwardsColumnTen {
+    if (coinUp10 == FALSE)
+    {
+        coinUp10 = TRUE;
+        NSLog(@"This is too much");
+        NSInteger originalY = 150;
+        for(int i = 0; i < 5; i++)
+        {
+            CCSprite *coinVertical = [CCSprite spriteWithFile:@"bubble.png"];
+            coinVertical.position = ccp(330, originalY);
+            originalY += 20;
+            [self addChild:coinVertical];
+            [self.coinArray addObject:coinVertical];
+        }
+    }
 }
 
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
          if (fasterSpeed == FALSE) {
             fasterSpeed = TRUE;
-            scrollSpeed = 240;
+             scrollSpeed = 240;
             NSLog(@"Speed Changed 1");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins2 class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins3 class]];
+
          }
     }
     if (pointsDisplayNode.score > 3000) {
@@ -539,7 +908,9 @@
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
-             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Coins class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins2 class]];
+//            [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Coins3 class]]; 
         }
     }
     if (pointsDisplayNode.score > 6000) {

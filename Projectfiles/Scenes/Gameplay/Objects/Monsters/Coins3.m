@@ -1,17 +1,17 @@
 //
-//  Coins.m
+//  Coins3.m
 //  Fat
 //
-//  Created by Shalin Shah on 7/16/13.
+//  Created by Shalin Shah on 7/17/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Coins.h"
+#import "Coins3.h"
 #import "GameMechanics.h"
 #import "GameplayLayer.h"
 #import "Store.h"
 
-@implementation Coins
+@implementation Coins3
 
 - (id)initWithMonsterPicture
 {
@@ -21,7 +21,7 @@
         CGRect screenRect = [[CCDirector sharedDirector] screenRect];
         CGSize spriteSize = [self contentSize];
         posX =  screenRect.size.width + spriteSize.width * 0.5f;
-        posY = 150;
+        posY = 190;
         self.initialHitPoints = 1;
         self.animationFrames = [NSMutableArray array];
         [self scheduleUpdate];
@@ -40,4 +40,5 @@
     self.position = ccp(-MAX_INT, 0);
     [Store addInAppCurrency:coinValue];
 }
+
 @end

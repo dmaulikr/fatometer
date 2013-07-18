@@ -32,6 +32,12 @@
     CCMenu *skipAheadMenu;
     CCMenuItemSprite *skipAheadMenuItem;
     
+    CCMenu *menu;
+    CCMenu *menu2;
+    CCMenu *menu3;
+    
+    NSMutableArray *coinPlace;
+    
     /* Pause Button */
     CCMenu *pauseButtonMenu;
     CCMenuItemSprite *pauseButtonMenuItem;
@@ -48,11 +54,14 @@
     /* used to trigger events, that need to run every X update cycles*/
     int updateCount;
     
+    int sidewaysCoins;
+    
     /* stores the exact distance the knight has ran */
     float gainedDistance;
     
     CCSprite *toolBar;
     CCSprite *pointer;
+    CCSprite *coins;
     
     CCLayerColor* colorLayer;
     
@@ -82,10 +91,34 @@
     BOOL fasterSpeed18;
     BOOL fasterSpeed19;
     BOOL fasterSpeed20;
+    
+    BOOL coinUp1;
+    BOOL coinUp2;
+    BOOL coinUp3;
+    BOOL coinUp4;
+    BOOL coinUp5;
+    BOOL coinUp6;
+    BOOL coinUp7;
+    BOOL coinUp8;
+    BOOL coinUp9;
+    BOOL coinUp10;
+
+    BOOL coinSide1;
+    BOOL coinSide2;
+    BOOL coinSide3;
+    BOOL coinSide4;
+    BOOL coinSide5;
+    BOOL coinSide6;
+    BOOL coinSide7;
+    BOOL coinSide8;
+    BOOL coinSide9;
+    BOOL coinSide10;
+
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
 @property (nonatomic, assign) BOOL showMainMenu;
+@property (nonatomic, assign) NSMutableArray *coinArray;
 
 /**
  Tells the game to start

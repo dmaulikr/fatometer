@@ -15,6 +15,8 @@
 		382FF22417970A5D009EA6FF /* animation_knight.png in Resources */ = {isa = PBXBuildFile; fileRef = 382FF21E17970A5C009EA6FF /* animation_knight.png */; };
 		382FF22717970C4B009EA6FF /* animation_knight-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 382FF22517970C4A009EA6FF /* animation_knight-hd.plist */; };
 		382FF22817970C4B009EA6FF /* animation_knight.plist in Resources */ = {isa = PBXBuildFile; fileRef = 382FF22617970C4A009EA6FF /* animation_knight.plist */; };
+		382FF23417975776009EA6FF /* Coins2.m in Sources */ = {isa = PBXBuildFile; fileRef = 382FF23317975774009EA6FF /* Coins2.m */; };
+		382FF23717975AD3009EA6FF /* Coins3.m in Sources */ = {isa = PBXBuildFile; fileRef = 382FF23617975AD2009EA6FF /* Coins3.m */; };
 		38A9BBD8178E7FB1002A656B /* toolbar-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBD7178E7FB1002A656B /* toolbar-hd.png */; };
 		38A9BBDA178E801A002A656B /* pointer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBD9178E801A002A656B /* pointer-hd.png */; };
 		38A9BBE01790BE5C002A656B /* close-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBDE1790BE5C002A656B /* close-hd.png */; };
@@ -358,6 +360,10 @@
 		382FF21E17970A5C009EA6FF /* animation_knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = animation_knight.png; path = Objects/animation_knight.png; sourceTree = "<group>"; };
 		382FF22517970C4A009EA6FF /* animation_knight-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "animation_knight-hd.plist"; path = "Objects/animation_knight-hd.plist"; sourceTree = "<group>"; };
 		382FF22617970C4A009EA6FF /* animation_knight.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = animation_knight.plist; path = Objects/animation_knight.plist; sourceTree = "<group>"; };
+		382FF23217975772009EA6FF /* Coins2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coins2.h; sourceTree = "<group>"; };
+		382FF23317975774009EA6FF /* Coins2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coins2.m; sourceTree = "<group>"; };
+		382FF23517975AD2009EA6FF /* Coins3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coins3.h; sourceTree = "<group>"; };
+		382FF23617975AD2009EA6FF /* Coins3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Coins3.m; sourceTree = "<group>"; };
 		38A9BBD7178E7FB1002A656B /* toolbar-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-hd.png"; sourceTree = "<group>"; };
 		38A9BBD9178E801A002A656B /* pointer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointer-hd.png"; sourceTree = "<group>"; };
 		38A9BBDE1790BE5C002A656B /* close-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-hd.png"; sourceTree = "<group>"; };
@@ -1108,6 +1114,10 @@
 				38FACD3E17951D9E00823F00 /* Strawberries.m */,
 				38FACD6D1795C57000823F00 /* Coins.h */,
 				38FACD6E1795C57400823F00 /* Coins.m */,
+				382FF23217975772009EA6FF /* Coins2.h */,
+				382FF23317975774009EA6FF /* Coins2.m */,
+				382FF23517975AD2009EA6FF /* Coins3.h */,
+				382FF23617975AD2009EA6FF /* Coins3.m */,
 			);
 			name = Foods;
 			path = Scenes/Gameplay/Objects/Monsters;
@@ -1977,6 +1987,8 @@
 				38FACD3F17951D9F00823F00 /* Strawberries.m in Sources */,
 				38FACD6F1795C57600823F00 /* Coins.m in Sources */,
 				38FACD711795C5BA00823F00 /* Knight.m in Sources */,
+				382FF23417975776009EA6FF /* Coins2.m in Sources */,
+				382FF23717975AD3009EA6FF /* Coins3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

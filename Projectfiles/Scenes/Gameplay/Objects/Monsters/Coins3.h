@@ -1,21 +1,19 @@
 //
-//  Coins.h
+//  Coins3.h
 //  Fat
 //
-//  Created by Shalin Shah on 7/16/13.
+//  Created by Shalin Shah on 7/17/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
 #import "UnhealthyFood.h"
 #import "GameplayLayer.h"
 
-@interface Coins : UnhealthyFood
+@interface Coins3 : UnhealthyFood
 {
     
     int posX;
     int posY;
-    
-    CCMenu *menu;
     
     int coinValue;
     ScoreboardEntryNode *coinsDisplayNode;
@@ -26,5 +24,5 @@
 @property (nonatomic, assign) float cost;
 
 
-@end
 
+@end
