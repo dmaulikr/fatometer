@@ -6,25 +6,22 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "UnhealthyFood.h"
+#import "CCSprite.h"
 #import "GameplayLayer.h"
 
-@interface Coins : UnhealthyFood
-{
-    
-    int posX;
-    int posY;
-    
-    CCMenu *menu;
-    
-    int coinValue;
-    ScoreboardEntryNode *coinsDisplayNode;
-    ScoreboardEntryNode *availableMoney;
-    ScoreboardEntryNode *inAppCurrencyDisplayNode;
-}
+@interface Coins :  CCSprite
 
-@property (nonatomic, assign) float cost;
+// defines a hit zone, which is smaller as the sprite, only if this hit zone is hit the knight is injured
+@property (nonatomic, assign) CGRect hitZone;
 
+// velocity in pixels per second
+@property (nonatomic, assign) CGPoint velocity;
+
+@property (nonatomic, assign) NSInteger hitPoints;
+
+
+- (id)initWithCoins;
+- (void)spawn;
 
 @end
 

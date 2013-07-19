@@ -18,13 +18,13 @@
     if (self)
     {
         self.initialHitPoints = 1;
-        self.animationFrames = [NSMutableArray array];
+//        self.animationFrames = [NSMutableArray array];
         //Create an animation from the set of frames you created earlier
-                CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.7f];
+//                CCAnimation *running = [CCAnimation animationWithSpriteFrames: self.animationFrames delay:0.7f];
                 //Create an action with the animation that can then be assigned to a sprite
-                self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
+//                self.run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
                 // run the animation
-                [self runAction:self.run];
+//                [self runAction:self.run];
         
         [self scheduleUpdate];
     }

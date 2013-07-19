@@ -13,6 +13,7 @@
 #import "ScoreboardEntryNode.h"
 #import "HealthDisplayNode.h"
 #import "PopUp.h"
+#import "Coins.h"
 #import "Knight.h"
 
 
@@ -35,9 +36,7 @@
     CCMenu *menu;
     CCMenu *menu2;
     CCMenu *menu3;
-    
-    NSMutableArray *coinPlace;
-    
+        
     /* Pause Button */
     CCMenu *pauseButtonMenu;
     CCMenuItemSprite *pauseButtonMenuItem;
@@ -56,12 +55,15 @@
     
     int sidewaysCoins;
     
+    int posX;
+    int posY;
+    int coinValue;
+    
     /* stores the exact distance the knight has ran */
     float gainedDistance;
     
     CCSprite *toolBar;
     CCSprite *pointer;
-    CCSprite *coins;
     
     CCLayerColor* colorLayer;
     
@@ -113,12 +115,22 @@
     BOOL coinSide8;
     BOOL coinSide9;
     BOOL coinSide10;
+    
+    BOOL spawnCoinsOutside;
+    
+    NSMutableArray *coinArray;
 
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
 @property (nonatomic, assign) BOOL showMainMenu;
-@property (nonatomic, assign) NSMutableArray *coinArray;
+@property (nonatomic, assign) BOOL visible;
+
+// velocity in pixels per second
+@property (nonatomic, assign) CGPoint velocity;
+@property (nonatomic, strong) NSMutableArray *animationFrames;
+@property (nonatomic, strong) CCAction *run;
+@property (nonatomic, assign) NSInteger initialHitPoints;
 
 /**
  Tells the game to start

@@ -28,7 +28,7 @@
     if (self)
     {
         // Preload Sound
-        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+//        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
 
         self.contentSize = [[CCDirector sharedDirector] winSize];
         // position of screen, animate to screen
@@ -103,7 +103,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:scene]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 
 }
 
@@ -112,7 +112,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:scene]];
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)resumeButtonPressed

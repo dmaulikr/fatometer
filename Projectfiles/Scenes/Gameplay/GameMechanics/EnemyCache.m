@@ -92,6 +92,7 @@
      We use a CCArray since it has a better performance than an NSArray. */
 	CCArray* enemiesOfType = [enemies objectForKey:enemyTypeClass];
     Food* enemy;
+    Coins* coins;
     
     /* we try to reuse existing enimies, therefore we use this flag, to keep track if we found an enemy we can
      respawn or if we need to create a new one */

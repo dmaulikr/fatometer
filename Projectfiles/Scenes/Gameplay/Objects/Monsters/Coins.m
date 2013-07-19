@@ -8,36 +8,49 @@
 
 #import "Coins.h"
 #import "GameMechanics.h"
-#import "GameplayLayer.h"
-#import "Store.h"
 
 @implementation Coins
 
-- (id)initWithMonsterPicture
+- (void)dealloc
 {
-    self = [super initWithFile:@"bubble.png"];
+    /*
+     When our object is removed, we need to unregister from all notifications.
+     */
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (id)initWithCoins{
+    
     if (self)
     {
-        CGRect screenRect = [[CCDirector sharedDirector] screenRect];
-        CGSize spriteSize = [self contentSize];
-        posX =  screenRect.size.width + spriteSize.width * 0.5f;
-        posY = 150;
-        self.initialHitPoints = 1;
-        self.animationFrames = [NSMutableArray array];
         [self scheduleUpdate];
-        inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
     }
-    coinValue = 3;
     return self;
 }
-- (void)spawn
+
+- (void)update:(ccTime)delta
 {
-    self.position = CGPointMake(posX, posY);
-    self.visible = YES;
+    // apply background scroll speed
+    float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
+    float xSpeed = 1.6 * backgroundScrollSpeedX;
+
+    // move the monster until it leaves the left edge of the screen
+    if (self.position.x > (self.contentSize.width * (-1)))
+    {
+        self.position = ccp(self.position.x - (xSpeed*delta), self.position.y);
+    }
 }
-- (void)gotCollected {
-    self.visible = FALSE;
-    self.position = ccp(-MAX_INT, 0);
-    [Store addInAppCurrency:coinValue];
+
+- (void)gamePaused
+{
+    [self pauseSchedulerAndActions];
 }
+
+- (void)gameResumed
+{
+    [self resumeSchedulerAndActions];
+}
+
+
+
 @end
