@@ -588,7 +588,8 @@
         {
             [self removeChild:coin];
             [coinArray removeObject:coin];
-            [self showSpriteAgain:coin];
+            
+            [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:7.0f];
             
             //                [coinArray removeAllObjects];
             //                for (int i = 0; i < [coinArray count]; i++)
