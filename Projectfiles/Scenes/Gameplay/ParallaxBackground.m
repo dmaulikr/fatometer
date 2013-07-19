@@ -54,6 +54,8 @@
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
             
+            // I don't even need these if statments if I add the appropriate suffix to the code. I need to edit this later.
+            
             if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
                 // iPhone 5
                 CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ip5.png"];
