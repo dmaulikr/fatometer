@@ -116,7 +116,7 @@
     
     if (self)
     {        
-        scrollSpeed = 200.0f;
+        scrollSpeed = 250.0f;
         
         // This is to update the speed and make it faster
         fasterSpeed = FALSE;
@@ -284,11 +284,6 @@
         coinArray = [[NSMutableArray alloc] init];
         
         [self resizeSprite:knight toWidth:80 toHeight:70];
-        for (int numBubbles = 0; numBubbles < [coinArray count]; numBubbles++)
-        {
-            Coins *tempCoin = [coinArray objectAtIndex:numBubbles];
-            tempCoin.visible = false;
-        }
     }
     return self;
 }
@@ -462,10 +457,8 @@
 	float sensitivity = 300.0f;
 	// how fast the velocity can be at most
 	float maxVelocity = 700;
-    
 	// adjust velocity based on current accelerometer acceleration
 	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
-    
 	// we must limit the maximum velocity of the player sprite, in both directions
 	if (knight.velocity.x > maxVelocity)
 	{
@@ -475,7 +468,6 @@
 	{
 		velocityX = - maxVelocity;
 	}
-    
     knight.velocity = ccp(velocityX, knight.velocity.y);
 }
 
@@ -504,8 +496,6 @@
     }
 }
 
-
-
 -(void) updatePointer
 {
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
@@ -531,14 +521,12 @@
 
 - (void) update:(ccTime)delta
 {
-    
     // update the amount of in-App currency in pause mode, too
     inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
     
     if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
     {
         [self updateRunning:delta];
-        
         // check if we need to inform missions about current game state
         updateCount++;
         if ((updateCount % MISSION_UPDATE_FREQUENCY) == 0)
@@ -546,7 +534,6 @@
             [self pushGameStateToMissions];
         }
     }
-    
     [self updatePointer];
     [self changeStuff];
     [self coinSidewaysRowOne];
@@ -573,7 +560,7 @@
         Coins *coin = [coinArray objectAtIndex:cNum];
         // apply background scroll speed
         float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
-        float xSpeed = 1.09 * backgroundScrollSpeedX;
+        float xSpeed = 1 * backgroundScrollSpeedX;
         
         // move the coin until it leaves the left edge of the screen
         if (coin.position.x > (coin.contentSize.width * (-1)))
@@ -668,7 +655,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 1500) {
          if (fasterSpeed == FALSE) {
             fasterSpeed = TRUE;
-             scrollSpeed = 240;
+             scrollSpeed = 290;
             NSLog(@"Speed Changed 1");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
@@ -679,7 +666,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 3000) {
          if (fasterSpeed2 == FALSE) {
             fasterSpeed2 = TRUE;
-            scrollSpeed = 280;
+            scrollSpeed = 330;
             NSLog(@"Speed Changed 2");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[UnhealthyFood class]];
@@ -691,7 +678,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 6000) {
          if (fasterSpeed3 == FALSE) {
             fasterSpeed3 = TRUE;
-            scrollSpeed = 320;
+            scrollSpeed = 370;
             NSLog(@"Speed Changed 3");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[UnhealthyFood class]];
@@ -704,7 +691,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 7500) {
          if (fasterSpeed4 == FALSE) {
             fasterSpeed4 = TRUE;
-            scrollSpeed = 360;
+            scrollSpeed = 410;
             NSLog(@"Speed Changed 4");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[UnhealthyFood class]];
@@ -717,7 +704,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 10000) {
          if (fasterSpeed5 == FALSE) {
             fasterSpeed5 = TRUE;
-            scrollSpeed = 400;
+            scrollSpeed = 450;
             NSLog(@"Speed Changed 5");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[UnhealthyFood class]];
@@ -731,7 +718,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 13000) {
          if (fasterSpeed6 == FALSE) {
             fasterSpeed6 = TRUE;
-            scrollSpeed = 440;
+            scrollSpeed = 490;
             NSLog(@"Speed Changed 6");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
@@ -745,7 +732,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 16500) {
          if (fasterSpeed7 == FALSE) {
             fasterSpeed7 = TRUE;
-            scrollSpeed = 480;
+            scrollSpeed = 530;
             NSLog(@"Speed Changed 7");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[UnhealthyFood class]];
@@ -759,7 +746,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 20000) {
          if (fasterSpeed8 == FALSE) {
             fasterSpeed8 = TRUE;
-            scrollSpeed = 500;
+            scrollSpeed = 570;
             NSLog(@"Speed Changed 8");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[UnhealthyFood class]];
@@ -773,7 +760,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 22500) {
          if (fasterSpeed9 == FALSE) {
             fasterSpeed9 = TRUE;
-            scrollSpeed = 520;
+            scrollSpeed = 610;
             NSLog(@"Speed Changed 9");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[UnhealthyFood class]];
@@ -788,7 +775,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 25000) {
          if (fasterSpeed10 == FALSE) {
             fasterSpeed10 = TRUE;
-            scrollSpeed = 540;
+            scrollSpeed = 650;
             NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[UnhealthyFood class]];
@@ -803,7 +790,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 27500) {
          if (fasterSpeed11 == FALSE) {
             fasterSpeed11 = TRUE;
-            scrollSpeed = 560;
+            scrollSpeed = 670;
             NSLog(@"Speed Changed 11");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed11 = TRUE;
@@ -819,7 +806,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 30000) {
          if (fasterSpeed12 == FALSE) {
             fasterSpeed12 = TRUE;
-            scrollSpeed = 580;
+            scrollSpeed = 690;
             NSLog(@"Speed Changed 12");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[UnhealthyFood class]];
@@ -835,7 +822,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 32500) {
          if (fasterSpeed13 == FALSE) {
             fasterSpeed13 = TRUE;
-            scrollSpeed = 600;
+            scrollSpeed = 700;
             NSLog(@"Speed Changed 13");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:80 forMonsterType:[UnhealthyFood class]];
@@ -852,7 +839,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 35000) {
          if (fasterSpeed14 == FALSE) {
             fasterSpeed14 = TRUE;
-            scrollSpeed = 620;
+            scrollSpeed = 710;
             NSLog(@"Speed Changed 14");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[UnhealthyFood class]];
@@ -870,7 +857,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 37500) {
          if (fasterSpeed15 == FALSE) {
             fasterSpeed15 = TRUE;
-            scrollSpeed = 640;
+            scrollSpeed = 720;
             NSLog(@"Speed Changed 15");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[UnhealthyFood class]];
@@ -889,7 +876,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 40000) {
          if (fasterSpeed16 == FALSE) {
             fasterSpeed16 = TRUE;
-            scrollSpeed = 660;
+            scrollSpeed = 730;
             NSLog(@"Speed Changed 16");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[UnhealthyFood class]];
@@ -908,7 +895,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 42500) {
          if (fasterSpeed17 == FALSE) {
             fasterSpeed17 = TRUE;
-            scrollSpeed = 680;
+            scrollSpeed = 740;
             NSLog(@"Speed Changed 17");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
@@ -927,7 +914,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 45000) {
          if (fasterSpeed18 == FALSE) {
             fasterSpeed18 = TRUE;
-            scrollSpeed = 700;
+            scrollSpeed = 750;
             NSLog(@"Speed Changed 18");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:30 forMonsterType:[UnhealthyFood class]];
@@ -946,7 +933,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 47500) {
          if (fasterSpeed19 == FALSE) {
             fasterSpeed19 = TRUE;
-            scrollSpeed = 720;
+            scrollSpeed = 760;
             NSLog(@"Speed Changed 19");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:20 forMonsterType:[UnhealthyFood class]];
@@ -965,7 +952,7 @@ if (coinSide1 == FALSE)
     if (pointsDisplayNode.score > 50000) {
          if (fasterSpeed20 == FALSE) {
             fasterSpeed20 = TRUE;
-            scrollSpeed = 740;
+            scrollSpeed = 770;
             NSLog(@"Speed Changed 20");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:10 forMonsterType:[UnhealthyFood class]];
