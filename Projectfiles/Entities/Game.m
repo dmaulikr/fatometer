@@ -22,7 +22,6 @@ static NSArray *_allMissions;
 
 @interface Game()
 
-
 // lets the game load missions
 + (void)loadMissions;
 
@@ -122,7 +121,7 @@ static NSArray *_allMissions;
 {
     /* store the indexes of the currently active missions (within the allMissionsArray) in an array, to be able to reload this missions on game restart. Generated missions will be entered with an NSNotFound index and generated new on demand. */
     NSMutableArray *indexesOfActiveMissions = [[NSMutableArray alloc] init];
-
+    
     for (unsigned int i = 0; i < [_missions count]; i++)
     {
         Mission *m = [_missions objectAtIndex:i];
@@ -130,7 +129,7 @@ static NSArray *_allMissions;
         NSNumber *indexOfMissionNr = [NSNumber numberWithInt:indexOfMission];
         [indexesOfActiveMissions addObject:indexOfMissionNr];
     }
-
+    
     [[NSUserDefaults standardUserDefaults] setObject:indexesOfActiveMissions forKey:MISSION_STATUS_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }

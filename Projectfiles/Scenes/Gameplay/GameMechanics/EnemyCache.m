@@ -11,7 +11,7 @@
 #import "GameMechanics.h"
 #import "Knight.h"
 
-#define ENEMY_MAX 5
+#define ENEMY_MAX 300
 
 @implementation EnemyCache
 
@@ -47,7 +47,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
 	}
-    
+	
 	return self;
 }
 
@@ -92,7 +92,6 @@
      We use a CCArray since it has a better performance than an NSArray. */
 	CCArray* enemiesOfType = [enemies objectForKey:enemyTypeClass];
     Food* enemy;
-    Coins* coins;
     
     /* we try to reuse existing enimies, therefore we use this flag, to keep track if we found an enemy we can
      respawn or if we need to create a new one */
@@ -129,6 +128,7 @@
     }
 }
 
+
 -(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
     sprite.scaleX = width / sprite.contentSize.width;
     sprite.scaleY = height / sprite.contentSize.height;
@@ -142,10 +142,7 @@
 {
 	Food* enemy;
     Knight *knight = [[GameMechanics sharedGameMechanics] knight];
-    CGRect knightBoundingBox = tempKnight;
-    
-//    [[[GameMechanics sharedGameMechanics] gameScene] resizeSprite];
-    
+    CGRect knightBoundingBox = [knight boundingBox];
     CGRect knightHitZone = [knight hitZone];
     
     // iterate over all enemies (all child nodes of this enemy batch)
@@ -178,19 +175,17 @@
                 // if the knight is stabbing, or the knight is in invincible mode, the enemy will be destroyed...
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
-                    enemy.visible = FALSE;
-
+                    [enemy gotCollected];
                 } else
                 {
                     // if the kight is not stabbing, he will be hit
-//                    [knight gotHit];
                     [enemy gotCollected];
-
                 }
             }
 		}
 	}
 }
+
 
 
 -(void) update:(ccTime)delta
@@ -200,7 +195,7 @@
     {
         updateCount++;
         
-        // first we get all available spawnFrequency types
+        // first we get all available monster types
         NSArray *monsterTypes = [[[GameMechanics sharedGameMechanics] spawnRatesByMonsterType] allKeys];
         
         for (Class monsterTypeClass in monsterTypes)
@@ -218,5 +213,6 @@
         [self checkForCollisions];
     }
 }
+
 
 @end

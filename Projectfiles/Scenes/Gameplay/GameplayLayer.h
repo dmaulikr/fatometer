@@ -59,6 +59,8 @@
     int posY;
     int coinValue;
     
+    int coinsCollected;
+    
     /* stores the exact distance the knight has ran */
     float gainedDistance;
     

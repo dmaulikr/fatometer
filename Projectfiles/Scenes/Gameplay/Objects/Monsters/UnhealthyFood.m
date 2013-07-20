@@ -75,6 +75,8 @@
     [[GameMechanics sharedGameMechanics] game].fatness += 19;
 //    [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
 //    [[GameMechanics sharedGameMechanics] game].storeItems
+    
+    NSLog(@"Hit a Burger");
 }
 
 - (void)update:(ccTime)delta

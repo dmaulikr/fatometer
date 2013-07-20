@@ -163,6 +163,7 @@
         
         sidewaysCoins = 7;
         coinValue = 1;
+        coinsCollected = 0;
         
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
@@ -201,12 +202,11 @@
         [self addChild:knight];
         knight.anchorPoint = ccp(0,0);
         
-        
         // add scoreboard entry for in-app currency
         inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 220, self.contentSize.height - 70);
-        inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
+        inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
         
         // add scoreboard entry for points
@@ -233,17 +233,15 @@
         pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 70);
         [hudNode addChild:pauseButtonMenu];
         
-        
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(239.5, 300);
-        
+        // Toolbar setup of iphone 5
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
             toolBar = [CCSprite spriteWithFile:@"toolbarip5.png"];
             toolBar.position = ccp(285, 300);
         }
-        
         
         // Set up Tutorial
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
@@ -267,6 +265,10 @@
         // add decorative node
         //[self addChild:[DecorativeObjectsNode node]];
         
+        coinArray = [[NSMutableArray alloc] init];
+        
+        [self resizeSprite:knight toWidth:80 toHeight:70];
+        
         // setup a new gaming session
         [self resetGame];
         [self scheduleUpdate];
@@ -277,17 +279,12 @@
          **/
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gamePaused) name:@"GamePaused" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameResumed) name:@"GameResumed" object:nil];
-        
-        coinArray = [[NSMutableArray alloc] init];
-        
-        [self resizeSprite:knight toWidth:80 toHeight:70];
     }
     return self;
 }
 /*
  Useful Little Code Snippets that make my life easier
 */
-
 -(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
     sprite.scaleX = width / sprite.contentSize.width;
     sprite.scaleY = height / sprite.contentSize.height;
@@ -323,22 +320,18 @@
 {
     tut.visible = TRUE;
 }
-
 -(void) makeFlashLabelInvisible
 {
     tut.visible = FALSE;
 }
-
 -(void) convertFromPercent:(float) floatToConvert
 {
     float percentVal = [toolBar boundingBox].size.width/100;
     float percent = floatToConvert * percentVal;
     pointerPosition = ccp(percent, toolBar.position.y);
 }
-
 - (void)gamePaused
 {
-    tut.visible = FALSE;
     [self pauseSchedulerAndActions];
 }
 
@@ -354,7 +347,6 @@
     [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
     [self enableGamePlayButtons];
     [self presentSkipAheadButtonWithDuration:5.f];
-    
     /*
      inform all missions, that they have started
      */
@@ -362,20 +354,18 @@
     {
         [m missionStart:game];
     }
-    
     [self addChild:toolBar];
     [self addChild:pointer];
-    [self resetFatness];
     [self startTutorial];
 }
 
 - (void)quit
 {
-    [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
+    [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
     self.showMainMenu = TRUE;
 }
 - (void)reset {
-    [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
+    [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
 }
 - (void)resetGame
 {
@@ -399,7 +389,7 @@
 
     // setup HUD
     healthDisplayNode.health = knight.hitPoints;
-    coinsDisplayNode.score = game.score;
+    coinsDisplayNode.score = coinsCollected;
     pointsDisplayNode.score = game.meters;
     
     // set spwan rate for monsters
@@ -412,6 +402,11 @@
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
+    
+    [[GameMechanics sharedGameMechanics] game].fatness = 50;
+    
+    [self resetFatness];
+    coinSide1 = FALSE;
 }
 
 -(void) startTutorial
@@ -513,13 +508,24 @@
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
     
+    
+    
+    
+//    [[GameMechanics sharedGameMechanics] game].fatness-= pow(0.000000000001, -100);
 }
 
+//-(void) movePointerDown {
+//    for (int i = 0; i < 3;i++)
+//    {
+//        [[GameMechanics sharedGameMechanics] game].fatness -= (0.0000001 * 0.0000001) * 0.000000000001;
+//        i = 0;
+//    }
+//}
 
 - (void) update:(ccTime)delta
 {
     // update the amount of in-App currency in pause mode, too
-    inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
+    inAppCurrencyDisplayNode.score = coinsCollected;
     
     if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
     {
@@ -533,7 +539,7 @@
     }
     [self updatePointer];
     [self changeStuff];
-    [self coinSidewaysRowOne];
+    [self patternOne];
 
     CGRect knightRect = [knight boundingBox];
     for (int i = 0; i < [coinArray count]; i++)
@@ -544,7 +550,9 @@
         {
             [coinArray removeObject:coin];
             [self removeChild:coin];
-//            [Store addInAppCurrency:coinValue]; // This is how to add money
+            coinsCollected += coinValue;
+            [Store addInAppCurrency:coinValue];
+
         }
     }
 }
@@ -577,7 +585,7 @@
     game.meters = (int) (gainedDistance);
     // update the score display
     pointsDisplayNode.score = game.meters;
-    coinsDisplayNode.score = game.score;
+    coinsDisplayNode.score = coinsCollected;
     healthDisplayNode.health = knight.hitPoints;
     
     // the gesture recognizer assumes portrait mode, so we need to use rotated swipe directions
@@ -601,9 +609,9 @@
 }
 
 /*
-    These are the methods for displaying the different horizontal rows of coins to generate a horizontal pattern
+    These are the methods for displaying the different horizontal rows of coins to generate a horizontal/diagonal pattern
 */
-- (void)coinSidewaysRowOne {
+- (void)patternOne {
 if (coinSide1 == FALSE)
 {
     coinSide1 = TRUE;
@@ -650,59 +658,59 @@ if (coinSide1 == FALSE)
 
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
-         if (fasterSpeed == FALSE) {
-            fasterSpeed = TRUE;
+//         if (fasterSpeed == FALSE) {
+//            fasterSpeed = TRUE;
              scrollSpeed = 290;
-            NSLog(@"Speed Changed 1");
+//            NSLog(@"Speed Changed 1");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 3000) {
-         if (fasterSpeed2 == FALSE) {
-            fasterSpeed2 = TRUE;
+//         if (fasterSpeed2 == FALSE) {
+//            fasterSpeed2 = TRUE;
             scrollSpeed = 330;
-            NSLog(@"Speed Changed 2");
+//            NSLog(@"Speed Changed 2");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
-        }
+//        }
     }
     if (pointsDisplayNode.score > 6000) {
-         if (fasterSpeed3 == FALSE) {
-            fasterSpeed3 = TRUE;
+//         if (fasterSpeed3 == FALSE) {
+//            fasterSpeed3 = TRUE;
             scrollSpeed = 370;
-            NSLog(@"Speed Changed 3");
+//            NSLog(@"Speed Changed 3");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:430 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Pizza class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 7500) {
-         if (fasterSpeed4 == FALSE) {
-            fasterSpeed4 = TRUE;
+//         if (fasterSpeed4 == FALSE) {
+//            fasterSpeed4 = TRUE;
             scrollSpeed = 410;
-            NSLog(@"Speed Changed 4");
+//            NSLog(@"Speed Changed 4");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:570 forMonsterType:[Pizza class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 10000) {
-         if (fasterSpeed5 == FALSE) {
-            fasterSpeed5 = TRUE;
+//         if (fasterSpeed5 == FALSE) {
+//            fasterSpeed5 = TRUE;
             scrollSpeed = 450;
-            NSLog(@"Speed Changed 5");
+//            NSLog(@"Speed Changed 5");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[HealthyFood class]];
@@ -710,13 +718,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:480 forMonsterType:[Cupcake class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 13000) {
-         if (fasterSpeed6 == FALSE) {
-            fasterSpeed6 = TRUE;
+//         if (fasterSpeed6 == FALSE) {
+//            fasterSpeed6 = TRUE;
             scrollSpeed = 490;
-            NSLog(@"Speed Changed 6");
+//            NSLog(@"Speed Changed 6");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
@@ -724,13 +732,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:460 forMonsterType:[Cupcake class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 16500) {
-         if (fasterSpeed7 == FALSE) {
-            fasterSpeed7 = TRUE;
+//         if (fasterSpeed7 == FALSE) {
+//            fasterSpeed7 = TRUE;
             scrollSpeed = 530;
-            NSLog(@"Speed Changed 7");
+//            NSLog(@"Speed Changed 7");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
@@ -738,13 +746,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Cupcake class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 20000) {
-         if (fasterSpeed8 == FALSE) {
-            fasterSpeed8 = TRUE;
+//         if (fasterSpeed8 == FALSE) {
+//            fasterSpeed8 = TRUE;
             scrollSpeed = 570;
-            NSLog(@"Speed Changed 8");
+//            NSLog(@"Speed Changed 8");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
@@ -752,13 +760,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Cupcake class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 22500) {
-         if (fasterSpeed9 == FALSE) {
-            fasterSpeed9 = TRUE;
+//         if (fasterSpeed9 == FALSE) {
+//            fasterSpeed9 = TRUE;
             scrollSpeed = 610;
-            NSLog(@"Speed Changed 9");
+//            NSLog(@"Speed Changed 9");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
@@ -767,13 +775,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 25000) {
-         if (fasterSpeed10 == FALSE) {
-            fasterSpeed10 = TRUE;
+//         if (fasterSpeed10 == FALSE) {
+//            fasterSpeed10 = TRUE;
             scrollSpeed = 650;
-            NSLog(@"Speed Changed 10");
+//            NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
@@ -782,13 +790,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 27500) {
-         if (fasterSpeed11 == FALSE) {
-            fasterSpeed11 = TRUE;
+//         if (fasterSpeed11 == FALSE) {
+//            fasterSpeed11 = TRUE;
             scrollSpeed = 670;
-            NSLog(@"Speed Changed 11");
+//            NSLog(@"Speed Changed 11");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             fasterSpeed11 = TRUE;
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[UnhealthyFood class]];
@@ -798,13 +806,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 30000) {
-         if (fasterSpeed12 == FALSE) {
-            fasterSpeed12 = TRUE;
+//         if (fasterSpeed12 == FALSE) {
+//            fasterSpeed12 = TRUE;
             scrollSpeed = 690;
-            NSLog(@"Speed Changed 12");
+//            NSLog(@"Speed Changed 12");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[HealthyFood class]];
@@ -814,13 +822,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:560 forMonsterType:[Fries class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-        }
+//        }
     }
     if (pointsDisplayNode.score > 32500) {
-         if (fasterSpeed13 == FALSE) {
-            fasterSpeed13 = TRUE;
+//         if (fasterSpeed13 == FALSE) {
+//            fasterSpeed13 = TRUE;
             scrollSpeed = 700;
-            NSLog(@"Speed Changed 13");
+//            NSLog(@"Speed Changed 13");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:80 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[HealthyFood class]];
@@ -831,13 +839,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Fries class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 35000) {
-         if (fasterSpeed14 == FALSE) {
-            fasterSpeed14 = TRUE;
+//         if (fasterSpeed14 == FALSE) {
+//            fasterSpeed14 = TRUE;
             scrollSpeed = 710;
-            NSLog(@"Speed Changed 14");
+//            NSLog(@"Speed Changed 14");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[HealthyFood class]];
@@ -849,13 +857,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 37500) {
-         if (fasterSpeed15 == FALSE) {
-            fasterSpeed15 = TRUE;
+//         if (fasterSpeed15 == FALSE) {
+//            fasterSpeed15 = TRUE;
             scrollSpeed = 720;
-            NSLog(@"Speed Changed 15");
+//            NSLog(@"Speed Changed 15");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[HealthyFood class]];
@@ -868,13 +876,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 40000) {
-         if (fasterSpeed16 == FALSE) {
-            fasterSpeed16 = TRUE;
+//         if (fasterSpeed16 == FALSE) {
+//            fasterSpeed16 = TRUE;
             scrollSpeed = 730;
-            NSLog(@"Speed Changed 16");
+//            NSLog(@"Speed Changed 16");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[HealthyFood class]];
@@ -887,13 +895,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 42500) {
-         if (fasterSpeed17 == FALSE) {
-            fasterSpeed17 = TRUE;
+//         if (fasterSpeed17 == FALSE) {
+//            fasterSpeed17 = TRUE;
             scrollSpeed = 740;
-            NSLog(@"Speed Changed 17");
+//            NSLog(@"Speed Changed 17");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
@@ -906,13 +914,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 45000) {
-         if (fasterSpeed18 == FALSE) {
-            fasterSpeed18 = TRUE;
+//         if (fasterSpeed18 == FALSE) {
+//            fasterSpeed18 = TRUE;
             scrollSpeed = 750;
-            NSLog(@"Speed Changed 18");
+//            NSLog(@"Speed Changed 18");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:30 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
@@ -925,13 +933,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 47500) {
-         if (fasterSpeed19 == FALSE) {
-            fasterSpeed19 = TRUE;
+//         if (fasterSpeed19 == FALSE) {
+//            fasterSpeed19 = TRUE;
             scrollSpeed = 760;
-            NSLog(@"Speed Changed 19");
+//            NSLog(@"Speed Changed 19");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:20 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
@@ -944,13 +952,13 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
     if (pointsDisplayNode.score > 50000) {
-         if (fasterSpeed20 == FALSE) {
-            fasterSpeed20 = TRUE;
+//         if (fasterSpeed20 == FALSE) {
+//            fasterSpeed20 = TRUE;
             scrollSpeed = 770;
-            NSLog(@"Speed Changed 20");
+//            NSLog(@"Speed Changed 20");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:10 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
@@ -963,7 +971,7 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-         }
+//         }
     }
 }
 
@@ -1005,7 +1013,7 @@ if (coinSide1 == FALSE)
 {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
     CCScale9Sprite *backgroundImage = [StyleManager goOnPopUpBackground];
-    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtontaped:) buttonTitles:@[@"OK", @"No"]];
+    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked:) buttonTitles:@[@"OK", @"No"]];
     [self disableGameplayButtons];
     
 }
@@ -1082,13 +1090,16 @@ if (coinSide1 == FALSE)
  */
 - (void)storeDisplayNeedsUpdate
 {
-    inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];
+    inAppCurrencyDisplayNode.score = coinsCollected;
 }
 
 - (void)resumeButtonPressed:(PauseScreen *)pauseScreen
 {
     // enable the pause button again, since the pause menu is hidden now
     [self enableGamePlayButtons];
+    [self showHUD:TRUE];
+    [self resumeSchedulerAndActions];
+    [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
 }
 
 #pragma mark - Button Callbacks
@@ -1116,9 +1127,9 @@ if (coinSide1 == FALSE)
 //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
-- (void)goOnPopUpButtontaped:(CCControlButton *)sender
+- (void)goOnPopUpButtonClicked:(CCControlButton *)sender
 {
-    CCLOG(@"Button tapped.");
+    CCLOG(@"Button clicked.");
     if (sender.tag == 0)
     {
         if ([Store hasSufficientFundsForGoOnAction])
@@ -1127,9 +1138,8 @@ if (coinSide1 == FALSE)
             [goOnPopUp dismiss];
             [self executeGoOnAction];
             [self enableGamePlayButtons];
-            knight.visible = TRUE;
             [self resetFatness];
-            
+            knight.visible = TRUE;
         } else
         {
             // game is paused in this state already, we only need to present the more coins screen
@@ -1157,8 +1167,7 @@ if (coinSide1 == FALSE)
 
 - (void)pauseButtonPressed
 {
-//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
-    NSLog(@"Pause");
+    CCLOG(@"Pause");
     // disable pause button while the pause menu is shown, since we want to avoid, that the pause button can be hit twice.
     [self disableGameplayButtons];
     

@@ -16,6 +16,8 @@
 @interface PauseScreen()
 
 - (void)resumeButtonPressed;
+- (void)quitButtonPressed;
+-(void)resetButtonPressed;
 
 @end
 
@@ -45,9 +47,9 @@
         backgroundNode.anchorPoint = ccp(0.5, 0.5);
         
         // add title label
-        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
+        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"PAUSED"
                                                         fontName:DEFAULT_FONT
-                                                        fontSize:50];
+                                                        fontSize:42];
         storeItemLabel.color = DEFAULT_FONT_COLOR;
         storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 45);
         [self addChild:storeItemLabel];

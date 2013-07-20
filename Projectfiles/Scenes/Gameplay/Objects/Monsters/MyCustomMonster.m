@@ -60,6 +60,7 @@
 //    [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
     [[GameMechanics sharedGameMechanics] game].score += 1;
     [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 5;
+    NSLog(@"Hit a Banana");
 }
 
 - (void)update:(ccTime)delta

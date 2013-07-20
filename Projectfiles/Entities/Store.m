@@ -41,7 +41,7 @@ BOOL storeLoaded;
     if (!storeLoaded)
     {
         inGameStoreItems = [[NSMutableArray alloc] init];
-
+        
         storeLoaded = TRUE;
         // create some demo store items
         

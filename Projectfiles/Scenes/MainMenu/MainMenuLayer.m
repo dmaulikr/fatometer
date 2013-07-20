@@ -26,15 +26,6 @@
 
 @implementation MainMenuLayer
 
-+ (id)scene
-{
-    CCScene *scene = [CCScene node];
-    MainMenuLayer* layer = [MainMenuLayer node];
-    
-    [scene addChild:layer];
-    return scene;
-}
-
 -(id) init
 {
 	if (self = [super init])

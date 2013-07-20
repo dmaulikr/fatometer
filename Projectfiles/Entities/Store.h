@@ -24,9 +24,9 @@
 + (NSArray *)storeItemsByCategory:(NSString *)category;
 
 /* Fills the store with categories and items provided in the store Dictionary.
-   Expected structure:
-   {@"Category A": [Item1, Item2, Item3]
-    @"Category B": [Item4, Item5, Item6] }*/
+ Expected structure:
+ {@"Category A": [Item1, Item2, Item3]
+ @"Category B": [Item4, Item5, Item6] }*/
 + (void)setupWithStoreDictionary:(NSDictionary *)storeDictionary;
 
 // returns the amount of available inAppCurrency
@@ -53,7 +53,7 @@
 // purchases a go on action
 + (BOOL)purchaseGoOnAction;
 /*
-   Lets the store set itself up with a default setting
+ Lets the store set itself up with a default setting
  */
 + (void)setupDefault;
 
