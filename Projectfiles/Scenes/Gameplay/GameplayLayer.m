@@ -115,52 +115,8 @@
     {        
         scrollSpeed = 250.0f;
         
-        // This is to update the speed and make it faster
-        fasterSpeed = FALSE;
-        fasterSpeed2 = FALSE;
-        fasterSpeed3 = FALSE;
-        fasterSpeed4 = FALSE;
-        fasterSpeed5 = FALSE;
-        fasterSpeed6 = FALSE;
-        fasterSpeed7 = FALSE;
-        fasterSpeed8 = FALSE;
-        fasterSpeed9 = FALSE;
-        fasterSpeed10 = FALSE;
-        fasterSpeed11 = FALSE;
-        fasterSpeed12 = FALSE;
-        fasterSpeed13 = FALSE;
-        fasterSpeed14 = FALSE;
-        fasterSpeed15 = FALSE;
-        fasterSpeed16 = FALSE;
-        fasterSpeed17 = FALSE;
-        fasterSpeed18 = FALSE;
-        fasterSpeed19 = FALSE;
-        fasterSpeed20 = FALSE;
-        
-        coinSide1 = FALSE;
-        coinSide2 = FALSE;
-        coinSide3 = FALSE;
-        coinSide4 = FALSE;
-        coinSide5 = FALSE;
-        coinSide6 = FALSE;
-        coinSide7 = FALSE;
-        coinSide8 = FALSE;
-        coinSide9 = FALSE;
-        coinSide10 = FALSE;
-        
-        coinUp1 = FALSE;
-        coinUp2 = FALSE;
-        coinUp3 = FALSE;
-        coinUp4 = FALSE;
-        coinUp5 = FALSE;
-        coinUp6 = FALSE;
-        coinUp7 = FALSE;
-        coinUp8 = FALSE;
-        coinUp9 = FALSE;
-        coinUp10 = FALSE;
-        
-        spawnCoinsOutside = FALSE;
-        
+        coinPattern1 = FALSE;
+                    
         sidewaysCoins = 7;
         coinValue = 1;
         coinsCollected = 0;
@@ -406,7 +362,7 @@
     [[GameMechanics sharedGameMechanics] game].fatness = 50;
     
     [self resetFatness];
-    coinSide1 = FALSE;
+    coinPattern1 = FALSE;
 }
 
 -(void) startTutorial
@@ -604,7 +560,7 @@
 -(void) showSpriteAgain:(CCSprite *)coin{
     if ([coinArray count] == 0)
     {
-        coinSide1 = FALSE;
+        coinPattern1 = FALSE;
     }
 }
 
@@ -612,10 +568,10 @@
     These are the methods for displaying the different horizontal rows of coins to generate a horizontal/diagonal pattern
 */
 - (void)patternOne {
-if (coinSide1 == FALSE)
+if (coinPattern1 == FALSE)
 {
-    coinSide1 = TRUE;
-    NSLog(@"coinSide1 = TRUE");
+    coinPattern1 = TRUE;
+    NSLog(@"coinPattern1 = TRUE");
     int originalX = 500;
     for(int i = 0; i < 8; i++)
     {
@@ -658,59 +614,40 @@ if (coinSide1 == FALSE)
 
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
-//         if (fasterSpeed == FALSE) {
-//            fasterSpeed = TRUE;
-             scrollSpeed = 290;
-//            NSLog(@"Speed Changed 1");
+            scrollSpeed = 290;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[MyCustomMonster class]];
-//         }
     }
     if (pointsDisplayNode.score > 3000) {
-//         if (fasterSpeed2 == FALSE) {
-//            fasterSpeed2 = TRUE;
             scrollSpeed = 330;
-//            NSLog(@"Speed Changed 2");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
-//        }
     }
     if (pointsDisplayNode.score > 6000) {
-//         if (fasterSpeed3 == FALSE) {
-//            fasterSpeed3 = TRUE;
             scrollSpeed = 370;
-//            NSLog(@"Speed Changed 3");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:430 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Pizza class]];
-//         }
     }
     if (pointsDisplayNode.score > 7500) {
-//         if (fasterSpeed4 == FALSE) {
-//            fasterSpeed4 = TRUE;
             scrollSpeed = 410;
-//            NSLog(@"Speed Changed 4");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:570 forMonsterType:[Pizza class]];
-//         }
     }
     if (pointsDisplayNode.score > 10000) {
-//         if (fasterSpeed5 == FALSE) {
-//            fasterSpeed5 = TRUE;
             scrollSpeed = 450;
-//            NSLog(@"Speed Changed 5");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[HealthyFood class]];
@@ -718,13 +655,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:480 forMonsterType:[Cupcake class]];
-//         }
     }
     if (pointsDisplayNode.score > 13000) {
-//         if (fasterSpeed6 == FALSE) {
-//            fasterSpeed6 = TRUE;
             scrollSpeed = 490;
-//            NSLog(@"Speed Changed 6");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[HealthyFood class]];
@@ -732,13 +665,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:460 forMonsterType:[Cupcake class]];
-//         }
     }
     if (pointsDisplayNode.score > 16500) {
-//         if (fasterSpeed7 == FALSE) {
-//            fasterSpeed7 = TRUE;
             scrollSpeed = 530;
-//            NSLog(@"Speed Changed 7");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
@@ -746,13 +675,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:450 forMonsterType:[Cupcake class]];
-//         }
     }
     if (pointsDisplayNode.score > 20000) {
-//         if (fasterSpeed8 == FALSE) {
-//            fasterSpeed8 = TRUE;
             scrollSpeed = 570;
-//            NSLog(@"Speed Changed 8");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
@@ -760,13 +685,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Cupcake class]];
-//         }
     }
     if (pointsDisplayNode.score > 22500) {
-//         if (fasterSpeed9 == FALSE) {
-//            fasterSpeed9 = TRUE;
             scrollSpeed = 610;
-//            NSLog(@"Speed Changed 9");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
@@ -775,13 +696,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 25000) {
-//         if (fasterSpeed10 == FALSE) {
-//            fasterSpeed10 = TRUE;
             scrollSpeed = 650;
-//            NSLog(@"Speed Changed 10");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
@@ -790,15 +707,10 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 27500) {
-//         if (fasterSpeed11 == FALSE) {
-//            fasterSpeed11 = TRUE;
             scrollSpeed = 670;
-//            NSLog(@"Speed Changed 11");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
-            fasterSpeed11 = TRUE;
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[MyCustomMonster class]];
@@ -806,13 +718,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 30000) {
-//         if (fasterSpeed12 == FALSE) {
-//            fasterSpeed12 = TRUE;
             scrollSpeed = 690;
-//            NSLog(@"Speed Changed 12");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[HealthyFood class]];
@@ -822,13 +730,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:560 forMonsterType:[Fries class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
-//        }
     }
     if (pointsDisplayNode.score > 32500) {
-//         if (fasterSpeed13 == FALSE) {
-//            fasterSpeed13 = TRUE;
             scrollSpeed = 700;
-//            NSLog(@"Speed Changed 13");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:80 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[HealthyFood class]];
@@ -839,13 +743,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Fries class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 35000) {
-//         if (fasterSpeed14 == FALSE) {
-//            fasterSpeed14 = TRUE;
             scrollSpeed = 710;
-//            NSLog(@"Speed Changed 14");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[HealthyFood class]];
@@ -857,13 +757,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 37500) {
-//         if (fasterSpeed15 == FALSE) {
-//            fasterSpeed15 = TRUE;
             scrollSpeed = 720;
-//            NSLog(@"Speed Changed 15");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[HealthyFood class]];
@@ -876,13 +772,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 40000) {
-//         if (fasterSpeed16 == FALSE) {
-//            fasterSpeed16 = TRUE;
             scrollSpeed = 730;
-//            NSLog(@"Speed Changed 16");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[HealthyFood class]];
@@ -895,13 +787,9 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 42500) {
-//         if (fasterSpeed17 == FALSE) {
-//            fasterSpeed17 = TRUE;
             scrollSpeed = 740;
-//            NSLog(@"Speed Changed 17");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[HealthyFood class]];
@@ -914,15 +802,11 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 45000) {
-//         if (fasterSpeed18 == FALSE) {
-//            fasterSpeed18 = TRUE;
             scrollSpeed = 750;
-//            NSLog(@"Speed Changed 18");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:30 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
@@ -933,15 +817,11 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 47500) {
-//         if (fasterSpeed19 == FALSE) {
-//            fasterSpeed19 = TRUE;
             scrollSpeed = 760;
-//            NSLog(@"Speed Changed 19");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:20 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:38 forMonsterType:[UnhealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[HealthyFood class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[MyCustomMonster class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Apples class]];
@@ -952,26 +832,21 @@ if (coinSide1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-//         }
     }
     if (pointsDisplayNode.score > 50000) {
-//         if (fasterSpeed20 == FALSE) {
-//            fasterSpeed20 = TRUE;
             scrollSpeed = 770;
-//            NSLog(@"Speed Changed 20");
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:10 forMonsterType:[UnhealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[HealthyFood class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[MyCustomMonster class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[Apples class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Pizza class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Cake class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Fries class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Cupcake class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
-//         }
+            [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[UnhealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:159 forMonsterType:[HealthyFood class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:101 forMonsterType:[MyCustomMonster class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:121 forMonsterType:[Chicken class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Cake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Fries class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Cupcake class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:206 forMonsterType:[Oranges class]];
+            [[GameMechanics sharedGameMechanics] setSpawnRate:313 forMonsterType:[Strawberries class]];
     }
 }
 

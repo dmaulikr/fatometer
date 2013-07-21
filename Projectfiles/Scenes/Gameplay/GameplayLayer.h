@@ -75,51 +75,9 @@
     CCLabelBMFont* tut;
     
     BOOL playedTutorial;
-    BOOL fasterSpeed;
-    BOOL fasterSpeed2;
-    BOOL fasterSpeed3;
-    BOOL fasterSpeed4;
-    BOOL fasterSpeed5;
-    BOOL fasterSpeed6;
-    BOOL fasterSpeed7;
-    BOOL fasterSpeed8;
-    BOOL fasterSpeed9;
-    BOOL fasterSpeed10;
-    BOOL fasterSpeed11;
-    BOOL fasterSpeed12;
-    BOOL fasterSpeed13;
-    BOOL fasterSpeed14;
-    BOOL fasterSpeed15;
-    BOOL fasterSpeed16;
-    BOOL fasterSpeed17;
-    BOOL fasterSpeed18;
-    BOOL fasterSpeed19;
-    BOOL fasterSpeed20;
     
-    BOOL coinUp1;
-    BOOL coinUp2;
-    BOOL coinUp3;
-    BOOL coinUp4;
-    BOOL coinUp5;
-    BOOL coinUp6;
-    BOOL coinUp7;
-    BOOL coinUp8;
-    BOOL coinUp9;
-    BOOL coinUp10;
-
-    BOOL coinSide1;
-    BOOL coinSide2;
-    BOOL coinSide3;
-    BOOL coinSide4;
-    BOOL coinSide5;
-    BOOL coinSide6;
-    BOOL coinSide7;
-    BOOL coinSide8;
-    BOOL coinSide9;
-    BOOL coinSide10;
-    
-    BOOL spawnCoinsOutside;
-    
+    // Coin Stuff
+    BOOL coinPattern1;
     NSMutableArray *coinArray;
 
 }
