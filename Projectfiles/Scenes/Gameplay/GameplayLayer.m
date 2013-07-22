@@ -344,7 +344,6 @@
     knight.hitPoints = KNIGHT_HIT_POINTS;
 
     // setup HUD
-    healthDisplayNode.health = knight.hitPoints;
     coinsDisplayNode.score = coinsCollected;
     pointsDisplayNode.score = game.meters;
     
@@ -542,7 +541,6 @@
     // update the score display
     pointsDisplayNode.score = game.meters;
     coinsDisplayNode.score = coinsCollected;
-    healthDisplayNode.health = knight.hitPoints;
     
     // the gesture recognizer assumes portrait mode, so we need to use rotated swipe directions
     KKInput* input = [KKInput sharedInput];

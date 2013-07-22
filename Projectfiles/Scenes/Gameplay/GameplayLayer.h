@@ -22,7 +22,6 @@
 {
     float scrollSpeed;
     
-    HealthDisplayNode *healthDisplayNode;
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;
     ScoreboardEntryNode *inAppCurrencyDisplayNode;
