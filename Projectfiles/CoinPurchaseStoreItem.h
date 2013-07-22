@@ -8,7 +8,7 @@
 
 #import "StoreItem.h"
 
-/*
+/* 
  A StoreItem which allows purchasing virtual currency.
  */
 

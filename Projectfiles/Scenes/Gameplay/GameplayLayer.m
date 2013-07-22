@@ -17,6 +17,7 @@
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
+#import "Coins.h"
 #import "UnhealthyFood.h"
 #import "Apples.h"
 #import "Donuts.h"
@@ -460,10 +461,10 @@
         [self presentGoOnPopUp];
     }
     
+    // Implement the score here
+    
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
-    pointer.position = pointerPosition;
-    
-    
+    pointer.position = pointerPosition;    
     
     
 //    [[GameMechanics sharedGameMechanics] game].fatness-= pow(0.000000000001, -100);
@@ -476,6 +477,7 @@
 //        i = 0;
 //    }
 //}
+
 
 - (void) update:(ccTime)delta
 {
