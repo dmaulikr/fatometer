@@ -16,12 +16,30 @@
 #import "Coins.h"
 #import "Knight.h"
 
-
-
-@interface GameplayLayer : CCLayer <StoreDisplayNeedsUpdate>
+@interface GameplayLayer : CCLayer <StoreDisplayNeedsUpdate, PauseScreenDelegate>
 {
     float scrollSpeed;
-    
+    float scrollSpeed1;
+    float scrollSpeed2;
+    float scrollSpeed3;
+    float scrollSpeed4;
+    float scrollSpeed5;
+    float scrollSpeed6;
+    float scrollSpeed7;
+    float scrollSpeed8;
+    float scrollSpeed9;
+    float scrollSpeed10;
+    float scrollSpeed11;
+    float scrollSpeed12;
+    float scrollSpeed13;
+    float scrollSpeed14;
+    float scrollSpeed15;
+    float scrollSpeed16;
+    float scrollSpeed17;
+    float scrollSpeed18;
+    float scrollSpeed19;
+    float scrollSpeed20;
+
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;
     ScoreboardEntryNode *inAppCurrencyDisplayNode;

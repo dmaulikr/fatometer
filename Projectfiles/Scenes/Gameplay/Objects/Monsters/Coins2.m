@@ -22,7 +22,6 @@
         CGSize spriteSize = [self contentSize];
         posX =  screenRect.size.width + spriteSize.width * 0.5f;
         posY = 170;
-        self.initialHitPoints = 1;
         self.animationFrames = [NSMutableArray array];
         [self scheduleUpdate];
         inAppCurrencyDisplayNode.score = [Store availableAmountInAppCurrency];

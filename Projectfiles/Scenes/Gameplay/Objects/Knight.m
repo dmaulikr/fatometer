@@ -139,14 +139,14 @@
 - (void)updateRunningMode:(ccTime)delta
 {
     // flip the animation when moving backwards
-//    if (self.velocity.x < -50.f)
-//    {
-//        self.flipX = TRUE;
-//    }
-//    else if (self.velocity.x > 50.f)
-//    {
-//        self.flipX = FALSE;
-//    }
+    //    if (self.velocity.x < -50.f)
+    //    {
+    //        self.flipX = TRUE;
+    //    }
+    //    else if (self.velocity.x > 50.f)
+    //    {
+    //        self.flipX = FALSE;
+    //    }
     
     // apply gravity
     CGPoint gravity = [[GameMechanics sharedGameMechanics] worldGravity];

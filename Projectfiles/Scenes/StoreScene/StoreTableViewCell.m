@@ -166,7 +166,7 @@
         // for virtual products display the popup
         // TODO: implement purchasing of virtual products
         popUp = [PopupProvider presentPopUpWithContentString:@"You successfully bought item" target:self selector:@selector(popUpButtonClicked:) buttonTitles:@[@"OK", @"Cancel"]];
-        CCLOG(@"Purchasing %@", self.storeItem.title);
+        NSLog(@"Purchasing %@", self.storeItem.title);
     } else if ([self.storeItem isKindOfClass:[CoinPurchaseStoreItem class]])
     {
         CoinPurchaseStoreItem *storeItem = (CoinPurchaseStoreItem *) self.storeItem;
@@ -198,7 +198,7 @@
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
 {
-    CCLOG(@"Button clicked.");
+    NSLog(@"Button clicked.");
     if (sender.tag == 0)
     {
         // OK button selcted

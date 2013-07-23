@@ -8,7 +8,6 @@
 
 #import "CCLayer.h"
 #import "Game.h"
-#import "GameplayLayer.h"
 #import "CCSpriteBackgroundNode.h"
 #import "CCBackgroundColorNode.h"
 #import "MissionsNode.h"

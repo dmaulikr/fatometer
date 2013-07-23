@@ -11,17 +11,5 @@
 
 @interface Coins :  CCSprite
 
-// defines a hit zone, which is smaller as the sprite, only if this hit zone is hit the knight is injured
-@property (nonatomic, assign) CGRect hitZone;
-
-// velocity in pixels per second
-@property (nonatomic, assign) CGPoint velocity;
-
-@property (nonatomic, assign) NSInteger hitPoints;
-
-
-- (id)initWithCoins;
-- (void)spawn;
-
 @end
 

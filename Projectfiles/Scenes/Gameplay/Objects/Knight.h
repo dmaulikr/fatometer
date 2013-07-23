@@ -20,7 +20,7 @@
     NSMutableArray *animationFramesStab;
     CCSequence *stab;
     
-    BOOL stabDidRun;    
+    BOOL stabDidRun;
     
 }
 

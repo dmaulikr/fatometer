@@ -13,9 +13,9 @@
 -(void) initializationComplete
 {
 #ifdef KK_ARC_ENABLED
-	CCLOG(@"ARC is enabled");
+	NSLog(@"ARC is enabled");
 #else
-	CCLOG(@"ARC is either not available or not enabled");
+	NSLog(@"ARC is either not available or not enabled");
 #endif
     
     [MGWU loadMGWU:@"comashudesairunnerTemplateUltraLongSuperSecretKey"];

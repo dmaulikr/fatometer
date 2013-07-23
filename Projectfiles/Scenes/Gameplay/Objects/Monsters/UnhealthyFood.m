@@ -32,7 +32,7 @@
 	CGRect screenRect = [[CCDirector sharedDirector] screenRect];
 	CGSize spriteSize = [self contentSize];
 	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
-//	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
+    //	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
     float yPos = 0.25 * screenRect.size.height - spriteSize.height;
 	self.position = CGPointMake(xPos, yPos);
     
@@ -50,33 +50,29 @@
     system.position = self.position;
     [[[GameMechanics sharedGameMechanics] gameScene] addChild:system];
     
-//    CCSprite *coinSprite = [CCSprite spriteWithFile:@"coin.png"];
-//    coinSprite.position = self.position;
-//    [[[GameMechanics sharedGameMechanics] gameScene] addChild:coinSprite];
-//    CGSize screenSize = [[GameMechanics sharedGameMechanics] gameScene].contentSize;
-//    CGPoint coinDestination = ccp(21, screenSize.height-27);
-//    CCMoveTo *move = [CCMoveTo actionWithDuration:2.f position:coinDestination];
-//    id easeMove = [CCEaseBackInOut actionWithAction:move];
-//    
-//    CCAction *movementCompleted = [CCCallBlock actionWithBlock:^{
-//        // this code is called when the movement is completed, then we we want to clean up the coinSprite
-//        coinSprite.visible = FALSE;
-//        [coinSprite removeFromParent];
-//        coinSprite.zOrder = MAX_INT -1;
-//    }];
-//    
-//    CCSequence *coinMovementSequence = [CCSequence actions:easeMove, movementCompleted, nil];
-//    
-//    [coinSprite runAction: coinMovementSequence];
+    //    CCSprite *coinSprite = [CCSprite spriteWithFile:@"coin.png"];
+    //    coinSprite.position = self.position;
+    //    [[[GameMechanics sharedGameMechanics] gameScene] addChild:coinSprite];
+    //    CGSize screenSize = [[GameMechanics sharedGameMechanics] gameScene].contentSize;
+    //    CGPoint coinDestination = ccp(21, screenSize.height-27);
+    //    CCMoveTo *move = [CCMoveTo actionWithDuration:2.f position:coinDestination];
+    //    id easeMove = [CCEaseBackInOut actionWithAction:move];
+    //
+    //    CCAction *movementCompleted = [CCCallBlock actionWithBlock:^{
+    //        // this code is called when the movement is completed, then we we want to clean up the coinSprite
+    //        coinSprite.visible = FALSE;
+    //        [coinSprite removeFromParent];
+    //        coinSprite.zOrder = MAX_INT -1;
+    //    }];
+    //
+    //    CCSequence *coinMovementSequence = [CCSequence actions:easeMove, movementCompleted, nil];
+    //
+    //    [coinSprite runAction: coinMovementSequence];
     
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].fatness += 19;
-//    [[GameMechanics sharedGameMechanics] game].enemiesKilled += 1;
-//    [[GameMechanics sharedGameMechanics] game].storeItems
-    
-    NSLog(@"Hit a Burger");
 }
 
 - (void)update:(ccTime)delta

@@ -16,22 +16,20 @@
 @interface PauseScreen()
 
 - (void)resumeButtonPressed;
-- (void)quitButtonPressed;
--(void)resetButtonPressed;
 
 @end
 
 @implementation PauseScreen
 
-- (id)initWithGame:(Game *)game 
+- (id)initWithGame:(Game *)game
 {
     self = [super init];
     
     if (self)
     {
         // Preload Sound
-//        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
-
+        //        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+        
         self.contentSize = [[CCDirector sharedDirector] winSize];
         // position of screen, animate to screen
         self.position = ccp(self.contentSize.width / 2, self.contentSize.height * 1.5);
@@ -47,9 +45,9 @@
         backgroundNode.anchorPoint = ccp(0.5, 0.5);
         
         // add title label
-        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"PAUSED"
+        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
                                                         fontName:DEFAULT_FONT
-                                                        fontSize:42];
+                                                        fontSize:50];
         storeItemLabel.color = DEFAULT_FONT_COLOR;
         storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 45);
         [self addChild:storeItemLabel];
@@ -66,55 +64,55 @@
         // add a reset button
         CCSprite *resetButtonNormal = [CCSprite spriteWithFile:@"reset.png"];
         resetMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:resetButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(resetButtonPressed)];
-
+        
         
         menu = [CCMenu menuWithItems:resumeMenuItem, resetMenuItem, quitMenuItem, nil];
         [menu alignItemsHorizontally];
         menu.position = ccp(0, 0);
         [self addChild:menu];
         
-//        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
-//        [menu2 alignItemsHorizontally];
-//        menu2.position = ccp(0, -15);
-//        [self addChild:menu2];
-//        
-//        menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
-//        [menu3 alignItemsHorizontally];
-//        menu3.position = ccp(0, -95);
-//        [self addChild:menu3];
+        //        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
+        //        [menu2 alignItemsHorizontally];
+        //        menu2.position = ccp(0, -15);
+        //        [self addChild:menu2];
+        //
+        //        menu3 = [CCMenu menuWithItems:quitMenuItem, nil];
+        //        [menu3 alignItemsHorizontally];
+        //        menu3.position = ccp(0, -95);
+        //        [self addChild:menu3];
         
-        scene = [GameplayLayer node];
-
+//        scene = [GameplayLayer node];
+        
         
         // add a missions node
-//        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
-//        missionNode.contentSize = CGSizeMake(240.f, 120.f);
-//        missionNode.anchorPoint = ccp(0.5, 0.5);
-//        missionNode.position = ccp(0, 0);
-//        
-//        // we want to use the 9Patch background on the pause screen
-//        missionNode.usesScaleSpriteBackground = TRUE;
-//        [self addChild:missionNode];
+        //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
+        //        missionNode.contentSize = CGSizeMake(240.f, 120.f);
+        //        missionNode.anchorPoint = ccp(0.5, 0.5);
+        //        missionNode.position = ccp(0, 0);
+        //
+        //        // we want to use the 9Patch background on the pause screen
+        //        missionNode.usesScaleSpriteBackground = TRUE;
+        //        [self addChild:missionNode];
     }
     
     return self;
 }
 
 - (void)quitButtonPressed
-{    
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:scene]];
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
-//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
-
+    //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    
 }
 
 - (void)resetButtonPressed
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:scene]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
-//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)resumeButtonPressed

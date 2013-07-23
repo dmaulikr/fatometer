@@ -44,6 +44,7 @@ typedef NS_ENUM(NSInteger, GameState) {
 // reference to the GamePlay-Scene
 @property (nonatomic, weak) GameplayLayer *gameScene;
 
+
 // sets up a gravity (used for jumping mechanism)
 @property (nonatomic, assign) CGPoint worldGravity;
 
