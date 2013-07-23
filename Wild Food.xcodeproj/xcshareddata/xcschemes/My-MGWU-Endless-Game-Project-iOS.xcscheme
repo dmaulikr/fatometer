@@ -17,7 +17,7 @@
                BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
                BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
                BlueprintName = "Food Gone Wild"
-               ReferencedContainer = "container:Fat.xcodeproj">
+               ReferencedContainer = "container:Wild Food.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
             BlueprintName = "Food Gone Wild"
-            ReferencedContainer = "container:Fat.xcodeproj">
+            ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,7 +54,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
             BlueprintName = "Food Gone Wild"
-            ReferencedContainer = "container:Fat.xcodeproj">
+            ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -72,7 +72,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
             BlueprintName = "Food Gone Wild"
-            ReferencedContainer = "container:Fat.xcodeproj">
+            ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

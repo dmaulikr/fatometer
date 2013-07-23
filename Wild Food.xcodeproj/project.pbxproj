@@ -84,11 +84,7 @@
 		38A9BBE11790BE5C002A656B /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBDF1790BE5C002A656B /* close.png */; };
 		38A9BBE41790D4A5002A656B /* reset-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBE21790D4A5002A656B /* reset-hd.png */; };
 		38A9BBE51790D4A5002A656B /* reset.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BBE31790D4A5002A656B /* reset.png */; };
-		38ACA128178C9D1F00170550 /* banana-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA126178C9D1F00170550 /* banana-hd.png */; };
-		38ACA129178C9D1F00170550 /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA127178C9D1F00170550 /* banana.png */; };
 		38ACA12B178C9DBE00170550 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12A178C9DBE00170550 /* fire.png */; };
-		38ACA12E178CAD7000170550 /* apple-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12C178CAD7000170550 /* apple-hd.png */; };
-		38ACA12F178CAD7000170550 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA12D178CAD7000170550 /* apple.png */; };
 		38ACA132178CAEDF00170550 /* Apples.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ACA131178CAEDF00170550 /* Apples.m */; };
 		38ACA139178CC6DA00170550 /* healthy-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA137178CC6D900170550 /* healthy-hd.png */; };
 		38ACA13A178CC6DA00170550 /* healthy.png in Resources */ = {isa = PBXBuildFile; fileRef = 38ACA138178CC6D900170550 /* healthy.png */; };
@@ -479,11 +475,7 @@
 		38A9BBDF1790BE5C002A656B /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		38A9BBE21790D4A5002A656B /* reset-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reset-hd.png"; sourceTree = "<group>"; };
 		38A9BBE31790D4A5002A656B /* reset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reset.png; sourceTree = "<group>"; };
-		38ACA126178C9D1F00170550 /* banana-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "banana-hd.png"; path = "Objects/banana-hd.png"; sourceTree = "<group>"; };
-		38ACA127178C9D1F00170550 /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banana.png; path = Objects/banana.png; sourceTree = "<group>"; };
 		38ACA12A178C9DBE00170550 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
-		38ACA12C178CAD7000170550 /* apple-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "apple-hd.png"; path = "Objects/apple-hd.png"; sourceTree = "<group>"; };
-		38ACA12D178CAD7000170550 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = Objects/apple.png; sourceTree = "<group>"; };
 		38ACA130178CAEDF00170550 /* Apples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apples.h; sourceTree = "<group>"; };
 		38ACA131178CAEDF00170550 /* Apples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apples.m; sourceTree = "<group>"; };
 		38ACA137178CC6D900170550 /* healthy-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "healthy-hd.png"; path = "Objects/healthy-hd.png"; sourceTree = "<group>"; };
@@ -853,7 +845,7 @@
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E813B5024400931BF2 /* BuildSettings-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
-		DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Gone Wild.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC1A0E313A94ED5005BD75D /* Wild Food.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wild Food.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A38D13A94F1A005BD75D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCC1A38E13A94F1A005BD75D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCC1A39113A94F1A005BD75D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1599,10 +1591,6 @@
 				38FACD731795CFFF00823F00 /* bubble.png */,
 				38ACA137178CC6D900170550 /* healthy-hd.png */,
 				38ACA138178CC6D900170550 /* healthy.png */,
-				38ACA12C178CAD7000170550 /* apple-hd.png */,
-				38ACA12D178CAD7000170550 /* apple.png */,
-				38ACA126178C9D1F00170550 /* banana-hd.png */,
-				38ACA127178C9D1F00170550 /* banana.png */,
 				6212B6FE177115D10040386F /* tree-hd.png */,
 				6212B6FF177115D10040386F /* tree.png */,
 				62E4B1511764F82700D0A8D9 /* monster-animations-hd.plist */,
@@ -1650,7 +1638,7 @@
 		DCC1A0E413A94ED5005BD75D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */,
+				DCC1A0E313A94ED5005BD75D /* Wild Food.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1750,7 +1738,7 @@
 			);
 			name = "Food Gone Wild";
 			productName = "Hello-World-iOS";
-			productReference = DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */;
+			productReference = DCC1A0E313A94ED5005BD75D /* Wild Food.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1762,7 +1750,7 @@
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "MakeGamesWithUs Inc.";
 			};
-			buildConfigurationList = DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Fat" */;
+			buildConfigurationList = DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Wild Food" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1973,11 +1961,7 @@
 				5417099B177124400021A8C5 /* README.md in Resources */,
 				38BE2B9E177BA2210009AEE6 /* toolbar.png in Resources */,
 				38BE2BA0177BAEE40009AEE6 /* pointer.png in Resources */,
-				38ACA128178C9D1F00170550 /* banana-hd.png in Resources */,
-				38ACA129178C9D1F00170550 /* banana.png in Resources */,
 				38ACA12B178C9DBE00170550 /* fire.png in Resources */,
-				38ACA12E178CAD7000170550 /* apple-hd.png in Resources */,
-				38ACA12F178CAD7000170550 /* apple.png in Resources */,
 				38ACA139178CC6DA00170550 /* healthy-hd.png in Resources */,
 				38ACA13A178CC6DA00170550 /* healthy.png in Resources */,
 				38A9BBD8178E7FB1002A656B /* toolbar-hd.png in Resources */,
@@ -2184,7 +2168,7 @@
 					"$(KKFRAMEWORKS_IOS)",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "Food Gone Wild";
+				PRODUCT_NAME = "Wild Food";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2204,7 +2188,7 @@
 					"$(KKFRAMEWORKS_IOS)",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "Food Gone Wild";
+				PRODUCT_NAME = "Wild Food";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2212,7 +2196,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Fat" */ = {
+		DCC1A0DB13A94EC0005BD75D /* Build configuration list for PBXProject "Wild Food" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCC1A0DD13A94EC0005BD75D /* Debug */,
