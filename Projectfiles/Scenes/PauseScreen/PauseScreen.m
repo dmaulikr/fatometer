@@ -70,7 +70,7 @@
         
         menu = [CCMenu menuWithItems:resumeMenuItem, resetMenuItem, quitMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, 0);
+        menu.position = ccp(0, 30);
         [self addChild:menu];
         
         //        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
@@ -85,14 +85,14 @@
 
         
         // add a missions node
-        //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
-        //        missionNode.contentSize = CGSizeMake(240.f, 120.f);
-        //        missionNode.anchorPoint = ccp(0.5, 0.5);
-        //        missionNode.position = ccp(0, 0);
-        //
-        //        // we want to use the 9Patch background on the pause screen
-        //        missionNode.usesScaleSpriteBackground = TRUE;
-        //        [self addChild:missionNode];
+                missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
+                missionNode.contentSize = CGSizeMake(240.f, 120.f);
+                missionNode.anchorPoint = ccp(0.5, 0.5);
+                missionNode.position = ccp(0, -80);
+        
+                // we want to use the 9Patch background on the pause screen
+                missionNode.usesScaleSpriteBackground = TRUE;
+                [self addChild:missionNode];
     }
     
     return self;

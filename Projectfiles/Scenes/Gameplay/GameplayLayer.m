@@ -454,17 +454,17 @@
 {
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {   
-//        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
-//        knight.visible = FALSE;
+        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
+        knight.visible = FALSE;
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
-//        [self presentGoOnPopUp];
+        [self presentGoOnPopUp];
     }
     if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
     {
-//        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
-//        knight.visible = FALSE;
+        [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
+        knight.visible = FALSE;
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
-//        [self presentGoOnPopUp];
+        [self presentGoOnPopUp];    
     }
     
     // Implement the score here

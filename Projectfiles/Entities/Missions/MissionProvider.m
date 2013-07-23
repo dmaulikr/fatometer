@@ -29,29 +29,42 @@ static NSMutableArray *missions;
         RunDistanceMission *mission1 = [[RunDistanceMission alloc] init];
         mission1.missionDescriptionFormat = @"Run %d meters";
         mission1.thumbnailFileName = @"missions_1.png";
-        [[mission1.missionObjectives objectAtIndex:0] setGoalValue:50];
+        [[mission1.missionObjectives objectAtIndex:0] setGoalValue:20000];
         [self storeLastObjectiveGoalValuesForMission:mission1];
         
         KillAmountOfEnemiesMission *mission2 = [[KillAmountOfEnemiesMission alloc] init];
-        mission2.missionDescriptionFormat = @"Kill %d enemies";
+        mission2.missionDescriptionFormat = @"Collect %d foods before dying";
         mission2.thumbnailFileName = @"missions_2.png";
-        [[mission2.missionObjectives objectAtIndex:0] setGoalValue:1];
+        [[mission2.missionObjectives objectAtIndex:0] setGoalValue:30];
         [self storeLastObjectiveGoalValuesForMission:mission2];
         
         KillAmountOfEnemiesInDistance *mission3 = [[KillAmountOfEnemiesInDistance alloc] init];
-        mission3.missionDescriptionFormat = @"Kill %d enemies in %d meters";
+        mission3.missionDescriptionFormat = @"Eat %d foods in %d meters";
         mission3.thumbnailFileName = @"missions_1.png";
-        [[mission3.missionObjectives objectAtIndex:0] setGoalValue:2];
-        [[mission3.missionObjectives objectAtIndex:1] setGoalValue:1500];
+        [[mission3.missionObjectives objectAtIndex:0] setGoalValue:25];
+        [[mission3.missionObjectives objectAtIndex:1] setGoalValue:25000];
         [self storeLastObjectiveGoalValuesForMission:mission3];
         
         RunDistanceMission *mission4 = [[RunDistanceMission alloc] init];
         mission4.missionDescriptionFormat = @"Run %d meters";
         mission4.thumbnailFileName = @"missions_1.png";
-        [[mission4.missionObjectives objectAtIndex:0] setGoalValue:150];
+        [[mission4.missionObjectives objectAtIndex:0] setGoalValue:30000];
         [self storeLastObjectiveGoalValuesForMission:mission4];
         
-        [missions addObjectsFromArray:@[mission1, mission2, mission3, mission4]];
+        KillAmountOfEnemiesMission *mission5 = [[KillAmountOfEnemiesMission alloc] init];
+        mission2.missionDescriptionFormat = @"Collect %d foods before dying";
+        mission2.thumbnailFileName = @"missions_2.png";
+        [[mission2.missionObjectives objectAtIndex:0] setGoalValue:50];
+        [self storeLastObjectiveGoalValuesForMission:mission5];
+        
+        KillAmountOfEnemiesInDistance *mission6 = [[KillAmountOfEnemiesInDistance alloc] init];
+        mission3.missionDescriptionFormat = @"Eat %d foods in %d meters";
+        mission3.thumbnailFileName = @"missions_1.png";
+        [[mission3.missionObjectives objectAtIndex:0] setGoalValue:45];
+        [[mission3.missionObjectives objectAtIndex:1] setGoalValue:23000];
+        [self storeLastObjectiveGoalValuesForMission:mission6];
+        
+        [missions addObjectsFromArray:@[mission1, mission2, mission3, mission4, mission5, mission6]];
         [self persistMissions];
     }
 }
@@ -90,7 +103,7 @@ static NSMutableArray *missions;
         
         if (objective.objectiveType == MissionObjectiveTypeHigherIsBetter)
         {
-            int newGoalValue = lastGoalValue * 1.1;
+            int newGoalValue = lastGoalValue * 1.4;
             
             if (newGoalValue == lastGoalValue)
             {

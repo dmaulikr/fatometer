@@ -40,16 +40,16 @@
 - (void)missionStart:(Game *)game
 {
     // capture the start distance
-//    startAmountKilledEnemies = game.enemiesKilled;
+    startAmountKilledEnemies = game.foodsCollected;
 }
 
 - (void)generalGameUpdate:(Game *)game
 {
     // check if we have reached the required distance
-//    if ((game.enemiesKilled - startAmountKilledEnemies) >= [killAmountOfEnemies goalValue])
-//    {
-//        self.successfullyCompleted = TRUE;
-//    }
+    if ((game.foodsCollected - startAmountKilledEnemies) >= [killAmountOfEnemies goalValue])
+    {
+        self.successfullyCompleted = TRUE;
+    }
 }
 
 @end
