@@ -16,6 +16,8 @@
 @interface PauseScreen()
 
 - (void)resumeButtonPressed;
+- (void)quitButtonPressed;
+- (void)resetButtonPressed;
 
 @end
 
@@ -102,7 +104,6 @@
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
     [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
-    
 }
 
 - (void)resetButtonPressed

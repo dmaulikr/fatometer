@@ -171,14 +171,14 @@
         knight.anchorPoint = ccp(0,0);
         
         // add scoreboard entry for in-app currency
-        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"bubble.png" fontFile:@"avenir.fnt"];
+        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:DEFAULT_FONT];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 220, self.contentSize.height - 70);
         inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
         
         // add scoreboard entry for points
-        pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:@"avenir24.fnt"];
+        pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:DEFAULT_FONT];
         pointsDisplayNode.position = ccp(10, self.contentSize.height - 50);
         pointsDisplayNode.scoreStringFormat = @"%d m";
         [hudNode addChild:pointsDisplayNode z:MAX_INT-1];
@@ -579,7 +579,7 @@ if (coinPattern1 == FALSE)
     int originalX = 500;
     for(int i = 0; i < 8; i++)
     {
-        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
         coinHorizontal.position = ccp(originalX, 150);
         originalX += 20;
         
@@ -588,7 +588,7 @@ if (coinPattern1 == FALSE)
     }
     for(int i = 0; i < 8; i++)
     {
-        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
         coinHorizontal.position = ccp(originalX, 170);
         originalX += 20;
         
@@ -597,7 +597,7 @@ if (coinPattern1 == FALSE)
     }
     for(int i = 0; i < 8; i++)
     {
-        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
         coinHorizontal.position = ccp(originalX, 190);
         originalX += 20;
         
@@ -606,7 +606,7 @@ if (coinPattern1 == FALSE)
     }
     for(int i = 0; i < 8; i++)
     {
-        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"bubble.png"];
+        CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
         coinHorizontal.position = ccp(originalX, 210);
         originalX += 20;
         
