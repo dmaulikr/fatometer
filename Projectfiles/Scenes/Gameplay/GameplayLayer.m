@@ -137,19 +137,14 @@
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
         //Preload the music
-        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"background.mp3"];
-//        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"fly.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"coins.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         // Play the Music
-//        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background.mp3" loop:TRUE];
-//        if([[SimpleAudioEngine sharedEngine]isBackgroundMusicPlaying])
-//        {
-//            NSLog(@"Music Played");
-//        } else {
-//            NSLog(@"");
-//        }
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fly.mp3" loop:TRUE];
         
-        // preload particle effects
+        // Preload particle effects
         // To preload the textures, play each effect once off-screen
         CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
         system.positionType = kCCPositionTypeFree;
@@ -171,18 +166,18 @@
         knight.anchorPoint = ccp(0,0);
         
         // add scoreboard entry for in-app currency
-        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:DEFAULT_FONT];
+        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 220, self.contentSize.height - 70);
         inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
         
         // add scoreboard entry for points
-        pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:DEFAULT_FONT];
+        pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:@"avenir24.fnt"];
         pointsDisplayNode.position = ccp(10, self.contentSize.height - 50);
         pointsDisplayNode.scoreStringFormat = @"%d m";
         [hudNode addChild:pointsDisplayNode z:MAX_INT-1];
-        
+                
         // set up the skip ahead menu
         CCSprite *skipAhead = [CCSprite spriteWithFile:@"skipahead.png"];
         CCSprite *skipAheadSelected = [CCSprite spriteWithFile:@"skipahead-pressed.png"];
@@ -520,6 +515,7 @@
             [self removeChild:coin];
             coinsCollected += coinValue;
 //            [Store addInAppCurrency:coinValue];
+            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
         }
     }
 }
@@ -1001,7 +997,7 @@ if (coinPattern1 == FALSE)
         [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
         [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromSkipAheadAction)];
     }
-//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)goOnPopUpButtonClicked:(CCControlButton *)sender

@@ -10,6 +10,7 @@
 #import "Food.h"
 #import "GameMechanics.h"
 #import "Knight.h"
+#import "SimpleAudioEngine.h"
 
 #define ENEMY_MAX 5
 
@@ -39,6 +40,8 @@
         
         [self scheduleUpdate];
         enemies = [[NSMutableDictionary alloc] init];
+        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"explode.mp3"];
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -91,9 +94,7 @@
      We use the class of the enemy as key for the dictionary, to receive an array of all existing enimies of that type.
      We use a CCArray since it has a better performance than an NSArray. */
 	CCArray* enemiesOfType = [enemies objectForKey:enemyTypeClass];
-    Food* enemy;
-    Coins* coins;
-    
+    Food* enemy;    
     /* we try to reuse existing enimies, therefore we use this flag, to keep track if we found an enemy we can
      respawn or if we need to create a new one */
     BOOL foundAvailableEnemyToSpawn = FALSE;
@@ -166,6 +167,7 @@
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
                     [enemy gotCollected];
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                     // since the enemy was hit, we can skip the second check, using 'continue'.
                     continue;
                 }
@@ -185,7 +187,7 @@
                     // if the kight is not stabbing, he will be hit
                     //                    [knight gotHit];
                     [enemy gotCollected];
-                    
+                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                 }
             }
 		}
