@@ -853,7 +853,7 @@
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E813B5024400931BF2 /* BuildSettings-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
-		DCC1A0E313A94ED5005BD75D /* My-MGWU-Endless-Game-Project-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-MGWU-Endless-Game-Project-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Gone Wild.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A38D13A94F1A005BD75D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCC1A38E13A94F1A005BD75D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DCC1A39113A94F1A005BD75D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1650,7 +1650,7 @@
 		DCC1A0E413A94ED5005BD75D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1A0E313A94ED5005BD75D /* My-MGWU-Endless-Game-Project-iOS.app */,
+				DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1736,9 +1736,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DCC1A0E213A94ED5005BD75D /* My-MGWU-Endless-Game-Project-iOS */ = {
+		DCC1A0E213A94ED5005BD75D /* Food Gone Wild */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "My-MGWU-Endless-Game-Project-iOS" */;
+			buildConfigurationList = DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "Food Gone Wild" */;
 			buildPhases = (
 				DCC1A0DF13A94ED5005BD75D /* Sources */,
 				DCC1A0E013A94ED5005BD75D /* Frameworks */,
@@ -1748,9 +1748,9 @@
 			);
 			dependencies = (
 			);
-			name = "My-MGWU-Endless-Game-Project-iOS";
+			name = "Food Gone Wild";
 			productName = "Hello-World-iOS";
-			productReference = DCC1A0E313A94ED5005BD75D /* My-MGWU-Endless-Game-Project-iOS.app */;
+			productReference = DCC1A0E313A94ED5005BD75D /* Food Gone Wild.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1775,7 +1775,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DCC1A0E213A94ED5005BD75D /* My-MGWU-Endless-Game-Project-iOS */,
+				DCC1A0E213A94ED5005BD75D /* Food Gone Wild */,
 			);
 		};
 /* End PBXProject section */
@@ -2184,7 +2184,7 @@
 					"$(KKFRAMEWORKS_IOS)",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "My-MGWU-Endless-Game-Project-iOS";
+				PRODUCT_NAME = "Food Gone Wild";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2204,7 +2204,7 @@
 					"$(KKFRAMEWORKS_IOS)",
 					"-lsqlite3.0",
 				);
-				PRODUCT_NAME = "My-MGWU-Endless-Game-Project-iOS";
+				PRODUCT_NAME = "Food Gone Wild";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -2221,7 +2221,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "My-MGWU-Endless-Game-Project-iOS" */ = {
+		DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "Food Gone Wild" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCC1A25413A94ED7005BD75D /* Debug */,

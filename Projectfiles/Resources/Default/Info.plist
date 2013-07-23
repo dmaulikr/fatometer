@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>CaviarDreams-Bold.ttf</string>
-		<string>CaviarDreams-BoldItalic.ttf</string>
-		<string>CaviarDreams-Italic.ttf</string>
-		<string>CaviarDreams.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
@@ -27,7 +20,7 @@
 		<string>Icon-Small@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>de.benjamin-encz.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.shalinshah.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -55,6 +48,13 @@
 	<string>194284847389260</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CaviarDreams-Bold.ttf</string>
+		<string>CaviarDreams-BoldItalic.ttf</string>
+		<string>CaviarDreams-Italic.ttf</string>
+		<string>CaviarDreams.ttf</string>
+	</array>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
