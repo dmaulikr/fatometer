@@ -13,7 +13,7 @@
 
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"strawberries.png"];
+    self = [super initWithFile:@"strawberry.png"];
     
     if (self)
     {

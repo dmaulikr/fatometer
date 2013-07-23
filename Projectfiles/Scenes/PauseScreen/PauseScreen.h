@@ -36,7 +36,6 @@
     CCMenuItemSprite *quitMenuItem;
     CCMenuItemSprite *resetMenuItem;
     MissionsNode *missionNode;
-    CCScene *scene;
 }
 
 @property (nonatomic, weak) id<PauseScreenDelegate> delegate;

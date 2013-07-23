@@ -28,7 +28,7 @@
     if (self)
     {
         // Preload Sound
-        //        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         self.contentSize = [[CCDirector sharedDirector] winSize];
         // position of screen, animate to screen
@@ -80,9 +80,7 @@
         //        [menu3 alignItemsHorizontally];
         //        menu3.position = ccp(0, -95);
         //        [self addChild:menu3];
-        
-//        scene = [GameplayLayer node];
-        
+
         
         // add a missions node
         //        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
@@ -103,7 +101,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:0.5f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
-    //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
     
 }
 
@@ -112,13 +110,14 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:0.5f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
-    //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)resumeButtonPressed
 {
     [self hideAndResume];
     [self.delegate resumeButtonPressed:self];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)present

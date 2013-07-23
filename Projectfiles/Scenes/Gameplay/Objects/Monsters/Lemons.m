@@ -1,19 +1,18 @@
 //
-//  Oranges.m
+//  Lemons.m
 //  Fat
 //
-//  Created by Shalin Shah on 7/15/13.
+//  Created by Shalin Shah on 7/22/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Oranges.h"
+#import "Lemons.h"
 #import "GameMechanics.h"
 
-@implementation Oranges
-
+@implementation Lemons
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"orange.png"];
+    self = [super initWithFile:@"lemons.png"];
     
     if (self)
     {
@@ -37,7 +36,6 @@
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
-    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 3;
+    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 5;
 }
-
 @end

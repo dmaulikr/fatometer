@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "UnhealthyFood.h"
+#import "Sandwich.h"
 
-@interface Strawberries : UnhealthyFood
+@interface Strawberries : Sandwich
 
 @end
