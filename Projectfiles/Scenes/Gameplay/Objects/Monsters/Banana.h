@@ -1,5 +1,5 @@
 //
-//  MyCustomMonster.h
+//  Banana.h
 //  _MGWU-SideScroller-Template_
 //
 //  Created by Benjamin Encz on 6/18/13.
@@ -8,7 +8,7 @@
 
 #import "Food.h"
 
-@interface MyCustomMonster : Food
+@interface Banana : Food
 
 @property (nonatomic, assign) NSInteger hitPoints;
 // velocity in pixels per second

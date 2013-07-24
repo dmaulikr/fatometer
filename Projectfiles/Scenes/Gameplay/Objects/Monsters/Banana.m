@@ -1,15 +1,15 @@
 //
-//  MyCustomMonster.m
+//  Banana.m
 //  _MGWU-SideScroller-Template_
 //
 //  Created by Benjamin Encz on 6/18/13.
 //  Copyright (c) 2013 MakeGamesWithUs Inc. Free to use for all purposes.
 //
 
-#import "MyCustomMonster.h"
+#import "Banana.h"
 #import "GameMechanics.h"
 
-@implementation MyCustomMonster
+@implementation Banana
 
 - (id)initWithMonsterPicture
 {
@@ -56,7 +56,7 @@
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
-    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 5;
+    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 3;
     [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
 }
 

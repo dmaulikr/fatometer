@@ -235,7 +235,7 @@
 		6212B6E0176E9CA80040386F /* 9patch_whiteBackground-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6D4176E9CA80040386F /* 9patch_whiteBackground-hd.png */; };
 		6212B6E2176E9ED30040386F /* topMissionCellBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6E1176E9ECD0040386F /* topMissionCellBackground.png */; };
 		6212B6FB177114800040386F /* Food.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F5177114800040386F /* Food.m */; };
-		6212B6FC177114800040386F /* MyCustomMonster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F7177114800040386F /* MyCustomMonster.m */; };
+		6212B6FC177114800040386F /* Banana.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B6F7177114800040386F /* Banana.m */; };
 		6212B700177115D10040386F /* tree-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6FE177115D10040386F /* tree-hd.png */; };
 		6212B701177115D10040386F /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 6212B6FF177115D10040386F /* tree.png */; };
 		6212B706177116A70040386F /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 6212B705177116A70040386F /* Tree.m */; };
@@ -664,8 +664,8 @@
 		6212B6E1176E9ECD0040386F /* topMissionCellBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topMissionCellBackground.png; sourceTree = "<group>"; };
 		6212B6F4177114800040386F /* Food.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Food.h; sourceTree = "<group>"; };
 		6212B6F5177114800040386F /* Food.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Food.m; sourceTree = "<group>"; };
-		6212B6F6177114800040386F /* MyCustomMonster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomMonster.h; sourceTree = "<group>"; };
-		6212B6F7177114800040386F /* MyCustomMonster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomMonster.m; sourceTree = "<group>"; };
+		6212B6F6177114800040386F /* Banana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banana.h; sourceTree = "<group>"; };
+		6212B6F7177114800040386F /* Banana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banana.m; sourceTree = "<group>"; };
 		6212B6FE177115D10040386F /* tree-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tree-hd.png"; path = "Objects/tree-hd.png"; sourceTree = "<group>"; };
 		6212B6FF177115D10040386F /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Objects/tree.png; sourceTree = "<group>"; };
 		6212B704177116A70040386F /* Tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tree.h; sourceTree = "<group>"; };
@@ -1194,8 +1194,8 @@
 			children = (
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
-				6212B6F6177114800040386F /* MyCustomMonster.h */,
-				6212B6F7177114800040386F /* MyCustomMonster.m */,
+				6212B6F6177114800040386F /* Banana.h */,
+				6212B6F7177114800040386F /* Banana.m */,
 				38ACA130178CAEDF00170550 /* Apples.h */,
 				38ACA131178CAEDF00170550 /* Apples.m */,
 				387F8659179E517100D2F1A4 /* Bread.h */,
@@ -2098,7 +2098,7 @@
 				6212B6C5176E546D0040386F /* MissionProvider.m in Sources */,
 				6212B6C8176E6F850040386F /* KillAmountOfEnemiesInDistance.m in Sources */,
 				6212B6FB177114800040386F /* Food.m in Sources */,
-				6212B6FC177114800040386F /* MyCustomMonster.m in Sources */,
+				6212B6FC177114800040386F /* Banana.m in Sources */,
 				6212B706177116A70040386F /* Tree.m in Sources */,
 				6212B70917711AAD0040386F /* DecorativeObjectsNode.m in Sources */,
 				54170990177124400021A8C5 /* CCControl.m in Sources */,

@@ -97,6 +97,7 @@
     BOOL coinPattern1;
     NSMutableArray *coinArray;
 
+    int framesPast;
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
