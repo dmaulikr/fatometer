@@ -36,7 +36,7 @@
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 15;
-    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
+    [[GameMechanics sharedGameMechanics] game].foodsCollected = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
 }
 
 @end

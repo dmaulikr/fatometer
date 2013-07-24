@@ -20,13 +20,11 @@
         self.animationFrames = [NSMutableArray array];
         [self scheduleUpdate];
     }
-    
     return self;
 }
 
 
 - (void)gotCollected {
-    
     CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
     // Set some parameters that can't be set in Particle Designer
     system.positionType = kCCPositionTypeFree;
@@ -38,7 +36,7 @@
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
     [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].fatness -= 7;
-    [[GameMechanics sharedGameMechanics] game].fatness = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
+    [[GameMechanics sharedGameMechanics] game].foodsCollected = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
 }
 
 

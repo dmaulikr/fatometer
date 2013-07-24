@@ -235,6 +235,7 @@
         // setup a new gaming session
         [self resetGame];
         [self scheduleUpdate];
+//        [self schedule:@selector(moveDown:)];
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -320,7 +321,6 @@
     [self addChild:toolBar];
     [self addChild:pointer];
     [self startTutorial];
-//    [self schedule:@selector(moveDown:)];
 }
 
 - (void)quit
@@ -365,9 +365,7 @@
     
     // set the floor height, this will be the minimum y-Position for all entities
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
-    
-    [[GameMechanics sharedGameMechanics] game].fatness = 50;
-    
+        
     [self resetFatness];
     coinPattern1 = FALSE;
 }
@@ -476,23 +474,14 @@
     pointer.position = pointerPosition;
 }
 
--(void) moveDown:(ccTime) dt
-{
-    framesPast = framesPast % 60;
-    if (framesPast == 0) {
-    [[GameMechanics sharedGameMechanics] game].fatness -= 0.001;
-    }
-    
-}
-
-//-(void) movePointerDown {
-//    for (int i = 0; i < 3;i++)
-//    {
-//        [[GameMechanics sharedGameMechanics] game].fatness -= (0.0000001 * 0.0000001) * 0.000000000001;
-//        i = 0;
+//-(void) moveDown:(ccTime) dt
+//{
+//    framesPast = framesPast % 60;
+//    if (framesPast == 0) {
+//    [[GameMechanics sharedGameMechanics] game].fatness -= 0.001;
 //    }
+//    
 //}
-
 
 - (void) update:(ccTime)delta
 {
@@ -622,6 +611,11 @@ if (coinPattern1 == FALSE)
 }
 
 - (void)changeStuff {
+    if (pointsDisplayNode.score > 0) {
+        [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[Sandwich class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Pear class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Banana class]];
+    }
     if (pointsDisplayNode.score > 1500) {
             scrollSpeed1 = 290;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed1];
