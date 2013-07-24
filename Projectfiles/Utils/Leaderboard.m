@@ -30,7 +30,6 @@
     {
         userName = [[NSUserDefaults standardUserDefaults] objectForKey:USERNAME_KEY];
     }
-    
     return userName;
 }
 

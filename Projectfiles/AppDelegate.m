@@ -18,7 +18,8 @@
 	NSLog(@"ARC is either not available or not enabled");
 #endif
     
-    [MGWU loadMGWU:@"comashudesairunnerTemplateUltraLongSuperSecretKey"];
+    [MGWU loadMGWU:@"comshalinshahfoodgonewildawesomenamegamesidescrollermadefromtheintershipiamawesomeandsmartjustkiddingbutno12313"];
+    [MGWU dark];
 }
 
 -(id) alternateView
