@@ -452,14 +452,14 @@
 
 -(void) updatePointer
 {
-    if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
+    if ([[GameMechanics sharedGameMechanics] game].fatness >= 100)
     {   
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
         [self presentGoOnPopUp];
     }
-    if ([[GameMechanics sharedGameMechanics] game].fatness < 0)
+    if ([[GameMechanics sharedGameMechanics] game].fatness <= 0)
     {
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
@@ -688,7 +688,7 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Oranges class]];
     }
     if (pointsDisplayNode.score > 22500) {
-            scrollSpeed9 = 610;
+            scrollSpeed9 = 580;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed9];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Donuts class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Pear class]];
@@ -699,7 +699,7 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 25000) {
-            scrollSpeed10 = 650;
+            scrollSpeed10 = 590;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed10];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Donuts class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Pear class]];
@@ -710,7 +710,7 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 27500) {
-            scrollSpeed11 = 670;
+            scrollSpeed11 = 600;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed11];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Donuts class]];
@@ -721,7 +721,7 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 30000) {
-            scrollSpeed12 = 690;
+            scrollSpeed12 = 610;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed12];
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Pear class]];
@@ -733,20 +733,17 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 32500) {
-            scrollSpeed13 = 700;
+            scrollSpeed13 = 620;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed13];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:80 forMonsterType:[Sandwich class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Hotdog class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Donuts class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 35000) {
-            scrollSpeed14 = 710;
+            scrollSpeed14 = 630;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed14];
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Pear class]];
@@ -754,13 +751,9 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:640 forMonsterType:[Hotdog class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Donuts class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 37500) {
-            scrollSpeed15 = 720;
+            scrollSpeed15 = 640;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed15];
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Pear class]];
@@ -768,21 +761,15 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:740 forMonsterType:[Hotdog class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:640 forMonsterType:[Donuts class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Carrots class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Oranges class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 40000) {
-            scrollSpeed16 = 730;
+            scrollSpeed16 = 650;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed16];
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Banana class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Apples class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:720 forMonsterType:[Carrots class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Eggs class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Donuts class]];
@@ -790,29 +777,22 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 42500) {
-            scrollSpeed17 = 740;
+            scrollSpeed17 = 652;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed17];
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Carrots class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Eggs class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Donuts class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Oranges class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 45000) {
-            scrollSpeed18 = 750;
+            scrollSpeed18 = 654;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed18];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Carrots class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Kiwi class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Donuts class]];
@@ -820,34 +800,24 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 47500) {
-            scrollSpeed19 = 760;
+            scrollSpeed19 = 655;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed19];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:38 forMonsterType:[Sandwich class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Banana class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Carrots class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Kiwi class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Eggs class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 50000) {
-            scrollSpeed20 = 770;
+            scrollSpeed20 = 656;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[Sandwich class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:159 forMonsterType:[Pear class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:101 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:121 forMonsterType:[Chicken class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:206 forMonsterType:[Oranges class]];
-            [[GameMechanics sharedGameMechanics] setSpawnRate:313 forMonsterType:[Strawberries class]];
     }
 }
 

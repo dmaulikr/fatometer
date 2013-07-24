@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-               BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
+               BuildableName = "Wild Food.app"
                BlueprintName = "Food Gone Wild"
                ReferencedContainer = "container:Wild Food.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
+            BuildableName = "Wild Food.app"
             BlueprintName = "Food Gone Wild"
             ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
+            BuildableName = "Wild Food.app"
             BlueprintName = "Food Gone Wild"
             ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "My-MGWU-Endless-Game-Project-iOS.app"
+            BuildableName = "Wild Food.app"
             BlueprintName = "Food Gone Wild"
             ReferencedContainer = "container:Wild Food.xcodeproj">
          </BuildableReference>
