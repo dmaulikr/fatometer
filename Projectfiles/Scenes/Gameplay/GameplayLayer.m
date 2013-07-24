@@ -235,7 +235,6 @@
         // setup a new gaming session
         [self resetGame];
         [self scheduleUpdate];
-//        [self schedule:@selector(moveDown:)];
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -321,12 +320,14 @@
     [self addChild:toolBar];
     [self addChild:pointer];
     [self startTutorial];
+    [self schedule:@selector(moveDown:)];
 }
 
 - (void)quit
 {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
-    self.showMainMenu = TRUE;    
+    self.showMainMenu = TRUE;
+    [self resetFatness];
 }
 - (void)reset {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
@@ -451,8 +452,6 @@
 
 -(void) updatePointer
 {
-//    framesPast++;
-    
     if ([[GameMechanics sharedGameMechanics] game].fatness > 100)
     {   
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
@@ -468,20 +467,20 @@
         [self presentGoOnPopUp];    
     }
     
-    // Implement the score here
-    
+    framesPast++;
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
+//    CCMoveTo *pointerPos = [CCMoveTo actionWithDuration:5.f position:pointerPosition];
+//    [pointer runAction:pointerPos];
 }
 
-//-(void) moveDown:(ccTime) dt
-//{
-//    framesPast = framesPast % 60;
-//    if (framesPast == 0) {
-//    [[GameMechanics sharedGameMechanics] game].fatness -= 0.001;
-//    }
-//    
-//}
+-(void) moveDown:(ccTime) dt
+{
+    framesPast = framesPast % 60;
+    if (framesPast == 0) {
+    [[GameMechanics sharedGameMechanics] game].fatness -= 0.000001 * 0.000001;
+    }    
+}
 
 - (void) update:(ccTime)delta
 {
