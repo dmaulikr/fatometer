@@ -11,13 +11,69 @@
 /*
   So this is the objective of the game: You are the last person remaining on earth all the food has gone bad. So you have to try and maintain your weight to save the human race from extinction. You have to try to not get too fat, or get too skinny and pass out, otherwise, the extinction of the human race will be blamed upon you.
 */
+/*
+ 
+ GAMEPLAY IDEAS:
+ 1). MAKE THE TOOLBAR MOVE SMOOTHLY WHEN FAT OR SKINNY FOODS ARE COLLECTED
+ 2). MAKE THE TOOLBAR'S POINTER SLOWLY MOVE DOWN (IMPLEMENTED)
+ 3). MAKE THE MISSIONS WORK (IMPLEMENTED)
+ 4). ADD THE STORE
+ 5). ADD AROUND 30 ITEMS TO THE STORE
+ 6). ADD POWERUPS
+ 7). CHANGE THE STORE TEXT TO A STORE ICON
+ 8). 
+ 9).
+ 10).
+ 
+*/
+/*
+ TUTORIAL IDEAS:
+ 
+ 1. TAP TO JUMP (A FINGER SHOWING A TAP)
+ 2. TILT TO MOVE (TITLE ICON ON THE SCREEN)
+ 3. WATCH THE FATNESS BAR (ARROW POINTING AT FATNESS BAR)
+ (MAKE THE TUTORIAL INTERACTIVE WITH WORDS AND LET THEM DIVE IN TO THE GAMEPLAY - ALSO ADD IMAGES)
+
+*/
+/*
+ 
+ 
+ POWERUP IDEAS:
+ - ENERGY SHEILD (IMPLEMENTED, POWERUP1)
+ - PAUSE POWER (IMPLEMENTED, POWERUP2)
+ - DESTROY SHIP POWER (IMPLEMENTED, POWERUP3)
+ 
+ (4) E - SLOW MOTION POWER
+ (3) I - WORLD SPlITS INTO 2 COLORS FOR A CERTAIN AMOUNT OF TIME
+ - COLORS BECOME INVERSE (RED GOES TO BLUE, BLUE TO YELLOW, YELLOW TO RED)
+ (2) E - SUICIDE POWERUP (BLOW EVERYTHING UP)
+ - ATMOSPHERE POWERUP (certain section can be broken by each ship collision, but the rest of the section will remain intact)
+ - MORE SECTIONS POWERUP (creates more colored sections on the middle wheel)
+ (3) A - UNLEASH MONSTER POWERUP (releases monster that shoots ships, redirecting to a minigame where you shoot ships)
+ (3) I - STORE POWER (buy anything midway through a game, but with limited time)
+ (2) E - MUSIC MODE (play music to increase focus and coordination)
+ (1) I - NEGATIVE COLOR MODE (inverts the colors on screen)
+ (3) I - GOLF MODE (try and get the most ships into the wrong sectors as possible)
+ (3) E - POINT BOOST (any ship that collides with the player will grant some extra number of points)
+ (2) I - RED SHIP BOOST (only creates red ships for some amount of time)
+ (2) I - BLUE SHIP BOOST (only creates blue ships for some amount of time)
+ (2) I - YELLOW SHIP BOOST (only creates yellow ships for some amount of time)
+ (2) E - LIVES BOOST (gain lives every time a ship correctly lands into a sector)
+ (2) E - CHANGE THE DEATH OF THE PLANET (change the death of the planet randomly, will it explode? will it melt? will it burn?)
+ (3) E - ZOMBIE PLANET (right before death, activate powerup to ressurect the planet and give you an additional life)
+ (1) A - KATAMARI PLANET (enable this powerup to allow any ship that collides with the planet to add on to the ships mass for a certain amount of time)
+ (0) A - MAKE THE FAT MAN FLY UP IN THE AIR FOR A FEW SECONDS 
+ - INVERSE STEERING (does what its name claims)
+ (1) E/I - BOUNCE OFF POWERUP (all ships that collide with the planet bounce off)
+
+ 
+ */
 
 #import "SimpleAudioEngine.h"
 #import "GameplayLayer.h"
 #import "ParallaxBackground.h"
 #import "Game.h"
 #import "Coins.h"
-
 #import "Sandwich.h"
 #import "Apples.h"
 #import "Bread.h"
@@ -40,7 +96,6 @@
 #import "Pizza.h"
 #import "Strawberries.h"
 #import "Banana.h"
-
 #import "GameMechanics.h"
 #import "EnemyCache.h"
 #import "MainMenuLayer.h"
@@ -124,7 +179,7 @@
     self = [super init];
     
     if (self)
-    {        
+    {
         scrollSpeed = 250.0f;
         
         // Coin Stuff
@@ -132,6 +187,10 @@
         sidewaysCoins = 7;
         coinValue = 1;
         coinsCollected = 0;
+        
+        powerUpShow = FALSE;
+        powerUpThreeOn = FALSE;
+        randomPowerup = FALSE;
         
         // get screen center
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
@@ -229,6 +288,7 @@
         //[self addChild:[DecorativeObjectsNode node]];
         
         coinArray = [[NSMutableArray alloc] init];
+        powerUpArray = [[NSMutableArray alloc] init];
         
         [self resizeSprite:knight toWidth:80 toHeight:70];
         
@@ -498,8 +558,11 @@
         }
     }
     [self updatePointer];
+    if (powerUpThreeOn == FALSE){
     [self changeStuff];
+    }
     [self patternOne];
+    [self powerUpShow];
 
     CGRect knightRect = [knight boundingBox];
     for (int i = 0; i < [coinArray count]; i++)
@@ -515,6 +578,7 @@
             [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
         }
     }
+    [self doThisOkay];
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -539,9 +603,26 @@
             [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:7.0f];
         }
     }
+    // Move coins off the screen and make them move away
+    for (int cNum = 0; cNum < [powerUpArray count]; cNum ++)
+    {
+        CCSprite *powerUp = [powerUpArray objectAtIndex:cNum];
+        float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
+        float xSpeed = 1 * backgroundScrollSpeedX;
+        if (powerUp.position.x > (powerUp.contentSize.width * (-1)))
+        {
+            powerUp.position = ccp(powerUp.position.x - (xSpeed*delta), powerUp.position.y);
+        }
+        else
+        {
+            [self removeChild:powerUp];
+            [powerUpArray removeObject:powerUp];
+            [self performSelector:@selector(showPowerUpAgain:) withObject:powerUp afterDelay:2.0f];
+        }
+    }
     
     // distance depends on the current scrolling speed
-    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 1.6;
+    gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 2.6;
     game.meters = (int) (gainedDistance);
     // update the score display
     pointsDisplayNode.score = game.meters;
@@ -559,6 +640,13 @@
     if ([coinArray count] == 0)
     {
         coinPattern1 = FALSE;
+    }
+}
+
+-(void) showPowerUpAgain:(CCSprite *)powerUp{
+    if ([powerUpArray count] == 0)
+    {
+        powerUpShow = FALSE;
     }
 }
 
@@ -608,13 +696,60 @@ if (coinPattern1 == FALSE)
     }
 }
 }
+- (void)powerUpShow {
+//    if (powerUpShow == FALSE)
+//    {
+//        powerUpShow = TRUE;
+//        int toNumber = 500;
+//        int fromNumber = 300;
+//        int originalX = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
+//            CCSprite *powerUp = [CCSprite spriteWithFile:@"powerup.png"];
+//            powerUp.position = ccp(500, 150);
+//            [self addChild:powerUp];
+//            [powerUpArray addObject:powerUp];
+//    }
+}
+- (void)firstPower {
+    [self flashLabel:@"Double Coins" actionWithDuration:5.0f color:@"blue"];
+    id coins = [CCCallFunc actionWithTarget:self selector:@selector(makeCoinsDouble)];
+    id delayCoins = [CCDelayTime actionWithDuration:5.0f];
+    id coinsGone = [CCCallFunc actionWithTarget:self selector:@selector(makeCoinsOne)];
+    CCSequence *powerUp1Seq = [CCSequence actions:coins, delayCoins, coinsGone, nil];
+    [self runAction:powerUp1Seq];
+}
+- (void)secondPower {
+    [self flashLabel:@"Slow Speed" actionWithDuration:5.0f color:@"blue"];
+    powerUpThreeOn = TRUE;
+    id speed = [CCCallFunc actionWithTarget:self selector:@selector(scrollspeedPowerUp)];
+    id delaySpeed = [CCDelayTime actionWithDuration:5.0f];
+    id speedBack = [CCCallFunc actionWithTarget:self selector:@selector(defaultScrollSpeed)];
+    CCSequence *powerUp1Seq = [CCSequence actions:speed, delaySpeed, speedBack, nil];
+    [self runAction:powerUp1Seq];
+}
+- (void)thirdPower {
+    [self flashLabel:@"Fatness Reset" actionWithDuration:2.0f color:@"blue"];
+    [self resetFatness];
+}
+//- (void)fourthPower {
+//    coinValue = 2;
+//}
+-(void)makeCoinsDouble {
+    coinValue = 2;
+}
+-(void)makeCoinsOne {
+    coinValue = 1;
+}
+-(void) scrollspeedPowerUp {
+    scrollSpeedP = 190;
+    [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeedP];
+}
+-(void) defaultScrollSpeed {
+    powerUpThreeOn = FALSE;
+}
+
+
 
 - (void)changeStuff {
-    if (pointsDisplayNode.score > 0) {
-        [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[Sandwich class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Banana class]];
-    }
     if (pointsDisplayNode.score > 1500) {
             scrollSpeed1 = 290;
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed1];
@@ -820,6 +955,70 @@ if (coinPattern1 == FALSE)
             [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
     }
 }
+
+-(void) doThisOkay {
+    for (int i = 0; i < [powerUpArray count]; i++)
+    {
+        CGRect knightRect = [knight boundingBox];
+        CCSprite *powerUp = [powerUpArray objectAtIndex:i];
+        CGRect powerUpRect = [powerUp boundingBox];
+        if (CGRectIntersectsRect(knightRect, powerUpRect))
+        {
+            [coinArray removeObject:powerUp];
+            [self removeChild:powerUp];
+            //            coinsCollected += coinValue;
+            //            [Store addInAppCurrency:coinValue];
+            //            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
+            toNumber = 3;
+            fromNumber = 1;
+            ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
+            
+            //        if (randomPowerup == FALSE) {
+            //            randomPowerup = TRUE;
+            //            if (ranDom == 1) {
+            //                [self firstPower];
+            //                NSLog(@"Number = 1");
+            //            }
+            //            if (ranDom == 2) {
+            //                [self secondPower];
+            //                NSLog(@"Number = 2");
+            //            }
+            //            if (ranDom == 3) {
+            //                [self thirdPower];
+            //                NSLog(@"Number = 3");
+            //            }
+            //        }
+            
+            if (randomPowerup == FALSE) {
+                for (int i = 1; i < 4; i++) {
+                    if (i == 1) {
+                        [self firstPower];
+                    }
+                    if (i == 2) {
+                        [self secondPower];
+                    }
+                    if (i == 3) {
+                        [self thirdPower];
+                    }
+                }
+            }
+            
+            //
+            //            id powerOne = [CCCallFunc actionWithTarget:self selector:@selector(firstPower)];
+            ////            id delayCoins = [CCDelayTime actionWithDuration:5.0f];
+            //            id powerTwo = [CCCallFunc actionWithTarget:self selector:@selector(secondPower)];
+            //            id powerThree = [CCCallFunc actionWithTarget:self selector:@selector(thirdPower)];
+            //            CCSequence *randomPowersSeq = [CCSequence actions:powerOne, powerTwo, powerThree, nil];
+            //            [self runAction:randomPowersSeq];
+            
+            
+            //            for (int i = 1; i< 4; i++ ) {
+            //                
+            //            }
+        }
+    }
+}
+    
 
 #pragma mark - Scene Lifecycle
 

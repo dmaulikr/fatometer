@@ -39,6 +39,7 @@
     float scrollSpeed18;
     float scrollSpeed19;
     float scrollSpeed20;
+    float scrollSpeedP;
 
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;
@@ -97,7 +98,16 @@
     BOOL coinPattern1;
     NSMutableArray *coinArray;
 
+    // PowerUp Stuff
+    BOOL powerUpShow;
+    NSMutableArray *powerUpArray;
+    BOOL powerUpThreeOn;
+    BOOL randomPowerup;
+    
     int framesPast;
+    int toNumber;
+    int fromNumber;
+    int ranDom;
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.
