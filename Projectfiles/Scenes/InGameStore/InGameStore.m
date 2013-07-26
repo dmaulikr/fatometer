@@ -99,7 +99,7 @@
 //    NSLog(@"Button clicked.");
     if (sender.tag == 0)
     {
-        // OK button selcted
+        // If the OK button is selcted, dismiss the popup
         [popUp dismiss];
         
         // enable menues again
