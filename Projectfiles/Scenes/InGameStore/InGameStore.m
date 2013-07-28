@@ -96,7 +96,7 @@
 
 - (void)popUpButtonClicked:(CCControlButton *)sender
 {
-    NSLog(@"Button clicked.");
+//    NSLog(@"Button clicked.");
     if (sender.tag == 0)
     {
         // OK button selcted
