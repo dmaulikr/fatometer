@@ -73,6 +73,7 @@
         menu.position = ccp(0, 30);
         [self addChild:menu];
         
+        // This is for aligning the menu items vertically
         //        menu2 = [CCMenu menuWithItems:resetMenuItem, nil];
         //        [menu2 alignItemsHorizontally];
         //        menu2.position = ccp(0, -15);
@@ -82,7 +83,6 @@
         //        [menu3 alignItemsHorizontally];
         //        menu3.position = ccp(0, -95);
         //        [self addChild:menu3];
-
         
         // add a missions node
                 missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
