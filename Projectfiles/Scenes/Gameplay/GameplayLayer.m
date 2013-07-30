@@ -192,8 +192,9 @@
         powerUpThreeOn = FALSE;
         randomPowerup = FALSE;
         
-        // get screen center
+        // get screen center and screen size
         CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
+        CGSize screenSize = [[CCDirector sharedDirector] winSize];
         
         //Preload the music
         [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"fly.mp3"];
@@ -266,13 +267,27 @@
         }
         
         // Set Up Tutorial Images and Arrows
-            CGSize screenSize = [[CCDirector sharedDirector] winSize];
             tapGesture = [CCSprite spriteWithFile:@"finger.png"];
             tapGesture.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 70);
             [self addChild:tapGesture z:1000];
             tapGesture.visible = false;
             //        [self setDimensionsInPixelsOnSprite:rotateArrow width:270 height:320];
         
+            tiltPic = [CCSprite spriteWithFile:@"tilt.png"];
+            tiltPic.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 50);
+            [self addChild:tiltPic z:1000];
+            tiltPic.visible = false;
+        
+            toolbarArrows = [CCSprite spriteWithFile:@"arrows.png"];
+            toolbarArrows.position = ccp(screenSize.width / 2, (screenSize.height / 2) + 30);
+            [self addChild:toolbarArrows z:1000];
+            toolbarArrows.visible = false;
+            // Arrows setup of iphone 5
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+                toolbarArrows = [CCSprite spriteWithFile:@"arrowsip5.png"];
+                toolbarArrows.position = ccp(screenSize.width / 2, (screenSize.height / 2) + 30);
+            }
+
 //            powerupArrow = [CCSprite spriteWithFile:@"powerupTutorial.png"];
 //            powerupArrow.position = ccp(screenCenter.x, 80);
 //            [self addChild:powerupArrow z:1000];
@@ -451,26 +466,43 @@
     if (playedTutorial == FALSE) {
         playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
+        id delay2 = [CCDelayTime actionWithDuration:2.0f];
+        id image1 = [CCCallFunc actionWithTarget:self selector:@selector(image1)];
+        id image2 = [CCCallFunc actionWithTarget:self selector:@selector(image2)];
+        id image3 = [CCCallFunc actionWithTarget:self selector:@selector(image3)];
         id part1 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial1)];
         id part2 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial2)];
         id part3 = [CCCallFunc actionWithTarget:self selector:@selector(tutorial3)];
-        CCSequence *tutorialSeq = [CCSequence actions:part1, delay, part2, delay, part3, delay, nil];
+        CCSequence *tutorialSeq = [CCSequence actions:part1, delay, image1, part2, delay, image2, part3, delay, image3, nil];
         [self runAction:tutorialSeq];
         [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
     }
 }
+-(void) image1
+{
+    tapGesture.visible = false;
+}
+-(void) image2
+{
+    tiltPic.visible = false;
+}
+-(void) image3
+{
+    toolbarArrows.visible = false;
+}
 -(void) tutorial1
 {
-    [self flashLabel:@"Tap to jump" actionWithDuration:2.0f color:@"black"];
     tapGesture.visible = true;
+    [self flashLabel:@"Tap to jump" actionWithDuration:2.0f color:@"black"];
 }
 -(void) tutorial2
 {
-    tapGesture.visible = false;
+    tiltPic.visible = true;
     [self flashLabel:@"Turn device to move" actionWithDuration:2.0f color:@"black"];
 }
 -(void) tutorial3
 {
+    toolbarArrows.visible = true;
     [self flashLabel:@"Maintain your weight" actionWithDuration:2.0f color:@"black"];
 }
 
