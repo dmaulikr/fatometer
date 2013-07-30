@@ -228,15 +228,15 @@
         // add scoreboard entry for in-app currency
         inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
-        inAppCurrencyDisplayNode.position = ccp(self.contentSize.width - 220, self.contentSize.height - 70);
+        inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 15);
         inAppCurrencyDisplayNode.score = coinsCollected;
-        [hudNode addChild:inAppCurrencyDisplayNode z:MAX_INT-1];
+        [hudNode addChild:inAppCurrencyDisplayNode z:10000];
         
         // add scoreboard entry for points
         pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:@"avenir24.fnt"];
         pointsDisplayNode.position = ccp(10, self.contentSize.height - 50);
         pointsDisplayNode.scoreStringFormat = @"%d m";
-        [hudNode addChild:pointsDisplayNode z:MAX_INT-1];
+        [hudNode addChild:pointsDisplayNode z:1000];
                 
         // set up the skip ahead menu
         CCSprite *skipAhead = [CCSprite spriteWithFile:@"skipahead.png"];
@@ -406,7 +406,7 @@
     {
         [m missionStart:game];
     }
-    [self addChild:toolBar];
+    [self addChild:toolBar z:-2];
     [self addChild:pointer];
     [self startTutorial];
     [self schedule:@selector(moveDown:)];
