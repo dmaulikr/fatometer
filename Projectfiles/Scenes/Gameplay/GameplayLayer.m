@@ -228,7 +228,7 @@
         // add scoreboard entry for in-app currency
         inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
-        inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 15);
+        inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 20);
         inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:10000];
         
