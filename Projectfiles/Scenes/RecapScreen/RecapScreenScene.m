@@ -62,7 +62,7 @@
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
         NSString *foodsCollected = [NSString stringWithFormat:@"%d Enemy's Killed", game.foodsCollected];
         
-        NSArray *highScoreStrings = [NSArray arrayWithObjects:highscore, distance, nil];
+        NSArray *highScoreStrings = [NSArray arrayWithObjects:distance, nil];
 
         // setup the statistics panel with the current game information of the user
         statisticsNode = [[StatisticsNode alloc] initWithTitle:@"Game Over" highScoreStrings:highScoreStrings];
@@ -116,10 +116,14 @@
         [self addChild:personalBestNode];
         
         /*********** Next Button ***********/
-        CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"next.png"] selectedSprite:[CCSprite spriteWithFile:@"next_pressed.png"]block:^(id sender) {
-            StoreScreenScene *storeScreenScene = [[StoreScreenScene alloc] init];
-            [[CCDirector sharedDirector] replaceScene:storeScreenScene];
+        CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"button_playbutton.png"] selectedSprite:[CCSprite spriteWithFile:@"button_playbutton.png"]block:^(id sender) {
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionZoomFlipAngular transitionWithDuration:1.5f scene:[GameplayLayer node]]];
         }];
+        
+//        CCMenuItemSprite *storeButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"next.png"] selectedSprite:[CCSprite spriteWithFile:@"next_.png"]block:^(id sender) {
+//                        StoreScreenScene *storeScreenScene = [[StoreScreenScene alloc] init];
+//                        [[CCDirector sharedDirector] replaceScene:storeScreenScene];
+//        }];
         
         CCMenu *nextButtonMenu = [CCMenu menuWithItems:nextButton, nil];
         nextButtonMenu.anchorPoint = ccp(1,0);
@@ -138,7 +142,7 @@
     
     if (username)
     {
-        [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD];
+//        [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD];
         [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
     } else
     {
@@ -213,7 +217,7 @@
             NSString *username = usernameTextField.text;
             // save the user name
             [Leaderboard setUserName:username];
-            [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD withCallback:@selector(receivedScores:) onTarget:self];
+//            [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD withCallback:@selector(receivedScores:) onTarget:self];
             [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
 
         } else if (buttonIndex == 1)
@@ -246,7 +250,7 @@
 - (void)submitScoreDelayed
 {
     NSString *username = [Leaderboard userName];
-    [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD];
+//    [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD];
     [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
 }
 

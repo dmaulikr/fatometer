@@ -265,6 +265,20 @@
             toolBar.position = ccp(285, 300);
         }
         
+        // Set Up Tutorial Images and Arrows
+            CGSize screenSize = [[CCDirector sharedDirector] winSize];
+            tapGesture = [CCSprite spriteWithFile:@"finger.png"];
+            tapGesture.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 70);
+            [self addChild:tapGesture z:1000];
+            tapGesture.visible = false;
+            //        [self setDimensionsInPixelsOnSprite:rotateArrow width:270 height:320];
+        
+//            powerupArrow = [CCSprite spriteWithFile:@"powerupTutorial.png"];
+//            powerupArrow.position = ccp(screenCenter.x, 80);
+//            [self addChild:powerupArrow z:1000];
+//            powerupArrow.visible = false;
+//            [self setDimensionsInPixelsOnSprite:rotateArrow width:300 height:300];
+        
         // Set up Tutorial
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
         tut.position = screenCenter;
@@ -448,9 +462,11 @@
 -(void) tutorial1
 {
     [self flashLabel:@"Tap to jump" actionWithDuration:2.0f color:@"black"];
+    tapGesture.visible = true;
 }
 -(void) tutorial2
 {
+    tapGesture.visible = false;
     [self flashLabel:@"Turn device to move" actionWithDuration:2.0f color:@"black"];
 }
 -(void) tutorial3
@@ -603,7 +619,7 @@
             [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:7.0f];
         }
     }
-    // Move coins off the screen and make them move away
+    // Move the powerups off the screen and make them move away
     for (int cNum = 0; cNum < [powerUpArray count]; cNum ++)
     {
         CCSprite *powerUp = [powerUpArray objectAtIndex:cNum];
@@ -1219,6 +1235,7 @@ if (coinPattern1 == FALSE)
     [self addChild:pauseScreen z:10];
     [pauseScreen present];
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
+    tut.visible = false;
 }
 
 #pragma mark - Game Logic

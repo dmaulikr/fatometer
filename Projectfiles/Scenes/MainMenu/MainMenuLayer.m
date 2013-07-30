@@ -70,19 +70,42 @@
         CCSprite *selectedStartButton = [CCSprite spriteWithFile:@"mainmenu.png"];
         
         startButton = [CCMenuItemSprite itemWithNormalSprite:normalStartButton selectedSprite:selectedStartButton target:self selector:@selector(startButtonPressed)];
-        storeButton = [CCMenuItemFont itemWithString:@"Store" block:^(id sender) {
-            CCScene *scene = [[StoreScreenScene alloc] init];
-            [[CCDirector sharedDirector] replaceScene:scene];
-        }];
-        storeButton.color = DEFAULT_FONT_COLOR;
+//        
+//        storeButton = [CCMenuItemSprite itemWithNormalSprite:normalStoreButton selectedSprite:selectedStoreButton block:^(id sender) {
+//            CCScene *scene = [[StoreScreenScene alloc] init];
+//            [[CCDirector sharedDirector] replaceScene:scene];
+//        }];
+//
+        CCMenuItemImage *storeButton = [CCMenuItemImage itemWithNormalImage:@"store.png" selectedImage:@"store.png" target:self selector:@selector(storeScene)];
+        
+        
+//        storeButton = [CCMenuItemFont itemWithString:@"Store" block:^(id sender) {
+//            CCScene *scene = [[StoreScreenScene alloc] init];
+//            [[CCDirector sharedDirector] replaceScene:scene];
+//        }];
+//        storeButton.color = DEFAULT_FONT_COLOR;
+        
+        startMenu2 = [CCMenu menuWithItems:storeButton, nil];
+        startMenu2.position = ccp(screenSize.width - 30, screenSize.height - 30);
+        [startMenu2 alignItemsVertically];
+        [self addChild:startMenu2];
 
-        startMenu = [CCMenu menuWithItems:startButton, storeButton, nil];
+        startMenu = [CCMenu menuWithItems:startButton, nil];
         startMenu.position = ccp(screenCenter.x, screenCenter.y - 50);
+        startMenu.scale = 0;
         [startMenu alignItemsVertically];
-        [self addChild: startMenu];
+        [self addChild:startMenu];
+        id THISCODEISBYKEVIN = [CCScaleTo actionWithDuration:0.7f scale:1];
+        [startMenu runAction:THISCODEISBYKEVIN];
 	}
 
 	return self;
+}
+
+-(void) storeScene
+{
+    CCScene *scene = [[StoreScreenScene alloc] init];
+    [[CCDirector sharedDirector] replaceScene:scene];
 }
 
 - (void)startButtonPressed

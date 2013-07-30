@@ -84,6 +84,9 @@
     
     CCSprite *toolBar;
     CCSprite *pointer;
+    CCSprite *tapGesture;
+    CCSprite *tiltPic;
+    CCSprite *toolbarArrows;
     
     CCLayerColor* colorLayer;
     

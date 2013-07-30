@@ -12,6 +12,7 @@
 {
     CCNode *startTitleLabel;
     CCMenu *startMenu;
+    CCMenu *startMenu2;
     CCMenuItem *startButton;
     CCMenuItemFont *storeButton;
     CGPoint startTitleLabelTargetPoint;
