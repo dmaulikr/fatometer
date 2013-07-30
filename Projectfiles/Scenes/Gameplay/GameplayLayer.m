@@ -498,12 +498,12 @@
 -(void) tutorial2
 {
     tiltPic.visible = true;
-    [self flashLabel:@"Turn device to move" actionWithDuration:2.0f color:@"black"];
+    [self flashLabel:@"Tilt device" actionWithDuration:2.0f color:@"black"];
 }
 -(void) tutorial3
 {
     toolbarArrows.visible = true;
-    [self flashLabel:@"Maintain your weight" actionWithDuration:2.0f color:@"black"];
+//    [self flashLabel:@"" actionWithDuration:2.0f color:@"black"];
 }
 
 
