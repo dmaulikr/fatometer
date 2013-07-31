@@ -48,7 +48,6 @@
 
 - (void)gotCollected
 {
-    
     CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];
     // Set some parameters that can't be set in Particle Designer
     system.positionType = kCCPositionTypeFree;

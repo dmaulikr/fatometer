@@ -96,6 +96,7 @@
     if (self.position.y == [[GameMechanics sharedGameMechanics] floorHeight])
     {
         self.velocity = ccp(self.velocity.x, 475.f);
+        [[GameMechanics sharedGameMechanics] game].jumps += 1;
     }
 }
 

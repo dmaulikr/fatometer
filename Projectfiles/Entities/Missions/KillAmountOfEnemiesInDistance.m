@@ -45,8 +45,9 @@
 - (void)missionStart:(Game *)game
 {
     // capture the start distance
-//    startAmountKilledEnemies = game.foodsCollected;
+    startAmountKilledEnemies = game.foodsCollected;
     startDistance = game.meters;
+    
 }
 
 - (void)generalGameUpdate:(Game *)game

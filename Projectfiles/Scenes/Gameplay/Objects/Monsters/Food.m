@@ -7,6 +7,7 @@
 //
 
 #import "Food.h"
+#import "GameMechanics.h"
 
 @implementation Food
 

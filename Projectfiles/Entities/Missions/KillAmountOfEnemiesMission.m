@@ -49,6 +49,9 @@
     if ((game.foodsCollected - startAmountKilledEnemies) >= [killAmountOfEnemies goalValue])
     {
         self.successfullyCompleted = TRUE;
+        
+        NSLog([NSString stringWithFormat:@"%i",game.foodsCollected]);
+        NSLog([NSString stringWithFormat:@"%i",[killAmountOfEnemies goalValue]]);
     }
 }
 

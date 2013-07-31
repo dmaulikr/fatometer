@@ -24,7 +24,6 @@
     return self;
 }
 
-
 - (void)gotCollected {
     
     CCParticleSystem* system = [CCParticleSystemQuad particleWithFile:@"fx-explosion.plist"];

@@ -42,21 +42,7 @@
 			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(0, screenSize.height / 2);
-            
-            if (IS_IPHONE_5 || IS_IPOD_5) {
-                // iPhone 5
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ip5.png"];
-                sprite.position = CGPointMake(0, screenSize.height / 2);
-            } else if (IS_IPAD) {
-                // iPad Non-Retina
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipad.png"];
-                sprite.position = CGPointMake(0, screenSize.height / 2);
-            } else if (IS_IPAD_RETINA) {
-                //iPad Retina
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipadhd.png"];
-                sprite.position = CGPointMake(0, screenSize.height / 2);
-            }
-			[backgroundNode addChild:sprite z:i tag:i];
+            [backgroundNode addChild:sprite z:i tag:i];
 		}
         
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling

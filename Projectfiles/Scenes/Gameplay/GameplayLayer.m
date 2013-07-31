@@ -259,12 +259,9 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        toolBar.position = ccp(239.5, 300);
+        toolBar.position = ccp(screenSize.width,screenSize.height);
         // Toolbar setup of iphone 5
-        if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
-            toolBar = [CCSprite spriteWithFile:@"toolbarip5.png"];
-            toolBar.position = ccp(285, 300);
-        }
+        
         
         // Set Up Tutorial Images and Arrows
             tapGesture = [CCSprite spriteWithFile:@"finger.png"];
@@ -409,6 +406,7 @@
     [self addChild:pointer];
     [self startTutorial];
     [self schedule:@selector(moveDown:)];
+    [self resetJumps];
 }
 
 - (void)quit
@@ -456,6 +454,7 @@
     [[GameMechanics sharedGameMechanics] setFloorHeight:20.f];
         
     [self resetFatness];
+    [self resetJumps];
     coinPattern1 = FALSE;
 }
 
@@ -647,7 +646,7 @@
         {
             [self removeChild:coin];
             [coinArray removeObject:coin];
-            [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:7.0f];
+            [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:5.0f];
         }
     }
     // Move the powerups off the screen and make them move away
@@ -680,6 +679,7 @@
     if ([input anyTouchBeganThisFrame])
     {
         [knight jump];
+        
     }
 }
 
@@ -704,7 +704,7 @@
 if (coinPattern1 == FALSE)
 {
     coinPattern1 = TRUE;
-    int originalX = 500;
+    int originalX = 5000;
     for(int i = 0; i < 8; i++)
     {
         CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
@@ -1254,6 +1254,9 @@ if (coinPattern1 == FALSE)
 -(void)resetFatness {
     [[GameMechanics sharedGameMechanics] game].fatness = 50;
 }
+-(void)resetJumps {
+    [[GameMechanics sharedGameMechanics] game].jumps = 0;
+}
 
 - (void)pauseButtonPressed
 {
@@ -1267,6 +1270,9 @@ if (coinPattern1 == FALSE)
     [pauseScreen present];
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
     tut.visible = false;
+    tapGesture.visible = false;
+    tiltPic.visible = false;
+    toolbarArrows.visible = false;
 }
 
 #pragma mark - Game Logic
