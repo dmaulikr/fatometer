@@ -367,7 +367,6 @@
     CCSequence *showLabelSeq = [CCSequence actions:addVisibility, delayInvis, addInvis, nil];
     [self runAction:showLabelSeq];
 }
-
 -(void) makeFlashLabelVisible
 {
     tut.visible = TRUE;

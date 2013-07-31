@@ -26,36 +26,103 @@
 		// Create the background node
         backgroundNode = [CCNode node];
 		[self addChild:backgroundNode];
-
-        numStripes = 3;
         
-		// Add the 4 different layers and position them on the screen
-		for (NSUInteger i = 0; i < numStripes; i++)
+        // For Parralax, set this to however many different background layers there are. So If there are 3 backgrounds, then this would be set to 3.
+        numStripes = 1;
+        
+        /*
+         The Below Code is For for NON Parralax Backgrounds. Comment this if you want to use a parralax background.
+         These images can be set to anything, and they don't have to be in numerical order.
+         The if statements below check the devices size, so you can display the right image for other iOS devices such as the iPhone 5 or iPad.
+         */
+        
+        for (NSUInteger i = 0; i < numStripes; i++)
 		{
-			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
-			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+            // Normal iPhone and iPod Touch, and Retona iPhone and iPod Touch
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(0, screenSize.height / 2);
+            
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+                // iPhone 5
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ip5.png"];
+                sprite.position = CGPointMake(0, screenSize.height / 2);
+            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
+                // iPad Non-Retina
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipad.png"];
+                sprite.position = CGPointMake(0, screenSize.height / 2);
+            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+                //iPad Retina
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipadhd.png"];
+                sprite.position = CGPointMake(0, screenSize.height / 2);
+            }
 			[backgroundNode addChild:sprite z:i tag:i];
 		}
         
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         for (NSUInteger i = 0; i < numStripes; i++)
 		{
-			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
-			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+            // Normal iPhone and iPod Touch, and Retona iPhone and iPod Touch
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
             
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+                // iPhone 5
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ip5.png"];
+                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
+            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
+                // iPad Non-Retina
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipad.png"];
+                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
+            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+                //iPad Retina
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipadhd.png"];
+                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
+            }
 			[backgroundNode addChild:sprite z:i tag:i];
 		}
         
 		// Initialize the array that contains the scroll factors for individual layers.
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
+        
+        
+        /*
+         The Below Code is Only for Parralax Backgrounds. Uncomment this if you want to use a parralax background.
+         Also, you need to add a number in front of the png file name.
+         For Example, the file name will be bg0.png, and then bg1.png, and bg2.png
+         */
+        
+        
+//		// Add the 4 different layers and position them on the screen
+//		for (NSUInteger i = 0; i < numStripes; i++)
+//		{
+//			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
+//			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+//			sprite.anchorPoint = CGPointMake(0, 0.5f);
+//			sprite.position = CGPointMake(0, screenSize.height / 2);
+//			[backgroundNode addChild:sprite z:i tag:i];
+//		}
+//        
+//		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
+//        for (NSUInteger i = 0; i < numStripes; i++)
+//		{
+//			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
+//			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+//			sprite.anchorPoint = CGPointMake(0, 0.5f);
+//			sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
+//            
+//			[backgroundNode addChild:sprite z:i tag:i];
+//		}
+//        
+//		// Initialize the array that contains the scroll factors for individual layers.
+//		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
+//		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
 
 		[self scheduleUpdate];
 	}
@@ -104,5 +171,4 @@
 		sprite.position = pos;
 	}
 }
-
 @end
