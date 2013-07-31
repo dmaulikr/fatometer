@@ -29,6 +29,17 @@ typedef NS_ENUM(NSInteger, GameState) {
 #define SCROLL_SPEED_DEFAULT 300.f
 #define SCROLL_SPEED_SKIP_AHEAD 380.f
 #define KNIGHT_HIT_POINTS 5
+// Device and Widescreen Detection
+#define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+// iPhone
+#define IS_IPHONE ( ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone" ] )  || ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPhone Simulator" ] ) )
+#define IS_IPHONE_5 ( IS_IPHONE && IS_WIDESCREEN )
+// iPod Touch
+#define IS_IPOD   ( [ [ [ UIDevice currentDevice ] model ] isEqualToString: @"iPod touch" ] )
+#define IS_IPOD_5 ( IS_IPOD && IS_WIDESCREEN )
+// iPad
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPAD_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
 
 @interface GameMechanics : NSObject
 
