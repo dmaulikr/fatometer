@@ -202,7 +202,7 @@
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         // Play the Music
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fly.mp3" loop:TRUE];
+//        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fly.mp3" loop:TRUE];
         
         // Preload particle effects
         // To preload the textures, play each effect once off-screen
@@ -310,27 +310,7 @@
         
         coinArray = [[NSMutableArray alloc] init];
         powerUpArray = [[NSMutableArray alloc] init];
-        
-//        [self resizeSprite:knight toWidth:80 toHeight:70];
-//        if (IS_IPOD_5 || IS_IPOD_5) {
-//            //            [self resizeSprite:knight toWidth:80 toHeight:70];
-//            [[GameMechanics sharedGameMechanics] knight].scaleX = 80;
-//            [[GameMechanics sharedGameMechanics] knight].scaleY = 70;
-//            
-//        }
-//        else if (IS_IPAD) {
-//            //            [self resizeSprite:knight toWidth:450 toHeight:437];
-//            [[GameMechanics sharedGameMechanics] knight].scaleX = 450;
-//            [[GameMechanics sharedGameMechanics] knight].scaleY = 437;
-//            
-//            
-//        } else if (IS_IPAD_RETINA) {
-//            //            [self resizeSprite:knight toWidth:200 toHeight:185];
-//            [[GameMechanics sharedGameMechanics] knight].scaleX = 200;
-//            [[GameMechanics sharedGameMechanics] knight].scaleY = 185;
-//        }
-        
-        
+            
         // setup a new gaming session
         [self resetGame];
         [self scheduleUpdate];
@@ -350,7 +330,6 @@
 -(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
     sprite.scaleX = width / sprite.contentSize.width;
     sprite.scaleY = height / sprite.contentSize.height;
-    NSLog(@"Resized Sprite");  
 }
 
 -(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString

@@ -134,12 +134,7 @@
 {
 	Food* enemy;
     Knight *knight = [[GameMechanics sharedGameMechanics] knight];
-//    tempKnight = CGRectMake(knight.position.x, knight.position.y, knight., knight.height);
     CGRect knightBoundingBox = knight.boundingBox;
-    
-    //    [[[GameMechanics sharedGameMechanics] gameScene] resizeSprite];
-    
-//    CGRect knightHitZone = [knight hitZone];
 	CGRect knightHitZone = knight.boundingBox;
     
     // iterate over all enemies (all child nodes of this enemy batch)

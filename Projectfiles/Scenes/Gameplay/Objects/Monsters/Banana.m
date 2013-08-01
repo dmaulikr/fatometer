@@ -40,6 +40,18 @@
 	float yPos = screenRect.size.height / 3 *2;
 	self.position = CGPointMake(xPos, yPos);
     
+    if (IS_IPOD_5 || IS_IPOD_5) {
+    } else if (IS_IPAD) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = screenRect.size.height / 12 *3;
+        self.position = CGPointMake(xPos, yPos);
+    } else if (IS_IPAD_RETINA) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = screenRect.size.height / 15 *3;
+        self.position = CGPointMake(xPos, yPos);
+    }
+
+    
 	// Finally set yourself to be visible, this also flag the enemy as "in use"
 	self.visible = YES;
 }

@@ -18,11 +18,8 @@
 {
     // stores all enemies
     NSMutableDictionary* enemies;
-    CGRect tempKnight;
     // count the updates (used to determine when monsters should be spawned)
     int updateCount;
 }
-
--(void)resizeSprite;
 
 @end

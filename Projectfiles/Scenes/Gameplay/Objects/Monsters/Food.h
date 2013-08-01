@@ -19,5 +19,6 @@
 - (id)initWithMonsterPicture;
 - (void)spawn;
 - (void)gotCollected;
+-(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height;
 
 @end

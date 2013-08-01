@@ -33,7 +33,7 @@
 	CGSize spriteSize = [self contentSize];
 	float xPos = screenRect.size.width + spriteSize.width * 0.5f;
     //	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
-    float yPos = 0.19 * screenRect.size.height - spriteSize.height;
+    float yPos = 0.21 * screenRect.size.height - spriteSize.height;
 	self.position = CGPointMake(xPos, yPos);
     
     self.visible = YES;

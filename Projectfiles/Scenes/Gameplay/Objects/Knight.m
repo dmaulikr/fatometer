@@ -94,7 +94,6 @@
 -(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
     sprite.scaleX = width / sprite.contentSize.width;
     sprite.scaleY = height / sprite.contentSize.height;
-    NSLog(@"Resized Sprite");
 }
 - (void)gamePaused
 {
@@ -112,6 +111,30 @@
     if (self.position.y == [[GameMechanics sharedGameMechanics] floorHeight])
     {
         self.velocity = ccp(self.velocity.x, 475.f);
+        if (IS_IPOD_5 || IS_IPOD_5) {
+            self.velocity = ccp(self.velocity.x, 475.f);
+        } else if (IS_IPAD) {
+            self.velocity = ccp(self.velocity.x, 575.f);
+        } else if (IS_IPAD_RETINA) {
+            self.velocity = ccp(self.velocity.x, 675.f);
+        }
+        [[GameMechanics sharedGameMechanics] game].jumps += 1;
+    }
+}
+-(void)jumpLess
+{
+    // can only jump of the floor
+    if (self.position.y == [[GameMechanics sharedGameMechanics] floorHeight])
+    {
+        self.velocity = ccp(self.velocity.x, 285.f);
+        
+        if (IS_IPOD_5 || IS_IPOD_5) {
+            self.velocity = ccp(self.velocity.x, 285.f);
+        } else if (IS_IPAD) {
+            self.velocity = ccp(self.velocity.x, 385.f);
+        } else if (IS_IPAD_RETINA) {
+            self.velocity = ccp(self.velocity.x, 485.f);
+        }
         [[GameMechanics sharedGameMechanics] game].jumps += 1;
     }
 }
