@@ -44,6 +44,7 @@
 - (id)initWithKnightPicture;
 - (void)gotHit;
 - (void)jump;
+- (void)jumpLess;
 - (void)stab;
 - (void)collect;
 

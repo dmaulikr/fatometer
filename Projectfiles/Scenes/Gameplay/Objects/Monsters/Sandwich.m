@@ -15,7 +15,11 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"sandwich.png"];
-    
+    if (IS_IPAD) {
+        self.scale = 1.3f;
+    } else if (IS_IPAD_RETINA) {
+        self.scale = 1.6f;
+    }
     if (self)
     {
         self.initialHitPoints = 1;
@@ -35,6 +39,21 @@
     //	float yPos = CCRANDOM_0_1() * (0.25 * screenRect.size.height - spriteSize.height) + spriteSize.height * 0.5f;
     float yPos = 0.21 * screenRect.size.height - spriteSize.height;
 	self.position = CGPointMake(xPos, yPos);
+    
+    if (IS_IPHONE_5 || IS_IPOD_5) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = 0.21 * screenRect.size.height - spriteSize.height;
+        self.position = CGPointMake(xPos, yPos);
+
+    } else if (IS_IPAD) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = 0.10 * screenRect.size.height - spriteSize.height;
+        self.position = CGPointMake(xPos, yPos);
+    } else if (IS_IPAD_RETINA) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = 0.8 * screenRect.size.height - spriteSize.height;
+        self.position = CGPointMake(xPos, yPos);
+    }
     
     self.visible = YES;
 	// reset health

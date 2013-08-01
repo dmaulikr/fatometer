@@ -71,7 +71,7 @@
         [self scheduleUpdate];
         
         [self resizeSprite:self toWidth:80 toHeight:70];
-        if (IS_IPOD_5 || IS_IPOD_5) {
+        if (IS_IPHONE_5 || IS_IPOD_5) {
             [self resizeSprite:self toWidth:80 toHeight:70];
             knightWidth = [self boundingBox].size.width; // calibrate collision detection
         } else if (IS_IPAD) {
@@ -111,12 +111,12 @@
     if (self.position.y == [[GameMechanics sharedGameMechanics] floorHeight])
     {
         self.velocity = ccp(self.velocity.x, 475.f);
-        if (IS_IPOD_5 || IS_IPOD_5) {
+        if (IS_IPHONE_5 || IS_IPOD_5) {
             self.velocity = ccp(self.velocity.x, 475.f);
-        } else if (IS_IPAD) {
-            self.velocity = ccp(self.velocity.x, 575.f);
-        } else if (IS_IPAD_RETINA) {
+        } else if ([[CCDirector sharedDirector] winSizeInPixels].height == 768) {
             self.velocity = ccp(self.velocity.x, 675.f);
+        } else if (IS_IPAD_RETINA) {
+            self.velocity = ccp(self.velocity.x, 805.f);
         }
         [[GameMechanics sharedGameMechanics] game].jumps += 1;
     }
@@ -128,7 +128,7 @@
     {
         self.velocity = ccp(self.velocity.x, 285.f);
         
-        if (IS_IPOD_5 || IS_IPOD_5) {
+        if (IS_IPHONE_5 || IS_IPOD_5) {
             self.velocity = ccp(self.velocity.x, 285.f);
         } else if (IS_IPAD) {
             self.velocity = ccp(self.velocity.x, 385.f);

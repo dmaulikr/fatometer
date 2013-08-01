@@ -14,7 +14,11 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"apple.png"];
-    
+    if (IS_IPAD) {
+        self.scale = 1.3f;
+    } else if (IS_IPAD_RETINA) {
+        self.scale = 1.6f;
+    }
     if (self)
     {
         self.animationFrames = [NSMutableArray array];
@@ -40,22 +44,22 @@
 	float yPos = screenRect.size.height / 12 *9;
 	self.position = CGPointMake(xPos, yPos);
     
-    if (IS_IPOD_5 || IS_IPOD_5) {
+    if (IS_IPHONE_5 || IS_IPOD_5) {
+        float xPos = screenRect.size.width + spriteSize.width * 0.5f;
+        float yPos = screenRect.size.height / 12 *9;
+        self.position = CGPointMake(xPos, yPos);
     } else if (IS_IPAD) {
         float xPos = screenRect.size.width + spriteSize.width * 0.5f;
-        float yPos = screenRect.size.height / 12 *4;
+        float yPos = screenRect.size.height / 12 *7;
         self.position = CGPointMake(xPos, yPos);
     } else if (IS_IPAD_RETINA) {
         float xPos = screenRect.size.width + spriteSize.width * 0.5f;
-        float yPos = screenRect.size.height / 14 *4;
+        float yPos = screenRect.size.height / 12 *6;
         self.position = CGPointMake(xPos, yPos);
     }
     
-    
 	// Finally set yourself to be visible, this also flag the enemy as "in use"
 	self.visible = YES;
-    
-    
 }
 
 - (void)gotCollected

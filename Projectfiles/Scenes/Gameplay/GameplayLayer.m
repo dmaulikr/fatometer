@@ -260,7 +260,8 @@
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(screenSize.width/2,screenSize.height-3);
-        if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+        [self resizeSprite:toolBar toWidth:screenSize.width toHeight:[toolBar boundingBox].size.height];
+        if (IS_IPHONE_5 || IS_IPOD_5) {
             toolbarArrows = [CCSprite spriteWithFile:@"toolbar-568h.png"];
         }
         
@@ -671,7 +672,6 @@
     if ([input anyTouchBeganThisFrame])
     {
         [knight jump];
-        
     }
 }
 
@@ -697,10 +697,12 @@ if (coinPattern1 == FALSE)
 {
     coinPattern1 = TRUE;
     int originalX = 5000;
+    CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
+
     for(int i = 0; i < 8; i++)
     {
         CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
-        coinHorizontal.position = ccp(originalX, 150);
+        coinHorizontal.position = ccp(originalX, screenCenter.y - 20);
         originalX += 20;
         
         [self addChild:coinHorizontal];
@@ -709,7 +711,7 @@ if (coinPattern1 == FALSE)
     for(int i = 0; i < 8; i++)
     {
         CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
-        coinHorizontal.position = ccp(originalX, 170);
+        coinHorizontal.position = ccp(originalX, screenCenter.y);
         originalX += 20;
         
         [self addChild:coinHorizontal];
@@ -718,7 +720,7 @@ if (coinPattern1 == FALSE)
     for(int i = 0; i < 8; i++)
     {
         CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
-        coinHorizontal.position = ccp(originalX, 190);
+        coinHorizontal.position = ccp(originalX, screenCenter.y + 20);
         originalX += 20;
         
         [self addChild:coinHorizontal];
@@ -727,7 +729,7 @@ if (coinPattern1 == FALSE)
     for(int i = 0; i < 8; i++)
     {
         CCSprite *coinHorizontal = [CCSprite spriteWithFile:@"coin.png"];
-        coinHorizontal.position = ccp(originalX, 210);
+        coinHorizontal.position = ccp(originalX, screenCenter.y + 40);
         originalX += 20;
         
         [self addChild:coinHorizontal];

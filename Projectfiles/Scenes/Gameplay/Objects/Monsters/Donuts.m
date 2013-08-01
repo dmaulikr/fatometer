@@ -14,7 +14,11 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"donuts.png"];
-    
+    if (IS_IPAD) {
+        self.scale = 1.3f;
+    } else if (IS_IPAD_RETINA) {
+        self.scale = 1.6f;
+    }
     if (self)
     {
         self.animationFrames = [NSMutableArray array];
@@ -23,7 +27,6 @@
     
     return self;
 }
-
 
 - (void)gotCollected {
     
