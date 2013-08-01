@@ -41,6 +41,7 @@
             // Normal iPhone and iPod Touch, and Retona iPhone and iPod Touch
 			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
+                        
 			sprite.position = CGPointMake(0, screenSize.height / 2);
             [backgroundNode addChild:sprite z:i tag:i];
 		}
