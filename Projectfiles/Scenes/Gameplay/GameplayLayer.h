@@ -131,7 +131,7 @@
 - (void)startTutorial;
 - (void)resetFatness;
 
--(void)resizeSprite;
+//-(void)resizeSprite;
 
 - (void)quit;
 - (void)reset;

@@ -259,8 +259,10 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"toolbar.png"];
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
-        toolBar.position = ccp(screenSize.width,screenSize.height);
-        // Toolbar setup of iphone 5
+        toolBar.position = ccp(screenSize.width/2,screenSize.height-3);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
+            toolbarArrows = [CCSprite spriteWithFile:@"toolbar-568h.png"];
+        }
         
         
         // Set Up Tutorial Images and Arrows
@@ -268,7 +270,6 @@
             tapGesture.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 70);
             [self addChild:tapGesture z:1000];
             tapGesture.visible = false;
-            //        [self setDimensionsInPixelsOnSprite:rotateArrow width:270 height:320];
         
             tiltPic = [CCSprite spriteWithFile:@"tilt.png"];
             tiltPic.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 50);
@@ -284,12 +285,6 @@
                 toolbarArrows = [CCSprite spriteWithFile:@"arrowsip5.png"];
                 toolbarArrows.position = ccp(screenSize.width / 2, (screenSize.height / 2) + 30);
             }
-
-//            powerupArrow = [CCSprite spriteWithFile:@"powerupTutorial.png"];
-//            powerupArrow.position = ccp(screenCenter.x, 80);
-//            [self addChild:powerupArrow z:1000];
-//            powerupArrow.visible = false;
-//            [self setDimensionsInPixelsOnSprite:rotateArrow width:300 height:300];
         
         // Set up Tutorial
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
@@ -306,17 +301,35 @@
                 
 
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
-                
+        
         // add the enemy cache containing all spawned enemies
         [self addChild:[EnemyCache node]];
-        
+
         // add decorative node
         //[self addChild:[DecorativeObjectsNode node]];
         
         coinArray = [[NSMutableArray alloc] init];
         powerUpArray = [[NSMutableArray alloc] init];
         
-        [self resizeSprite:knight toWidth:80 toHeight:70];
+//        [self resizeSprite:knight toWidth:80 toHeight:70];
+//        if (IS_IPOD_5 || IS_IPOD_5) {
+//            //            [self resizeSprite:knight toWidth:80 toHeight:70];
+//            [[GameMechanics sharedGameMechanics] knight].scaleX = 80;
+//            [[GameMechanics sharedGameMechanics] knight].scaleY = 70;
+//            
+//        }
+//        else if (IS_IPAD) {
+//            //            [self resizeSprite:knight toWidth:450 toHeight:437];
+//            [[GameMechanics sharedGameMechanics] knight].scaleX = 450;
+//            [[GameMechanics sharedGameMechanics] knight].scaleY = 437;
+//            
+//            
+//        } else if (IS_IPAD_RETINA) {
+//            //            [self resizeSprite:knight toWidth:200 toHeight:185];
+//            [[GameMechanics sharedGameMechanics] knight].scaleX = 200;
+//            [[GameMechanics sharedGameMechanics] knight].scaleY = 185;
+//        }
+        
         
         // setup a new gaming session
         [self resetGame];

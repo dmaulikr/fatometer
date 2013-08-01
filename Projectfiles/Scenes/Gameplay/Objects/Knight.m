@@ -70,6 +70,18 @@
         [self runAction:run];
         [self scheduleUpdate];
         
+        [self resizeSprite:self toWidth:80 toHeight:70];
+        if (IS_IPOD_5 || IS_IPOD_5) {
+            [self resizeSprite:self toWidth:80 toHeight:70];
+            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+        } else if (IS_IPAD) {
+            [self resizeSprite:self toWidth:150 toHeight:137];
+            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+        } else if (IS_IPAD_RETINA) {
+            [self resizeSprite:self toWidth:200 toHeight:185];
+            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+        }
+        
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
          Here we sign up for the 'GamePaused' and 'GameResumed' information, that is broadcasted by the GameMechanics class. Whenever the game pauses or resumes, we get informed and can react accordingly.
@@ -79,7 +91,11 @@
     }
     return self;
 }
-
+-(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
+    sprite.scaleX = width / sprite.contentSize.width;
+    sprite.scaleY = height / sprite.contentSize.height;
+    NSLog(@"Resized Sprite");
+}
 - (void)gamePaused
 {
     [self pauseSchedulerAndActions];

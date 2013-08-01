@@ -218,8 +218,6 @@
 		38F751B317A9F112006B3B91 /* toolbar-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7515617A9F112006B3B91 /* toolbar-ipad.png */; };
 		38F751B417A9F112006B3B91 /* toolbar-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7515717A9F112006B3B91 /* toolbar-ipadhd.png */; };
 		38F751B517A9F112006B3B91 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7515817A9F112006B3B91 /* toolbar.png */; };
-		38F751B617A9F112006B3B91 /* toolbarip5-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7515917A9F112006B3B91 /* toolbarip5-hd.png */; };
-		38F751B717A9F112006B3B91 /* toolbarip5.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7515A17A9F112006B3B91 /* toolbarip5.png */; };
 		38F751C817A9F125006B3B91 /* buy1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751B817A9F124006B3B91 /* buy1-hd.png */; };
 		38F751C917A9F125006B3B91 /* buy1-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751B917A9F124006B3B91 /* buy1-ipadhd.png */; };
 		38F751CA17A9F125006B3B91 /* buy1.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751BA17A9F124006B3B91 /* buy1.png */; };
@@ -339,6 +337,7 @@
 		38F752A617A9F188006B3B91 /* storecoin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7525717A9F188006B3B91 /* storecoin-hd.png */; };
 		38F752A717A9F188006B3B91 /* storecoin-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7525817A9F188006B3B91 /* storecoin-ipadhd.png */; };
 		38F752A817A9F188006B3B91 /* storecoin.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7525917A9F188006B3B91 /* storecoin.png */; };
+		38F752AA17A9F6AA006B3B91 /* pointer-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F752A917A9F6AA006B3B91 /* pointer-ipad.png */; };
 		38FACD2A179519BD00823F00 /* Donuts.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD29179519BD00823F00 /* Donuts.m */; };
 		38FACD3017951BAF00823F00 /* Chicken.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD2F17951BAF00823F00 /* Chicken.m */; };
 		38FACD3917951CED00823F00 /* Oranges.m in Sources */ = {isa = PBXBuildFile; fileRef = 38FACD3817951CED00823F00 /* Oranges.m */; };
@@ -724,8 +723,6 @@
 		38F7515617A9F112006B3B91 /* toolbar-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-ipad.png"; sourceTree = "<group>"; };
 		38F7515717A9F112006B3B91 /* toolbar-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-ipadhd.png"; sourceTree = "<group>"; };
 		38F7515817A9F112006B3B91 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
-		38F7515917A9F112006B3B91 /* toolbarip5-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbarip5-hd.png"; sourceTree = "<group>"; };
-		38F7515A17A9F112006B3B91 /* toolbarip5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbarip5.png; sourceTree = "<group>"; };
 		38F751B817A9F124006B3B91 /* buy1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy1-hd.png"; sourceTree = "<group>"; };
 		38F751B917A9F124006B3B91 /* buy1-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy1-ipadhd.png"; sourceTree = "<group>"; };
 		38F751BA17A9F124006B3B91 /* buy1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buy1.png; sourceTree = "<group>"; };
@@ -845,6 +842,7 @@
 		38F7525717A9F188006B3B91 /* storecoin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "storecoin-hd.png"; sourceTree = "<group>"; };
 		38F7525817A9F188006B3B91 /* storecoin-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "storecoin-ipadhd.png"; sourceTree = "<group>"; };
 		38F7525917A9F188006B3B91 /* storecoin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storecoin.png; sourceTree = "<group>"; };
+		38F752A917A9F6AA006B3B91 /* pointer-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pointer-ipad.png"; sourceTree = "<group>"; };
 		38FACD28179519BC00823F00 /* Donuts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Donuts.h; sourceTree = "<group>"; };
 		38FACD29179519BD00823F00 /* Donuts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Donuts.m; sourceTree = "<group>"; };
 		38FACD2E17951BAF00823F00 /* Chicken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chicken.h; sourceTree = "<group>"; };
@@ -1269,6 +1267,7 @@
 		38A531DD17A9E3C900A8A484 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				38F752A917A9F6AA006B3B91 /* pointer-ipad.png */,
 				38F750FC17A9F112006B3B91 /* arrows-hd.png */,
 				38F750FD17A9F112006B3B91 /* arrows.png */,
 				38F750FE17A9F112006B3B91 /* arrowsip5-hd.png */,
@@ -1317,8 +1316,6 @@
 				38F7515617A9F112006B3B91 /* toolbar-ipad.png */,
 				38F7515717A9F112006B3B91 /* toolbar-ipadhd.png */,
 				38F7515817A9F112006B3B91 /* toolbar.png */,
-				38F7515917A9F112006B3B91 /* toolbarip5-hd.png */,
-				38F7515A17A9F112006B3B91 /* toolbarip5.png */,
 			);
 			path = Gameplay;
 			sourceTree = "<group>";
@@ -2380,8 +2377,6 @@
 				38F751B317A9F112006B3B91 /* toolbar-ipad.png in Resources */,
 				38F751B417A9F112006B3B91 /* toolbar-ipadhd.png in Resources */,
 				38F751B517A9F112006B3B91 /* toolbar.png in Resources */,
-				38F751B617A9F112006B3B91 /* toolbarip5-hd.png in Resources */,
-				38F751B717A9F112006B3B91 /* toolbarip5.png in Resources */,
 				38F751C817A9F125006B3B91 /* buy1-hd.png in Resources */,
 				38F751C917A9F125006B3B91 /* buy1-ipadhd.png in Resources */,
 				38F751CA17A9F125006B3B91 /* buy1.png in Resources */,
@@ -2501,6 +2496,7 @@
 				38F752A617A9F188006B3B91 /* storecoin-hd.png in Resources */,
 				38F752A717A9F188006B3B91 /* storecoin-ipadhd.png in Resources */,
 				38F752A817A9F188006B3B91 /* storecoin.png in Resources */,
+				38F752AA17A9F6AA006B3B91 /* pointer-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

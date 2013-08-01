@@ -130,24 +130,17 @@
     }
 }
 
--(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
-    sprite.scaleX = width / sprite.contentSize.width;
-    sprite.scaleY = height / sprite.contentSize.height;
-    Knight *knight = [[GameMechanics sharedGameMechanics] knight];
-    tempKnight = CGRectMake(knight.position.x, knight.position.y, width, height);
-    NSLog(@"Resized Sprite");
-}
-
-
 -(void) checkForCollisions
 {
 	Food* enemy;
     Knight *knight = [[GameMechanics sharedGameMechanics] knight];
-    CGRect knightBoundingBox = tempKnight;
+//    tempKnight = CGRectMake(knight.position.x, knight.position.y, knight., knight.height);
+    CGRect knightBoundingBox = knight.boundingBox;
     
     //    [[[GameMechanics sharedGameMechanics] gameScene] resizeSprite];
     
-    CGRect knightHitZone = [knight hitZone];
+//    CGRect knightHitZone = [knight hitZone];
+	CGRect knightHitZone = knight.boundingBox;
     
     // iterate over all enemies (all child nodes of this enemy batch)
 	CCARRAY_FOREACH([self children], enemy)

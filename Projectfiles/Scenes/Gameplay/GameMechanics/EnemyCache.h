@@ -7,6 +7,7 @@
 //
 
 #import "CCNode.h"
+#import "Knight.h"
 
 /**
  This class stores all enemies. This is necessary, to be able to draw all enemies on one BatchNode.
@@ -17,11 +18,11 @@
 {
     // stores all enemies
     NSMutableDictionary* enemies;
-    
+    CGRect tempKnight;
     // count the updates (used to determine when monsters should be spawned)
     int updateCount;
-    
-    CGRect tempKnight;
 }
+
+-(void)resizeSprite;
 
 @end

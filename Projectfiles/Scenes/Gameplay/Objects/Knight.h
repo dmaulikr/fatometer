@@ -20,7 +20,9 @@
     NSMutableArray *animationFramesStab;
     CCSequence *stab;
     
-    BOOL stabDidRun;    
+    BOOL stabDidRun;
+    CGRect tempKnight;
+    int knightWidth;
 }
 
 // defines a hit zone, which is smaller as the sprite, only if this hit zone is hit the knight is injured
