@@ -2631,6 +2631,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90EF13B4F6F7009DD35A /* BuildSettings-Debug-iOS.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mgwuSDK.embeddedframework\"",
@@ -2643,6 +2645,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
+				PROVISIONING_PROFILE = "1185EFE7-C3D2-48B9-8B77-580AEFDD4ADA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1185EFE7-C3D2-48B9-8B77-580AEFDD4ADA";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2651,6 +2655,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90F013B4F811009DD35A /* BuildSettings-Release-iOS.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mgwuSDK.embeddedframework\"",
@@ -2663,6 +2669,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
+				PROVISIONING_PROFILE = "1185EFE7-C3D2-48B9-8B77-580AEFDD4ADA";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1185EFE7-C3D2-48B9-8B77-580AEFDD4ADA";
 				SDKROOT = iphoneos;
 			};
 			name = Release;

@@ -23,7 +23,7 @@
  7). CHANGE THE STORE TEXT TO A STORE ICON
  8). 
  9).
- 10).
+ 10). 
  
 */
 /*
@@ -261,7 +261,7 @@
         pointer = [CCSprite spriteWithFile:@"pointer.png"];
         toolBar.position = ccp(screenSize.width/2,screenSize.height-3);
         [self resizeSprite:toolBar toWidth:screenSize.width toHeight:[toolBar boundingBox].size.height];
-        if (IS_IPHONE_5 || IS_IPOD_5) {
+        if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
             toolbarArrows = [CCSprite spriteWithFile:@"toolbar-568h.png"];
         }
         
@@ -507,9 +507,9 @@
 	// controls how quickly velocity decelerates (lower = quicker to change direction)
 	float deceleration = 0.0001f;
 	// determines how sensitive the accelerometer reacts (higher = more sensitive)
-	float sensitivity = 300.0f;
+	float sensitivity = 500.0f;
 	// how fast the velocity can be at most
-	float maxVelocity = 700;
+	float maxVelocity = 1500;
 	// adjust velocity based on current accelerometer acceleration
 	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
 	// we must limit the maximum velocity of the player sprite, in both directions

@@ -14,7 +14,9 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"apple.png"];
-    if (IS_IPAD) {
+    if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
+        self.scale = 1.0f;
+    } else if (IS_IPAD) {
         self.scale = 1.3f;
     } else if (IS_IPAD_RETINA) {
         self.scale = 1.6f;
@@ -44,7 +46,7 @@
 	float yPos = screenRect.size.height / 12 *9;
 	self.position = CGPointMake(xPos, yPos);
     
-    if (IS_IPHONE_5 || IS_IPOD_5) {
+    if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
         float xPos = screenRect.size.width + spriteSize.width * 0.5f;
         float yPos = screenRect.size.height / 12 *9;
         self.position = CGPointMake(xPos, yPos);
