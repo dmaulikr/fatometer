@@ -36,7 +36,7 @@
     
     CCLabelTTF *highScoreLabel = [CCLabelTTF labelWithString:personalBestString
                                                     fontName:DEFAULT_FONT
-                                                    fontSize:18];
+                                                    fontSize:28];
     highScoreLabel.color = INVERSE_FONT_COLOR;
     highScoreLabel.anchorPoint = ccp(0, 1);
     highScoreLabel.position = ccp(4, self.contentSize.height-4);

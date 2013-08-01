@@ -25,6 +25,20 @@
  9).
  10). 
  
+ PROTEIN BARS - MAKES YOU IMMUNE TO FAT FOODS
+ CARB BOOST - MAKES YOU LOSE WEIGHT FASTER
+ FIVE HOUR ENERGY - MAKES YOU RUN UPSIDE DOWN
+ 
+ 
+ Die certain times
+ Collect fatty foods in a row
+ Go combined total of 500,000 meters
+ Collect certain coins
+ Explode 7 times
+ Die of fatness certainn times
+ Die of thiness certain times
+ Run a certain meters going upside down
+ 
 */
 /*
  TUTORIAL IDEAS:
@@ -180,7 +194,10 @@
     
     if (self)
     {
-        scrollSpeed = 250.0f;
+        scrollSpeed = 280.0f;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 400.0f;
+        }
         
         // Coin Stuff
         coinPattern1 = FALSE;
@@ -253,7 +270,7 @@
         CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause.png"];
         pauseButtonMenuItem = [CCMenuItemSprite itemWithNormalSprite:pauseButton selectedSprite:pauseButtonPressed target:self selector:@selector(pauseButtonPressed)];
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
-        pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 70);
+        pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 55);
         [hudNode addChild:pauseButtonMenu];
         
         // SET UP TOOLBAR, POINTER, AND FATNESS
@@ -793,6 +810,9 @@ if (coinPattern1 == FALSE)
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
             scrollSpeed1 = 290;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 440.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed1];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Pear class]];
@@ -801,6 +821,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 3000) {
             scrollSpeed2 = 330;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 480.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed2];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[Pear class]];
@@ -809,6 +832,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 6000) {
             scrollSpeed3 = 370;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 520.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed3];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[Pear class]];
@@ -818,6 +844,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 7500) {
             scrollSpeed4 = 410;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 560.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed4];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[Pear class]];
@@ -827,6 +856,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 10000) {
             scrollSpeed5 = 450;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 580.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed5];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[Meat class]];
@@ -836,6 +868,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 13000) {
             scrollSpeed6 = 490;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 620.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed6];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Watermelon class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[Pear class]];
@@ -846,6 +881,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 16500) {
             scrollSpeed7 = 530;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 660.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed7];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Pear class]];
@@ -855,6 +893,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 20000) {
             scrollSpeed8 = 570;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 700.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed8];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Pear class]];
@@ -865,6 +906,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 22500) {
             scrollSpeed9 = 580;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 710.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed9];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Donuts class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Pear class]];
@@ -876,6 +920,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 25000) {
             scrollSpeed10 = 590;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 720.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed10];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Donuts class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Pear class]];
@@ -887,6 +934,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 27500) {
             scrollSpeed11 = 600;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 730.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed11];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Donuts class]];
@@ -898,6 +948,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 30000) {
             scrollSpeed12 = 610;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 740.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed12];
             [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Pear class]];
@@ -910,6 +963,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 32500) {
             scrollSpeed13 = 620;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 750.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed13];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
@@ -920,6 +976,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 35000) {
             scrollSpeed14 = 630;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 760.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed14];
             [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Pear class]];
@@ -930,6 +989,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 37500) {
             scrollSpeed15 = 640;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 770.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed15];
             [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Pear class]];
@@ -942,6 +1004,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 40000) {
             scrollSpeed16 = 650;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 780.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed16];
             [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Pear class]];
@@ -954,6 +1019,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 42500) {
             scrollSpeed17 = 652;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 782.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed17];
             [[GameMechanics sharedGameMechanics] setSpawnRate:40 forMonsterType:[Sandwich class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Pear class]];
@@ -965,6 +1033,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 45000) {
             scrollSpeed18 = 654;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 784.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed18];
             [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Pear class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Banana class]];
@@ -977,6 +1048,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 47500) {
             scrollSpeed19 = 655;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 785.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed19];
             [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Banana class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
@@ -987,6 +1061,9 @@ if (coinPattern1 == FALSE)
     }
     if (pointsDisplayNode.score > 50000) {
             scrollSpeed20 = 656;
+            if (IS_IPOD || IS_IPAD_RETINA) {
+                scrollSpeed = 786.0f;
+            }
             [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
             [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
             [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];

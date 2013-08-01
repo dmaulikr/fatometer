@@ -117,7 +117,7 @@
         
         /*********** Next Button ***********/
         CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"button_playbutton.png"] selectedSprite:[CCSprite spriteWithFile:@"button_playbutton.png"]block:^(id sender) {
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionZoomFlipAngular transitionWithDuration:1.5f scene:[GameplayLayer node]]];
+            [[CCDirector sharedDirector] replaceScene:[CCTransitionZoomFlipAngular transitionWithDuration:1.0f scene:[GameplayLayer node]]];
         }];
         
 //        CCMenuItemSprite *storeButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"next.png"] selectedSprite:[CCSprite spriteWithFile:@"next_.png"]block:^(id sender) {
