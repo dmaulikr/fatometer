@@ -792,6 +792,7 @@ if (coinPattern1 == FALSE)
 //    coinValue = 2;
 //}
 -(void)makeCoinsDouble {
+    
     coinValue = 2;
 }
 -(void)makeCoinsOne {
