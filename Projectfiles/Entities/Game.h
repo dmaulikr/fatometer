@@ -20,6 +20,7 @@
 @property (nonatomic, assign) NSInteger foodsCollected;
 @property (nonatomic, assign) NSInteger fatness;
 @property (nonatomic, assign) NSInteger jumps;
+@property (nonatomic, assign) NSInteger deaths;
 
 // currently active missions
 @property (nonatomic, strong) NSMutableArray *missions;

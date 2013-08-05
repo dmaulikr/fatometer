@@ -11,6 +11,7 @@
 #import "KillAmountOfEnemiesMission.h"
 #import "KillAmountOfEnemiesInDistance.h"
 #import "JumpWithoutCollectingFoods.h"
+#import "DieAmountOfTimes.h"
 
 #define ALL_MISSIONS_KEY @"allMissions"
 
@@ -52,7 +53,13 @@ static NSMutableArray *missions;
         [[mission4.missionObjectives objectAtIndex:0] setGoalValue:5];
         [self storeLastObjectiveGoalValuesForMission:mission4];
         
-        [missions addObjectsFromArray:@[mission1, mission2, mission3, mission4]];
+        RunDistanceMission *mission5 = [[DieAmountOfTimes alloc] init];
+        mission5.missionDescriptionFormat = @"Die %d times";
+        mission5.thumbnailFileName = @"missions_1.png";
+        [[mission5.missionObjectives objectAtIndex:0] setGoalValue:3];
+        [self storeLastObjectiveGoalValuesForMission:mission5];
+        
+        [missions addObjectsFromArray:@[mission1, mission2, mission3, mission4, mission5]];
         [self persistMissions];
     }
 }

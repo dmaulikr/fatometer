@@ -1291,6 +1291,7 @@ if (coinPattern1 == FALSE)
 
 - (void)goOnPopUpButtonClicked:(CCControlButton *)sender
 {
+    [[GameMechanics sharedGameMechanics] game].deaths+=1;
     NSLog(@"Button clicked.");
     if (sender.tag == 0)
     {
@@ -1329,6 +1330,10 @@ if (coinPattern1 == FALSE)
 -(void)resetJumps {
     [[GameMechanics sharedGameMechanics] game].jumps = 0;
 }
+-(void)resetDeaths {
+    [[GameMechanics sharedGameMechanics] game].deaths = 0;
+}
+
 
 - (void)pauseButtonPressed
 {

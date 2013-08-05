@@ -11,6 +11,7 @@
 		380F5D9817A82E7A0066283C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9717A82E7A0066283C /* Default.png */; };
 		380F5D9E17A82E9B0066283C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9D17A82E9B0066283C /* Default@2x.png */; };
 		380F5DA017A82F090066283C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9F17A82F090066283C /* Default-568h@2x.png */; };
+		384C7A4B17AF71B100B01AC7 /* DieAmountOfTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C7A4A17AF71B100B01AC7 /* DieAmountOfTimes.m */; };
 		387F865B179E517100D2F1A4 /* Bread.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F865A179E517100D2F1A4 /* Bread.m */; };
 		387F865E179E51A900D2F1A4 /* Broccoli.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F865D179E51A900D2F1A4 /* Broccoli.m */; };
 		387F8661179E51DD00D2F1A4 /* Carrots.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F8660179E51DC00D2F1A4 /* Carrots.m */; };
@@ -502,6 +503,8 @@
 		380F5D9D17A82E9B0066283C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		380F5D9F17A82F090066283C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		381FD2F1179DAD4900702DF4 /* CoinPurchaseStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinPurchaseStoreItem.h; sourceTree = "<group>"; };
+		384C7A4917AF71B100B01AC7 /* DieAmountOfTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DieAmountOfTimes.h; sourceTree = "<group>"; };
+		384C7A4A17AF71B100B01AC7 /* DieAmountOfTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DieAmountOfTimes.m; sourceTree = "<group>"; };
 		387F8659179E517100D2F1A4 /* Bread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bread.h; sourceTree = "<group>"; };
 		387F865A179E517100D2F1A4 /* Bread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bread.m; sourceTree = "<group>"; };
 		387F865C179E51A900D2F1A4 /* Broccoli.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Broccoli.h; sourceTree = "<group>"; };
@@ -1742,6 +1745,8 @@
 				6212B600176AD7130040386F /* MissionObjective.m */,
 				6212B6C3176E546B0040386F /* MissionProvider.h */,
 				6212B6C4176E546C0040386F /* MissionProvider.m */,
+				384C7A4917AF71B100B01AC7 /* DieAmountOfTimes.h */,
+				384C7A4A17AF71B100B01AC7 /* DieAmountOfTimes.m */,
 				6212B6C6176E6F810040386F /* KillAmountOfEnemiesInDistance.h */,
 				6212B6C7176E6F820040386F /* KillAmountOfEnemiesInDistance.m */,
 			);
@@ -2607,6 +2612,7 @@
 				387F867F179E546500D2F1A4 /* Tomato.m in Sources */,
 				387F8682179E54E900D2F1A4 /* Watermelon.m in Sources */,
 				38A52EE117A9989800A8A484 /* JumpWithoutCollectingFoods.m in Sources */,
+				384C7A4B17AF71B100B01AC7 /* DieAmountOfTimes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

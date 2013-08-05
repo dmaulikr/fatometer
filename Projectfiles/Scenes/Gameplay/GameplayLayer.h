@@ -130,6 +130,8 @@
 - (void)startGame;
 - (void)startTutorial;
 - (void)resetFatness;
+- (void)resetJumps;
+- (void)resetDeaths;
 
 //-(void)resizeSprite;
 

@@ -46,7 +46,7 @@ BOOL storeLoaded;
         // create some demo store items
         
         CoinPurchaseStoreItem *item1 = [[CoinPurchaseStoreItem alloc] init];
-        item1.title = @"40 Coins";
+        item1.title = @"1000 Coins";
         item1.thumbnailFilename = @"missions_1.png";
         item1.detailDescription = @"Pocket Money!";
         item1.cost = 0.99f;
@@ -55,7 +55,7 @@ BOOL storeLoaded;
         item1.inGameStoreImageFile = @"buy1.png";
         
         CoinPurchaseStoreItem *item2 = [[CoinPurchaseStoreItem alloc] init];
-        item2.title = @"100 Coins";
+        item2.title = @"5000 Coins";
         item2.thumbnailFilename = @"missions_1.png";
         item2.detailDescription = @"Starter Pack!";
         item2.cost = 1.99f;
@@ -64,7 +64,7 @@ BOOL storeLoaded;
         item2.inGameStoreImageFile = @"buy2.png";
         
         CoinPurchaseStoreItem *item3 = [[CoinPurchaseStoreItem alloc] init];
-        item3.title = @"500 Coins";
+        item3.title = @"10000 Coins";
         item3.thumbnailFilename = @"missions_1.png";
         item3.detailDescription = @"Big Boy!";
         item3.cost = 3.99f;
@@ -72,36 +72,9 @@ BOOL storeLoaded;
         item3.productID = @"TestProductID";
         item3.inGameStoreImageFile = @"buy3.png";
         
-        CoinPurchaseStoreItem *item4 = [[CoinPurchaseStoreItem alloc] init];
-        item4.title = @"1000 Coins";
-        item4.thumbnailFilename = @"missions_1.png";
-        item4.detailDescription = @"Pro!";
-        item4.cost = 5.99f;
-        item4.coinValue = 1000;
-        item4.productID = @"TestProductID";
-        item4.inGameStoreImageFile = @"buy3.png";
-        
-        CoinPurchaseStoreItem *item5 = [[CoinPurchaseStoreItem alloc] init];
-        item5.title = @"1500 Coins";
-        item5.thumbnailFilename = @"missions_1.png";
-        item5.detailDescription = @"A huge bunch of coins!";
-        item5.cost = 6.99f;
-        item5.coinValue = 1500;
-        item5.productID = @"TestProductID";
-        item5.inGameStoreImageFile = @"buy3.png";
-        
-        CoinPurchaseStoreItem *item6 = [[CoinPurchaseStoreItem alloc] init];
-        item6.title = @"2000 Coins";
-        item6.thumbnailFilename = @"missions_1.png";
-        item6.detailDescription = @"You are rich!";
-        item6.cost = 7.49f;
-        item6.coinValue = 2000;
-        item6.productID = @"TestProductID";
-        item6.inGameStoreImageFile = @"buy3.png";
-        
         // these are the items presented in the in game store
         inGameStoreItems = [@[item1, item2, item3] mutableCopy];
-        NSDictionary *setup = @{@"Coins": @[item1, item2,item3, item4, item5, item6]};
+        NSDictionary *setup = @{@"Coins": @[item1, item2, item3]};
         
         [self setupWithStoreDictionary:setup];
         
