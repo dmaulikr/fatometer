@@ -40,7 +40,7 @@
     float scrollSpeed19;
     float scrollSpeed20;
     float scrollSpeedP;
-
+    
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;
     ScoreboardEntryNode *inAppCurrencyDisplayNode;
@@ -54,7 +54,7 @@
     CCMenu *menu;
     CCMenu *menu2;
     CCMenu *menu3;
-        
+    
     /* Pause Button */
     CCMenu *pauseButtonMenu;
     CCMenuItemSprite *pauseButtonMenuItem;
@@ -100,7 +100,7 @@
     // Coin Stuff
     BOOL coinPattern1;
     NSMutableArray *coinArray;
-
+    
     // PowerUp Stuff
     BOOL powerUpShow;
     NSMutableArray *powerUpArray;
