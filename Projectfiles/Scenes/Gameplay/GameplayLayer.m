@@ -203,8 +203,8 @@
         randomPowerup = FALSE;
         
         // get screen center and screen size
-        CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
-        CGSize screenSize = [[CCDirector sharedDirector] winSize];
+        screenSize = [[CCDirector sharedDirector] winSize];
+        screenCenter = ccp(screenSize.width/2, screenSize.height/2);
         
         //Preload the music
         [[SimpleAudioEngine sharedEngine] preloadBackgroundMusic:@"fly.mp3"];
@@ -260,7 +260,9 @@
         
         // set up pause button
         CCSprite *pauseButton = [CCSprite spriteWithFile:@"pause.png"];
-        CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause.png"];
+        CCSprite *pauseButtonPressed = [CCSprite spriteWithFile:@"pause-down.png"];
+        pauseButton.scale = 1.5;
+        pauseButtonPressed.scale = 1.5;
         pauseButtonMenuItem = [CCMenuItemSprite itemWithNormalSprite:pauseButton selectedSprite:pauseButtonPressed target:self selector:@selector(pauseButtonPressed)];
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
         pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 55);
@@ -276,39 +278,34 @@
         }
         
         // Set Up Tutorial Images and Arrows
-        tapGesture = [CCSprite spriteWithFile:@"finger.png"];
-        tapGesture.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 70);
+        tapGesture = [CCSprite spriteWithFile:@"tap-screen.png"];
+        tapGesture.scale = 0.6f;
+        tapGesture.position = ccp(screenCenter.x, screenCenter.y - 75);
         [self addChild:tapGesture z:1000];
         tapGesture.visible = false;
         
-        tiltPic = [CCSprite spriteWithFile:@"tilt.png"];
-        tiltPic.position = ccp(screenSize.width / 2, (screenSize.height / 2) - 50);
+        tiltPic = [CCSprite spriteWithFile:@"tilt-screen.png"];
+        tiltPic.position = ccp(screenCenter.x, screenCenter.y - 65);
         [self addChild:tiltPic z:1000];
+        tiltPic.scale = 0.6f;
         tiltPic.visible = false;
         
         toolbarArrows = [CCSprite spriteWithFile:@"arrows.png"];
-        toolbarArrows.position = ccp(screenSize.width / 2, (screenSize.height / 2) + 30);
+        toolbarArrows.position = ccp(screenCenter.x, screenCenter.y + 50);
         [self addChild:toolbarArrows z:1000];
         toolbarArrows.visible = false;
-        // Arrows setup of iphone 5
-        if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
-            toolbarArrows = [CCSprite spriteWithFile:@"arrowsip5.png"];
-            toolbarArrows.position = ccp(screenSize.width / 2, (screenSize.height / 2) + 30);
-        }
-        
+
         // Set up Tutorial
         tut = [CCLabelTTF labelWithString:@"" fontName:@"Arial" fontSize:30];
         tut.position = screenCenter;
         [self addChild:tut z:10000];
         tut.visible = FALSE;
-        bool tutorialStatusCheck = [[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialStatus"];
+        BOOL tutorialStatusCheck = [[NSUserDefaults standardUserDefaults] boolForKey:@"tutorialStatus"];
         if (tutorialStatusCheck == FALSE) {
             playedTutorial = FALSE;
-        }
-        else {
+        } else {
             playedTutorial = [[NSUserDefaults standardUserDefaults] objectForKey:@"tutorialStatus"];
         }
-        
         
         [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
         
@@ -342,8 +339,7 @@
     sprite.scaleY = height / sprite.contentSize.height;
 }
 
--(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString
-{
+-(void) flashLabel:(NSString *) stringToFlashOnScreen actionWithDuration:(float) numSecondsToFlash color:(NSString *) colorString {
     if ([colorString isEqualToString:@"red"] == TRUE) {
         tut.color = ccc3(255,0,0);
     }
@@ -366,22 +362,18 @@
     CCSequence *showLabelSeq = [CCSequence actions:addVisibility, delayInvis, addInvis, nil];
     [self runAction:showLabelSeq];
 }
--(void) makeFlashLabelVisible
-{
+-(void) makeFlashLabelVisible {
     tut.visible = TRUE;
 }
--(void) makeFlashLabelInvisible
-{
+-(void) makeFlashLabelInvisible {
     tut.visible = FALSE;
 }
--(void) convertFromPercent:(float) floatToConvert
-{
+-(void) convertFromPercent:(float) floatToConvert {
     float percentVal = [toolBar boundingBox].size.width/100;
     float percent = floatToConvert * percentVal;
     pointerPosition = ccp(percent, toolBar.position.y);
 }
-- (void)gamePaused
-{
+- (void)gamePaused {
     [self pauseSchedulerAndActions];
 }
 
@@ -392,16 +384,14 @@
 
 #pragma mark - Reset Game
 
-- (void)startGame
-{
+- (void)startGame {
     [[GameMechanics sharedGameMechanics] setGameState:GameStateRunning];
     [self enableGamePlayButtons];
     [self presentSkipAheadButtonWithDuration:5.f];
     /*
      inform all missions, that they have started
      */
-    for (Mission *m in game.missions)
-    {
+    for (Mission *m in game.missions) {
         [m missionStart:game];
     }
     [self addChild:toolBar z:-2];

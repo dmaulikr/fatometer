@@ -41,6 +41,9 @@
     float scrollSpeed20;
     float scrollSpeedP;
     
+    CGPoint screenCenter;
+    CGSize screenSize;
+
     ScoreboardEntryNode *coinsDisplayNode;
     ScoreboardEntryNode *pointsDisplayNode;
     ScoreboardEntryNode *inAppCurrencyDisplayNode;
