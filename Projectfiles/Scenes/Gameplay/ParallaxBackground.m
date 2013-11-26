@@ -38,7 +38,7 @@
         
         for (NSUInteger i = 0; i < numStripes; i++)
 		{
-            // Normal iPhone and iPod Touch, and Retona iPhone and iPod Touch
+            // Normal iPhone and iPod Touch, and Retina iPhone and iPod Touch
 			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
                         
@@ -58,7 +58,7 @@
             
             if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
                 // iPhone 5
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ip5.png"];
+                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-568h.png"];
                 sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
             } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
                 // iPad Non-Retina
@@ -73,6 +73,7 @@
 		}
         
 		// Initialize the array that contains the scroll factors for individual layers.
+        // Uncomment this line of code if not using parralax backgrounds
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
@@ -84,14 +85,14 @@
          */
         
 //		// Add the 4 different layers and position them on the screen
-//		for (NSUInteger i = 0; i < numStripes; i++)
-//		{
-//			NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
-//			CCSprite* sprite = [CCSprite spriteWithFile:fileName];
-//			sprite.anchorPoint = CGPointMake(0, 0.5f);
-//			sprite.position = CGPointMake(0, screenSize.height / 2);
-//			[backgroundNode addChild:sprite z:i tag:i];
-//		}
+//        for (NSUInteger i = 0; i < numStripes; i++)
+//        {
+//            NSString* fileName = [NSString stringWithFormat:@"bg%i.png", i];
+//            CCSprite* sprite = [CCSprite spriteWithFile:fileName];
+//            sprite.anchorPoint = CGPointMake(0, 0.5f);
+//            sprite.position = CGPointMake(0, screenSize.height / 2);
+//            [backgroundNode addChild:sprite z:i tag:i];
+//        }
 //        
 //		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
 //        for (NSUInteger i = 0; i < numStripes; i++)
@@ -106,8 +107,7 @@
 //        
 //		// Initialize the array that contains the scroll factors for individual layers.
 //		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
-//		[speedFactors addObject:[NSNumber numberWithFloat:0.5f]];
-//		[speedFactors addObject:[NSNumber numberWithFloat:0.8f]];
+//		[speedFactors addObject:[NSNumber numberWithFloat:0.7f]];
 //		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 //		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
 

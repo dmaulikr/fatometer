@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Wild Food.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
+               BuildableName = "Wild Food.app"
+               BlueprintName = "Food Gone Wild"
+               ReferencedContainer = "container:FatGuyFred.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -54,7 +68,7 @@
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
             BuildableName = "Wild Food.app"
             BlueprintName = "Food Gone Wild"
-            ReferencedContainer = "container:Wild Food.xcodeproj">
+            ReferencedContainer = "container:FatGuyFred.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
