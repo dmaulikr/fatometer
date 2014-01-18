@@ -34,7 +34,7 @@
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         // setup In-App-Purchase Store
-        [Store setupDefault];
+        [Store setupDefault]; 
         
         // set background color
         CCLayerColor* colorLayer = [CCLayerColor layerWithColor:SCREEN_BG_COLOR_TRANSPARENT];

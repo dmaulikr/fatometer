@@ -23,18 +23,22 @@
 - (void)resumeButtonPressed:(PauseScreen *)pauseScreen;
 - (void)quitButtonPressed:(PauseScreen *)pauseScreen;
 - (void)resetButtonPressed:(PauseScreen *)pauseScreen;
+- (void)storeButtonPressed:(PauseScreen *)pauseScreen;
 
 @end
 
 @interface PauseScreen : CCLayer
 {
+    CGPoint screenCenter;
+    CGSize size;
     CCBackgroundColorNode *backgroundNode;
     CCMenu *menu;
 //    CCMenu *menu2;
 //    CCMenu *menu3;
     CCMenuItemSprite *resumeMenuItem;
-    CCMenuItemSprite *quitMenuItem;
+    CCMenuItemSprite *homeMenuItem;
     CCMenuItemSprite *resetMenuItem;
+    CCMenuItemSprite *storeMenuItem;
     MissionsNode *missionNode;
 }
 

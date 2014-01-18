@@ -30,6 +30,8 @@
 	CGSize screenSize;
     
     CCNode *backgroundNode;
+//    CCSprite *sprite;
+//    CCSprite *sprite2;
 }
 
 @end

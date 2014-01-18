@@ -14,7 +14,7 @@
 
 #define DEFAULT_FONT_COLOR ccc3(0, 0, 0)
 #define WHITE_FONT_COLOR ccc3(255, 255, 255)
-#define DEFAULT_FONT @"Caviar Dreams"
+#define DEFAULT_FONT @"PaperJohnnyEins-Regular"
 
 #define INVERSE_FONT_COLOR ccc3(255, 255, 255)
 
