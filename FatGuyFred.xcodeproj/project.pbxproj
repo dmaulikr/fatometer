@@ -12,12 +12,10 @@
 		380F5D9E17A82E9B0066283C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9D17A82E9B0066283C /* Default@2x.png */; };
 		380F5DA017A82F090066283C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9F17A82F090066283C /* Default-568h@2x.png */; };
 		384C7A4B17AF71B100B01AC7 /* DieAmountOfTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 384C7A4A17AF71B100B01AC7 /* DieAmountOfTimes.m */; };
-		384DEFA61845397C004B71A9 /* bg-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEF9A1845397C004B71A9 /* bg-568h.png */; };
 		384DEFA81845397C004B71A9 /* bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEF9C1845397C004B71A9 /* bg-hd.png */; };
 		384DEFAA1845397C004B71A9 /* bg-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEF9E1845397C004B71A9 /* bg-ipad.png */; };
 		384DEFAC1845397C004B71A9 /* bg-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFA01845397C004B71A9 /* bg-ipadhd.png */; };
 		384DEFAE1845397C004B71A9 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFA21845397C004B71A9 /* bg.png */; };
-		384DEFAF1845397C004B71A9 /* bg0-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFA31845397C004B71A9 /* bg0-hd.png */; };
 		384DEFB01845397C004B71A9 /* bg0.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFA41845397C004B71A9 /* bg0.png */; };
 		384DEFB4184542E8004B71A9 /* tap-screen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFB1184542E8004B71A9 /* tap-screen-hd.png */; };
 		384DEFB5184542E8004B71A9 /* tap-screen-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFB2184542E8004B71A9 /* tap-screen-ipadhd.png */; };
@@ -467,6 +465,7 @@
 		62F0C649174F1BD800FB096E /* StoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F0C648174F1BD800FB096E /* StoreItem.m */; };
 		62F0C64C174F295B00FB096E /* StoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F0C64A174F295B00FB096E /* StoreTableViewCell.m */; };
 		62F0C652174FDA9100FB096E /* StoreTableViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F0C651174FDA9100FB096E /* StoreTableViewHeaderCell.m */; };
+		70D2E1A9188A169700720C31 /* bg1.png in Resources */ = {isa = PBXBuildFile; fileRef = 70D2E1A8188A169700720C31 /* bg1.png */; };
 		DC65615C13A969B600A7AC53 /* libbox2d-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615013A969B600A7AC53 /* libbox2d-ios.a */; };
 		DC65615D13A969B600A7AC53 /* libchipmunk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615113A969B600A7AC53 /* libchipmunk-ios.a */; };
 		DC65615E13A969B600A7AC53 /* libchipmunk-spacemanager-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC65615213A969B600A7AC53 /* libchipmunk-spacemanager-ios.a */; };
@@ -490,12 +489,10 @@
 		381FD2F1179DAD4900702DF4 /* CoinPurchaseStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinPurchaseStoreItem.h; sourceTree = "<group>"; };
 		384C7A4917AF71B100B01AC7 /* DieAmountOfTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DieAmountOfTimes.h; sourceTree = "<group>"; };
 		384C7A4A17AF71B100B01AC7 /* DieAmountOfTimes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DieAmountOfTimes.m; sourceTree = "<group>"; };
-		384DEF9A1845397C004B71A9 /* bg-568h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-568h.png"; sourceTree = "<group>"; };
 		384DEF9C1845397C004B71A9 /* bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-hd.png"; sourceTree = "<group>"; };
 		384DEF9E1845397C004B71A9 /* bg-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-ipad.png"; sourceTree = "<group>"; };
 		384DEFA01845397C004B71A9 /* bg-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-ipadhd.png"; sourceTree = "<group>"; };
 		384DEFA21845397C004B71A9 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
-		384DEFA31845397C004B71A9 /* bg0-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg0-hd.png"; sourceTree = "<group>"; };
 		384DEFA41845397C004B71A9 /* bg0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg0.png; sourceTree = "<group>"; };
 		384DEFB1184542E8004B71A9 /* tap-screen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tap-screen-hd.png"; sourceTree = "<group>"; };
 		384DEFB2184542E8004B71A9 /* tap-screen-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tap-screen-ipadhd.png"; sourceTree = "<group>"; };
@@ -1034,6 +1031,7 @@
 		62F0C64B174F295B00FB096E /* StoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreTableViewCell.h; path = Scenes/StoreScene/StoreTableViewCell.h; sourceTree = "<group>"; };
 		62F0C650174FDA9100FB096E /* StoreTableViewHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreTableViewHeaderCell.h; path = Scenes/StoreScene/StoreTableViewHeaderCell.h; sourceTree = "<group>"; };
 		62F0C651174FDA9100FB096E /* StoreTableViewHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableViewHeaderCell.m; path = Scenes/StoreScene/StoreTableViewHeaderCell.m; sourceTree = "<group>"; };
+		70D2E1A8188A169700720C31 /* bg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg1.png; sourceTree = "<group>"; };
 		DC3BE97813B4FB71003739CC /* BuildSettings-iOS.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-iOS.xcconfig"; sourceTree = "<group>"; };
 		DC65615013A969B600A7AC53 /* libbox2d-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libbox2d-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC65615113A969B600A7AC53 /* libchipmunk-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libchipmunk-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1132,12 +1130,11 @@
 		38A5319317A9E3C900A8A484 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				384DEF9A1845397C004B71A9 /* bg-568h.png */,
 				384DEF9C1845397C004B71A9 /* bg-hd.png */,
 				384DEF9E1845397C004B71A9 /* bg-ipad.png */,
 				384DEFA01845397C004B71A9 /* bg-ipadhd.png */,
 				384DEFA21845397C004B71A9 /* bg.png */,
-				384DEFA31845397C004B71A9 /* bg0-hd.png */,
+				70D2E1A8188A169700720C31 /* bg1.png */,
 				384DEFA41845397C004B71A9 /* bg0.png */,
 			);
 			path = Backgrounds;
@@ -2071,7 +2068,7 @@
 				ORGANIZATIONNAME = "MakeGamesWithUs Inc.";
 				TargetAttributes = {
 					DCC1A0E213A94ED5005BD75D = {
-						DevelopmentTeam = B39S6TGG7N;
+						DevelopmentTeam = GQ254GL522;
 					};
 				};
 			};
@@ -2098,7 +2095,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				384DEFA61845397C004B71A9 /* bg-568h.png in Resources */,
 				5417091A177123A90021A8C5 /* aqua.png in Resources */,
 				5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */,
 				5417091C177123A90021A8C5 /* CrossPromoViewController.nib in Resources */,
@@ -2183,6 +2179,7 @@
 				38A532A417A9E3C900A8A484 /* CaviarDreams_Italic.ttf in Resources */,
 				38A5333717A9E3C900A8A484 /* coins.mp3 in Resources */,
 				38A5333817A9E3C900A8A484 /* explode.mp3 in Resources */,
+				70D2E1A9188A169700720C31 /* bg1.png in Resources */,
 				38A5333917A9E3C900A8A484 /* fly.mp3 in Resources */,
 				38A5333A17A9E3C900A8A484 /* select.mp3 in Resources */,
 				38F7505F17A9F0B7006B3B91 /* fps_images-hd.png in Resources */,
@@ -2257,7 +2254,6 @@
 				38F750F817A9F0F5006B3B91 /* watermelon.png in Resources */,
 				38F7515B17A9F112006B3B91 /* arrows-hd.png in Resources */,
 				38F7515C17A9F112006B3B91 /* arrows.png in Resources */,
-				384DEFAF1845397C004B71A9 /* bg0-hd.png in Resources */,
 				38F7516817A9F112006B3B91 /* fire.png in Resources */,
 				38F7516917A9F112006B3B91 /* avenir-hd.fnt in Resources */,
 				38F7516A17A9F112006B3B91 /* avenir-hd.png in Resources */,
@@ -2582,8 +2578,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90EF13B4F6F7009DD35A /* BuildSettings-Debug-iOS.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shalin Shah (3SSVVBSKNP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shalin Shah (3SSVVBSKNP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mgwuSDK.embeddedframework\"",
@@ -2596,8 +2592,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
-				PROVISIONING_PROFILE = "B530DCC7-C104-4C83-963E-4B20BE67B0F2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B530DCC7-C104-4C83-963E-4B20BE67B0F2";
+				PROVISIONING_PROFILE = "D6A45A2E-7542-4506-9D8C-B4F04A6AB9E7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6A45A2E-7542-4506-9D8C-B4F04A6AB9E7";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2607,8 +2603,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA90F013B4F811009DD35A /* BuildSettings-Release-iOS.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dipti Shah (SKPGEPUU32)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shalin Shah (3SSVVBSKNP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shalin Shah (3SSVVBSKNP)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/mgwuSDK.embeddedframework\"",
@@ -2621,8 +2617,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
-				PROVISIONING_PROFILE = "B530DCC7-C104-4C83-963E-4B20BE67B0F2";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B530DCC7-C104-4C83-963E-4B20BE67B0F2";
+				PROVISIONING_PROFILE = "D6A45A2E-7542-4506-9D8C-B4F04A6AB9E7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6A45A2E-7542-4506-9D8C-B4F04A6AB9E7";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
 			};

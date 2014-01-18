@@ -39,37 +39,32 @@
         for (NSUInteger i = 0; i < numStripes; i++)
 		{
             // Normal iPhone and iPod Touch, and Retina iPhone and iPod Touch
-			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
-			sprite.anchorPoint = CGPointMake(0, 0.5f);
-                        
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg0.png"];
+//            CCSprite *sprite2 = [CCSprite spriteWithFile:@"bg1.png"];
+            
+            sprite.anchorPoint = CGPointMake(0, 0.5f);
 			sprite.position = CGPointMake(0, screenSize.height / 2);
+
+//			sprite2.anchorPoint = CGPointMake(0, 0.5f);
+//			sprite2.position = CGPointMake(sprite.position.x*1.5, screenSize.height / 2);
+            
             [backgroundNode addChild:sprite z:i tag:i];
+//            [backgroundNode addChild:sprite2 z:i tag:i];
 		}
         
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         for (NSUInteger i = 0; i < numStripes; i++)
 		{
             // Normal iPhone and iPod Touch, and Retona iPhone and iPod Touch
-			CCSprite *sprite = [CCSprite spriteWithFile:@"bg.png"];
+			CCSprite *sprite = [CCSprite spriteWithFile:@"bg0.png"];
+//            CCSprite *sprite2 = [CCSprite spriteWithFile:@"bg1.png"];
 			sprite.anchorPoint = CGPointMake(0, 0.5f);
-			sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
-            
-            // I don't even need these if statments if I add the appropriate suffix to the code. I need to edit this later.
-            
-            if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136) {
-                // iPhone 5
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-568h.png"];
-                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
-            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
-                // iPad Non-Retina
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipad.png"];
-                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
-            } else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-                //iPad Retina
-                CCSprite *sprite = [CCSprite spriteWithFile:@"bg-ipadhd.png"];
-                sprite.position = CGPointMake(sprite.contentSize.width - 1, screenSize.height / 2);
-            }
+			sprite.position = CGPointMake((sprite.contentSize.width - 1)*2, screenSize.height / 2);
+//            sprite2.anchorPoint = CGPointMake(0, 0.5f);
+//			sprite2.position = CGPointMake((sprite2.contentSize.width - 1)*2, screenSize.height / 2);
+//            
 			[backgroundNode addChild:sprite z:i tag:i];
+//            [backgroundNode addChild:sprite2 z:i tag:i];
 		}
         
 		// Initialize the array that contains the scroll factors for individual layers.
