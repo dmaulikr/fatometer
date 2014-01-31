@@ -28,7 +28,7 @@
 		[self addChild:backgroundNode];
         
         // For Parralax, set this to however many different background layers there are. So If there are 3 backgrounds, then this would be set to 3.
-        numStripes = 1;
+        numStripes = 3;
         
         /*
          The Below Code is For for NON Parralax Backgrounds. Comment this if you want to use a parralax background.
@@ -38,8 +38,11 @@
         
         for (NSUInteger i = 0; i < numStripes; i++)
         {
-            CCSprite *sprite = [CCSprite spriteWithFile:@"background-left.png"];
-            CCSprite *sprite2 = [CCSprite spriteWithFile:@"background-right.png"];
+            NSString* bgleft = [NSString stringWithFormat:@"background0-left.png", i];
+            NSString* bgright = [NSString stringWithFormat:@"background0-right.png", i];
+
+            CCSprite *sprite = [CCSprite spriteWithFile:bgleft];
+            CCSprite *sprite2 = [CCSprite spriteWithFile:bgright];
             
             sprite.anchorPoint = CGPointMake(0, 0.5f);
             sprite.position = CGPointMake(0, screenSize.height / 2);
@@ -54,8 +57,11 @@
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         for (NSUInteger i = 0; i < numStripes; i++)
         {
-            CCSprite *sprite = [CCSprite spriteWithFile:@"background-left.png"];
-            CCSprite *sprite2 = [CCSprite spriteWithFile:@"background-right.png"];
+            NSString* bgleft = [NSString stringWithFormat:@"background0-left.png", i];
+            NSString* bgright = [NSString stringWithFormat:@"background0-right.png", i];
+            
+            CCSprite *sprite = [CCSprite spriteWithFile:bgleft];
+            CCSprite *sprite2 = [CCSprite spriteWithFile:bgright];
             sprite.anchorPoint = CGPointMake(0, 0.5f);
             sprite2.anchorPoint = CGPointMake(0, 0.5f);
             sprite.position = CGPointMake(sprite.contentSize.width + sprite2.contentSize.width - 1, screenSize.height / 2);
@@ -69,6 +75,8 @@
 		// Initialize the array that contains the scroll factors for individual layers.
         // Uncomment this line of code if not using parralax backgrounds
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
+		[speedFactors addObject:[NSNumber numberWithFloat:0.4f]];
+        [speedFactors addObject:[NSNumber numberWithFloat:0.7f]];
 		[speedFactors addObject:[NSNumber numberWithFloat:1.0f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
         
