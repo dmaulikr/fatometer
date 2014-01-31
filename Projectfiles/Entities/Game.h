@@ -17,6 +17,7 @@
 
 @property (nonatomic, assign) NSInteger score;
 @property (nonatomic, assign) NSInteger meters;
+@property (nonatomic, assign) NSInteger coins;
 @property (nonatomic, assign) NSInteger foodsCollected;
 @property (nonatomic, assign) NSInteger fatness;
 @property (nonatomic, assign) NSInteger jumps;

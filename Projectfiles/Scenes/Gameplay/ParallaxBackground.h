@@ -23,6 +23,7 @@
 	CCSpriteBatchNode* spriteBatch;
 
 	NSUInteger numStripes;
+//    NSUInteger numBackgrounds;
 
 	CCArray* speedFactors;
 	float scrollSpeed;

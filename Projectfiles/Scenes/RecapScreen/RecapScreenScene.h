@@ -10,6 +10,7 @@
 #import "Game.h"
 #import "MissionsNode.h"
 #import "LeaderboardNode.h"
+#import "ScoreboardEntryNode.h"
 
 @interface RecapScreenScene : CCScene <UIAlertViewDelegate>
 {
@@ -21,6 +22,7 @@
     MissionsNode *missionNode;
     UIAlertView *usernamePrompt;
     BOOL waitingForFacebookLogin;
+    ScoreboardEntryNode *coinsDisplayNode;
 }
 
 - (id)initWithGame:(Game *)game;

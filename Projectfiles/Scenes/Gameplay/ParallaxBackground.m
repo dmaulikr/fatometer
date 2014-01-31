@@ -38,8 +38,8 @@
         
         for (NSUInteger i = 0; i < numStripes; i++)
         {
-            CCSprite *sprite = [CCSprite spriteWithFile:@"bg0.png"];
-            CCSprite *sprite2 = [CCSprite spriteWithFile:@"bg1.png"];
+            CCSprite *sprite = [CCSprite spriteWithFile:@"background-left.png"];
+            CCSprite *sprite2 = [CCSprite spriteWithFile:@"background-right.png"];
             
             sprite.anchorPoint = CGPointMake(0, 0.5f);
             sprite.position = CGPointMake(0, screenSize.height / 2);
@@ -54,8 +54,8 @@
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         for (NSUInteger i = 0; i < numStripes; i++)
         {
-            CCSprite *sprite = [CCSprite spriteWithFile:@"bg0.png"];
-            CCSprite *sprite2 = [CCSprite spriteWithFile:@"bg1.png"];
+            CCSprite *sprite = [CCSprite spriteWithFile:@"background-left.png"];
+            CCSprite *sprite2 = [CCSprite spriteWithFile:@"background-right.png"];
             sprite.anchorPoint = CGPointMake(0, 0.5f);
             sprite2.anchorPoint = CGPointMake(0, 0.5f);
             sprite.position = CGPointMake(sprite.contentSize.width + sprite2.contentSize.width - 1, screenSize.height / 2);

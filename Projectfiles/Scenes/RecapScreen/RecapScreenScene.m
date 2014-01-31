@@ -17,6 +17,8 @@
 #import "PersonalBestNode.h"
 #import "GameplayLayer.h"
 #import "Leaderboard.h"
+#import "GameplayLayer.h"
+#import "Store.h"
 
 @interface RecapScreenScene()
 
@@ -58,11 +60,11 @@
          */
         
         /********** Statistics Panel *********/
-        NSString *highscore = [NSString stringWithFormat:@"%d Points", game.score];
+        NSString *highscore = [NSString stringWithFormat:@"%d coins", [Store availableAmountInAppCurrency]];
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
-        NSString *foodsCollected = [NSString stringWithFormat:@"%d Enemy's Killed", game.foodsCollected];
+        NSString *foodsCollected = [NSString stringWithFormat:@"Ate %d foods", game.foodsCollected];
         
-        NSArray *highScoreStrings = [NSArray arrayWithObjects:distance, nil];
+        NSArray *highScoreStrings = [NSArray arrayWithObjects:distance, foodsCollected, highscore, nil];
 
         // setup the statistics panel with the current game information of the user
         statisticsNode = [[StatisticsNode alloc] initWithTitle:@"Game Over" highScoreStrings:highScoreStrings];
@@ -92,20 +94,24 @@
         [self addChild:tabNode];
         
         /*********** Facebook, Twitter, MGWU and MoreGames Menu **********/
-        CCMenuItemSprite *mgwuIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"mmenu.png"] selectedSprite:[CCSprite spriteWithFile:@"mmenu_pressed.png"] target:self selector:@selector(mguwIconPressed)];
+        CCMenuItemSprite *mgwuIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"share-menu.png"] selectedSprite:[CCSprite spriteWithFile:@"share-menu.png"] target:self selector:@selector(mguwIconPressed)];
         
-        CCMenuItemSprite *moreGamesIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"moregames.png"] selectedSprite:[CCSprite spriteWithFile:@"moregames_pressed.png"] target:self selector:@selector(moreGamesIconPressed)];
+        CCMenuItemSprite *moreGamesIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"more-button.png"] selectedSprite:[CCSprite spriteWithFile:@"more-button-down.png"] target:self selector:@selector(moreGamesIconPressed)];
                                            
-        CCMenuItemSprite *facebookIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"facebook.png"] selectedSprite:[CCSprite spriteWithFile:@"facebook_pressed.png"] target:self selector:@selector(fbIconPressed)];
+        CCMenuItemSprite *facebookIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"facebook-button.png"] selectedSprite:[CCSprite spriteWithFile:@"facebook-button-down.png"] target:self selector:@selector(fbIconPressed)];
                                           
-        CCMenuItemSprite *twitterIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"twitter.png"] selectedSprite:[CCSprite spriteWithFile:@"twitter_pressed.png"] target:self selector:@selector(twitterIconPressed)];
+        CCMenuItemSprite *twitterIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"twitter-button.png"] selectedSprite:[CCSprite spriteWithFile:@"twitter-button-down.png"] target:self selector:@selector(twitterIconPressed)];
         
-        CCMenu *socialMenu = [CCMenu menuWithItems:mgwuIcon, moreGamesIcon, facebookIcon, twitterIcon, nil];
+        CCMenu *socialMenu = [CCMenu menuWithItems:moreGamesIcon, facebookIcon, twitterIcon, nil];
         socialMenu.position = ccp(100, self.contentSize.height-40);
         socialMenu.anchorPoint = ccp(0,1);
         [socialMenu alignItemsHorizontallyWithPadding:0.f];
         [self addChild:socialMenu];
         
+        CCSprite *socialMenuBG = [CCSprite spriteWithFile:@"share-menu.png"];
+        socialMenuBG.position = ccp(100, self.contentSize.height-40);
+        [self addChild:socialMenuBG];
+
         
         /*********** Personal Best *********/
         
