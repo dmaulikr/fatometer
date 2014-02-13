@@ -53,7 +53,35 @@
         CCNode *tab = [self.tabs objectAtIndex:i];
         NSString *tabTitle = [tabTitles objectAtIndex:i];
         // add a tab bar button for each tab
-        CCControlButton *tabButton = [StyleManager defaultRecapSceneTabButtonWithTitle:tabTitle];
+        CCControlButton *tabButton = nil;
+        
+        if (i == 0) {
+            // mission
+            CCControlButton *controllButton = [CCControlButton buttonWithTitle:@"" fontName:DEFAULT_FONT fontSize:16];
+            controllButton.contentSize = CGSizeMake(101,25);
+            controllButton.preferredSize = CGSizeMake(101,25);
+            CCScale9Sprite *backgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"missions-inactive.png" capInsets:CGRectZero];
+            backgroundSprite.contentSize = CGSizeMake(101,25);
+            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
+            
+            [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
+            tabButton = controllButton;
+        } else if (i == 1) {
+            // leaderboards
+            CCControlButton *controllButton = [CCControlButton buttonWithTitle:@"" fontName:DEFAULT_FONT fontSize:16];
+            controllButton.contentSize = CGSizeMake(131,25);
+            controllButton.preferredSize = CGSizeMake(131,25);
+            CCScale9Sprite *backgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"leaderboard-inactive.png" capInsets:CGRectZero];
+            backgroundSprite.contentSize = CGSizeMake(131,25);
+            backgroundSprite.contentSize = controllButton.contentSize;
+            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
+            
+            [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
+            tabButton = controllButton;
+        } else {
+            tabButton = [StyleManager defaultRecapSceneTabButtonWithTitle:tabTitle];
+        }
+        
         tabButton.anchorPoint = ccp(0,1);
         tabButton.position = ccp(xPos, self.contentSize.height);
 

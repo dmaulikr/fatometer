@@ -149,7 +149,7 @@
     if (username)
     {
 //        [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD];
-        [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
+//        [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
     } else
     {
         // if no unsername is set yet, prompt dialog and submit highscore then
@@ -224,7 +224,7 @@
             // save the user name
             [Leaderboard setUserName:username];
 //            [MGWU submitHighScore:game.score byPlayer:username forLeaderboard:HIGHSCORE_LEADERBOARD withCallback:@selector(receivedScores:) onTarget:self];
-            [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
+//            [MGWU submitHighScore:game.meters byPlayer:username forLeaderboard:DISTANCE_LEADERBOARD];
 
         } else if (buttonIndex == 1)
         {
