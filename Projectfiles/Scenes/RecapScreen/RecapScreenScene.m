@@ -47,10 +47,16 @@
         game = g;
         
         CGSize screenSize = [CCDirector sharedDirector].screenSize;
+        size = [[CCDirector sharedDirector] winSize];
+        screenCenter = ccp(size.width/2, size.height/2);
+        
+        CCSprite* background = [CCSprite spriteWithFile:@"background-recap.png"];
+        background.position = ccp(screenCenter.x,screenCenter.y);
+        [self addChild:background z:0];
         
         // set the background color
-        CCLayerColor* colorLayer = [CCLayerColor layerWithColor:SCREEN_BG_COLOR];
-        [self addChild:colorLayer z:0];
+//        CCLayerColor* colorLayer = [CCLayerColor layerWithColor:SCREEN_BG_COLOR];
+//        [self addChild:colorLayer z:0];
         
         /*
          We are building this screen with different modules. One module (StatistsicsPanel) will show
@@ -60,17 +66,24 @@
          */
         
         /********** Statistics Panel *********/
-        NSString *highscore = [NSString stringWithFormat:@"%d coins", [Store availableAmountInAppCurrency]];
+        CCSprite *coinImage = [CCSprite spriteWithFile:@"coin-mode-icon.png"];
+        coinImage.position = ccp((screenCenter.x / 6)+9, screenCenter.y - 32);
+        [self addChild:coinImage z:1000000];
+        NSString *coins = [NSString stringWithFormat:@"     %d coins", [Store availableAmountInAppCurrency]];
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
         NSString *foodsCollected = [NSString stringWithFormat:@"Ate %d foods", game.foodsCollected];
         
-        NSArray *highScoreStrings = [NSArray arrayWithObjects:distance, foodsCollected, highscore, nil];
+        NSArray *highScoreStrings = [NSArray arrayWithObjects:distance, foodsCollected, coins, nil];
 
         // setup the statistics panel with the current game information of the user
-        statisticsNode = [[StatisticsNode alloc] initWithTitle:@"Game Over" highScoreStrings:highScoreStrings];
+        CCSprite *gameOverTitle = [CCSprite spriteWithFile:@"gameover.png"];
+        gameOverTitle.position = ccp((screenCenter.x / 2), screenCenter.y * 1.5);
+        [self addChild:gameOverTitle];
+        
+        statisticsNode = [[StatisticsNode alloc] init];
         statisticsNode.contentSize = CGSizeMake(200, 200);
         statisticsNode.anchorPoint = ccp(0, 1);
-        statisticsNode.position = ccp(20 ,screenSize.height - 70);
+        statisticsNode.position = ccp((screenCenter.x / 2), screenCenter.y * 1.5);
         [self addChild:statisticsNode];
         
         /********** Mission Panel *********/
@@ -84,6 +97,9 @@
         leaderboardNode.contentSize = CGSizeMake(240.f, 201.f);
         
         /********** TabView Panel *********/
+//        CCSprite *tabTileScoreboard = [CCSprite spriteWithFile:@"leaderboard-active.png"];
+//        CCSprite *tabTileMission = [CCSprite spriteWithFile:@"missions-active.png"];
+        
         NSArray *tabs = @[missionNode, leaderboardNode];
         NSArray *tabTitles = @[@"Missions", @"Leaderboards"];
         tabNode = [[TabNode alloc] initWithTabs:tabs tabTitles:tabTitles];
@@ -94,7 +110,7 @@
         [self addChild:tabNode];
         
         /*********** Facebook, Twitter, MGWU and MoreGames Menu **********/
-        CCMenuItemSprite *mgwuIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"share-menu.png"] selectedSprite:[CCSprite spriteWithFile:@"share-menu.png"] target:self selector:@selector(mguwIconPressed)];
+//        CCMenuItemSprite *mgwuIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"share-menu.png"] selectedSprite:[CCSprite spriteWithFile:@"share-menu.png"] target:self selector:@selector(mguwIconPressed)];
         
         CCMenuItemSprite *moreGamesIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"more-button.png"] selectedSprite:[CCSprite spriteWithFile:@"more-button-down.png"] target:self selector:@selector(moreGamesIconPressed)];
                                            
@@ -103,10 +119,10 @@
         CCMenuItemSprite *twitterIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"twitter-button.png"] selectedSprite:[CCSprite spriteWithFile:@"twitter-button-down.png"] target:self selector:@selector(twitterIconPressed)];
         
         CCMenu *socialMenu = [CCMenu menuWithItems:moreGamesIcon, facebookIcon, twitterIcon, nil];
-        socialMenu.position = ccp(100, self.contentSize.height-40);
+        socialMenu.position = ccp(110, self.contentSize.height-40);
         socialMenu.anchorPoint = ccp(0,1);
         [socialMenu alignItemsHorizontallyWithPadding:0.f];
-        [self addChild:socialMenu];
+        [self addChild:socialMenu z:100000];
         
         CCSprite *socialMenuBG = [CCSprite spriteWithFile:@"share-menu.png"];
         socialMenuBG.position = ccp(100, self.contentSize.height-40);
@@ -190,7 +206,7 @@
 
 - (void)twitterIconPressed
 {
-    NSString *tweetMessage = [NSString stringWithFormat:@"Checkout this amazing game: @MGWU_Runner_Template! @MakeGamesWithUs"];
+    NSString *tweetMessage = [NSString stringWithFormat:@"Checkout this amazing game: @shlns! @MakeGamesWithUs"];
     [MGWU postToTwitter:tweetMessage];
 }
 

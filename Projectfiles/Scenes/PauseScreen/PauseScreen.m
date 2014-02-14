@@ -50,7 +50,8 @@
 //        backgroundNode.anchorPoint = ccp(0.5, 0.5);
         
         CCSprite* background = [CCSprite spriteWithFile:@"pausebackground.png"];
-        background.position = ccp(screenCenter.x,screenCenter.y);
+        self.position = ccp(self.contentSize.width / 4, self.contentSize.height / 4);
+        background.scale = 2;
         [self addChild:background z:-100000];
         
         // add title label
@@ -61,7 +62,7 @@
         storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 45);
         
         CCSprite *pauseTitle = [CCSprite spriteWithFile:@"pause-title-hd.png"];
-        pauseTitle.position = ccp(0, 0.5 * self.contentSize.height - 45);
+        pauseTitle.position = ccp(0,(self.contentSize.height/2.5)-100);
         [self addChild:pauseTitle];
         
         // add a resume button
@@ -78,7 +79,7 @@
 
         menu = [CCMenu menuWithItems:resumeMenuItem, resetMenuItem, homeMenuItem, storeMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, 30);
+        menu.position = ccp(0, (self.contentSize.height/6)-100);
         [self addChild:menu];
         
         // This is for aligning the menu items vertically

@@ -23,6 +23,8 @@
     UIAlertView *usernamePrompt;
     BOOL waitingForFacebookLogin;
     ScoreboardEntryNode *coinsDisplayNode;
+    CGPoint screenCenter;
+    CGSize size;
 }
 
 - (id)initWithGame:(Game *)game;

@@ -63,7 +63,7 @@
     if (self)
     {
         [self structureScoreboardEntries:scoreboardArg];
-        self.backgroundSprite = [CCSprite spriteWithFile:@"leaderboard_background.png"];
+        self.backgroundSprite = [CCSprite spriteWithFile:@"scoreboard.png"];
     }
     
     return self;
