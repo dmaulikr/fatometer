@@ -30,16 +30,20 @@
     CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 255)];
     colorLayer.size = self.contentSize;
     colorLayer.anchorPoint = ccp(0,0);
-    [self addChild:colorLayer z:-10];
+//    [self addChild:colorLayer z:-10];
     
-    NSString *personalBestString = [NSString stringWithFormat:@"YOUR BEST: %dm",personalBest];
+    CCSprite *bestScoreSprite = [CCSprite spriteWithFile:@"best-score.png"];
+    bestScoreSprite.position = ccp((self.contentSize.width)-122, (self.contentSize.height)-23);
+    [self addChild:bestScoreSprite z:-10];
+    
+    NSString *personalBestString = [NSString stringWithFormat:@"BEST: %dm",personalBest];
     
     CCLabelTTF *highScoreLabel = [CCLabelTTF labelWithString:personalBestString
                                                     fontName:DEFAULT_FONT
-                                                    fontSize:28];
+                                                    fontSize:20];
     highScoreLabel.color = INVERSE_FONT_COLOR;
     highScoreLabel.anchorPoint = ccp(0, 1);
-    highScoreLabel.position = ccp(4, self.contentSize.height-4);
+    highScoreLabel.position = ccp((self.contentSize.width/4) - 50, (self.contentSize.height)-18);
     [self addChild:highScoreLabel];
 }
 
