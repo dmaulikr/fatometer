@@ -77,13 +77,14 @@
 
         // setup the statistics panel with the current game information of the user
         CCSprite *gameOverTitle = [CCSprite spriteWithFile:@"gameover.png"];
-        gameOverTitle.position = ccp((screenCenter.x / 2), screenCenter.y * 1.5);
+        gameOverTitle.position = ccp((screenCenter.x / 2.3), screenCenter.y * 1.5);
+        gameOverTitle.scale = 1.3;
         [self addChild:gameOverTitle];
         
         statisticsNode = [[StatisticsNode alloc] initWithTitle:nil highScoreStrings:highScoreStrings];
         statisticsNode.contentSize = CGSizeMake(200, 200);
         statisticsNode.anchorPoint = ccp(0, 1);
-        statisticsNode.position = ccp((screenCenter.x / 2), screenCenter.y * 1.5);
+        statisticsNode.position = ccp((screenCenter.x / 5), screenCenter.y);
         [self addChild:statisticsNode];
         
         /********** Mission Panel *********/

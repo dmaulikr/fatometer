@@ -235,8 +235,11 @@
         [self addChild:knight];
         knight.anchorPoint = ccp(0,0);
         
+        CCSprite *coinModeImage = [CCSprite spriteWithFile:@"coin-mode.png"];
+        coinModeImage.scale = 1.2;
+        
         // add scoreboard entry for in-app currency
-        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin.png" fontFile:@"avenir.fnt"];
+        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:coinModeImage fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 20);
         inAppCurrencyDisplayNode.score = coinsCollected;
@@ -265,13 +268,15 @@
         pauseButtonPressed.scale = 1.5;
         pauseButtonMenuItem = [CCMenuItemSprite itemWithNormalSprite:pauseButton selectedSprite:pauseButtonPressed target:self selector:@selector(pauseButtonPressed)];
         pauseButtonMenu = [CCMenu menuWithItems:pauseButtonMenuItem, nil];
-        pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 55);
+        pauseButtonMenu.position = ccp(self.contentSize.width - 30, self.contentSize.height - 30);
         [hudNode addChild:pauseButtonMenu];
         
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"weight-bar.png"];
         pointer = [CCSprite spriteWithFile:@"weight-indicator.png"];
-        toolBar.position = ccp(screenSize.width/2,screenSize.height-40);
+        toolBar.position = ccp(screenSize.width/2,screenSize.height-24);
+        toolBar.scale = 1.3;
+        pointer.scale = 1.3;
 //        [self resizeSprite:toolBar toWidth:screenSize.width toHeight:[toolBar boundingBox].size.height];
         
         // Set Up Tutorial Images and Arrows
