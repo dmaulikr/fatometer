@@ -35,8 +35,8 @@
 	if ((self = [super init]))
 	{
         // load all the enemies in a sprite cache, all monsters need to be part of this sprite file
-        CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
-		[frameCache addSpriteFramesWithFile:@"monster-animations.plist"];
+//        CCSpriteFrameCache* frameCache = [CCSpriteFrameCache sharedSpriteFrameCache];
+//		[frameCache addSpriteFramesWithFile:@"monster-animations.plist"];
         
         [self scheduleUpdate];
         enemies = [[NSMutableDictionary alloc] init];
