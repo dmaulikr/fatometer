@@ -239,7 +239,7 @@
         coinModeImage.scale = 1.2;
         
         // add scoreboard entry for in-app currency
-        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:coinModeImage fontFile:@"avenir.fnt"];
+        inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin-mode.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 20);
         inAppCurrencyDisplayNode.score = coinsCollected;
