@@ -1165,8 +1165,8 @@
 - (void)onEnterTransitionDidFinish
 {
   
-//  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
-//  [[CCDirector sharedDirector] replaceScene:recap];
+  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
+  [[CCDirector sharedDirector] replaceScene:recap];
   
     // setup a gesture listener for jumping and stabbing gestures
     [KKInput sharedInput].gestureSwipeEnabled = TRUE;
