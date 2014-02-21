@@ -271,7 +271,7 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"weight-bar.png"];
         pointer = [CCSprite spriteWithFile:@"weight-indicator.png"];
-        toolBar.position = ccp(screenSize.width/2,screenSize.height-55);
+        toolBar.position = ccp(screenSize.width/2,screenSize.height-40);
 //        [self resizeSprite:toolBar toWidth:screenSize.width toHeight:[toolBar boundingBox].size.height];
         
         // Set Up Tutorial Images and Arrows
@@ -367,9 +367,9 @@
 }
 -(void) convertFromPercent:(float) floatToConvert {
 //    float percentVal = [toolBar boundingBox].size.width/100;
-    float percentVal = toolBar.size.width/100;
+    float percentVal = ([toolBar boundingBox].size.width)/100;
     float percent = floatToConvert * percentVal;
-    pointerPosition = ccp(percent, toolBar.position.y);
+    pointerPosition = ccp(percent+(screenCenter.x/2), toolBar.position.y);
 }
 - (void)gamePaused {
     [self pauseSchedulerAndActions];
