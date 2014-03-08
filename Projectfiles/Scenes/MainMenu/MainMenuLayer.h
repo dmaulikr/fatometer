@@ -16,6 +16,11 @@
     CCMenuItem *startButton;
     CCMenuItemFont *storeButton;
     CGPoint startTitleLabelTargetPoint;
+    
+    
+    CGPoint screenCenter;
+    CGSize size;
+
 }
 
 @end

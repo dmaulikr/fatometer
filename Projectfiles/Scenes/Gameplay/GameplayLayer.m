@@ -159,7 +159,7 @@
     GameplayLayer* layer = [GameplayLayer node];
     
     // By default we want to show the main menu
-    layer.showMainMenu = TRUE;
+    layer.showMainMenu = FALSE;
     
     [scene addChild:layer];
     return scene;
@@ -407,7 +407,7 @@
 - (void)quit
 {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
-    self.showMainMenu = TRUE;
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionSlideInT transitionWithDuration:0.5f scene:[MainMenuLayer node]]];
     [self resetFatness];
 }
 - (void)reset {
@@ -731,51 +731,53 @@
         }
     }
 }
+
+
 - (void)powerUpShow {
     /*
      The random value algorithm between ranges is this:
      (arc4random()%(toNumber-fromNumber))+fromNumber
      */
-    if (pointsDisplayNode.score == (arc4random()%(1200-1000))+1000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(2200-2000))+2000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(3200-3000))+3000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(4200-4000))+4000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(5200-5000))+5000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(6200-6000))+6000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(7200-7000))+7000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(8200-8000))+8000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(9200-9000))+9000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(10200-10000))+10000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(11200-11000))+11000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(12200-12000))+12000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(13200-13000))+13000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(14200-14000))+14000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(15200-15000))+15000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(16200-16000))+16000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(17200-17000))+17000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(18200-18000))+18000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(19200-19000))+19000) {
-        
-    } else if (pointsDisplayNode.score == (arc4random()%(20200-20000))+20000) {
-        
+    if (pointsDisplayNode.score == (arc4random()%(1200-1001))+1000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(2200-2001))+2000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(3200-3001))+3000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(4200-4001))+4000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(5200-5001))+5000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(6200-6001))+6000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(7200-7001))+7000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(8200-8001))+8000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(9200-9001))+9000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(10200-10001))+10000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(11200-11001))+11000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(12200-12001))+12000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(13200-13001))+13000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(14200-14001))+14000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(15200-15001))+15000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(16200-16001))+16000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(17200-17001))+17000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(18200-18001))+18000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(19200-19001))+19000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(20200-20001))+20000) {
+        [self addPowers];
     }
     
     //    if (powerUpShow == FALSE)
@@ -790,7 +792,16 @@
     //            [powerUpArray addObject:powerUp];
     //    }
 }
-- (void)firstPower {
+-(void)addPowers {
+    int originalX = 5000;
+    CCSprite *powers = [CCSprite spriteWithFile:@"coin-mode.png"];
+    powers.position = ccp(originalX, screenCenter.y + 40);
+    originalX += 20;
+    
+    [self addChild:powers];
+    [powerUpArray addObject:powers];
+}
+- (void)power1 {
     [self flashLabel:@"Double Coins" actionWithDuration:5.0f color:@"blue"];
     id coins = [CCCallFunc actionWithTarget:self selector:@selector(makeCoinsDouble)];
     id delayCoins = [CCDelayTime actionWithDuration:5.0f];
@@ -798,7 +809,7 @@
     CCSequence *powerUp1Seq = [CCSequence actions:coins, delayCoins, coinsGone, nil];
     [self runAction:powerUp1Seq];
 }
-- (void)secondPower {
+- (void)power2 {
     [self flashLabel:@"Slow Speed" actionWithDuration:5.0f color:@"blue"];
     powerUpThreeOn = TRUE;
     id speed = [CCCallFunc actionWithTarget:self selector:@selector(scrollspeedPowerUp)];
@@ -807,9 +818,16 @@
     CCSequence *powerUp1Seq = [CCSequence actions:speed, delaySpeed, speedBack, nil];
     [self runAction:powerUp1Seq];
 }
-- (void)thirdPower {
+- (void)power3 {
     [self flashLabel:@"Fatness Reset" actionWithDuration:2.0f color:@"blue"];
     [self resetFatness];
+}
+- (void)randomPowers {
+//    arc4random()%(20200-20000))+20000;
+    toNumber = 3;
+    fromNumber = 1;
+    ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
+    NSString *powerNumber = [NSString stringWithFormat:@"power%i",ranDom];
 }
 //- (void)fourthPower {
 //    coinValue = 2;
@@ -828,6 +846,72 @@
 -(void) defaultScrollSpeed {
     powerUpThreeOn = FALSE;
 }
+
+-(void) doThisOkay {
+    for (NSUInteger i = 0; i < [powerUpArray count]; i++)
+    {
+        CGRect knightRect = [knight boundingBox];
+        CCSprite *powerUp = [powerUpArray objectAtIndex:i];
+        CGRect powerUpRect = [powerUp boundingBox];
+        if (CGRectIntersectsRect(knightRect, powerUpRect))
+        {
+            [powerUpArray removeObject:powerUp];
+            [self removeChild:powerUp];
+            //            coinsCollected += coinValue;
+            //            [Store addInAppCurrency:coinValue];
+            //            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
+            toNumber = 3;
+            fromNumber = 1;
+            ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
+            
+            //        if (randomPowerup == FALSE) {
+            //            randomPowerup = TRUE;
+            //            if (ranDom == 1) {
+            //                [self firstPower];
+            //                NSLog(@"Number = 1");
+            //            }
+            //            if (ranDom == 2) {
+            //                [self secondPower];
+            //                NSLog(@"Number = 2");
+            //            }
+            //            if (ranDom == 3) {
+            //                [self thirdPower];
+            //                NSLog(@"Number = 3");
+            //            }
+            //        }
+            
+            [self power1];
+            
+//            if (randomPowerup == FALSE) {
+//                for (int i = 1; i < 4; i++) {
+//                    if (i == 1) {
+//                        [self power1];
+//                    }
+//                    if (i == 2) {
+//                        [self power2];
+//                    }
+//                    if (i == 3) {
+//                        [self power3];
+//                    }
+//                }
+//            }
+            
+            //
+            //            id powerOne = [CCCallFunc actionWithTarget:self selector:@selector(firstPower)];
+            ////            id delayCoins = [CCDelayTime actionWithDuration:5.0f];
+            //            id powerTwo = [CCCallFunc actionWithTarget:self selector:@selector(secondPower)];
+            //            id powerThree = [CCCallFunc actionWithTarget:self selector:@selector(thirdPower)];
+            //            CCSequence *randomPowersSeq = [CCSequence actions:powerOne, powerTwo, powerThree, nil];
+            //            [self runAction:randomPowersSeq];
+            
+            
+            //            for (int i = 1; i< 4; i++ ) {
+            //
+            //            }
+        }
+    }
+}
+
 
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
@@ -1096,96 +1180,34 @@
     }
 }
 
--(void) doThisOkay {
-    for (int i = 0; i < [powerUpArray count]; i++)
-    {
-        CGRect knightRect = [knight boundingBox];
-        CCSprite *powerUp = [powerUpArray objectAtIndex:i];
-        CGRect powerUpRect = [powerUp boundingBox];
-        if (CGRectIntersectsRect(knightRect, powerUpRect))
-        {
-            [coinArray removeObject:powerUp];
-            [self removeChild:powerUp];
-            //            coinsCollected += coinValue;
-            //            [Store addInAppCurrency:coinValue];
-            //            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
-            toNumber = 3;
-            fromNumber = 1;
-            ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
-            
-            //        if (randomPowerup == FALSE) {
-            //            randomPowerup = TRUE;
-            //            if (ranDom == 1) {
-            //                [self firstPower];
-            //                NSLog(@"Number = 1");
-            //            }
-            //            if (ranDom == 2) {
-            //                [self secondPower];
-            //                NSLog(@"Number = 2");
-            //            }
-            //            if (ranDom == 3) {
-            //                [self thirdPower];
-            //                NSLog(@"Number = 3");
-            //            }
-            //        }
-            
-            if (randomPowerup == FALSE) {
-                for (int i = 1; i < 4; i++) {
-                    if (i == 1) {
-                        [self firstPower];
-                    }
-                    if (i == 2) {
-                        [self secondPower];
-                    }
-                    if (i == 3) {
-                        [self thirdPower];
-                    }
-                }
-            }
-            
-            //
-            //            id powerOne = [CCCallFunc actionWithTarget:self selector:@selector(firstPower)];
-            ////            id delayCoins = [CCDelayTime actionWithDuration:5.0f];
-            //            id powerTwo = [CCCallFunc actionWithTarget:self selector:@selector(secondPower)];
-            //            id powerThree = [CCCallFunc actionWithTarget:self selector:@selector(thirdPower)];
-            //            CCSequence *randomPowersSeq = [CCSequence actions:powerOne, powerTwo, powerThree, nil];
-            //            [self runAction:randomPowersSeq];
-            
-            
-            //            for (int i = 1; i< 4; i++ ) {
-            //
-            //            }
-        }
-    }
-}
-
-
 #pragma mark - Scene Lifecycle
 
 - (void)onEnterTransitionDidFinish
 {
+    
+
   
-  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
-  [[CCDirector sharedDirector] replaceScene:recap];
+//  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
+//  [[CCDirector sharedDirector] replaceScene:recap];
   
     // setup a gesture listener for jumping and stabbing gestures
     [KKInput sharedInput].gestureSwipeEnabled = TRUE;
     // register for accelerometer input, to controll the knight
     
-    if (self.showMainMenu)
-    {
-        // add main menu
-        MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
-        [self addChild:mainMenuLayer z:MAX_INT];
-        [self hideHUD:TRUE];
-        [self disableGameplayButtons];
-        
-    } else
-    {
+//    if (self.showMainMenu)
+//    {
+//        // add main menu
+//        MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
+//        [self addChild:mainMenuLayer z:MAX_INT];
+//        [self hideHUD:TRUE];
+//        [self disableGameplayButtons];
+//        
+//    } else
+//    {
         // start game directly
         [self showHUD:TRUE];
         [self startGame];
-    }
+//    }
 }
 
 - (void)onExit

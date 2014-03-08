@@ -18,7 +18,7 @@
 #import "GameMechanics.h"
 
 #define TITLE_LABEL @"Food Gone Wild"
-#define TITLE_AS_SPRITE FALSE
+#define TITLE_AS_SPRITE TRUE
 
 @interface MainMenuLayer ()
 
@@ -36,9 +36,13 @@
         // setup In-App-Purchase Store
         [Store setupDefault]; 
         
-        // set background color
-        CCLayerColor* colorLayer = [CCLayerColor layerWithColor:SCREEN_BG_COLOR_TRANSPARENT];
-        [self addChild:colorLayer z:0];
+        screenCenter = [CCDirector sharedDirector].screenCenter;
+        size = [CCDirector sharedDirector].screenSize;
+        
+        // set background
+        CCSprite *background = [CCSprite spriteWithFile:@"background-mainlayer.png"];
+        background.position = screenCenter;
+        [self addChild:background z:2];
     
         //setup the start menu title
         if (!TITLE_AS_SPRITE) {
@@ -54,52 +58,46 @@
             startTitleLabel = startLabelSprite;
         }
         
-        CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
-        CGSize screenSize = [CCDirector sharedDirector].screenSize;
-        
         // place the startTitleLabel off-screen, later we will animate it on screen 
-        startTitleLabel.position = ccp (screenCenter.x, screenSize.height + 100);
+        startTitleLabel.position = ccp (screenCenter.x, size.height + 70);
         
         // this will be the point, we will animate the title to
-        startTitleLabelTargetPoint = ccp(screenCenter.x, screenSize.height - 80);
+        startTitleLabelTargetPoint = ccp(screenCenter.x, screenCenter.y * 1.15);
 
-		[self addChild:startTitleLabel];
+		[self addChild:startTitleLabel z:4];
         
         /* add a start button */
         CCSprite *normalStartButton = [CCSprite spriteWithFile:@"mainmenu.png"];
         CCSprite *selectedStartButton = [CCSprite spriteWithFile:@"mainmenu.png"];
         
         startButton = [CCMenuItemSprite itemWithNormalSprite:normalStartButton selectedSprite:selectedStartButton target:self selector:@selector(startButtonPressed)];
-//        
-//        storeButton = [CCMenuItemSprite itemWithNormalSprite:normalStoreButton selectedSprite:selectedStoreButton block:^(id sender) {
-//            CCScene *scene = [[StoreScreenScene alloc] init];
-//            [[CCDirector sharedDirector] replaceScene:scene];
-//        }];
-//
-        CCMenuItemImage *storeButton = [CCMenuItemImage itemWithNormalImage:@"store.png" selectedImage:@"store.png" target:self selector:@selector(storeScene)];
         
+        CCSprite *taptoplay = [CCSprite spriteWithFile:@"taptoplay.png"];
+        taptoplay.position = ccp(screenCenter.x, screenCenter.y / 2.5);
+        taptoplay.scale = 1.3;
+        [self addChild:taptoplay z:3];
         
-//        storeButton = [CCMenuItemFont itemWithString:@"Store" block:^(id sender) {
-//            CCScene *scene = [[StoreScreenScene alloc] init];
-//            [[CCDirector sharedDirector] replaceScene:scene];
-//        }];
-//        storeButton.color = DEFAULT_FONT_COLOR;
+        id blinker = [CCBlink actionWithDuration:4.0f blinks:7];
         
-        startMenu2 = [CCMenu menuWithItems:storeButton, nil];
-        startMenu2.position = ccp(screenSize.width - 30, screenSize.height - 30);
-        [startMenu2 alignItemsVertically];
-        [self addChild:startMenu2];
+        id fadeIn = [CCFadeIn actionWithDuration:1.0];
+        id fadeOut = [CCFadeOut actionWithDuration:1.0];
 
-        startMenu = [CCMenu menuWithItems:startButton, nil];
-        startMenu.position = ccp(screenCenter.x, screenCenter.y - 50);
-        startMenu.scale = 0;
-        [startMenu alignItemsVertically];
-        [self addChild:startMenu];
-        id THISCODEISBYKEVIN = [CCScaleTo actionWithDuration:0.7f scale:1];
-        [startMenu runAction:THISCODEISBYKEVIN];
-	}
+        CCSequence *sequence = [CCSequence actions:fadeOut, fadeIn, nil];
+        CCAction *forever = [CCRepeatForever actionWithAction:sequence];
+        [taptoplay runAction:forever];
+
+        
+        [self scheduleUpdate];
+        
+    }
 
 	return self;
+}
+
+-(void) update:(ccTime)delta {
+    if ([KKInput sharedInput].anyTouchEndedThisFrame) {
+        [self startButtonPressed];
+    }
 }
 
 -(void) storeScene
@@ -110,23 +108,9 @@
 
 - (void)startButtonPressed
 {
-    /** Build an action sequence, that moves the main menu of the screen **/
-    CCMoveTo *moveOffScreen = [CCMoveTo actionWithDuration:1.f position:ccp(self.position.x, self.contentSize.height * 2)];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
     
-    CCAction *movementCompleted = [CCCallBlock actionWithBlock:^{
-        // cleanup
-        self.visible = FALSE;
-        [self removeFromParent];
-    }];
-    
-    CCSequence *menuHideMovement = [CCSequence actions:moveOffScreen, movementCompleted, nil];
-    [self runAction:menuHideMovement];
-
-    /** Start the game and display the HUD */
-    [[[GameMechanics sharedGameMechanics] gameScene] startGame];
-    [[[GameMechanics sharedGameMechanics] gameScene] showHUD:TRUE];
-    
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+    [[CCDirector sharedDirector] replaceScene: [CCTransitionSlideInB transitionWithDuration:0.5f scene:[GameplayLayer node]]];
 
 }
 
@@ -144,12 +128,6 @@
     CCMoveTo *move = [CCMoveTo actionWithDuration:1.f position:startTitleLabelTargetPoint];
     id easeMove = [CCEaseBackInOut actionWithAction:move];
     [startTitleLabel runAction: easeMove];
-    
-    // set game state to "MenuState" when this menu appears
-    [[GameMechanics sharedGameMechanics] setGameState:GameStateMenu];
-    
-    // hide the HUD of the gamePlayLayer (otherwise, the game will be playable with the menu still up)
-    [[[GameMechanics sharedGameMechanics] gameScene] hideHUD:FALSE];
 }
 
 @end

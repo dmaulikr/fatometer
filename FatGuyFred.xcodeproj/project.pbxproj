@@ -35,6 +35,13 @@
 		387F867C179E53FF00D2F1A4 /* Pear.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F867B179E53FD00D2F1A4 /* Pear.m */; };
 		387F867F179E546500D2F1A4 /* Tomato.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F867E179E546300D2F1A4 /* Tomato.m */; };
 		387F8682179E54E900D2F1A4 /* Watermelon.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F8681179E54E700D2F1A4 /* Watermelon.m */; };
+		388B633318CB0D15006E6472 /* taptoplay-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B632C18CB0D15006E6472 /* taptoplay-hd.png */; };
+		388B633418CB0D15006E6472 /* taptoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B632D18CB0D15006E6472 /* taptoplay.png */; };
+		388B633518CB0D15006E6472 /* title-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B632E18CB0D15006E6472 /* title-hd.png */; };
+		388B633618CB0D15006E6472 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B632F18CB0D15006E6472 /* title.png */; };
+		388B633A18CB0D48006E6472 /* background-mainlayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633718CB0D48006E6472 /* background-mainlayer-hd.png */; };
+		388B633B18CB0D48006E6472 /* background-mainlayer-iphonehd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */; };
+		388B633C18CB0D48006E6472 /* background-mainlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633918CB0D48006E6472 /* background-mainlayer.png */; };
 		38A52EE117A9989800A8A484 /* JumpWithoutCollectingFoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */; };
 		38A5328717A9E3C900A8A484 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318917A9E3C900A8A484 /* Icon-72.png */; };
 		38A5328817A9E3C900A8A484 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318A17A9E3C900A8A484 /* Icon-72@2x.png */; };
@@ -225,12 +232,6 @@
 		38F751D517A9F125006B3B91 /* InGameStore_close-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751C517A9F125006B3B91 /* InGameStore_close-hd.png */; };
 		38F751D617A9F125006B3B91 /* InGameStore_close-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751C617A9F125006B3B91 /* InGameStore_close-ipadhd.png */; };
 		38F751D717A9F125006B3B91 /* InGameStore_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751C717A9F125006B3B91 /* InGameStore_close.png */; };
-		38F751DE17A9F140006B3B91 /* mainmenu-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751D817A9F140006B3B91 /* mainmenu-hd.png */; };
-		38F751DF17A9F140006B3B91 /* mainmenu-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751D917A9F140006B3B91 /* mainmenu-ipadhd.png */; };
-		38F751E017A9F140006B3B91 /* mainmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751DA17A9F140006B3B91 /* mainmenu.png */; };
-		38F751E117A9F140006B3B91 /* title-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751DB17A9F140006B3B91 /* title-hd.png */; };
-		38F751E217A9F140006B3B91 /* title-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751DC17A9F140006B3B91 /* title-ipadhd.png */; };
-		38F751E317A9F140006B3B91 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751DD17A9F140006B3B91 /* title.png */; };
 		38F751ED17A9F158006B3B91 /* missions_1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751E417A9F158006B3B91 /* missions_1-hd.png */; };
 		38F751EE17A9F158006B3B91 /* missions_1-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751E517A9F158006B3B91 /* missions_1-ipadhd.png */; };
 		38F751EF17A9F158006B3B91 /* missions_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F751E617A9F158006B3B91 /* missions_1.png */; };
@@ -627,6 +628,13 @@
 		387F867E179E546300D2F1A4 /* Tomato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tomato.m; sourceTree = "<group>"; };
 		387F8680179E54E500D2F1A4 /* Watermelon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watermelon.h; sourceTree = "<group>"; };
 		387F8681179E54E700D2F1A4 /* Watermelon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Watermelon.m; sourceTree = "<group>"; };
+		388B632C18CB0D15006E6472 /* taptoplay-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "taptoplay-hd.png"; sourceTree = "<group>"; };
+		388B632D18CB0D15006E6472 /* taptoplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taptoplay.png; sourceTree = "<group>"; };
+		388B632E18CB0D15006E6472 /* title-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-hd.png"; sourceTree = "<group>"; };
+		388B632F18CB0D15006E6472 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		388B633718CB0D48006E6472 /* background-mainlayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer-hd.png"; sourceTree = "<group>"; };
+		388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer-iphonehd.png"; sourceTree = "<group>"; };
+		388B633918CB0D48006E6472 /* background-mainlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer.png"; sourceTree = "<group>"; };
 		38A52EDF17A9989800A8A484 /* JumpWithoutCollectingFoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpWithoutCollectingFoods.h; sourceTree = "<group>"; };
 		38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpWithoutCollectingFoods.m; sourceTree = "<group>"; };
 		38A5318917A9E3C900A8A484 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -820,12 +828,6 @@
 		38F751C517A9F125006B3B91 /* InGameStore_close-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InGameStore_close-hd.png"; sourceTree = "<group>"; };
 		38F751C617A9F125006B3B91 /* InGameStore_close-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "InGameStore_close-ipadhd.png"; sourceTree = "<group>"; };
 		38F751C717A9F125006B3B91 /* InGameStore_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InGameStore_close.png; sourceTree = "<group>"; };
-		38F751D817A9F140006B3B91 /* mainmenu-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-hd.png"; sourceTree = "<group>"; };
-		38F751D917A9F140006B3B91 /* mainmenu-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mainmenu-ipadhd.png"; sourceTree = "<group>"; };
-		38F751DA17A9F140006B3B91 /* mainmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainmenu.png; sourceTree = "<group>"; };
-		38F751DB17A9F140006B3B91 /* title-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-hd.png"; sourceTree = "<group>"; };
-		38F751DC17A9F140006B3B91 /* title-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title-ipadhd.png"; sourceTree = "<group>"; };
-		38F751DD17A9F140006B3B91 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		38F751E417A9F158006B3B91 /* missions_1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missions_1-hd.png"; sourceTree = "<group>"; };
 		38F751E517A9F158006B3B91 /* missions_1-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "missions_1-ipadhd.png"; sourceTree = "<group>"; };
 		38F751E617A9F158006B3B91 /* missions_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = missions_1.png; sourceTree = "<group>"; };
@@ -1532,12 +1534,13 @@
 		38A5323517A9E3C900A8A484 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
-				38F751D817A9F140006B3B91 /* mainmenu-hd.png */,
-				38F751D917A9F140006B3B91 /* mainmenu-ipadhd.png */,
-				38F751DA17A9F140006B3B91 /* mainmenu.png */,
-				38F751DB17A9F140006B3B91 /* title-hd.png */,
-				38F751DC17A9F140006B3B91 /* title-ipadhd.png */,
-				38F751DD17A9F140006B3B91 /* title.png */,
+				388B633718CB0D48006E6472 /* background-mainlayer-hd.png */,
+				388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */,
+				388B633918CB0D48006E6472 /* background-mainlayer.png */,
+				388B632C18CB0D15006E6472 /* taptoplay-hd.png */,
+				388B632D18CB0D15006E6472 /* taptoplay.png */,
+				388B632E18CB0D15006E6472 /* title-hd.png */,
+				388B632F18CB0D15006E6472 /* title.png */,
 			);
 			path = MainMenu;
 			sourceTree = "<group>";
@@ -2420,6 +2423,7 @@
 				70D2E1F9188B247300720C31 /* pausebackground.png in Resources */,
 				54170927177123A90021A8C5 /* FBLoginBackgroundPortraitDark@2x.png in Resources */,
 				705135F4188BCF7F001F7384 /* coin-mode-icon-hd.png in Resources */,
+				388B633A18CB0D48006E6472 /* background-mainlayer-hd.png in Resources */,
 				54170928177123A90021A8C5 /* FBLoginButton.png in Resources */,
 				70513641188BCF7F001F7384 /* scoreboard-hd.png in Resources */,
 				54170929177123A90021A8C5 /* FBLoginButton@2x.png in Resources */,
@@ -2467,11 +2471,13 @@
 				384DEFB5184542E8004B71A9 /* tap-screen-ipadhd.png in Resources */,
 				70513630188BCF7F001F7384 /* next-button-down-hd.png in Resources */,
 				54170947177123A90021A8C5 /* mgwuLogoDark.png in Resources */,
+				388B633B18CB0D48006E6472 /* background-mainlayer-iphonehd.png in Resources */,
 				705135FA188BCF7F001F7384 /* facebook-button-down-hd.png in Resources */,
 				54170948177123A90021A8C5 /* mgwuLogoDark@2x.png in Resources */,
 				54170949177123A90021A8C5 /* mgwuPlaceholderIcon.png in Resources */,
 				70D2E1EB188B1D3500720C31 /* store-button-down.png in Resources */,
 				5417094A177123A90021A8C5 /* mgwuPlaceholderIcon@2x.png in Resources */,
+				388B633418CB0D15006E6472 /* taptoplay.png in Resources */,
 				5417094B177123A90021A8C5 /* mgwuPlaceholderIconDark.png in Resources */,
 				705135EF188BCF7F001F7384 /* checkbox-ipadhd.png in Resources */,
 				5417094C177123A90021A8C5 /* mgwuPlaceholderIconDark@2x.png in Resources */,
@@ -2493,6 +2499,7 @@
 				38A5328817A9E3C900A8A484 /* Icon-72@2x.png in Resources */,
 				38A5328917A9E3C900A8A484 /* Icon-Small-50.png in Resources */,
 				38A5328A17A9E3C900A8A484 /* Icon-Small-50@2x.png in Resources */,
+				388B633C18CB0D48006E6472 /* background-mainlayer.png in Resources */,
 				70513640188BCF7F001F7384 /* reset.png in Resources */,
 				705135EE188BCF7F001F7384 /* checkbox-hd.png in Resources */,
 				38A5328B17A9E3C900A8A484 /* Icon-Small.png in Resources */,
@@ -2691,6 +2698,7 @@
 				38F7519917A9F112006B3B91 /* pause-hd.png in Resources */,
 				384DEFC218454D86004B71A9 /* pause-down.png in Resources */,
 				38F7519A17A9F112006B3B91 /* pause-ipadhd.png in Resources */,
+				388B633618CB0D15006E6472 /* title.png in Resources */,
 				705135F5188BCF7F001F7384 /* coin-mode-icon.png in Resources */,
 				70D2E1E1188B1D3500720C31 /* play-button.png in Resources */,
 				38F7519E17A9F112006B3B91 /* pause.png in Resources */,
@@ -2741,23 +2749,19 @@
 				38F751D517A9F125006B3B91 /* InGameStore_close-hd.png in Resources */,
 				38F751D617A9F125006B3B91 /* InGameStore_close-ipadhd.png in Resources */,
 				38F751D717A9F125006B3B91 /* InGameStore_close.png in Resources */,
-				38F751DE17A9F140006B3B91 /* mainmenu-hd.png in Resources */,
-				38F751DF17A9F140006B3B91 /* mainmenu-ipadhd.png in Resources */,
 				70D2E1E6188B1D3500720C31 /* settings-button-down-hd.png in Resources */,
-				38F751E017A9F140006B3B91 /* mainmenu.png in Resources */,
-				38F751E117A9F140006B3B91 /* title-hd.png in Resources */,
 				70D2E1D8188B1D3500720C31 /* music-button-down-hd.png in Resources */,
 				70513633188BCF7F001F7384 /* next-button-hd.png in Resources */,
-				38F751E217A9F140006B3B91 /* title-ipadhd.png in Resources */,
 				70513635188BCF7F001F7384 /* next-button.png in Resources */,
 				70D2E1E3188B1D3500720C31 /* restart-button-down.png in Resources */,
-				38F751E317A9F140006B3B91 /* title.png in Resources */,
 				38F751ED17A9F158006B3B91 /* missions_1-hd.png in Resources */,
 				38F751EE17A9F158006B3B91 /* missions_1-ipadhd.png in Resources */,
 				38F751EF17A9F158006B3B91 /* missions_1.png in Resources */,
 				38F751F017A9F158006B3B91 /* missions_2-hd.png in Resources */,
 				705135F0188BCF7F001F7384 /* checkbox.png in Resources */,
+				388B633318CB0D15006E6472 /* taptoplay-hd.png in Resources */,
 				38F751F117A9F158006B3B91 /* missions_2-ipadhd.png in Resources */,
+				388B633518CB0D15006E6472 /* title-hd.png in Resources */,
 				7048852D189B3E78007CDC94 /* background0-right.png in Resources */,
 				38F751F217A9F158006B3B91 /* missions_2.png in Resources */,
 				38F751F317A9F158006B3B91 /* missions_3-hd.png in Resources */,

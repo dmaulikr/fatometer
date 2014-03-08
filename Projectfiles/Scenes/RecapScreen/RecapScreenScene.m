@@ -67,7 +67,7 @@
         
         /********** Statistics Panel *********/
         CCSprite *coinImage = [CCSprite spriteWithFile:@"coin-mode-icon.png"];
-        coinImage.position = ccp((screenCenter.x / 5)+30, (screenCenter.y /2)+9);
+        coinImage.position = ccp((screenCenter.x / 5)+30, (screenCenter.y /2)+12);
         [self addChild:coinImage z:1000000];
         NSString *coins = [NSString stringWithFormat:@"     %d coins", [Store availableAmountInAppCurrency]];
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
@@ -77,7 +77,7 @@
 
         // setup the statistics panel with the current game information of the user
         CCSprite *gameOverTitle = [CCSprite spriteWithFile:@"gameover.png"];
-        gameOverTitle.position = ccp((screenCenter.x / 2.4), screenCenter.y * 1.4);
+        gameOverTitle.position = ccp((screenCenter.x / 2.05), screenCenter.y * 1.4);
         gameOverTitle.scale = 1.28;
         [self addChild:gameOverTitle];
         
