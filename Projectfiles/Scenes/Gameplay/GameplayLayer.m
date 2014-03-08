@@ -40,48 +40,6 @@
  Run a certain meters going upside down
  
  */
-/*
- TUTORIAL IDEAS:
- 
- 1. TAP TO JUMP (A FINGER SHOWING A TAP)
- 2. TILT TO MOVE (TITLE ICON ON THE SCREEN)
- 3. WATCH THE FATNESS BAR (ARROW POINTING AT FATNESS BAR)
- (MAKE THE TUTORIAL INTERACTIVE WITH WORDS AND LET THEM DIVE IN TO THE GAMEPLAY - ALSO ADD IMAGES)
- 
- */
-/*
- 
- 
- POWERUP IDEAS:
- - ENERGY SHEILD (IMPLEMENTED, POWERUP1)
- - PAUSE POWER (IMPLEMENTED, POWERUP2)
- - DESTROY SHIP POWER (IMPLEMENTED, POWERUP3)
- 
- (4) E - SLOW MOTION POWER
- (3) I - WORLD SPlITS INTO 2 COLORS FOR A CERTAIN AMOUNT OF TIME
- - COLORS BECOME INVERSE (RED GOES TO BLUE, BLUE TO YELLOW, YELLOW TO RED)
- (2) E - SUICIDE POWERUP (BLOW EVERYTHING UP)
- - ATMOSPHERE POWERUP (certain section can be broken by each ship collision, but the rest of the section will remain intact)
- - MORE SECTIONS POWERUP (creates more colored sections on the middle wheel)
- (3) A - UNLEASH MONSTER POWERUP (releases monster that shoots ships, redirecting to a minigame where you shoot ships)
- (3) I - STORE POWER (buy anything midway through a game, but with limited time)
- (2) E - MUSIC MODE (play music to increase focus and coordination)
- (1) I - NEGATIVE COLOR MODE (inverts the colors on screen)
- (3) I - GOLF MODE (try and get the most ships into the wrong sectors as possible)
- (3) E - POINT BOOST (any ship that collides with the player will grant some extra number of points)
- (2) I - RED SHIP BOOST (only creates red ships for some amount of time)
- (2) I - BLUE SHIP BOOST (only creates blue ships for some amount of time)
- (2) I - YELLOW SHIP BOOST (only creates yellow ships for some amount of time)
- (2) E - LIVES BOOST (gain lives every time a ship correctly lands into a sector)
- (2) E - CHANGE THE DEATH OF THE PLANET (change the death of the planet randomly, will it explode? will it melt? will it burn?)
- (3) E - ZOMBIE PLANET (right before death, activate powerup to ressurect the planet and give you an additional life)
- (1) A - KATAMARI PLANET (enable this powerup to allow any ship that collides with the planet to add on to the ships mass for a certain amount of time)
- (0) A - MAKE THE FAT MAN FLY UP IN THE AIR FOR A FEW SECONDS
- - INVERSE STEERING (does what its name claims)
- (1) E/I - BOUNCE OFF POWERUP (all ships that collide with the planet bounce off)
- 
- 
- */
 
 #import "SimpleAudioEngine.h"
 #import "GameplayLayer.h"
@@ -134,23 +92,18 @@
  After the N seconds the button will automatically dissapear.
  */
 - (void)presentSkipAheadButtonWithDuration:(NSTimeInterval)duration;
-
 /*
  called when skipAheadButton has been touched
  */
 - (void)skipAheadButtonPressed;
-
 /*
  called when pause button was pressed
  */
 - (void)pauseButtonPressed;
-
 /*
  called when the player has chosen if he wants to continue the game (for paying coins) or not
  */
 - (void)goOnPopUpButtontaped:(CCControlButton *)sender;
-
-
 @end
 
 @implementation GameplayLayer
@@ -278,7 +231,6 @@
         toolBar.position = ccp(screenSize.width/2,screenSize.height-24);
         toolBar.scale = 1.3;
         pointer.scale = 1.3;
-//        [self resizeSprite:toolBar toWidth:screenSize.width toHeight:[toolBar boundingBox].size.height];
         
         // Set Up Tutorial Images and Arrows
         tapGesture = [CCSprite spriteWithFile:@"tap-screen.png"];
@@ -372,7 +324,6 @@
     tut.visible = FALSE;
 }
 -(void) convertFromPercent:(float) floatToConvert {
-//    float percentVal = [toolBar boundingBox].size.width/100;
     float percentVal = ([toolBar boundingBox].size.width)/100;
     float percent = floatToConvert * percentVal;
     pointerPosition = ccp(percent+(screenCenter.x/2), toolBar.position.y);
@@ -380,9 +331,7 @@
 - (void)gamePaused {
     [self pauseSchedulerAndActions];
 }
-
-- (void)gameResumed
-{
+- (void)gameResumed {
     [self resumeSchedulerAndActions];
 }
 
@@ -428,7 +377,6 @@
     [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed];
     
     /* setup initial values */
-    
     // setup knight
     knight.position = ccp(50,20);
     knight.zOrder = 10;
@@ -460,7 +408,6 @@
     if (playedTutorial == FALSE) {
         playedTutorial = TRUE;
         id delay = [CCDelayTime actionWithDuration:4.0f];
-        id delay2 = [CCDelayTime actionWithDuration:2.0f];
         id image1 = [CCCallFunc actionWithTarget:self selector:@selector(image1)];
         id image2 = [CCCallFunc actionWithTarget:self selector:@selector(image2)];
         id image3 = [CCCallFunc actionWithTarget:self selector:@selector(image3)];
@@ -472,32 +419,25 @@
         [[NSUserDefaults standardUserDefaults] setBool:playedTutorial forKey:@"tutorialStatus"];
     }
 }
--(void) image1
-{
+-(void) image1 {
     tapGesture.visible = false;
 }
--(void) image2
-{
+-(void) image2 {
     tiltPic.visible = false;
 }
--(void) image3
-{
+-(void) image3 {
     toolbarArrows.visible = false;
 }
--(void) tutorial1
-{
+-(void) tutorial1 {
     tapGesture.visible = true;
     [self flashLabel:@"Tap to jump" actionWithDuration:2.0f color:@"black"];
 }
--(void) tutorial2
-{
+-(void) tutorial2 {
     tiltPic.visible = true;
     [self flashLabel:@"Tilt device" actionWithDuration:2.0f color:@"black"];
 }
--(void) tutorial3
-{
+-(void) tutorial3 {
     toolbarArrows.visible = true;
-    //    [self flashLabel:@"" actionWithDuration:2.0f color:@"black"];
 }
 
 
@@ -527,24 +467,17 @@
     knight.velocity = ccp(velocityX, knight.velocity.y);
 }
 
-- (void)pushGameStateToMissions
-{
-    for (Mission *mission in game.missions)
-    {
-        if (mission.successfullyCompleted)
-        {
+- (void)pushGameStateToMissions {
+    for (Mission *mission in game.missions) {
+        if (mission.successfullyCompleted) {
             // we skip this mission, since it succesfully completed
             continue;
         }
-        
-        if ([mission respondsToSelector:@selector(generalGameUpdate:)])
-        {
+        if ([mission respondsToSelector:@selector(generalGameUpdate:)]) {
             // inform about current game state
             [mission generalGameUpdate:game];
-            
             // check if mission is now completed
-            if (mission.successfullyCompleted)
-            {
+            if (mission.successfullyCompleted) {
                 NSString *missionAccomplished = [NSString stringWithFormat:@"Completed: %@", mission.missionDescription];
                 [NotificationBox presentNotificationBoxOnNode:self withText:missionAccomplished duration:1.f];
             }
@@ -552,23 +485,19 @@
     }
 }
 
--(void) updatePointer
-{
-    if ([[GameMechanics sharedGameMechanics] game].fatness >= 100)
-    {
+-(void) updatePointer {
+    if ([[GameMechanics sharedGameMechanics] game].fatness >= 100) {
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
         [[GameMechanics sharedGameMechanics] game].fatness = 100;
         [self presentGoOnPopUp];
     }
-    if ([[GameMechanics sharedGameMechanics] game].fatness <= 0)
-    {
+    if ([[GameMechanics sharedGameMechanics] game].fatness <= 0) {
         [self flashWithRed:255 green:0 blue:0 alpha:255 actionWithDuration:0.5f];
         knight.visible = FALSE;
         [[GameMechanics sharedGameMechanics] game].fatness = 0;
         [self presentGoOnPopUp];
     }
-    
     framesPast++;
     [self convertFromPercent:[[GameMechanics sharedGameMechanics] game].fatness];
     pointer.position = pointerPosition;
@@ -626,7 +555,7 @@
 - (void)updateRunning:(ccTime)delta
 {
     // Move coins off the screen and make them move away
-    for (int cNum = 0; cNum < [coinArray count]; cNum ++) {
+    for (NSUInteger cNum = 0; cNum < [coinArray count]; cNum ++) {
         Coins *coin = [coinArray objectAtIndex:cNum];
         // apply background scroll speed
         float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
@@ -654,7 +583,6 @@
         else {
             [self removeChild:powerUp];
             [powerUpArray removeObject:powerUp];
-//            [self performSelector:@selector(showPowerUpAgain:) withObject:powerUp afterDelay:2.0f];
         }
     }
     
@@ -678,12 +606,6 @@
         coinPattern1 = FALSE;
     }
 }
-
-//-(void) showPowerUpAgain:(CCSprite *)powerUp{
-//    if ([powerUpArray count] == 0) {
-//        powerUpShow = FALSE;
-//    }
-//}
 
 /*
  These are the methods for displaying the different horizontal rows of coins to generate a horizontal/diagonal pattern
@@ -932,7 +854,6 @@
             scrollSpeed = 520.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed3];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Sandwich class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:430 forMonsterType:[Strawberries class]];
@@ -944,7 +865,6 @@
             scrollSpeed = 560.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed4];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Sandwich class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:420 forMonsterType:[Lemons class]];
@@ -956,7 +876,6 @@
             scrollSpeed = 580.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed5];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Sandwich class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[Meat class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:260 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Apples class]];
@@ -972,7 +891,6 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         
     }
     if (pointsDisplayNode.score > 16500) {
@@ -985,7 +903,6 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:240 forMonsterType:[Watermelon class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
     }
     if (pointsDisplayNode.score > 20000) {
         scrollSpeed8 = 570;
@@ -994,8 +911,6 @@
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed8];
         [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Sandwich class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:230 forMonsterType:[Watermelon class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:380 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Oranges class]];
@@ -1007,9 +922,6 @@
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed9];
         [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Donuts class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:220 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Kiwi class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
@@ -1022,9 +934,6 @@
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed10];
         [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Donuts class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:210 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Bread class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
@@ -1034,9 +943,6 @@
             scrollSpeed = 730.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed11];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Sandwich class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Donuts class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:200 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Broccoli class]];
@@ -1048,14 +954,10 @@
             scrollSpeed = 740.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed12];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:90 forMonsterType:[Sandwich class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Donuts class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:340 forMonsterType:[Hotdog class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:560 forMonsterType:[Fish class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Corn class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 32500) {
         scrollSpeed13 = 620;
@@ -1064,8 +966,6 @@
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed13];
         [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:330 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:540 forMonsterType:[Hotdog class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Donuts class]];
@@ -1078,10 +978,8 @@
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed14];
         [[GameMechanics sharedGameMechanics] setSpawnRate:70 forMonsterType:[Sandwich class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:170 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:320 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
     }
     if (pointsDisplayNode.score > 37500) {
         scrollSpeed15 = 640;
@@ -1089,11 +987,7 @@
             scrollSpeed = 770.0f;
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed15];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:60 forMonsterType:[Sandwich class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:160 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:310 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:360 forMonsterType:[Chicken class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Carrots class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
@@ -1105,11 +999,7 @@
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed16];
         [[GameMechanics sharedGameMechanics] setSpawnRate:50 forMonsterType:[Sandwich class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:100 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:150 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:720 forMonsterType:[Carrots class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Eggs class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:370 forMonsterType:[Donuts class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:520 forMonsterType:[Oranges class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
     }
@@ -1123,9 +1013,6 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:190 forMonsterType:[Pear class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:140 forMonsterType:[Chicken class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:620 forMonsterType:[Carrots class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:270 forMonsterType:[Donuts class]];
     }
     if (pointsDisplayNode.score > 45000) {
         scrollSpeed18 = 654;
@@ -1134,13 +1021,9 @@
         }
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed18];
         [[GameMechanics sharedGameMechanics] setSpawnRate:180 forMonsterType:[Pear class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:130 forMonsterType:[Banana class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:280 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Carrots class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Kiwi class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Donuts class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:400 forMonsterType:[Oranges class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:350 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 47500) {
         scrollSpeed19 = 655;
@@ -1151,8 +1034,6 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:120 forMonsterType:[Banana class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:110 forMonsterType:[Chicken class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Carrots class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Kiwi class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Eggs class]];
     }
     if (pointsDisplayNode.score > 50000) {
@@ -1163,7 +1044,6 @@
         [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
         [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
-        [[GameMechanics sharedGameMechanics] setSpawnRate:121 forMonsterType:[Chicken class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
@@ -1174,62 +1054,51 @@
 
 - (void)onEnterTransitionDidFinish
 {
-    
-
-  
 //  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
 //  [[CCDirector sharedDirector] replaceScene:recap];
   
     // setup a gesture listener for jumping and stabbing gestures
     [KKInput sharedInput].gestureSwipeEnabled = TRUE;
-    // register for accelerometer input, to controll the knight
-    
-//    if (self.showMainMenu)
-//    {
-//        // add main menu
-//        MainMenuLayer *mainMenuLayer = [[MainMenuLayer alloc] init];
-//        [self addChild:mainMenuLayer z:MAX_INT];
-//        [self hideHUD:TRUE];
-//        [self disableGameplayButtons];
-//        
-//    } else
-//    {
-        // start game directly
+
+    // start game directly
         [self showHUD:TRUE];
         [self startGame];
-//    }
 }
 
-- (void)onExit
-{
+- (void)onExit {
     // very important! deactivate the gestureInput, otherwise touches on scrollviews and tableviews will be cancelled!
     [KKInput sharedInput].gestureSwipeEnabled = FALSE;
 }
 
 #pragma mark - UI
 
-- (void)presentGoOnPopUp
-{
+- (void)presentGoOnPopUp {
     [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
     CCScale9Sprite *backgroundImage = [StyleManager goOnPopUpBackground];
-    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked:) buttonTitles:@[@"OK", @"No"]];
+    goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked) buttonTitles:nil];
+    
+    CCMenuItemSprite *yes = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"play-button.png"] selectedSprite:[CCSprite spriteWithFile:@"play-button-down.png"] target:self selector:@selector(goOnPopUpButtonClicked)];
+    
+    CCMenuItemSprite *no = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home-button.png"] selectedSprite:[CCSprite spriteWithFile:@"home-button-down.png"] target:self selector:@selector(goOnPopUpButtonCancel)];
+    
+    popupMenu = [CCMenu menuWithItems:yes, no, nil];
+    popupMenu.position = ccp(screenCenter.x+100, screenCenter.y);
+    [self addChild:popupMenu z:10000000000];
+    
     [self disableGameplayButtons];
 }
 
-- (void)showHUD:(BOOL)animated
-{
+- (void)showHUD:(BOOL)animated {
     // TODO: implement animated
     hudNode.visible = TRUE;
 }
 
-- (void)hideHUD:(BOOL)animated
-{
+- (void)hideHUD:(BOOL)animated {
     // TODO: implement animated
     hudNode.visible = FALSE;
 }
 
-- (void)presentSkipAheadButtonWithDuration:(NSTimeInterval)duration
-{
+- (void)presentSkipAheadButtonWithDuration:(NSTimeInterval)duration {
     skipAheadMenu.visible = TRUE;
     skipAheadMenu.opacity = 0.f;
     CCFadeIn *fadeIn = [CCFadeIn actionWithDuration:1.0f];
@@ -1238,8 +1107,7 @@
     [self scheduleOnce: @selector(hideSkipAheadButton) delay:duration];
 }
 
-- (void)hideSkipAheadButton
-{
+- (void)hideSkipAheadButton {
     CCFiniteTimeAction *fadeOut = [CCFadeOut actionWithDuration:1.5f];
     CCCallBlock *hide = [CCCallBlock actionWithBlock:^{
         // execute this code to hide the 'Skip Ahead'-Button, once it is faded out
@@ -1253,19 +1121,15 @@
     [skipAheadMenu runAction:fadeOutAndHide];
 }
 
-- (void)disableGameplayButtons
-{
+- (void)disableGameplayButtons {
     pauseButtonMenu.enabled = FALSE;
     skipAheadMenu.enabled = FALSE;
 }
-- (void)enableGamePlayButtons
-{
+- (void)enableGamePlayButtons {
     pauseButtonMenu.enabled = TRUE;
     skipAheadMenu.enabled = TRUE;
 }
-
--(void) flashWithRed:(int) red green:(int) green blue:(int) blue alpha:(int) alpha actionWithDuration:(float) duration
-{
+-(void) flashWithRed:(int) red green:(int) green blue:(int) blue alpha:(int) alpha actionWithDuration:(float) duration {
     colorLayer = [CCLayerColor layerWithColor:ccc4(red, green, blue, alpha)];
     [self addChild:colorLayer z:0];
     id delay = [CCDelayTime actionWithDuration:duration];
@@ -1273,9 +1137,7 @@
     id remove = [CCCallFunc actionWithTarget:self selector:@selector(removeFlashColor)];
     [colorLayer runAction:[CCSequence actions:delay, fadeOut, remove, nil]];
 }
-
--(void) removeFlashColor
-{
+-(void) removeFlashColor {
     [self removeChild:colorLayer cleanup:YES];
 }
 
@@ -1285,13 +1147,11 @@
  This method is called, when purchases on the In-Game-Store occur.
  Then we need to update the coins display on the HUD.
  */
-- (void)storeDisplayNeedsUpdate
-{
+- (void)storeDisplayNeedsUpdate {
     inAppCurrencyDisplayNode.score = coinsCollected;
 }
 
-- (void)resumeButtonPressed:(PauseScreen *)pauseScreen
-{
+- (void)resumeButtonPressed:(PauseScreen *)pauseScreen {
     // enable the pause button again, since the pause menu is hidden now
     [self enableGamePlayButtons];
     [self showHUD:TRUE];
@@ -1301,10 +1161,8 @@
 
 #pragma mark - Button Callbacks
 
-- (void)skipAheadButtonPressed
-{
-    if ([Store hasSufficientFundsForSkipAheadAction])
-    {
+- (void)skipAheadButtonPressed {
+    if ([Store hasSufficientFundsForSkipAheadAction]) {
         skipAheadMenu.enabled = FALSE;
         NSLog(@"Skip Ahead!");
         [self startSkipAheadMode];
@@ -1315,8 +1173,7 @@
         
         // ... in order to execute it directly
         [self hideSkipAheadButton];
-    } else
-    {
+    } else {
         // pause the game, to allow the player to buy coins
         [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
         [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromSkipAheadAction)];
@@ -1324,16 +1181,16 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
-- (void)goOnPopUpButtonClicked:(CCControlButton *)sender
-{
-    [[GameMechanics sharedGameMechanics] game].deaths+=1;
-    NSLog(@"Button clicked.");
-    if (sender.tag == 0)
-    {
+- (void)goOnPopUpButtonClicked {
+//    [[GameMechanics sharedGameMechanics] game].deaths+=1;
+//    NSLog(@"Button clicked.");
+//    if (sender.tag == 0)
+//    {
         if ([Store hasSufficientFundsForGoOnAction])
         {
             // OK button selected
             [goOnPopUp dismiss];
+            [self removeChild:popupMenu];
             [self executeGoOnAction];
             [self enableGamePlayButtons];
             [self resetFatness];
@@ -1342,21 +1199,27 @@
         {
             // game is paused in this state already, we only need to present the more coins screen
             // dismiss the popup; presented again when we return from the 'Buy More Coins'-Screen
+            [self removeChild:popupMenu];
             [goOnPopUp dismiss];
             [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromGoOnAction)];
         }
-    } else if (sender.tag == 1)
-    {
-        // Cancel button selected
-        [goOnPopUp dismiss];
-        game.score ++;
-        
-        // IMPORTANT: set game state to 'GameStateMenu', otherwise menu animations will no be played
-        [[GameMechanics sharedGameMechanics] setGameState:GameStateMenu];
-        
-        RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
-        [[CCDirector sharedDirector] replaceScene:recap];
-    }
+//    } else if (sender.tag == 1)
+//    {
+
+//    }
+}
+
+-(void)goOnPopUpButtonCancel {
+    // Cancel button selected
+    [self removeChild:popupMenu];
+    [goOnPopUp dismiss];
+    game.score ++;
+
+    // IMPORTANT: set game state to 'GameStateMenu', otherwise menu animations will no be played
+    [[GameMechanics sharedGameMechanics] setGameState:GameStateMenu];
+
+    RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
+    [[CCDirector sharedDirector] replaceScene:recap];
 }
 
 -(void)resetFatness {

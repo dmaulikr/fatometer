@@ -114,6 +114,8 @@
     int toNumber;
     int fromNumber;
     int ranDom;
+    
+    CCMenu *popupMenu;
 }
 
 // defines if the main menu shall be displayed, or if the game shall start directly. By default the menu is displayed.

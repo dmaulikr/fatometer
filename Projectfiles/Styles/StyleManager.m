@@ -68,7 +68,7 @@
 
 + (CCScale9Sprite *)goOnPopUpBackground
 {
-    return [[CCScale9Sprite alloc] initWithFile:@"keepgoing.png" capInsets:CGRectZero];
+    return [[CCScale9Sprite alloc] initWithFile:@"keep-playing.png" capInsets:CGRectZero];
 }
 
 @end

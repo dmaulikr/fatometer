@@ -45,7 +45,7 @@
     
     // add the different buttons, automatically determine the size of the button by dividing the available space through the amount of buttons
     // left and right margins for the button(s)
-    float buttonMargins = 10.f;
+    float buttonMargins = 100.f;
     // calculate the button size using the selected margin
     float buttonSize = (popUp.contentSize.width - 2 * buttonMargins - ([buttonTitles count] - 1) * buttonMargins) / [buttonTitles count];
     // set the initial xPosition to the defined margin
