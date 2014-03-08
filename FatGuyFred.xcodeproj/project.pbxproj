@@ -42,6 +42,7 @@
 		388B633A18CB0D48006E6472 /* background-mainlayer-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633718CB0D48006E6472 /* background-mainlayer-hd.png */; };
 		388B633B18CB0D48006E6472 /* background-mainlayer-iphonehd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */; };
 		388B633C18CB0D48006E6472 /* background-mainlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633918CB0D48006E6472 /* background-mainlayer.png */; };
+		388B633F18CB2363006E6472 /* Powers.m in Sources */ = {isa = PBXBuildFile; fileRef = 388B633E18CB2363006E6472 /* Powers.m */; };
 		38A52EE117A9989800A8A484 /* JumpWithoutCollectingFoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */; };
 		38A5328717A9E3C900A8A484 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318917A9E3C900A8A484 /* Icon-72.png */; };
 		38A5328817A9E3C900A8A484 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318A17A9E3C900A8A484 /* Icon-72@2x.png */; };
@@ -635,6 +636,8 @@
 		388B633718CB0D48006E6472 /* background-mainlayer-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer-hd.png"; sourceTree = "<group>"; };
 		388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer-iphonehd.png"; sourceTree = "<group>"; };
 		388B633918CB0D48006E6472 /* background-mainlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer.png"; sourceTree = "<group>"; };
+		388B633D18CB2363006E6472 /* Powers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Powers.h; path = ../../../../Resources/Powers.h; sourceTree = "<group>"; };
+		388B633E18CB2363006E6472 /* Powers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Powers.m; path = ../../../../Resources/Powers.m; sourceTree = "<group>"; };
 		38A52EDF17A9989800A8A484 /* JumpWithoutCollectingFoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpWithoutCollectingFoods.h; sourceTree = "<group>"; };
 		38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpWithoutCollectingFoods.m; sourceTree = "<group>"; };
 		38A5318917A9E3C900A8A484 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -2015,6 +2018,8 @@
 		6212B6F1177114800040386F /* Foods */ = {
 			isa = PBXGroup;
 			children = (
+				388B633D18CB2363006E6472 /* Powers.h */,
+				388B633E18CB2363006E6472 /* Powers.m */,
 				6212B6F4177114800040386F /* Food.h */,
 				6212B6F5177114800040386F /* Food.m */,
 				6212B6F6177114800040386F /* Banana.h */,
@@ -2958,6 +2963,7 @@
 				387F8676179E538F00D2F1A4 /* Lemons.m in Sources */,
 				387F8679179E53B400D2F1A4 /* Meat.m in Sources */,
 				387F867C179E53FF00D2F1A4 /* Pear.m in Sources */,
+				388B633F18CB2363006E6472 /* Powers.m in Sources */,
 				387F867F179E546500D2F1A4 /* Tomato.m in Sources */,
 				387F8682179E54E900D2F1A4 /* Watermelon.m in Sources */,
 				38A52EE117A9989800A8A484 /* JumpWithoutCollectingFoods.m in Sources */,

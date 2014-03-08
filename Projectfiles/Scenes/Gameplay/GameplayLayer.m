@@ -123,6 +123,7 @@
 #import "PauseScreen.h"
 #import "DecorativeObjectsNode.h"
 #import "STYLES.h"
+#import "Powers.h"
 
 // defines how many update cycles run, before the missions get an update about the current game state
 #define MISSION_UPDATE_FREQUENCY 10
@@ -641,20 +642,20 @@
             [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:5.0f];
         }
     }
-    // Move the powerups off the screen and make them move away
-    //    for (int cNum = 0; cNum < [powerUpArray count]; cNum ++) {
-    //        CCSprite *powerUp = [powerUpArray objectAtIndex:cNum];
-    //        float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
-    //        float xSpeed = 1 * backgroundScrollSpeedX;
-    //        if (powerUp.position.x > (powerUp.contentSize.width * (-1))) {
-    //            powerUp.position = ccp(powerUp.position.x - (xSpeed*delta), powerUp.position.y);
-    //        }
-    //        else {
-    //            [self removeChild:powerUp];
-    //            [powerUpArray removeObject:powerUp];
-    //            [self performSelector:@selector(showPowerUpAgain:) withObject:powerUp afterDelay:2.0f];
-    //        }
-    //    }
+// Move the powerups off the screen and make them move away
+    for (NSUInteger cNum = 0; cNum < [powerUpArray count]; cNum ++) {
+        Powers *powerUp = [powerUpArray objectAtIndex:cNum];
+        float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
+        float xSpeed = 1 * backgroundScrollSpeedX;
+        if (powerUp.position.x > (powerUp.contentSize.width * (-1))) {
+            powerUp.position = ccp(powerUp.position.x - (xSpeed*delta), powerUp.position.y);
+        }
+        else {
+            [self removeChild:powerUp];
+            [powerUpArray removeObject:powerUp];
+//            [self performSelector:@selector(showPowerUpAgain:) withObject:powerUp afterDelay:2.0f];
+        }
+    }
     
     // distance depends on the current scrolling speed
     gainedDistance += (delta * [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX]) / 2.6;
