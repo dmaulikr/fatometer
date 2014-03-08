@@ -607,7 +607,7 @@
     [self powerUpShow];
     
     CGRect knightRect = [knight boundingBox];
-    for (int i = 0; i < [coinArray count]; i++)
+    for (NSUInteger i = 0; i < [coinArray count]; i++)
     {
         Coins *coin = [coinArray objectAtIndex:i];
         CGRect coinRect = [coin boundingBox];
@@ -620,7 +620,7 @@
             [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
         }
     }
-    [self doThisOkay];
+    [self powersCollisionDetection];
 }
 
 - (void)updateRunning:(ccTime)delta
@@ -642,7 +642,8 @@
             [self performSelector:@selector(showSpriteAgain:) withObject:coin afterDelay:5.0f];
         }
     }
-// Move the powerups off the screen and make them move away
+    
+    // Move the powerups off the screen and make them move away
     for (NSUInteger cNum = 0; cNum < [powerUpArray count]; cNum ++) {
         Powers *powerUp = [powerUpArray objectAtIndex:cNum];
         float backgroundScrollSpeedX = [[GameMechanics sharedGameMechanics] backGroundScrollSpeedX];
@@ -692,7 +693,6 @@
     {
         coinPattern1 = TRUE;
         int originalX = 5000;
-        CGPoint screenCenter = [CCDirector sharedDirector].screenCenter;
         
         for(int i = 0; i < 8; i++)
         {
@@ -779,31 +779,70 @@
         [self addPowers];
     } else if (pointsDisplayNode.score == (arc4random()%(20200-20001))+20000) {
         [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(21200-21001))+21000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(22200-22001))+22000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(23200-23001))+23000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(24200-24001))+24000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(25200-25001))+25000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(26200-26001))+26000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(27200-27001))+27000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(28200-28001))+28000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(29200-29001))+29000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(30200-30001))+30000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(31200-31001))+31000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(32200-32001))+32000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(33200-33001))+33000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(34200-34001))+34000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(35200-35001))+35000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(36200-36001))+36000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(37200-37001))+37000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(38200-38001))+38000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(39200-39001))+39000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(40200-40001))+40000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(41200-41001))+41000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(42200-42001))+42000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(43200-43001))+43000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(44200-44001))+44000) {
+        [self addPowers];
+    } else if (pointsDisplayNode.score == (arc4random()%(45200-45001))+45000) {
+        [self addPowers];
     }
-    
-    //    if (powerUpShow == FALSE)
-    //    {
-    //        powerUpShow = TRUE;
-    //        int toNumber = 500;
-    //        int fromNumber = 300;
-    //        int originalX = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
-    //            CCSprite *powerUp = [CCSprite spriteWithFile:@"powerup.png"];
-    //            powerUp.position = ccp(500, 150);
-    //            [self addChild:powerUp];
-    //            [powerUpArray addObject:powerUp];
-    //    }
 }
 -(void)addPowers {
     int originalX = 5000;
-    CCSprite *powers = [CCSprite spriteWithFile:@"coin-mode.png"];
-    powers.position = ccp(originalX, screenCenter.y + 40);
+    Powers *powers = [CCSprite spriteWithFile:@"coin-mode.png"];
+    powers.position = ccp(originalX, screenCenter.y);
     originalX += 20;
-    
+    powers.scale = 2.0;
     [self addChild:powers];
     [powerUpArray addObject:powers];
+    NSLog(@"Powerup showed");
 }
 - (void)power1 {
-    [self flashLabel:@"Double Coins" actionWithDuration:5.0f color:@"blue"];
+    [self flashLabel:@"Double Coins" actionWithDuration:5.0f color:@"black"];
     id coins = [CCCallFunc actionWithTarget:self selector:@selector(makeCoinsDouble)];
     id delayCoins = [CCDelayTime actionWithDuration:5.0f];
     id coinsGone = [CCCallFunc actionWithTarget:self selector:@selector(makeCoinsOne)];
@@ -811,7 +850,7 @@
     [self runAction:powerUp1Seq];
 }
 - (void)power2 {
-    [self flashLabel:@"Slow Speed" actionWithDuration:5.0f color:@"blue"];
+    [self flashLabel:@"Slow Speed" actionWithDuration:5.0f color:@"black"];
     powerUpThreeOn = TRUE;
     id speed = [CCCallFunc actionWithTarget:self selector:@selector(scrollspeedPowerUp)];
     id delaySpeed = [CCDelayTime actionWithDuration:5.0f];
@@ -820,21 +859,10 @@
     [self runAction:powerUp1Seq];
 }
 - (void)power3 {
-    [self flashLabel:@"Fatness Reset" actionWithDuration:2.0f color:@"blue"];
+    [self flashLabel:@"Fatness Reset" actionWithDuration:2.0f color:@"black"];
     [self resetFatness];
 }
-- (void)randomPowers {
-//    arc4random()%(20200-20000))+20000;
-    toNumber = 3;
-    fromNumber = 1;
-    ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
-    NSString *powerNumber = [NSString stringWithFormat:@"power%i",ranDom];
-}
-//- (void)fourthPower {
-//    coinValue = 2;
-//}
 -(void)makeCoinsDouble {
-    
     coinValue = 2;
 }
 -(void)makeCoinsOne {
@@ -848,67 +876,28 @@
     powerUpThreeOn = FALSE;
 }
 
--(void) doThisOkay {
+-(void) powersCollisionDetection {
     for (NSUInteger i = 0; i < [powerUpArray count]; i++)
     {
         CGRect knightRect = [knight boundingBox];
-        CCSprite *powerUp = [powerUpArray objectAtIndex:i];
+        Powers *powerUp = [powerUpArray objectAtIndex:i];
         CGRect powerUpRect = [powerUp boundingBox];
         if (CGRectIntersectsRect(knightRect, powerUpRect))
         {
             [powerUpArray removeObject:powerUp];
             [self removeChild:powerUp];
-            //            coinsCollected += coinValue;
-            //            [Store addInAppCurrency:coinValue];
-            //            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
+
             toNumber = 3;
             fromNumber = 1;
             ranDom = (arc4random()%(toNumber-fromNumber+1))+fromNumber;
             
-            //        if (randomPowerup == FALSE) {
-            //            randomPowerup = TRUE;
-            //            if (ranDom == 1) {
-            //                [self firstPower];
-            //                NSLog(@"Number = 1");
-            //            }
-            //            if (ranDom == 2) {
-            //                [self secondPower];
-            //                NSLog(@"Number = 2");
-            //            }
-            //            if (ranDom == 3) {
-            //                [self thirdPower];
-            //                NSLog(@"Number = 3");
-            //            }
-            //        }
-            
-            [self power1];
-            
-//            if (randomPowerup == FALSE) {
-//                for (int i = 1; i < 4; i++) {
-//                    if (i == 1) {
-//                        [self power1];
-//                    }
-//                    if (i == 2) {
-//                        [self power2];
-//                    }
-//                    if (i == 3) {
-//                        [self power3];
-//                    }
-//                }
-//            }
-            
-            //
-            //            id powerOne = [CCCallFunc actionWithTarget:self selector:@selector(firstPower)];
-            ////            id delayCoins = [CCDelayTime actionWithDuration:5.0f];
-            //            id powerTwo = [CCCallFunc actionWithTarget:self selector:@selector(secondPower)];
-            //            id powerThree = [CCCallFunc actionWithTarget:self selector:@selector(thirdPower)];
-            //            CCSequence *randomPowersSeq = [CCSequence actions:powerOne, powerTwo, powerThree, nil];
-            //            [self runAction:randomPowersSeq];
-            
-            
-            //            for (int i = 1; i< 4; i++ ) {
-            //
-            //            }
+            if (ranDom == 1) {
+                [self power1];
+            } else if (ranDom == 2) {
+                [self power2];
+            } else if (ranDom == 3) {
+                [self power3];
+            }
         }
     }
 }

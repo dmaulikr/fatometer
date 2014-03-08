@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3803A83C17823FC1002E023A /* Sandwich.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* Sandwich.m */; };
+		380D4F2D18CB9CB2003536FE /* powerups-mode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */; };
+		380D4F2E18CB9CB2003536FE /* powerup-mode.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2B18CB9CB2003536FE /* powerup-mode.png */; };
+		380D4F2F18CB9CB2003536FE /* powerup-mode-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */; };
 		380F5D9817A82E7A0066283C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9717A82E7A0066283C /* Default.png */; };
 		380F5D9E17A82E9B0066283C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9D17A82E9B0066283C /* Default@2x.png */; };
 		380F5DA017A82F090066283C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9F17A82F090066283C /* Default-568h@2x.png */; };
@@ -586,6 +589,9 @@
 /* Begin PBXFileReference section */
 		3803A83A17823FBC002E023A /* Sandwich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sandwich.m; sourceTree = "<group>"; };
 		3803A83D1782457F002E023A /* Sandwich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sandwich.h; sourceTree = "<group>"; };
+		380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerups-mode-hd.png"; sourceTree = "<group>"; };
+		380D4F2B18CB9CB2003536FE /* powerup-mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerup-mode.png"; sourceTree = "<group>"; };
+		380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerup-mode-ipadhd.png"; sourceTree = "<group>"; };
 		380F5D9717A82E7A0066283C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		380F5D9D17A82E9B0066283C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		380F5D9F17A82F090066283C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1457,6 +1463,9 @@
 		38A531DD17A9E3C900A8A484 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */,
+				380D4F2B18CB9CB2003536FE /* powerup-mode.png */,
+				380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */,
 				38F18ED418B70D2E007200C9 /* coin-mode-hd.png */,
 				38F18ED518B70D2E007200C9 /* coin-mode-ipadhd.png */,
 				38F18ED618B70D2E007200C9 /* coin-mode.png */,
@@ -2544,6 +2553,7 @@
 				38F750BA17A9F0F5006B3B91 /* broccoli-hd.png in Resources */,
 				384DEFB6184542E8004B71A9 /* tap-screen.png in Resources */,
 				38F750BB17A9F0F5006B3B91 /* broccoli-ipadhd.png in Resources */,
+				380D4F2F18CB9CB2003536FE /* powerup-mode-ipadhd.png in Resources */,
 				70513639188BCF7F001F7384 /* powerup-mode-icon-hd.png in Resources */,
 				38F750BC17A9F0F5006B3B91 /* broccoli.png in Resources */,
 				70513604188BCF7F001F7384 /* gameover-ipadhd.png in Resources */,
@@ -2733,11 +2743,13 @@
 				38F751B217A9F112006B3B91 /* toolbar-hd.png in Resources */,
 				38F18ED118B6E3AD007200C9 /* weight-indicator-hd.png in Resources */,
 				38F751B317A9F112006B3B91 /* toolbar-ipad.png in Resources */,
+				380D4F2E18CB9CB2003536FE /* powerup-mode.png in Resources */,
 				38F751B417A9F112006B3B91 /* toolbar-ipadhd.png in Resources */,
 				38F751B517A9F112006B3B91 /* toolbar.png in Resources */,
 				38F751C817A9F125006B3B91 /* buy1-hd.png in Resources */,
 				38F751C917A9F125006B3B91 /* buy1-ipadhd.png in Resources */,
 				38F751CA17A9F125006B3B91 /* buy1.png in Resources */,
+				380D4F2D18CB9CB2003536FE /* powerups-mode-hd.png in Resources */,
 				38F751CB17A9F125006B3B91 /* buy2-hd.png in Resources */,
 				38F751CC17A9F125006B3B91 /* buy2-ipadhd.png in Resources */,
 				38F751CD17A9F125006B3B91 /* buy2.png in Resources */,
