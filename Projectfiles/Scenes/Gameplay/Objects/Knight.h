@@ -23,7 +23,14 @@
     BOOL stabDidRun;
     CGRect tempKnight;
     int knightWidth;
+    
+    NSString *l1;
+    NSString *l1_plist;
+    NSString *animation;
 }
+
+-(id)initWithKnightPicture:(NSString*)aPicture;
+- (NSString*)fileNameForFatness:(int) fatness;
 
 // defines a hit zone, which is smaller as the sprite, only if this hit zone is hit the knight is injured
 @property (nonatomic, assign) CGRect hitZone;

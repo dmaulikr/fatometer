@@ -133,7 +133,7 @@
 -(void) checkForCollisions
 {
 	Food* enemy;
-    Knight *knight = [[GameMechanics sharedGameMechanics] knight];
+    knight = [[GameMechanics sharedGameMechanics] knight];
     CGRect knightBoundingBox = knight.boundingBox;
 	CGRect knightHitZone = knight.boundingBox;
     
@@ -175,6 +175,16 @@
                     // if the kight is not stabbing, he will be hit
                     //                    [knight gotHit];
                     [enemy gotCollected];
+                    
+                    int currentFatness = [[GameMechanics sharedGameMechanics] game].fatness;
+                    NSString *newSpriteName = [knight fileNameForFatness:currentFatness];
+                    NSString *newplist = [knight fileNameForFatness:currentFatness];
+                    knight = [[Knight alloc] initWithKnightPicture:newSpriteName];
+                    
+                    [knight setDisplayFrame:
+                     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@.plist", newplist]]];
+
+                    
                     [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                 }
             }

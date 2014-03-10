@@ -185,7 +185,7 @@
         [self addChild:hudNode];
         
         // add the knight
-        knight = [[Knight alloc] initWithKnightPicture];
+        knight = [[Knight alloc] initWithKnightPicture:@"fatguyfredL3"];
         [self addChild:knight];
         knight.anchorPoint = ccp(0,0);
         
@@ -654,8 +654,6 @@
         }
     }
 }
-
-
 - (void)powerUpShow {
     /*
      The random value algorithm between ranges is this:
@@ -823,8 +821,6 @@
         }
     }
 }
-
-
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
         scrollSpeed1 = 290;

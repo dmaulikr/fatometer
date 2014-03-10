@@ -14,6 +14,26 @@
 		380D4F3318CBBEF3003536FE /* keep-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3018CBBEF3003536FE /* keep-playing.png */; };
 		380D4F3418CBBEF3003536FE /* keep-playing-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3118CBBEF3003536FE /* keep-playing-ipadhd.png */; };
 		380D4F3518CBBEF3003536FE /* keep-playing-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3218CBBEF3003536FE /* keep-playing-hd.png */; };
+		380D4F3A18CCDAA1003536FE /* fatguyfredL1-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3618CCDAA1003536FE /* fatguyfredL1-hd.plist */; };
+		380D4F3B18CCDAA1003536FE /* fatguyfredL1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3718CCDAA1003536FE /* fatguyfredL1-hd.png */; };
+		380D4F3C18CCDAA1003536FE /* fatguyfredL1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3818CCDAA1003536FE /* fatguyfredL1.plist */; };
+		380D4F3D18CCDAA1003536FE /* fatguyfredL1.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3918CCDAA1003536FE /* fatguyfredL1.png */; };
+		380D4F4E18CCDDE0003536FE /* fatguyfredL2-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3E18CCDDE0003536FE /* fatguyfredL2-hd.plist */; };
+		380D4F4F18CCDDE0003536FE /* fatguyfredL2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3F18CCDDE0003536FE /* fatguyfredL2-hd.png */; };
+		380D4F5018CCDDE0003536FE /* fatguyfredL2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4018CCDDE0003536FE /* fatguyfredL2.plist */; };
+		380D4F5118CCDDE0003536FE /* fatguyfredL2.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4118CCDDE0003536FE /* fatguyfredL2.png */; };
+		380D4F5218CCDDE0003536FE /* fatguyfredL3-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4218CCDDE0003536FE /* fatguyfredL3-hd.plist */; };
+		380D4F5318CCDDE0003536FE /* fatguyfredL3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4318CCDDE0003536FE /* fatguyfredL3-hd.png */; };
+		380D4F5418CCDDE0003536FE /* fatguyfredL3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4418CCDDE0003536FE /* fatguyfredL3.plist */; };
+		380D4F5518CCDDE0003536FE /* fatguyfredL3.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4518CCDDE0003536FE /* fatguyfredL3.png */; };
+		380D4F5618CCDDE0003536FE /* fatguyfredL4-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4618CCDDE0003536FE /* fatguyfredL4-hd.plist */; };
+		380D4F5718CCDDE0003536FE /* fatguyfredL4-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4718CCDDE0003536FE /* fatguyfredL4-hd.png */; };
+		380D4F5818CCDDE0003536FE /* fatguyfredL4.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4818CCDDE0003536FE /* fatguyfredL4.plist */; };
+		380D4F5918CCDDE0003536FE /* fatguyfredL4.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4918CCDDE0003536FE /* fatguyfredL4.png */; };
+		380D4F5A18CCDDE0003536FE /* fatguyfredL5-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4A18CCDDE0003536FE /* fatguyfredL5-hd.plist */; };
+		380D4F5B18CCDDE0003536FE /* fatguyfredL5-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4B18CCDDE0003536FE /* fatguyfredL5-hd.png */; };
+		380D4F5C18CCDDE0003536FE /* fatguyfredL5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4C18CCDDE0003536FE /* fatguyfredL5.plist */; };
+		380D4F5D18CCDDE0003536FE /* fatguyfredL5.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F4D18CCDDE0003536FE /* fatguyfredL5.png */; };
 		380F5D9817A82E7A0066283C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9717A82E7A0066283C /* Default.png */; };
 		380F5D9E17A82E9B0066283C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9D17A82E9B0066283C /* Default@2x.png */; };
 		380F5DA017A82F090066283C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 380F5D9F17A82F090066283C /* Default-568h@2x.png */; };
@@ -598,6 +618,26 @@
 		380D4F3018CBBEF3003536FE /* keep-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keep-playing.png"; sourceTree = "<group>"; };
 		380D4F3118CBBEF3003536FE /* keep-playing-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keep-playing-ipadhd.png"; sourceTree = "<group>"; };
 		380D4F3218CBBEF3003536FE /* keep-playing-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keep-playing-hd.png"; sourceTree = "<group>"; };
+		380D4F3618CCDAA1003536FE /* fatguyfredL1-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fatguyfredL1-hd.plist"; sourceTree = "<group>"; };
+		380D4F3718CCDAA1003536FE /* fatguyfredL1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fatguyfredL1-hd.png"; sourceTree = "<group>"; };
+		380D4F3818CCDAA1003536FE /* fatguyfredL1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fatguyfredL1.plist; sourceTree = "<group>"; };
+		380D4F3918CCDAA1003536FE /* fatguyfredL1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fatguyfredL1.png; sourceTree = "<group>"; };
+		380D4F3E18CCDDE0003536FE /* fatguyfredL2-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fatguyfredL2-hd.plist"; sourceTree = "<group>"; };
+		380D4F3F18CCDDE0003536FE /* fatguyfredL2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fatguyfredL2-hd.png"; sourceTree = "<group>"; };
+		380D4F4018CCDDE0003536FE /* fatguyfredL2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fatguyfredL2.plist; sourceTree = "<group>"; };
+		380D4F4118CCDDE0003536FE /* fatguyfredL2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fatguyfredL2.png; sourceTree = "<group>"; };
+		380D4F4218CCDDE0003536FE /* fatguyfredL3-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fatguyfredL3-hd.plist"; sourceTree = "<group>"; };
+		380D4F4318CCDDE0003536FE /* fatguyfredL3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fatguyfredL3-hd.png"; sourceTree = "<group>"; };
+		380D4F4418CCDDE0003536FE /* fatguyfredL3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fatguyfredL3.plist; sourceTree = "<group>"; };
+		380D4F4518CCDDE0003536FE /* fatguyfredL3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fatguyfredL3.png; sourceTree = "<group>"; };
+		380D4F4618CCDDE0003536FE /* fatguyfredL4-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fatguyfredL4-hd.plist"; sourceTree = "<group>"; };
+		380D4F4718CCDDE0003536FE /* fatguyfredL4-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fatguyfredL4-hd.png"; sourceTree = "<group>"; };
+		380D4F4818CCDDE0003536FE /* fatguyfredL4.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fatguyfredL4.plist; sourceTree = "<group>"; };
+		380D4F4918CCDDE0003536FE /* fatguyfredL4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fatguyfredL4.png; sourceTree = "<group>"; };
+		380D4F4A18CCDDE0003536FE /* fatguyfredL5-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "fatguyfredL5-hd.plist"; sourceTree = "<group>"; };
+		380D4F4B18CCDDE0003536FE /* fatguyfredL5-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fatguyfredL5-hd.png"; sourceTree = "<group>"; };
+		380D4F4C18CCDDE0003536FE /* fatguyfredL5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = fatguyfredL5.plist; sourceTree = "<group>"; };
+		380D4F4D18CCDDE0003536FE /* fatguyfredL5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fatguyfredL5.png; sourceTree = "<group>"; };
 		380F5D9717A82E7A0066283C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		380F5D9D17A82E9B0066283C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		380F5D9F17A82F090066283C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1670,6 +1710,26 @@
 		38F7512417A9F112006B3B91 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				380D4F3618CCDAA1003536FE /* fatguyfredL1-hd.plist */,
+				380D4F3718CCDAA1003536FE /* fatguyfredL1-hd.png */,
+				380D4F3818CCDAA1003536FE /* fatguyfredL1.plist */,
+				380D4F3918CCDAA1003536FE /* fatguyfredL1.png */,
+				380D4F3E18CCDDE0003536FE /* fatguyfredL2-hd.plist */,
+				380D4F3F18CCDDE0003536FE /* fatguyfredL2-hd.png */,
+				380D4F4018CCDDE0003536FE /* fatguyfredL2.plist */,
+				380D4F4118CCDDE0003536FE /* fatguyfredL2.png */,
+				380D4F4218CCDDE0003536FE /* fatguyfredL3-hd.plist */,
+				380D4F4318CCDDE0003536FE /* fatguyfredL3-hd.png */,
+				380D4F4418CCDDE0003536FE /* fatguyfredL3.plist */,
+				380D4F4518CCDDE0003536FE /* fatguyfredL3.png */,
+				380D4F4618CCDDE0003536FE /* fatguyfredL4-hd.plist */,
+				380D4F4718CCDDE0003536FE /* fatguyfredL4-hd.png */,
+				380D4F4818CCDDE0003536FE /* fatguyfredL4.plist */,
+				380D4F4918CCDDE0003536FE /* fatguyfredL4.png */,
+				380D4F4A18CCDDE0003536FE /* fatguyfredL5-hd.plist */,
+				380D4F4B18CCDDE0003536FE /* fatguyfredL5-hd.png */,
+				380D4F4C18CCDDE0003536FE /* fatguyfredL5.plist */,
+				380D4F4D18CCDDE0003536FE /* fatguyfredL5.png */,
 				38F7512517A9F112006B3B91 /* animation_knight-1-hd.png */,
 				38F7512617A9F112006B3B91 /* animation_knight-1.png */,
 				38F7512717A9F112006B3B91 /* animation_knight-hd.plist */,
@@ -2428,6 +2488,7 @@
 				5417091A177123A90021A8C5 /* aqua.png in Resources */,
 				5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */,
 				5417091C177123A90021A8C5 /* CrossPromoViewController.nib in Resources */,
+				380D4F5A18CCDDE0003536FE /* fatguyfredL5-hd.plist in Resources */,
 				5417091D177123A90021A8C5 /* FacebookIcon.png in Resources */,
 				5417091E177123A90021A8C5 /* FacebookSDKResources.bundle in Resources */,
 				5417091F177123A90021A8C5 /* fb_connect.png in Resources */,
@@ -2442,6 +2503,7 @@
 				384DEFBA18454314004B71A9 /* tilt-screen-hd.png in Resources */,
 				54170926177123A90021A8C5 /* FBLoginBackgroundPortraitDark.png in Resources */,
 				70513642188BCF7F001F7384 /* scoreboard-ipadhd.png in Resources */,
+				380D4F5118CCDDE0003536FE /* fatguyfredL2.png in Resources */,
 				70513625188BCF7F001F7384 /* more-button-ipadhd.png in Resources */,
 				70D2E1F9188B247300720C31 /* pausebackground.png in Resources */,
 				54170927177123A90021A8C5 /* FBLoginBackgroundPortraitDark@2x.png in Resources */,
@@ -2449,8 +2511,10 @@
 				388B633A18CB0D48006E6472 /* background-mainlayer-hd.png in Resources */,
 				54170928177123A90021A8C5 /* FBLoginButton.png in Resources */,
 				70513641188BCF7F001F7384 /* scoreboard-hd.png in Resources */,
+				380D4F5B18CCDDE0003536FE /* fatguyfredL5-hd.png in Resources */,
 				54170929177123A90021A8C5 /* FBLoginButton@2x.png in Resources */,
 				70513610188BCF7F001F7384 /* leaderboard-active-ipadhd.png in Resources */,
+				380D4F3B18CCDAA1003536FE /* fatguyfredL1-hd.png in Resources */,
 				5417092A177123A90021A8C5 /* FBLoginButtonPressed.png in Resources */,
 				5417092B177123A90021A8C5 /* FBLoginButtonPressed@2x.png in Resources */,
 				5417092C177123A90021A8C5 /* FBNoThanksButton.png in Resources */,
@@ -2473,6 +2537,7 @@
 				70488529189B3E78007CDC94 /* background1-right.png in Resources */,
 				54170937177123A90021A8C5 /* mgwu-gk-notification@2x.png in Resources */,
 				54170938177123A90021A8C5 /* mgwu-m.png in Resources */,
+				380D4F5518CCDDE0003536FE /* fatguyfredL3.png in Resources */,
 				54170939177123A90021A8C5 /* mgwu-m@2x.png in Resources */,
 				5417093A177123A90021A8C5 /* MGWUAboutFooterLandscape-568h@2x.png in Resources */,
 				5417093B177123A90021A8C5 /* MGWUAboutFooterLandscape.png in Resources */,
@@ -2484,8 +2549,11 @@
 				5417093E177123A90021A8C5 /* MGWUAboutFooterPortrait@2x.png in Resources */,
 				5417093F177123A90021A8C5 /* MGWUClose.png in Resources */,
 				54170940177123A90021A8C5 /* MGWUClose@2x.png in Resources */,
+				380D4F5C18CCDDE0003536FE /* fatguyfredL5.plist in Resources */,
 				54170941177123A90021A8C5 /* MGWUFacebookLoginLandscape.nib in Resources */,
 				54170942177123A90021A8C5 /* MGWUFacebookLoginLandscapeDark.nib in Resources */,
+				380D4F3C18CCDAA1003536FE /* fatguyfredL1.plist in Resources */,
+				380D4F5318CCDDE0003536FE /* fatguyfredL3-hd.png in Resources */,
 				54170943177123A90021A8C5 /* MGWUFacebookLoginPortrait.nib in Resources */,
 				54170944177123A90021A8C5 /* MGWUFacebookLoginPortraitDark.nib in Resources */,
 				54170945177123A90021A8C5 /* mgwulogo.png in Resources */,
@@ -2541,6 +2609,7 @@
 				38A532A417A9E3C900A8A484 /* CaviarDreams_Italic.ttf in Resources */,
 				38A5333717A9E3C900A8A484 /* coins.mp3 in Resources */,
 				38A5333817A9E3C900A8A484 /* explode.mp3 in Resources */,
+				380D4F5718CCDDE0003536FE /* fatguyfredL4-hd.png in Resources */,
 				7048852E189B3E78007CDC94 /* background0-right-hd.png in Resources */,
 				38A5333917A9E3C900A8A484 /* fly.mp3 in Resources */,
 				38A5333A17A9E3C900A8A484 /* select.mp3 in Resources */,
@@ -2558,6 +2627,7 @@
 				38F750B717A9F0F5006B3B91 /* banana.png in Resources */,
 				38F750B817A9F0F5006B3B91 /* bread-hd.png in Resources */,
 				38F18ED018B6E3AD007200C9 /* weight-bar.png in Resources */,
+				380D4F4F18CCDDE0003536FE /* fatguyfredL2-hd.png in Resources */,
 				70D2E1B2188A4C3A00720C31 /* bg1.png in Resources */,
 				38F750B917A9F0F5006B3B91 /* bread.png in Resources */,
 				38F750BA17A9F0F5006B3B91 /* broccoli-hd.png in Resources */,
@@ -2619,6 +2689,7 @@
 				38F750E417A9F0F5006B3B91 /* orange-hd.png in Resources */,
 				70D2E1EA188B1D3500720C31 /* store-button-down-hd.png in Resources */,
 				70513612188BCF7F001F7384 /* leaderboard-inactive-hd.png in Resources */,
+				380D4F4E18CCDDE0003536FE /* fatguyfredL2-hd.plist in Resources */,
 				38F750E517A9F0F5006B3B91 /* orange-ipadhd.png in Resources */,
 				38F750E617A9F0F5006B3B91 /* orange.png in Resources */,
 				70488537189B3F87007CDC94 /* background2-left.png in Resources */,
@@ -2675,18 +2746,21 @@
 				38F7517617A9F112006B3B91 /* bitmapfont.fnt in Resources */,
 				38F7517717A9F112006B3B91 /* bitmapfont.png in Resources */,
 				38F7517817A9F112006B3B91 /* heart_empty-hd.png in Resources */,
+				380D4F5018CCDDE0003536FE /* fatguyfredL2.plist in Resources */,
 				38F7517917A9F112006B3B91 /* heart_empty.png in Resources */,
 				38F7517A17A9F112006B3B91 /* heart_filled-hd.png in Resources */,
 				38F7517B17A9F112006B3B91 /* heart_filled.png in Resources */,
 				38F7517C17A9F112006B3B91 /* notification-box-hd.png in Resources */,
 				38F7517D17A9F112006B3B91 /* notification-box-ipadhd.png in Resources */,
 				70513607188BCF7F001F7384 /* home-button-down-ipadhd.png in Resources */,
+				380D4F5418CCDDE0003536FE /* fatguyfredL3.plist in Resources */,
 				70D2E1DC188B1D3500720C31 /* pause-title-hd.png in Resources */,
 				38F7517E17A9F112006B3B91 /* notification-box.png in Resources */,
 				38F7517F17A9F112006B3B91 /* keepgoing-hd.png in Resources */,
 				38F7518017A9F112006B3B91 /* keepgoing-ipadhd.png in Resources */,
 				38F7518117A9F112006B3B91 /* keepgoing.png in Resources */,
 				38F7518217A9F112006B3B91 /* animation_knight-1-hd.png in Resources */,
+				380D4F5818CCDDE0003536FE /* fatguyfredL4.plist in Resources */,
 				38F7518317A9F112006B3B91 /* animation_knight-1.png in Resources */,
 				70D2E1D7188B1D3500720C31 /* home-button.png in Resources */,
 				705135FE188BCF7F001F7384 /* facebook-button-ipadhd.png in Resources */,
@@ -2707,6 +2781,7 @@
 				7051364B188BCF7F001F7384 /* store-button-ipadhd.png in Resources */,
 				70513653188BCF7F001F7384 /* twitter-button-hd.png in Resources */,
 				38F7518F17A9F112006B3B91 /* designed-fx.png in Resources */,
+				380D4F5618CCDDE0003536FE /* fatguyfredL4-hd.plist in Resources */,
 				38F7519017A9F112006B3B91 /* fx-explosion.plist in Resources */,
 				38F7519117A9F112006B3B91 /* monster-animations-hd.plist in Resources */,
 				70D2E1FB188B248D00720C31 /* pausebackground-iphone5hd.png in Resources */,
@@ -2777,6 +2852,7 @@
 				38F751D517A9F125006B3B91 /* InGameStore_close-hd.png in Resources */,
 				38F751D617A9F125006B3B91 /* InGameStore_close-ipadhd.png in Resources */,
 				38F751D717A9F125006B3B91 /* InGameStore_close.png in Resources */,
+				380D4F3A18CCDAA1003536FE /* fatguyfredL1-hd.plist in Resources */,
 				70D2E1E6188B1D3500720C31 /* settings-button-down-hd.png in Resources */,
 				70D2E1D8188B1D3500720C31 /* music-button-down-hd.png in Resources */,
 				70513633188BCF7F001F7384 /* next-button-hd.png in Resources */,
@@ -2806,6 +2882,7 @@
 				38F7520517A9F16C006B3B91 /* reset-hd.png in Resources */,
 				70513603188BCF7F001F7384 /* gameover-hd.png in Resources */,
 				38F7520617A9F16C006B3B91 /* reset-ipadhd.png in Resources */,
+				380D4F3D18CCDAA1003536FE /* fatguyfredL1.png in Resources */,
 				38F7520717A9F16C006B3B91 /* reset.png in Resources */,
 				70D2E1ED188B1D3500720C31 /* store-button.png in Resources */,
 				38F7525A17A9F188006B3B91 /* 9patch_tab_normal-hd.png in Resources */,
@@ -2814,6 +2891,7 @@
 				38F7525C17A9F188006B3B91 /* 9patch_tab_normal.png in Resources */,
 				70513615188BCF7F001F7384 /* missions-active-hd.png in Resources */,
 				38F7525D17A9F188006B3B91 /* 9patch_tab_pressed-hd.png in Resources */,
+				380D4F5918CCDDE0003536FE /* fatguyfredL4.png in Resources */,
 				38F7525E17A9F188006B3B91 /* 9patch_tab_pressed-ipadhd.png in Resources */,
 				38F7525F17A9F188006B3B91 /* 9patch_tab_pressed.png in Resources */,
 				38F7526017A9F188006B3B91 /* 9patch_whiteBackground-hd.png in Resources */,
@@ -2835,6 +2913,7 @@
 				38F7526D17A9F188006B3B91 /* checkmark-ipadhd.png in Resources */,
 				38F7526E17A9F188006B3B91 /* checkmark.png in Resources */,
 				705135FC188BCF7F001F7384 /* facebook-button-down.png in Resources */,
+				380D4F5D18CCDDE0003536FE /* fatguyfredL5.png in Resources */,
 				38F7527517A9F188006B3B91 /* leaderboard_background-hd.png in Resources */,
 				38F7527617A9F188006B3B91 /* leaderboard_background-ipadhd.png in Resources */,
 				38F7527717A9F188006B3B91 /* leaderboard_background.png in Resources */,
@@ -2881,6 +2960,7 @@
 				7051363E188BCF7F001F7384 /* recap_background.png in Resources */,
 				70513619188BCF7F001F7384 /* missions-inactive-ipadhd.png in Resources */,
 				705135ED188BCF7F001F7384 /* bestscore-ipadhd.png in Resources */,
+				380D4F5218CCDDE0003536FE /* fatguyfredL3-hd.plist in Resources */,
 				38F752A517A9F188006B3B91 /* storeCellBackground.png in Resources */,
 				38F752A617A9F188006B3B91 /* storecoin-hd.png in Resources */,
 				7048852A189B3E78007CDC94 /* background1-right-hd.png in Resources */,

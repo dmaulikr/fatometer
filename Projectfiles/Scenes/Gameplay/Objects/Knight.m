@@ -20,22 +20,29 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (id)initWithKnightPicture {
-    self = [super initWithFile:@"animation_knight-1.png"];
+-(id)initWithKnightPicture:(NSString*)aPicture {
     
+    NSString *imageName = [aPicture stringByAppendingString:@".png"];
+    NSString *plistName = [aPicture stringByAppendingString:@".plist"];
+    
+    self = [super initWithFile:imageName];
+    
+    NSLog(@"%@ is the imagename", imageName);
+    NSLog(@"%@ is the plistname", plistName);
+
     if (self)
     {
         // knight is initally not moving
         self.velocity = ccp(0,0);
         self.invincible = FALSE;
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile: @"animation_knight.plist"];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:plistName];
         
         // ************* RUNNING ANIMATION ********************
         animationFramesRun = [NSMutableArray array];
-        for(int i = 1; i <= 4; ++i)
-        {
+        for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"animation_knight-%d.png", i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level3-Run-hd_%d.png", i]]];
         }
         
         //Create an animation from the set of frames you created earlier
@@ -44,43 +51,23 @@
         //Create an action with the animation that can then be assigned to a sprite
         run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
         
-        // ************* STABBING ANIMATION ********************
-        
-//        animationFramesStab = [NSMutableArray array];
-//        for (int i = 1; i <= 2; i++)
-//        {
-//            [animationFramesRun addObject:
-//             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"animation_knight-stab-%d.png", i]]];
-//        }
-//        CCAnimation *stabbing = [CCAnimation animationWithSpriteFrames:animationFramesStab delay:0.5f];
-//        CCAction *stabAction = [CCRepeat actionWithAction:[CCAnimate actionWithAnimation:stabbing] times:1];
-//        CCFiniteTimeAction *startStab = [CCCallBlock actionWithBlock:^{
-//            // stop running animation
-//            self.stabbing = TRUE;
-//            [self stopAction:run];
-//        }];
-//        CCFiniteTimeAction *finishStab = [CCCallBlock actionWithBlock:^{
-//            self.stabbing = FALSE;
-//            // restart running animation
-//            [self runAction:run];
-//        }];
-//        stab = [CCSequence actions:startStab, stabAction, finishStab, nil];
-        
         // run knight running animation
         [self runAction:run];
         [self scheduleUpdate];
         
-        [self resizeSprite:self toWidth:80 toHeight:70];
-        if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
-            [self resizeSprite:self toWidth:80 toHeight:70];
-            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-        } else if (IS_IPAD) {
-            [self resizeSprite:self toWidth:150 toHeight:137];
-            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-        } else if (IS_IPAD_RETINA) {
-            [self resizeSprite:self toWidth:200 toHeight:185];
-            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-        }
+        // Resizeing sprite (but this was before the fat guy came into play - when it was the knight image)
+        
+//        [self resizeSprite:self toWidth:80 toHeight:70];
+//        if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
+//            [self resizeSprite:self toWidth:80 toHeight:70];
+//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+//        } else if (IS_IPAD) {
+//            [self resizeSprite:self toWidth:150 toHeight:137];
+//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+//        } else if (IS_IPAD_RETINA) {
+//            [self resizeSprite:self toWidth:200 toHeight:185];
+//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
+//        }
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -91,6 +78,29 @@
     }
     return self;
 }
+
+- (NSString*)fileNameForFatness:(int) fatness
+{
+    if (fatness < 20){
+        return @"fatguyfredL1";
+//        NSLog(@"Level 1 Fatness");
+    } else if (fatness < 40) {
+        return @"fatguyfredL2";
+//        NSLog(@"Level 2 Fatness");
+    } else if (fatness < 60) {
+        return @"fatguyfredL3";
+//        NSLog(@"Level 3 Fatness");
+    } else if (fatness < 80) {
+        return @"fatguyfredL4";
+//        NSLog(@"Level 4 Fatness");
+    } else if (fatness < 100) {
+        return @"fatguyfredL5";
+//        NSLog(@"Level 5 Fatness");
+    }
+    return nil;
+}
+
+
 -(void)resizeSprite:(CCSprite*)sprite toWidth:(float)width toHeight:(float)height {
     sprite.scaleX = width / sprite.contentSize.width;
     sprite.scaleY = height / sprite.contentSize.height;
@@ -169,6 +179,28 @@
 
 - (void)update:(ccTime)delta
 {
+//    if ([[GameMechanics sharedGameMechanics] game].fatness < 20) {
+//        l1 = [NSString stringWithFormat:@"fatguyfredL1.png"];
+//        l1_plist = [NSString stringWithFormat:@"fatguyfredL1.plist"];
+//        animation = [NSString stringWithFormat:@"Level1-Run-hd"];
+//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 40) {
+//        l1 = [NSString stringWithFormat:@"fatguyfredL2.png"];
+//        l1_plist = [NSString stringWithFormat:@"fatguyfredL2.plist"];
+//        animation = [NSString stringWithFormat:@"Level2-Run-hd"];
+//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 60) {
+//        l1 = [NSString stringWithFormat:@"fatguyfredL3.png"];
+//        l1_plist = [NSString stringWithFormat:@"fatguyfredL3.plist"];
+//        animation = [NSString stringWithFormat:@"Level3-Run-hd"];
+//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 80) {
+//        l1 = [NSString stringWithFormat:@"fatguyfredL4.png"];
+//        l1_plist = [NSString stringWithFormat:@"fatguyfredL4.plist"];
+//        animation = [NSString stringWithFormat:@"Level4-Run-hd"];
+//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 100) {
+//        l1 = [NSString stringWithFormat:@"fatguyfredL5.png"];
+//        l1_plist = [NSString stringWithFormat:@"fatguyfredL5.plist"];
+//        animation = [NSString stringWithFormat:@"Level5-Run-hd"];
+//    }
+//    
     // only execute the block, if the game is in 'running' mode
     if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
     {

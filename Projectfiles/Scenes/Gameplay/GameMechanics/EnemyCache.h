@@ -20,6 +20,8 @@
     NSMutableDictionary* enemies;
     // count the updates (used to determine when monsters should be spawned)
     int updateCount;
+    
+    Knight *knight;
 }
 
 @end
