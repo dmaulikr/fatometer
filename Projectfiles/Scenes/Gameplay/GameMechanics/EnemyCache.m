@@ -180,19 +180,19 @@
                     
                     if (currentFatness < 20){
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL1.plist"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL1.png"]]];
                     } else if (currentFatness < 40) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL2.plist"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL2.png"]]];
                     } else if (currentFatness < 60) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL3.plist"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL3.png"]]];
                     } else if (currentFatness < 80) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL4.plist"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL4.png"]]];
                     } else if (currentFatness < 100) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL5.plist"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL5.png"]]];
                     }
 
                     
