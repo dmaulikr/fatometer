@@ -29,6 +29,8 @@
     
     if (self)
     {
+        number = [NSString stringWithFormat:@"3"];
+        
         NSLog(@"%@ is the imagename", imageName);
         NSLog(@"%@ is the plistname", plistName);
         
@@ -42,7 +44,7 @@
         animationFramesRun = [NSMutableArray array];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level3-Run-hd_%d.png", i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
         }
         
         //Create an animation from the set of frames you created earlier
@@ -83,18 +85,23 @@
 {
     if (fatness < 20){
         return @"fatguyfredL1";
+        number = [NSString stringWithFormat:@"1"];
 //        NSLog(@"Level 1 Fatness");
     } else if (fatness < 40) {
         return @"fatguyfredL2";
+        number = [NSString stringWithFormat:@"2"];
 //        NSLog(@"Level 2 Fatness");
     } else if (fatness < 60) {
         return @"fatguyfredL3";
+        number = [NSString stringWithFormat:@"3"];
 //        NSLog(@"Level 3 Fatness");
     } else if (fatness < 80) {
         return @"fatguyfredL4";
+        number = [NSString stringWithFormat:@"4"];
 //        NSLog(@"Level 4 Fatness");
     } else if (fatness < 100) {
         return @"fatguyfredL5";
+        number = [NSString stringWithFormat:@"5"];
 //        NSLog(@"Level 5 Fatness");
     }
     return nil;

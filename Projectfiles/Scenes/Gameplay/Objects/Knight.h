@@ -25,6 +25,7 @@
     int knightWidth;
     
     NSString *l1;
+    NSString *number;
     NSString *l1_plist;
     NSString *animation;
 }
