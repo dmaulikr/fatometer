@@ -27,11 +27,11 @@
     
     self = [super initWithFile:imageName];
     
-    NSLog(@"%@ is the imagename", imageName);
-    NSLog(@"%@ is the plistname", plistName);
-
     if (self)
     {
+        NSLog(@"%@ is the imagename", imageName);
+        NSLog(@"%@ is the plistname", plistName);
+        
         // knight is initally not moving
         self.velocity = ccp(0,0);
         self.invincible = FALSE;
