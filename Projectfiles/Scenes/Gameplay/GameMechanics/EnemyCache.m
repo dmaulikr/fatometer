@@ -179,7 +179,6 @@
                     int currentFatness = [[GameMechanics sharedGameMechanics] game].fatness;
                     NSString *newSpriteName = [knight fileNameForFatness:currentFatness];
                     NSString *newplist = [knight fileNameForFatness:currentFatness];
-                    knight = [[Knight alloc] initWithKnightPicture:newSpriteName];
                     
                     [knight setDisplayFrame:
                      [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@.plist", newplist]]];
