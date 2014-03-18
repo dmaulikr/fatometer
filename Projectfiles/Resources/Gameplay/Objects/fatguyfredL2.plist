@@ -4,7 +4,7 @@
 <dict>
 	<key>frames</key>
 	<dict>
-		<key>Level2-Run-hd_1.png</key>
+		<key>Level2-Run_1.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{174,166},{65,162}}</string>
@@ -17,7 +17,7 @@
 			<key>sourceSize</key>
 			<string>{103,178}</string>
 		</dict>
-		<key>Level2-Run-hd_2.png</key>
+		<key>Level2-Run_2.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,2},{83,170}}</string>
@@ -30,7 +30,7 @@
 			<key>sourceSize</key>
 			<string>{103,178}</string>
 		</dict>
-		<key>Level2-Run-hd_3.png</key>
+		<key>Level2-Run_3.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,170},{93,156}}</string>
@@ -43,7 +43,7 @@
 			<key>sourceSize</key>
 			<string>{103,178}</string>
 		</dict>
-		<key>Level2-Run-hd_4.png</key>
+		<key>Level2-Run_4.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{174,2},{65,162}}</string>
@@ -56,7 +56,7 @@
 			<key>sourceSize</key>
 			<string>{103,178}</string>
 		</dict>
-		<key>Level2-Run-hd_5.png</key>
+		<key>Level2-Run_5.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,87},{81,170}}</string>
@@ -69,7 +69,7 @@
 			<key>sourceSize</key>
 			<string>{103,178}</string>
 		</dict>
-		<key>Level2-Run-hd_6.png</key>
+		<key>Level2-Run_6.png</key>
 		<dict>
 			<key>frame</key>
 			<string>{{2,265},{91,156}}</string>

@@ -36,74 +36,13 @@
         self.velocity = ccp(0,0);
         self.invincible = FALSE;
         
-        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:plistName];
-        
-        // ************* RUNNING ANIMATION ********************
-        animationFramesRun = [NSMutableArray array];
-        
-        int currentFatness = [[GameMechanics sharedGameMechanics] game].fatness;
-        
-        if (currentFatness < 20){
-            number = [NSString stringWithFormat:@"1"];
-            for(int i = 1; i <= 6; ++i) {
-                [animationFramesRun addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-            }
-        } else if (currentFatness < 40) {
-            number = [NSString stringWithFormat:@"2"];
-            for(int i = 1; i <= 6; ++i) {
-                [animationFramesRun addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-            }
-        } else if (currentFatness < 60) {
-            number = [NSString stringWithFormat:@"3"];
-            for(int i = 1; i <= 6; ++i) {
-                [animationFramesRun addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-            }
-        } else if (currentFatness < 80) {
-            number = [NSString stringWithFormat:@"4"];
-            for(int i = 1; i <= 6; ++i) {
-                [animationFramesRun addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-            }
-        } else if (currentFatness < 100) {
-            number = [NSString stringWithFormat:@"5"];
-            for(int i = 1; i <= 6; ++i) {
-                [animationFramesRun addObject:
-                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-            }
+        for (int i = 1; i < 6; i++) {
+            plistName = [NSString stringWithFormat:@"fatguyfredL%d.plist", i];
+            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:plistName];
         }
-
+        [self updateFatnessLevel];
         
-//            for(int i = 1; i <= 6; ++i) {
-//                [animationFramesRun addObject:
-//                 [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-hd_%d.png", number, i]]];
-//            }
-        
-        //Create an animation from the set of frames you created earlier
-        CCAnimation *running = [CCAnimation animationWithSpriteFrames: animationFramesRun delay:0.1f];
-        
-        //Create an action with the animation that can then be assigned to a sprite
-        run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
-        
-        // run knight running animation
-        [self runAction:run];
         [self scheduleUpdate];
-        
-        // Resizeing sprite (but this was before the fat guy came into play - when it was the knight image)
-        
-//        [self resizeSprite:self toWidth:80 toHeight:70];
-//        if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
-//            [self resizeSprite:self toWidth:80 toHeight:70];
-//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-//        } else if (IS_IPAD) {
-//            [self resizeSprite:self toWidth:150 toHeight:137];
-//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-//        } else if (IS_IPAD_RETINA) {
-//            [self resizeSprite:self toWidth:200 toHeight:185];
-//            knightWidth = [self boundingBox].size.width; // calibrate collision detection
-//        }
         
         /**
          A Notification can be used to broadcast an information to all objects of a game, that are interested in it.
@@ -115,28 +54,73 @@
     return self;
 }
 
+- (void)updateFatnessLevel {
+    // ************* RUNNING ANIMATION ********************
+    animationFramesRun = [NSMutableArray array];
+    
+    int currentFatness = [[GameMechanics sharedGameMechanics] game].fatness;
+    //            number = [NSString stringWithFormat:@"1"];
+    
+    if (currentFatness < 20){
+        number = [NSString stringWithFormat:@"1"];
+        for(int i = 1; i <= 6; ++i) {
+            [animationFramesRun addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+        }
+    } else if (currentFatness < 40) {
+        number = [NSString stringWithFormat:@"2"];
+        for(int i = 1; i <= 6; ++i) {
+            [animationFramesRun addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+        }
+    } else if (currentFatness < 60) {
+        number = [NSString stringWithFormat:@"3"];
+        for(int i = 1; i <= 6; ++i) {
+            [animationFramesRun addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+        }
+    } else if (currentFatness < 80) {
+        number = [NSString stringWithFormat:@"4"];
+        for(int i = 1; i <= 6; ++i) {
+            [animationFramesRun addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+        }
+    } else if (currentFatness < 100) {
+        number = [NSString stringWithFormat:@"5"];
+        for(int i = 1; i <= 6; ++i) {
+            [animationFramesRun addObject:
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+        }
+    }
+    
+    //Create an animation from the set of frames you created earlier
+    CCAnimation *running = [CCAnimation animationWithSpriteFrames: animationFramesRun delay:0.1f];
+    
+    //Create an action with the animation that can then be assigned to a sprite
+    [self stopAction:run];
+    run = [CCRepeatForever actionWithAction: [CCAnimate actionWithAnimation:running]];
+    
+    // run knight running animation
+    [self runAction:run];
+}
+
 - (NSString*)fileNameForFatness:(int) fatness
 {
     if (fatness < 20){
-        return @"fatguyfredL1";
+        return @"Level1-Run_1";
         number = [NSString stringWithFormat:@"1"];
-//        NSLog(@"Level 1 Fatness");
     } else if (fatness < 40) {
-        return @"fatguyfredL2";
+        return @"Level2-Run_1";
         number = [NSString stringWithFormat:@"2"];
-//        NSLog(@"Level 2 Fatness");
     } else if (fatness < 60) {
-        return @"fatguyfredL3";
+        return @"Level3-Run_1";
         number = [NSString stringWithFormat:@"3"];
-//        NSLog(@"Level 3 Fatness");
     } else if (fatness < 80) {
-        return @"fatguyfredL4";
+        return @"Level4-Run_1";
         number = [NSString stringWithFormat:@"4"];
-//        NSLog(@"Level 4 Fatness");
     } else if (fatness < 100) {
-        return @"fatguyfredL5";
+        return @"Level5-Run_1";
         number = [NSString stringWithFormat:@"5"];
-//        NSLog(@"Level 5 Fatness");
     }
     return nil;
 }
@@ -220,28 +204,6 @@
 
 - (void)update:(ccTime)delta
 {
-//    if ([[GameMechanics sharedGameMechanics] game].fatness < 20) {
-//        l1 = [NSString stringWithFormat:@"fatguyfredL1.png"];
-//        l1_plist = [NSString stringWithFormat:@"fatguyfredL1.plist"];
-//        animation = [NSString stringWithFormat:@"Level1-Run-hd"];
-//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 40) {
-//        l1 = [NSString stringWithFormat:@"fatguyfredL2.png"];
-//        l1_plist = [NSString stringWithFormat:@"fatguyfredL2.plist"];
-//        animation = [NSString stringWithFormat:@"Level2-Run-hd"];
-//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 60) {
-//        l1 = [NSString stringWithFormat:@"fatguyfredL3.png"];
-//        l1_plist = [NSString stringWithFormat:@"fatguyfredL3.plist"];
-//        animation = [NSString stringWithFormat:@"Level3-Run-hd"];
-//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 80) {
-//        l1 = [NSString stringWithFormat:@"fatguyfredL4.png"];
-//        l1_plist = [NSString stringWithFormat:@"fatguyfredL4.plist"];
-//        animation = [NSString stringWithFormat:@"Level4-Run-hd"];
-//    } else if ([[GameMechanics sharedGameMechanics] game].fatness < 100) {
-//        l1 = [NSString stringWithFormat:@"fatguyfredL5.png"];
-//        l1_plist = [NSString stringWithFormat:@"fatguyfredL5.plist"];
-//        animation = [NSString stringWithFormat:@"Level5-Run-hd"];
-//    }
-//    
     // only execute the block, if the game is in 'running' mode
     if ([[GameMechanics sharedGameMechanics] gameState] == GameStateRunning)
     {

@@ -180,28 +180,22 @@
                     
                     if (currentFatness < 20){
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL1.png"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"Level1-Run_1.png"]]];
                     } else if (currentFatness < 40) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL2.png"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"Level2-Run_1.png"]]];
                     } else if (currentFatness < 60) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL3.png"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"Level3-Run_1.png"]]];
                     } else if (currentFatness < 80) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL4.png"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"Level4-Run_1.png"]]];
                     } else if (currentFatness < 100) {
                         [knight setDisplayFrame:
-                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"fatguyfredL5.png"]]];
+                         [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"Level5-Run_1.png"]]];
                     }
-
                     
-//                    NSString *newSpriteName = [knight fileNameForFatness:currentFatness];
-//                    NSString *newplist = [knight fileNameForFatness:currentFatness];
-//                    
-//                    [knight setDisplayFrame:
-//                     [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"%@.plist", newplist]]];
-//
+                    [knight updateFatnessLevel];
                     
                     [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                 }
