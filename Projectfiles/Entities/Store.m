@@ -47,7 +47,7 @@ BOOL storeLoaded;
         
         CoinPurchaseStoreItem *item1 = [[CoinPurchaseStoreItem alloc] init];
         item1.title = @"1000 Coins";
-        item1.thumbnailFilename = @"missions_1.png";
+        item1.thumbnailFilename = @"coin-icon.png";
         item1.detailDescription = @"Pocket Money!";
         item1.cost = 0.99f;
         item1.coinValue = 40;
@@ -56,7 +56,7 @@ BOOL storeLoaded;
         
         CoinPurchaseStoreItem *item2 = [[CoinPurchaseStoreItem alloc] init];
         item2.title = @"5000 Coins";
-        item2.thumbnailFilename = @"missions_1.png";
+        item2.thumbnailFilename = @"med-coin.png";
         item2.detailDescription = @"Starter Pack!";
         item2.cost = 1.99f;
         item2.coinValue = 100;
@@ -65,7 +65,7 @@ BOOL storeLoaded;
         
         CoinPurchaseStoreItem *item3 = [[CoinPurchaseStoreItem alloc] init];
         item3.title = @"10000 Coins";
-        item3.thumbnailFilename = @"missions_1.png";
+        item3.thumbnailFilename = @"large-coin.png";
         item3.detailDescription = @"Big Boy!";
         item3.cost = 3.99f;
         item3.coinValue = 500;

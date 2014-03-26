@@ -34,6 +34,10 @@
     
     if (self)
     {
+        // get screen center and screen size
+        screenCenter = [CCDirector sharedDirector].screenCenter;
+        screenSize = [[CCDirector sharedDirector] winSize];
+        
         // add title label
         storeItemLabel = [CCLabelTTF labelWithString:@""
                                            fontName:DEFAULT_FONT
@@ -62,16 +66,23 @@
         [self addChild:costLabel];
         
         backgroundSprite = [[CCSprite alloc] initWithFile:@"storeCellBackground.png"];
+        backgroundSprite.scale = 1.2;
         [self addChild:backgroundSprite z:-1];
         
-        purchaseButton = [[CCControlButton alloc] initWithBackgroundSprite:[StyleManager scaleSpriteWhiteBackgroundSolidBlackBorder]];
-        [purchaseButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
-        [purchaseButton setTitleTTFSize:10 forState:CCControlStateNormal];
-        [purchaseButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
-        [purchaseButton setTitle:@"BUY" forState:CCControlStateNormal];
-        [purchaseButton addTarget:self action:@selector(purchaseButtonSelected) forControlEvents:CCControlStateNormal];
-        purchaseButton.preferredSize = CGSizeMake(44, 24);
-        purchaseButton.touchPriority = -1;
+//        purchaseButton = [[CCControlButton alloc] initWithBackgroundSprite:[StyleManager scaleSpriteWhiteBackgroundSolidBlackBorder]];
+//        [purchaseButton setTitleTTF:DEFAULT_FONT forState:CCControlStateNormal];
+//        [purchaseButton setTitleTTFSize:10 forState:CCControlStateNormal];
+//        [purchaseButton setTitleColor:DEFAULT_FONT_COLOR forState:CCControlStateNormal];
+//        [purchaseButton setTitle:@"BUY" forState:CCControlStateNormal];
+//        [purchaseButton addTarget:self action:@selector(purchaseButtonSelected) forControlEvents:CCControlStateNormal];
+//        purchaseButton.preferredSize = CGSizeMake(44, 24);
+//        purchaseButton.touchPriority = -1;
+        
+//        buyImage = [CCSprite spriteWithFile:@"buy.png"];
+        buyButton = [CCMenuItemImage itemWithNormalImage:@"buy-button.png" selectedImage:@"buy-button-down.png" disabledImage:nil target:self selector:@selector(purchaseButtonSelected)];
+        
+        purchaseButton = [CCMenu menuWithItems:buyButton, nil];
+        
         
         [self addChild:purchaseButton];
     }
@@ -105,7 +116,7 @@
     
     if ([self.storeItem isKindOfClass:[VirtualCurrencyStoreItem class]])
     {
-        coinIcon = [CCSprite spriteWithFile:@"coin.png"];
+        coinIcon = [CCSprite spriteWithFile:@"coin-icon.png"];
         [self addChild:coinIcon];
         costLabel.string = [NSString stringWithFormat:@"%.2f", self.storeItem.cost];
     }
@@ -156,7 +167,7 @@
     }
     
     purchaseButton.anchorPoint = ccp(0, 0.5);
-    purchaseButton.position = ccp(self.contentSize.width - 50, self.contentSize.height / 2);
+    purchaseButton.position = ccp(self.contentSize.width - 55, self.contentSize.height / 2);
 }
 
 - (void)purchaseButtonSelected

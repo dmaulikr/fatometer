@@ -117,8 +117,9 @@
         [self addChild:storeTableView];
         
         // add a resume button
-        CCSprite *resumeButtonNormal = [CCSprite spriteWithFile:@"store_button_playbutton.png"];
-        CCMenuItem *resumeMenuItem = [[CCMenuItemSprite alloc] initWithNormalSprite:resumeButtonNormal selectedSprite:nil disabledSprite:nil target:self selector:@selector(newGameButtonPressed)];
+        CCMenuItemImage *resumeMenuItem = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button-down.png" disabledImage:nil target:self selector:@selector(newGameButtonPressed)];
+        
+        CCMenuItemImage *homeMenuItem = [CCMenuItemImage itemWithNormalImage:@"home-button.png" selectedImage:@"home-button-down.png" disabledImage:nil target:self selector:@selector(homeButtonPressed)];
         
         CCMenu *menu = [CCMenu menuWithItems:resumeMenuItem, nil];
         [menu alignItemsHorizontally];
@@ -178,7 +179,10 @@
     CCScene *game = [GameplayLayer noMenuScene];
     [[CCDirector sharedDirector] replaceScene:game];
 }
-
+- (void)homeButtonPressed
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0f scene:[MainMenuLayer node]]];
+}
 - (void)updateCashDisplay
 {
     availableCashLabel.string = [NSString stringWithFormat:@"%d",[Store availableAmountInAppCurrency]];

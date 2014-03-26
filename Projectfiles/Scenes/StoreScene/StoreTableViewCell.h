@@ -30,8 +30,12 @@
     CCSprite *coinIcon;
     CCSprite *backgroundSprite;
     
-    CCControlButton *purchaseButton;
+    CCMenu *purchaseButton;
     PopUp *popUp;
+    CCMenuItemImage *buyButton;
+    
+    CGPoint screenCenter;
+    CGSize screenSize;
 }
 
 @property (nonatomic, readonly) StoreItem *storeItem;

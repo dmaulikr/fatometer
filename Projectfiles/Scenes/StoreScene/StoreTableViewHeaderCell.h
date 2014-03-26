@@ -12,6 +12,9 @@
 {
     CCLabelTTF *storeItemLabel;
     CCSprite *backgroundSprite;
+    
+    CGPoint screenCenter;
+    CGSize screenSize;
 }
 
 

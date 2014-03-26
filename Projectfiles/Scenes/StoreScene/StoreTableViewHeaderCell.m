@@ -20,6 +20,11 @@
     
     if (self)
     {
+        
+        // get screen center and screen size
+        screenCenter = [CCDirector sharedDirector].screenCenter;
+        screenSize = [[CCDirector sharedDirector] winSize];
+
         storeItemLabel = [CCLabelTTF labelWithString:@""
                                             fontName:DEFAULT_FONT
                                             fontSize:12];
@@ -27,7 +32,8 @@
         storeItemLabel.anchorPoint = ccp(0, 0.5);
         [self addChild:storeItemLabel];
         
-        backgroundSprite =  [[CCSprite alloc] initWithFile:@"store_categorybar.png"];
+        backgroundSprite =  [[CCSprite alloc] initWithFile:@"blue-category-header.png"];
+        backgroundSprite.scale = 1.2;
         [self addChild:backgroundSprite z:-1];
     }
     

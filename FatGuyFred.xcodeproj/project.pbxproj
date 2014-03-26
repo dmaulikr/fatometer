@@ -71,6 +71,20 @@
 		38A5333917A9E3C900A8A484 /* fly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38A5324617A9E3C900A8A484 /* fly.mp3 */; };
 		38A5333A17A9E3C900A8A484 /* select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 38A5324717A9E3C900A8A484 /* select.mp3 */; };
 		38ACA132178CAEDF00170550 /* Apples.m in Sources */ = {isa = PBXBuildFile; fileRef = 38ACA131178CAEDF00170550 /* Apples.m */; };
+		38C2ECED18E277EF004FB5D8 /* store_background-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECEC18E277EF004FB5D8 /* store_background-iphone5hd.png */; };
+		38C2ECEF18E2784A004FB5D8 /* store_header-iphone5hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECEE18E2784A004FB5D8 /* store_header-iphone5hd.png */; };
+		38C2ECF218E2798E004FB5D8 /* blue-category-header-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF018E2798E004FB5D8 /* blue-category-header-hd.png */; };
+		38C2ECF318E2798E004FB5D8 /* blue-category-header.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF118E2798E004FB5D8 /* blue-category-header.png */; };
+		38C2ECF818E27DCD004FB5D8 /* buy-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF418E27DCD004FB5D8 /* buy-button.png */; };
+		38C2ECF918E27DCD004FB5D8 /* buy-button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF518E27DCD004FB5D8 /* buy-button-hd.png */; };
+		38C2ECFA18E27DCD004FB5D8 /* buy-button-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF618E27DCD004FB5D8 /* buy-button-down.png */; };
+		38C2ECFB18E27DCD004FB5D8 /* buy-button-down-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECF718E27DCD004FB5D8 /* buy-button-down-hd.png */; };
+		38C2ECFE18E28744004FB5D8 /* coin-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECFC18E28744004FB5D8 /* coin-icon.png */; };
+		38C2ECFF18E28744004FB5D8 /* coin-icon-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ECFD18E28744004FB5D8 /* coin-icon-hd.png */; };
+		38C2ED0418E288AB004FB5D8 /* med-coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ED0018E288AB004FB5D8 /* med-coin.png */; };
+		38C2ED0518E288AB004FB5D8 /* med-coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ED0118E288AB004FB5D8 /* med-coin-hd.png */; };
+		38C2ED0618E288AB004FB5D8 /* large-coin.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ED0218E288AB004FB5D8 /* large-coin.png */; };
+		38C2ED0718E288AB004FB5D8 /* large-coin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C2ED0318E288AB004FB5D8 /* large-coin-hd.png */; };
 		38D4A0FE17AAD5ED0048B8C0 /* apple-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D4A0FB17AAD5ED0048B8C0 /* apple-ipadhd.png */; };
 		38D4A0FF17AAD5ED0048B8C0 /* banana-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D4A0FC17AAD5ED0048B8C0 /* banana-ipadhd.png */; };
 		38D4A10017AAD5ED0048B8C0 /* bread-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D4A0FD17AAD5ED0048B8C0 /* bread-ipadhd.png */; };
@@ -718,6 +732,20 @@
 		38A5324717A9E3C900A8A484 /* select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select.mp3; sourceTree = "<group>"; };
 		38ACA130178CAEDF00170550 /* Apples.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Apples.h; sourceTree = "<group>"; };
 		38ACA131178CAEDF00170550 /* Apples.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Apples.m; sourceTree = "<group>"; };
+		38C2ECEC18E277EF004FB5D8 /* store_background-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "store_background-iphone5hd.png"; sourceTree = "<group>"; };
+		38C2ECEE18E2784A004FB5D8 /* store_header-iphone5hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "store_header-iphone5hd.png"; sourceTree = "<group>"; };
+		38C2ECF018E2798E004FB5D8 /* blue-category-header-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-category-header-hd.png"; sourceTree = "<group>"; };
+		38C2ECF118E2798E004FB5D8 /* blue-category-header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-category-header.png"; sourceTree = "<group>"; };
+		38C2ECF418E27DCD004FB5D8 /* buy-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy-button.png"; sourceTree = "<group>"; };
+		38C2ECF518E27DCD004FB5D8 /* buy-button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy-button-hd.png"; sourceTree = "<group>"; };
+		38C2ECF618E27DCD004FB5D8 /* buy-button-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy-button-down.png"; sourceTree = "<group>"; };
+		38C2ECF718E27DCD004FB5D8 /* buy-button-down-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buy-button-down-hd.png"; sourceTree = "<group>"; };
+		38C2ECFC18E28744004FB5D8 /* coin-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin-icon.png"; sourceTree = "<group>"; };
+		38C2ECFD18E28744004FB5D8 /* coin-icon-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin-icon-hd.png"; sourceTree = "<group>"; };
+		38C2ED0018E288AB004FB5D8 /* med-coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med-coin.png"; sourceTree = "<group>"; };
+		38C2ED0118E288AB004FB5D8 /* med-coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med-coin-hd.png"; sourceTree = "<group>"; };
+		38C2ED0218E288AB004FB5D8 /* large-coin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large-coin.png"; sourceTree = "<group>"; };
+		38C2ED0318E288AB004FB5D8 /* large-coin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large-coin-hd.png"; sourceTree = "<group>"; };
 		38D4A0FB17AAD5ED0048B8C0 /* apple-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "apple-ipadhd.png"; sourceTree = "<group>"; };
 		38D4A0FC17AAD5ED0048B8C0 /* banana-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "banana-ipadhd.png"; sourceTree = "<group>"; };
 		38D4A0FD17AAD5ED0048B8C0 /* bread-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bread-ipadhd.png"; sourceTree = "<group>"; };
@@ -1908,6 +1936,20 @@
 		38F7524417A9F188006B3B91 /* StoreScreen */ = {
 			isa = PBXGroup;
 			children = (
+				38C2ED0018E288AB004FB5D8 /* med-coin.png */,
+				38C2ED0118E288AB004FB5D8 /* med-coin-hd.png */,
+				38C2ED0218E288AB004FB5D8 /* large-coin.png */,
+				38C2ED0318E288AB004FB5D8 /* large-coin-hd.png */,
+				38C2ECFC18E28744004FB5D8 /* coin-icon.png */,
+				38C2ECFD18E28744004FB5D8 /* coin-icon-hd.png */,
+				38C2ECF418E27DCD004FB5D8 /* buy-button.png */,
+				38C2ECF518E27DCD004FB5D8 /* buy-button-hd.png */,
+				38C2ECF618E27DCD004FB5D8 /* buy-button-down.png */,
+				38C2ECF718E27DCD004FB5D8 /* buy-button-down-hd.png */,
+				38C2ECF018E2798E004FB5D8 /* blue-category-header-hd.png */,
+				38C2ECF118E2798E004FB5D8 /* blue-category-header.png */,
+				38C2ECEE18E2784A004FB5D8 /* store_header-iphone5hd.png */,
+				38C2ECEC18E277EF004FB5D8 /* store_background-iphone5hd.png */,
 				38F7524517A9F188006B3B91 /* store_background-hd.png */,
 				38F7524617A9F188006B3B91 /* store_background-ipadhd.png */,
 				38F7524717A9F188006B3B91 /* store_background.png */,
@@ -2508,6 +2550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70D2E1B9188B1C1D00720C31 /* PaperJohnnyEins-Regular.otf in Resources */,
+				38C2ECFE18E28744004FB5D8 /* coin-icon.png in Resources */,
 				5417091A177123A90021A8C5 /* aqua.png in Resources */,
 				5417091B177123A90021A8C5 /* bluechatbubble.png in Resources */,
 				5417091C177123A90021A8C5 /* CrossPromoViewController.nib in Resources */,
@@ -2536,6 +2579,7 @@
 				70513641188BCF7F001F7384 /* scoreboard-hd.png in Resources */,
 				38F9B44A18D7E6F60088077F /* fatguyfredL5-hd.png in Resources */,
 				54170929177123A90021A8C5 /* FBLoginButton@2x.png in Resources */,
+				38C2ED0718E288AB004FB5D8 /* large-coin-hd.png in Resources */,
 				70513610188BCF7F001F7384 /* leaderboard-active-ipadhd.png in Resources */,
 				38F9B43A18D7E6F60088077F /* fatguyfredL1-hd.png in Resources */,
 				5417092A177123A90021A8C5 /* FBLoginButtonPressed.png in Resources */,
@@ -2565,11 +2609,13 @@
 				5417093A177123A90021A8C5 /* MGWUAboutFooterLandscape-568h@2x.png in Resources */,
 				5417093B177123A90021A8C5 /* MGWUAboutFooterLandscape.png in Resources */,
 				70513648188BCF7F001F7384 /* store-button-down-ipadhd.png in Resources */,
+				38C2ECED18E277EF004FB5D8 /* store_background-iphone5hd.png in Resources */,
 				70D2E1D5188B1D3500720C31 /* home-button-down.png in Resources */,
 				70513644188BCF7F001F7384 /* share-menu-hd.png in Resources */,
 				5417093C177123A90021A8C5 /* MGWUAboutFooterLandscape@2x.png in Resources */,
 				5417093D177123A90021A8C5 /* MGWUAboutFooterPortrait.png in Resources */,
 				5417093E177123A90021A8C5 /* MGWUAboutFooterPortrait@2x.png in Resources */,
+				38C2ECFB18E27DCD004FB5D8 /* buy-button-down-hd.png in Resources */,
 				5417093F177123A90021A8C5 /* MGWUClose.png in Resources */,
 				54170940177123A90021A8C5 /* MGWUClose@2x.png in Resources */,
 				38F9B44B18D7E6F60088077F /* fatguyfredL5.plist in Resources */,
@@ -2594,10 +2640,12 @@
 				388B633418CB0D15006E6472 /* taptoplay.png in Resources */,
 				5417094B177123A90021A8C5 /* mgwuPlaceholderIconDark.png in Resources */,
 				705135EF188BCF7F001F7384 /* checkbox-ipadhd.png in Resources */,
+				38C2ECF818E27DCD004FB5D8 /* buy-button.png in Resources */,
 				5417094C177123A90021A8C5 /* mgwuPlaceholderIconDark@2x.png in Resources */,
 				5417094D177123A90021A8C5 /* operator.available.png in Resources */,
 				5417094E177123A90021A8C5 /* operator.connecting.png in Resources */,
 				5417094F177123A90021A8C5 /* operator.unavailable.png in Resources */,
+				38C2ECF318E2798E004FB5D8 /* blue-category-header.png in Resources */,
 				70D2E1DD188B1D3500720C31 /* pause-title.png in Resources */,
 				54170950177123A90021A8C5 /* send-button-active.png in Resources */,
 				54170951177123A90021A8C5 /* send-button-inactive.png in Resources */,
@@ -2707,6 +2755,7 @@
 				70513643188BCF7F001F7384 /* scoreboard.png in Resources */,
 				38F750DD17A9F0F5006B3B91 /* lemons.png in Resources */,
 				38F750E117A9F0F5006B3B91 /* meat-hd.png in Resources */,
+				38C2ED0418E288AB004FB5D8 /* med-coin.png in Resources */,
 				38F750E217A9F0F5006B3B91 /* meat-ipadhd.png in Resources */,
 				38F750E317A9F0F5006B3B91 /* meat.png in Resources */,
 				38F750E417A9F0F5006B3B91 /* orange-hd.png in Resources */,
@@ -2715,6 +2764,7 @@
 				38F9B43D18D7E6F60088077F /* fatguyfredL2-hd.plist in Resources */,
 				38F750E517A9F0F5006B3B91 /* orange-ipadhd.png in Resources */,
 				38F750E617A9F0F5006B3B91 /* orange.png in Resources */,
+				38C2ECFF18E28744004FB5D8 /* coin-icon-hd.png in Resources */,
 				70488537189B3F87007CDC94 /* background2-left.png in Resources */,
 				70D2E1B4188A4C3A00720C31 /* bg0.png in Resources */,
 				70513606188BCF7F001F7384 /* home-button-down-hd.png in Resources */,
@@ -2730,6 +2780,7 @@
 				38F750EC17A9F0F5006B3B91 /* pizza.png in Resources */,
 				705135FD188BCF7F001F7384 /* facebook-button-hd.png in Resources */,
 				38F750ED17A9F0F5006B3B91 /* sandwich-hd.png in Resources */,
+				38C2ECFA18E27DCD004FB5D8 /* buy-button-down.png in Resources */,
 				38F750EE17A9F0F5006B3B91 /* sandwich-ipadhd.png in Resources */,
 				38F750EF17A9F0F5006B3B91 /* sandwich.png in Resources */,
 				38F750F017A9F0F5006B3B91 /* strawberry-hd.png in Resources */,
@@ -2791,8 +2842,10 @@
 				38F7518517A9F112006B3B91 /* animation_knight-hd.png in Resources */,
 				38F7518617A9F112006B3B91 /* animation_knight.plist in Resources */,
 				38F7518717A9F112006B3B91 /* animation_knight.png in Resources */,
+				38C2ECEF18E2784A004FB5D8 /* store_header-iphone5hd.png in Resources */,
 				70513651188BCF7F001F7384 /* twitter-button-down-ipadhd.png in Resources */,
 				38F7518817A9F112006B3B91 /* bubble-hd.png in Resources */,
+				38C2ECF918E27DCD004FB5D8 /* buy-button-hd.png in Resources */,
 				38F7518917A9F112006B3B91 /* bubble-ipadhd.png in Resources */,
 				38F7518A17A9F112006B3B91 /* bubble.png in Resources */,
 				705135F6188BCF7F001F7384 /* coin-mode-ipadhd.png in Resources */,
@@ -2801,6 +2854,7 @@
 				38F7518D17A9F112006B3B91 /* coin.png in Resources */,
 				7051364C188BCF7F001F7384 /* store-button.png in Resources */,
 				38F7518E17A9F112006B3B91 /* designed-fx.plist in Resources */,
+				38C2ECF218E2798E004FB5D8 /* blue-category-header-hd.png in Resources */,
 				7051364B188BCF7F001F7384 /* store-button-ipadhd.png in Resources */,
 				70513653188BCF7F001F7384 /* twitter-button-hd.png in Resources */,
 				38F7518F17A9F112006B3B91 /* designed-fx.png in Resources */,
@@ -2857,6 +2911,7 @@
 				38F751B517A9F112006B3B91 /* toolbar.png in Resources */,
 				38F751C817A9F125006B3B91 /* buy1-hd.png in Resources */,
 				38F751C917A9F125006B3B91 /* buy1-ipadhd.png in Resources */,
+				38C2ED0618E288AB004FB5D8 /* large-coin.png in Resources */,
 				38F751CA17A9F125006B3B91 /* buy1.png in Resources */,
 				380D4F2D18CB9CB2003536FE /* powerups-mode-hd.png in Resources */,
 				38F751CB17A9F125006B3B91 /* buy2-hd.png in Resources */,
@@ -2927,6 +2982,7 @@
 				38F18ED218B6E3AD007200C9 /* weight-indicator-ipadhd.png in Resources */,
 				38F7526517A9F188006B3B91 /* 9patch_whiteBackground_noBorderTop.png in Resources */,
 				38F7526617A9F188006B3B91 /* topMissionCellBackground-hd.png in Resources */,
+				38C2ED0518E288AB004FB5D8 /* med-coin-hd.png in Resources */,
 				38F7526717A9F188006B3B91 /* topMissionCellBackground-ipadhd.png in Resources */,
 				38F7526817A9F188006B3B91 /* topMissionCellBackground.png in Resources */,
 				38F7526917A9F188006B3B91 /* checkbox-hd.png in Resources */,

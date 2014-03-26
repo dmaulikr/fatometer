@@ -132,7 +132,7 @@
 - (void)storeButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1.0f scene:[StoreScreenScene node]]];
-    [[[GameMechanics sharedGameMechanics] gameScene] quit];
+//    [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
     [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
