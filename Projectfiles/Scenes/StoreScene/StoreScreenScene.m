@@ -121,7 +121,7 @@
         
         CCMenuItemImage *homeMenuItem = [CCMenuItemImage itemWithNormalImage:@"home-button.png" selectedImage:@"home-button-down.png" disabledImage:nil target:self selector:@selector(homeButtonPressed)];
         
-        CCMenu *menu = [CCMenu menuWithItems:resumeMenuItem, nil];
+        CCMenu *menu = [CCMenu menuWithItems:resumeMenuItem, homeMenuItem, nil];
         [menu alignItemsHorizontally];
         menu.position = ccp(self.contentSize.width/2, 4 + resumeMenuItem.contentSize.height / 2);
         
