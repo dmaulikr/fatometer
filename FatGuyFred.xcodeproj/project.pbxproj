@@ -49,6 +49,12 @@
 		388B633B18CB0D48006E6472 /* background-mainlayer-iphonehd.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633818CB0D48006E6472 /* background-mainlayer-iphonehd.png */; };
 		388B633C18CB0D48006E6472 /* background-mainlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 388B633918CB0D48006E6472 /* background-mainlayer.png */; };
 		388B633F18CB2363006E6472 /* Powers.m in Sources */ = {isa = PBXBuildFile; fileRef = 388B633E18CB2363006E6472 /* Powers.m */; };
+		3893646D18E799E200CBD737 /* background0-left-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646718E799E200CBD737 /* background0-left-ipadhd.png */; };
+		3893646E18E799E200CBD737 /* background0-right-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646818E799E200CBD737 /* background0-right-ipadhd.png */; };
+		3893646F18E799E200CBD737 /* background1-left-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646918E799E200CBD737 /* background1-left-ipadhd.png */; };
+		3893647018E799E200CBD737 /* background1-right-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646A18E799E200CBD737 /* background1-right-ipadhd.png */; };
+		3893647118E799E200CBD737 /* background2-left-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646B18E799E200CBD737 /* background2-left-ipadhd.png */; };
+		3893647218E799E200CBD737 /* background2-right-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3893646C18E799E200CBD737 /* background2-right-ipadhd.png */; };
 		38A52EE117A9989800A8A484 /* JumpWithoutCollectingFoods.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */; };
 		38A5328717A9E3C900A8A484 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318917A9E3C900A8A484 /* Icon-72.png */; };
 		38A5328817A9E3C900A8A484 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38A5318A17A9E3C900A8A484 /* Icon-72@2x.png */; };
@@ -703,6 +709,12 @@
 		388B633918CB0D48006E6472 /* background-mainlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-mainlayer.png"; sourceTree = "<group>"; };
 		388B633D18CB2363006E6472 /* Powers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Powers.h; path = ../../../../Resources/Powers.h; sourceTree = "<group>"; };
 		388B633E18CB2363006E6472 /* Powers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Powers.m; path = ../../../../Resources/Powers.m; sourceTree = "<group>"; };
+		3893646718E799E200CBD737 /* background0-left-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background0-left-ipadhd.png"; sourceTree = "<group>"; };
+		3893646818E799E200CBD737 /* background0-right-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background0-right-ipadhd.png"; sourceTree = "<group>"; };
+		3893646918E799E200CBD737 /* background1-left-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1-left-ipadhd.png"; sourceTree = "<group>"; };
+		3893646A18E799E200CBD737 /* background1-right-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background1-right-ipadhd.png"; sourceTree = "<group>"; };
+		3893646B18E799E200CBD737 /* background2-left-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background2-left-ipadhd.png"; sourceTree = "<group>"; };
+		3893646C18E799E200CBD737 /* background2-right-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background2-right-ipadhd.png"; sourceTree = "<group>"; };
 		38A52EDF17A9989800A8A484 /* JumpWithoutCollectingFoods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JumpWithoutCollectingFoods.h; sourceTree = "<group>"; };
 		38A52EE017A9989800A8A484 /* JumpWithoutCollectingFoods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JumpWithoutCollectingFoods.m; sourceTree = "<group>"; };
 		38A5318917A9E3C900A8A484 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -1432,6 +1444,12 @@
 		38A5319317A9E3C900A8A484 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				3893646718E799E200CBD737 /* background0-left-ipadhd.png */,
+				3893646818E799E200CBD737 /* background0-right-ipadhd.png */,
+				3893646918E799E200CBD737 /* background1-left-ipadhd.png */,
+				3893646A18E799E200CBD737 /* background1-right-ipadhd.png */,
+				3893646B18E799E200CBD737 /* background2-left-ipadhd.png */,
+				3893646C18E799E200CBD737 /* background2-right-ipadhd.png */,
 				70488531189B3F87007CDC94 /* background2-right.png */,
 				70488532189B3F87007CDC94 /* background2-right-hd.png */,
 				70488533189B3F87007CDC94 /* background2-left.png */,
@@ -2576,6 +2594,7 @@
 				5417092D177123A90021A8C5 /* FBNoThanksButton@2x.png in Resources */,
 				70513654188BCF7F001F7384 /* twitter-button-ipadhd.png in Resources */,
 				705135EC188BCF7F001F7384 /* best-score.png in Resources */,
+				3893647118E799E200CBD737 /* background2-left-ipadhd.png in Resources */,
 				7051364A188BCF7F001F7384 /* store-button-hd.png in Resources */,
 				384DEFB4184542E8004B71A9 /* tap-screen-hd.png in Resources */,
 				5417092E177123A90021A8C5 /* FBNoThanksButtonPressed.png in Resources */,
@@ -2611,9 +2630,11 @@
 				54170942177123A90021A8C5 /* MGWUFacebookLoginLandscapeDark.nib in Resources */,
 				38F9B43B18D7E6F60088077F /* fatguyfredL1.plist in Resources */,
 				38F9B44218D7E6F60088077F /* fatguyfredL3-hd.png in Resources */,
+				3893647218E799E200CBD737 /* background2-right-ipadhd.png in Resources */,
 				54170943177123A90021A8C5 /* MGWUFacebookLoginPortrait.nib in Resources */,
 				54170944177123A90021A8C5 /* MGWUFacebookLoginPortraitDark.nib in Resources */,
 				54170945177123A90021A8C5 /* mgwulogo.png in Resources */,
+				3893646E18E799E200CBD737 /* background0-right-ipadhd.png in Resources */,
 				705135FB188BCF7F001F7384 /* facebook-button-down-ipadhd.png in Resources */,
 				54170946177123A90021A8C5 /* mgwuLogo@2x.png in Resources */,
 				384DEFB5184542E8004B71A9 /* tap-screen-ipadhd.png in Resources */,
@@ -2857,6 +2878,7 @@
 				38F7519617A9F112006B3B91 /* tree-hd.png in Resources */,
 				38F7519717A9F112006B3B91 /* tree-ipadhd.png in Resources */,
 				38F7519817A9F112006B3B91 /* tree.png in Resources */,
+				3893646F18E799E200CBD737 /* background1-left-ipadhd.png in Resources */,
 				38F7519917A9F112006B3B91 /* pause-hd.png in Resources */,
 				384DEFC218454D86004B71A9 /* pause-down.png in Resources */,
 				38F7519A17A9F112006B3B91 /* pause-ipadhd.png in Resources */,
@@ -2877,6 +2899,7 @@
 				38F751A617A9F112006B3B91 /* skipahead-pressed.png in Resources */,
 				7051361A188BCF7F001F7384 /* missions-inactive.png in Resources */,
 				38F751A717A9F112006B3B91 /* skipahead.png in Resources */,
+				3893647018E799E200CBD737 /* background1-right-ipadhd.png in Resources */,
 				380D4F3418CBBEF3003536FE /* keep-playing-ipadhd.png in Resources */,
 				384DEFBC18454314004B71A9 /* tilt-screen.png in Resources */,
 				38F751A817A9F112006B3B91 /* store-hd.png in Resources */,
@@ -2944,6 +2967,7 @@
 				38F7520417A9F16C006B3B91 /* close.png in Resources */,
 				38F7520517A9F16C006B3B91 /* reset-hd.png in Resources */,
 				70513603188BCF7F001F7384 /* gameover-hd.png in Resources */,
+				3893646D18E799E200CBD737 /* background0-left-ipadhd.png in Resources */,
 				38F7520617A9F16C006B3B91 /* reset-ipadhd.png in Resources */,
 				38F9B43C18D7E6F60088077F /* fatguyfredL1.png in Resources */,
 				38F7520717A9F16C006B3B91 /* reset.png in Resources */,
@@ -3196,8 +3220,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
-				PROVISIONING_PROFILE = "93C80B92-DEB1-4B52-8745-21D7641F4FED";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "93C80B92-DEB1-4B52-8745-21D7641F4FED";
+				PROVISIONING_PROFILE = "E79734E4-731F-42E3-A1ED-35177894FF1F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E79734E4-731F-42E3-A1ED-35177894FF1F";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -3221,8 +3245,8 @@
 					"-lsqlite3.0",
 				);
 				PRODUCT_NAME = "Wild Food";
-				PROVISIONING_PROFILE = "93C80B92-DEB1-4B52-8745-21D7641F4FED";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "93C80B92-DEB1-4B52-8745-21D7641F4FED";
+				PROVISIONING_PROFILE = "E79734E4-731F-42E3-A1ED-35177894FF1F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E79734E4-731F-42E3-A1ED-35177894FF1F";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
 			};
