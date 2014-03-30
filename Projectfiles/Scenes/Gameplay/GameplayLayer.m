@@ -189,19 +189,22 @@
         [self addChild:knight];
         knight.anchorPoint = ccp(0,0);
         
-        CCSprite *coinModeImage = [CCSprite spriteWithFile:@"coin-mode.png"];
-        coinModeImage.scale = 1.2;
-        
         // add scoreboard entry for in-app currency
         inAppCurrencyDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:@"coin-mode.png" fontFile:@"avenir.fnt"];
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 20);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            inAppCurrencyDisplayNode.position = ccp(45, self.contentSize.height - 110);
+        }
         inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:10000];
         
         // add scoreboard entry for points
         pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:@"avenir24.fnt"];
         pointsDisplayNode.position = ccp(10, self.contentSize.height - 50);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            inAppCurrencyDisplayNode.position = ccp(45, self.contentSize.height - 35);
+        }
         pointsDisplayNode.scoreStringFormat = @"%d m";
         [hudNode addChild:pointsDisplayNode z:1000];
         
@@ -228,7 +231,10 @@
         // SET UP TOOLBAR, POINTER, AND FATNESS
         toolBar = [CCSprite spriteWithFile:@"weight-bar.png"];
         pointer = [CCSprite spriteWithFile:@"weight-indicator.png"];
-        toolBar.position = ccp(screenSize.width/2,screenSize.height-24);
+        toolBar.position = ccp(screenCenter.x,screenSize.height-24);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            toolBar.position = ccp(screenCenter.x,screenSize.height-35);
+        }
         toolBar.scale = 1.3;
         pointer.scale = 1.3;
         

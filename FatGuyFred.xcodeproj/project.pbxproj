@@ -157,6 +157,9 @@
 		38D9782C18E7C4FF00752091 /* coin-icon-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D9782B18E7C4FF00752091 /* coin-icon-ipadhd.png */; };
 		38D9782F18E7C6A500752091 /* med-coin-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D9782D18E7C6A500752091 /* med-coin-ipadhd.png */; };
 		38D9783018E7C6A500752091 /* large-coin-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38D9782E18E7C6A500752091 /* large-coin-ipadhd.png */; };
+		38D9783818E7DCBE00752091 /* avenir-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 38D9783518E7DCBE00752091 /* avenir-ipadhd.fnt */; };
+		38D9783918E7DCBE00752091 /* avenir24-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 38D9783618E7DCBE00752091 /* avenir24-ipadhd.fnt */; };
+		38D9783A18E7DCBE00752091 /* bitmapfont-ipadhd.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 38D9783718E7DCBE00752091 /* bitmapfont-ipadhd.fnt */; };
 		38F18ECE18B6E3AD007200C9 /* weight-bar-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F18EC818B6E3AD007200C9 /* weight-bar-hd.png */; };
 		38F18ECF18B6E3AD007200C9 /* weight-bar-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F18EC918B6E3AD007200C9 /* weight-bar-ipadhd.png */; };
 		38F18ED018B6E3AD007200C9 /* weight-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F18ECA18B6E3AD007200C9 /* weight-bar.png */; };
@@ -872,6 +875,9 @@
 		38D9782B18E7C4FF00752091 /* coin-icon-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coin-icon-ipadhd.png"; sourceTree = "<group>"; };
 		38D9782D18E7C6A500752091 /* med-coin-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "med-coin-ipadhd.png"; sourceTree = "<group>"; };
 		38D9782E18E7C6A500752091 /* large-coin-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "large-coin-ipadhd.png"; sourceTree = "<group>"; };
+		38D9783518E7DCBE00752091 /* avenir-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "avenir-ipadhd.fnt"; sourceTree = "<group>"; };
+		38D9783618E7DCBE00752091 /* avenir24-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "avenir24-ipadhd.fnt"; sourceTree = "<group>"; };
+		38D9783718E7DCBE00752091 /* bitmapfont-ipadhd.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bitmapfont-ipadhd.fnt"; sourceTree = "<group>"; };
 		38F18EC818B6E3AD007200C9 /* weight-bar-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight-bar-hd.png"; sourceTree = "<group>"; };
 		38F18EC918B6E3AD007200C9 /* weight-bar-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight-bar-ipadhd.png"; sourceTree = "<group>"; };
 		38F18ECA18B6E3AD007200C9 /* weight-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weight-bar.png"; sourceTree = "<group>"; };
@@ -1887,6 +1893,9 @@
 		38F7510A17A9F112006B3B91 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				38D9783518E7DCBE00752091 /* avenir-ipadhd.fnt */,
+				38D9783618E7DCBE00752091 /* avenir24-ipadhd.fnt */,
+				38D9783718E7DCBE00752091 /* bitmapfont-ipadhd.fnt */,
 				38F7510B17A9F112006B3B91 /* avenir-hd.fnt */,
 				38F7510C17A9F112006B3B91 /* avenir-hd.png */,
 				38F7510D17A9F112006B3B91 /* avenir-ipadhd.png */,
@@ -2778,6 +2787,7 @@
 				54170938177123A90021A8C5 /* mgwu-m.png in Resources */,
 				38F9B44418D7E6F60088077F /* fatguyfredL3.png in Resources */,
 				54170939177123A90021A8C5 /* mgwu-m@2x.png in Resources */,
+				38D9783A18E7DCBE00752091 /* bitmapfont-ipadhd.fnt in Resources */,
 				5417093A177123A90021A8C5 /* MGWUAboutFooterLandscape-568h@2x.png in Resources */,
 				5417093B177123A90021A8C5 /* MGWUAboutFooterLandscape.png in Resources */,
 				70513648188BCF7F001F7384 /* store-button-down-ipadhd.png in Resources */,
@@ -3022,6 +3032,7 @@
 				38F9B43F18D7E6F60088077F /* fatguyfredL2.plist in Resources */,
 				38F7517917A9F112006B3B91 /* heart_empty.png in Resources */,
 				38F7517A17A9F112006B3B91 /* heart_filled-hd.png in Resources */,
+				38D9783918E7DCBE00752091 /* avenir24-ipadhd.fnt in Resources */,
 				38F7517B17A9F112006B3B91 /* heart_filled.png in Resources */,
 				38F7517C17A9F112006B3B91 /* notification-box-hd.png in Resources */,
 				38F7517D17A9F112006B3B91 /* notification-box-ipadhd.png in Resources */,
@@ -3052,6 +3063,7 @@
 				705135F6188BCF7F001F7384 /* coin-mode-ipadhd.png in Resources */,
 				38F7518B17A9F112006B3B91 /* coin-hd.png in Resources */,
 				38F7518C17A9F112006B3B91 /* coin-ipadhd.png in Resources */,
+				38D9783818E7DCBE00752091 /* avenir-ipadhd.fnt in Resources */,
 				38F7518D17A9F112006B3B91 /* coin.png in Resources */,
 				7051364C188BCF7F001F7384 /* store-button.png in Resources */,
 				38F7518E17A9F112006B3B91 /* designed-fx.plist in Resources */,
