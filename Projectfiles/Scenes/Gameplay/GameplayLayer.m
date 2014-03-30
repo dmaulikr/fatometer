@@ -143,7 +143,7 @@
         
         scrollSpeed = 280.0f;
         if (IS_IPOD || IS_IPAD_RETINA) {
-            scrollSpeed = 400.0f;
+            scrollSpeed = 600.0f;
         }
         
         // Coin Stuff
@@ -1079,13 +1079,15 @@
     CCScale9Sprite *backgroundImage = [StyleManager goOnPopUpBackground];
     goOnPopUp = [PopupProvider presentPopUpWithContentString:nil backgroundImage:backgroundImage target:self selector:@selector(goOnPopUpButtonClicked) buttonTitles:nil];
     
-    CCMenuItemSprite *yes = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"play-button.png"] selectedSprite:[CCSprite spriteWithFile:@"play-button-down.png"] target:self selector:@selector(goOnPopUpButtonClicked)];
+    CCMenuItemImage *yes = [CCMenuItemImage itemWithNormalImage:@"play-button.png" selectedImage:@"play-button-down.png" disabledImage:nil target:self selector:@selector(goOnPopUpButtonClicked)];
+
+    CCMenuItemImage *no = [CCMenuItemImage itemWithNormalImage:@"home-button.png" selectedImage:@"home-button-down.png" disabledImage:nil target:self selector:@selector(goOnPopUpButtonCancel)];
     
-    CCMenuItemSprite *no = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home-button.png"] selectedSprite:[CCSprite spriteWithFile:@"home-button-down.png"] target:self selector:@selector(goOnPopUpButtonCancel)];
     
     popupMenu = [CCMenu menuWithItems:yes, no, nil];
-    popupMenu.position = ccp(screenCenter.x+100, screenCenter.y);
-    [self addChild:popupMenu z:10000000000];
+    [popupMenu alignItemsHorizontally];
+    popupMenu.position = ccp(screenCenter.x, screenCenter.y-150);
+    [self addChild:popupMenu z:10000];
     
     [self disableGameplayButtons];
 }
