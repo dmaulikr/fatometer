@@ -28,6 +28,7 @@
     SWTableView *storeTableView;
     NSMutableArray *cells;
     CCLabelTTF *availableCashLabel;
+    CGSize screenSize;
 }
 
 // initializes the view with the store content

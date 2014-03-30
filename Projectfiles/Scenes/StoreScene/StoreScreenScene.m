@@ -64,7 +64,7 @@
     
     if (self) {
         _hasVariableCellSize = TRUE;
-        CGSize screenSize = [CCDirector sharedDirector].screenSize;
+        screenSize = [CCDirector sharedDirector].screenSize;
         
         [self setupWithStoreContent];
         
@@ -90,6 +90,9 @@
         CCSprite *storeFooter = [CCSprite spriteWithFile:@"store_footer.png"];
         storeFooter.position = ccp(self.contentSize.width / 2, (0.5 * storeFooter.contentSize.height));
         [self addChild:storeFooter];
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            storeFooter.visible = FALSE;
+        }
         
         // add a coin-symbol for the cash display
         CCSprite *storeCoinIcon = [CCSprite spriteWithFile:@"storecoin.png"];
@@ -107,9 +110,9 @@
         _tableContentSize=CGSizeMake(screenSize.width, tableHeight);
 
         float tableViewHeight = screenSize.height - storeHeader.contentSize.height - storeFooter.contentSize.height;
-        storeTableView = [SWTableView viewWithDataSource:self size:CGSizeMake(TABLE_WIDTH, tableViewHeight)];
+        storeTableView = [SWTableView viewWithDataSource:self size:CGSizeMake(screenSize.width, tableViewHeight)];
 
-        float storeTableXPosition = (self.contentSize.width - TABLE_WIDTH) / 2;
+        float storeTableXPosition = (self.contentSize.width - screenSize.width) / 2;
         storeTableView.position = ccp(storeTableXPosition, storeFooter.contentSize.height);
         storeTableView.verticalFillOrder = SWTableViewFillTopDown;
         storeTableView.clipsToBounds = TRUE;
@@ -148,7 +151,7 @@
         NSString *categoryName = storeCategory;
         sectionCell = [self sectionHeaderWithTitle:categoryName];
         sectionCell.idx = index;
-        sectionCell.contentSize = CGSizeMake(TABLE_WIDTH, ROW_HEIGHT_HEADER);;
+        sectionCell.contentSize = CGSizeMake(screenSize.width, screenSize.height / 20);;
         sectionCell.size = sectionCell.contentSize;
         
         [cells addObject:sectionCell];
@@ -164,7 +167,7 @@
             StoreItem *storeItem = [itemsInCategory objectAtIndex:i];
             [itemCell setupWithStoreItem:storeItem];
             itemCell.idx = index;
-            itemCell.contentSize = CGSizeMake(TABLE_WIDTH, ROW_HEIGHT);
+            itemCell.contentSize = CGSizeMake(screenSize.width, screenSize.height / 10);
             itemCell.size = itemCell.contentSize;
             itemCell.delegate = self; 
             

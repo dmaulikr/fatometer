@@ -153,6 +153,9 @@
     
     // position description label
     storeItemDetailDescriptionLabel.position = ccp(150 , self.contentSize.height / 2);
+    if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        storeItemDetailDescriptionLabel.position = ccp(200 , self.contentSize.height / 2);
+    }
     
     // position coin icon
     coinIcon.position = ccp(self.contentSize.width - 150, self.contentSize.height / 2);
@@ -168,6 +171,10 @@
     
     purchaseButton.anchorPoint = ccp(0, 0.5);
     purchaseButton.position = ccp(self.contentSize.width - 55, self.contentSize.height / 2);
+    
+    if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        purchaseButton.position = ccp(self.contentSize.width - 250, self.contentSize.height / 2);
+    }
 }
 
 - (void)purchaseButtonSelected
