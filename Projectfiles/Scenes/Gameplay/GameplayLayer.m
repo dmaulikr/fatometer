@@ -194,7 +194,7 @@
         inAppCurrencyDisplayNode.scoreStringFormat = @"%d";
         inAppCurrencyDisplayNode.position = ccp(15, self.contentSize.height - 20);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-            inAppCurrencyDisplayNode.position = ccp(45, self.contentSize.height - 110);
+            inAppCurrencyDisplayNode.position = ccp(45, self.contentSize.height - 35);
         }
         inAppCurrencyDisplayNode.score = coinsCollected;
         [hudNode addChild:inAppCurrencyDisplayNode z:10000];
@@ -203,7 +203,7 @@
         pointsDisplayNode = [[ScoreboardEntryNode alloc] initWithScoreImage:nil fontFile:@"avenir24.fnt"];
         pointsDisplayNode.position = ccp(10, self.contentSize.height - 50);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-            inAppCurrencyDisplayNode.position = ccp(45, self.contentSize.height - 35);
+            pointsDisplayNode.position = ccp(40, self.contentSize.height - 75);
         }
         pointsDisplayNode.scoreStringFormat = @"%d m";
         [hudNode addChild:pointsDisplayNode z:1000];
