@@ -4,97 +4,154 @@
 <dict>
 	<key>frames</key>
 	<dict>
+		
 		<key>Level4-Run_1.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{2,140},{65,162}}</string>
-			<key>offset</key>
-			<string>{2,-3}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{10, 5}, {34, 83}}</string>
+			<key>spriteOffset</key>
+			<string>{1, -2}</string>
+			<key>spriteSize</key>
+			<string>{34, 83}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
 			<true/>
-			<key>sourceColorRect</key>
-			<string>{{21,11},{65,162}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
+			<key>textureRect</key>
+			<string>{{72, 81}, {34, 83}}</string>
+			<key>textureRotated</key>
+			<false/>
 		</dict>
+		
 		<key>Level4-Run_2.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{2,2},{69,170}}</string>
-			<key>offset</key>
-			<string>{2,1}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{10, 1}, {36, 87}}</string>
+			<key>spriteOffset</key>
+			<string>{2, -0}</string>
+			<key>spriteSize</key>
+			<string>{36, 87}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
 			<true/>
-			<key>sourceColorRect</key>
-			<string>{{19,3},{69,170}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
+			<key>textureRect</key>
+			<string>{{0, 0}, {36, 87}}</string>
+			<key>textureRotated</key>
+			<false/>
 		</dict>
+		
 		<key>Level4-Run_3.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{2,207},{93,158}}</string>
-			<key>offset</key>
-			<string>{-5,-7}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{0, 9}, {48, 79}}</string>
+			<key>spriteOffset</key>
+			<string>{-2, -4}</string>
+			<key>spriteSize</key>
+			<string>{48, 79}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
 			<true/>
-			<key>sourceColorRect</key>
-			<string>{{0,17},{93,158}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
+			<key>textureRect</key>
+			<string>{{72, 0}, {48, 79}}</string>
+			<key>textureRotated</key>
+			<false/>
 		</dict>
+		
 		<key>Level4-Run_4.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{2,73},{65,162}}</string>
-			<key>offset</key>
-			<string>{2,-3}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{11, 5}, {34, 83}}</string>
+			<key>spriteOffset</key>
+			<string>{2, -2}</string>
+			<key>spriteSize</key>
+			<string>{34, 83}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
 			<true/>
-			<key>sourceColorRect</key>
-			<string>{{21,11},{65,162}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
+			<key>textureRect</key>
+			<string>{{108, 81}, {34, 83}}</string>
+			<key>textureRotated</key>
+			<false/>
 		</dict>
+		
 		<key>Level4-Run_5.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{174,2},{65,170}}</string>
-			<key>offset</key>
-			<string>{4,1}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{12, 1}, {32, 87}}</string>
+			<key>spriteOffset</key>
+			<string>{2, -0}</string>
+			<key>spriteSize</key>
+			<string>{32, 87}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{38, 0}, {32, 87}}</string>
+			<key>textureRotated</key>
 			<false/>
-			<key>sourceColorRect</key>
-			<string>{{23,3},{65,170}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
 		</dict>
+		
 		<key>Level4-Run_6.png</key>
 		<dict>
-			<key>frame</key>
-			<string>{{162,207},{89,158}}</string>
-			<key>offset</key>
-			<string>{-3,-7}</string>
-			<key>rotated</key>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{2, 9}, {46, 79}}</string>
+			<key>spriteOffset</key>
+			<string>{-1, -4}</string>
+			<key>spriteSize</key>
+			<string>{46, 79}</string>
+			<key>spriteSourceSize</key>
+			<string>{52, 89}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 89}, {46, 79}}</string>
+			<key>textureRotated</key>
 			<false/>
-			<key>sourceColorRect</key>
-			<string>{{4,17},{89,158}}</string>
-			<key>sourceSize</key>
-			<string>{103,178}</string>
 		</dict>
+		
 	</dict>
 	<key>metadata</key>
 	<dict>
+		<key>version</key>
+		<string>1.6.0</string>
 		<key>format</key>
-		<integer>2</integer>
-		<key>realTextureFileName</key>
-		<string>fatguyfredL4.png</string>
+		<integer>3</integer>
 		<key>size</key>
-		<string>{256,512}</string>
-		<key>smartupdate</key>
-		<string>$TexturePacker:SmartUpdate:c82c6555763b9661ae17b719b6a85529:3f171cebd3ded4ca72f25c6adfc9bdfc:e8a3ba1d073d7d105a63af67f0798ac6$</string>
+		<string>{256, 256}</string>
+		<key>name</key>
+		<string>Untitled 3</string>
 		<key>textureFileName</key>
 		<string>fatguyfredL4.png</string>
+		<key>premultipliedAlpha</key>
+		<false/>
 	</dict>
 </dict>
 </plist>

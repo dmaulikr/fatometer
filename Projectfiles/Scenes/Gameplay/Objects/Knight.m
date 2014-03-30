@@ -65,31 +65,31 @@
         number = [NSString stringWithFormat:@"1"];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-%d.png", number, i]]];
         }
     } else if (currentFatness < 40) {
         number = [NSString stringWithFormat:@"2"];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-%d.png", number, i]]];
         }
     } else if (currentFatness < 60) {
         number = [NSString stringWithFormat:@"3"];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-%d.png", number, i]]];
         }
     } else if (currentFatness < 80) {
         number = [NSString stringWithFormat:@"4"];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-%d.png", number, i]]];
         }
     } else if (currentFatness < 100) {
         number = [NSString stringWithFormat:@"5"];
         for(int i = 1; i <= 6; ++i) {
             [animationFramesRun addObject:
-             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run_%d.png", number, i]]];
+             [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName: [NSString stringWithFormat:@"Level%@-Run-%d.png", number, i]]];
         }
     }
     

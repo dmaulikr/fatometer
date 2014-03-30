@@ -5,134 +5,134 @@
 	<key>frames</key>
 	<dict>
 		
-		<key>Level2-Run-1.png</key>
+		<key>level5-run-ipadhd-1.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{11, 5}, {34, 83}}</string>
+			<string>{{44, 0}, {162, 356}}</string>
 			<key>spriteOffset</key>
-			<string>{2, -2}</string>
+			<string>{22, -0}</string>
 			<key>spriteSize</key>
-			<string>{34, 83}</string>
+			<string>{162, 356}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{92, 85}, {34, 83}}</string>
+			<string>{{192, 0}, {162, 356}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Level2-Run-2.png</key>
+		<key>level5-run-ipadhd-2.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{9, 1}, {42, 87}}</string>
+			<string>{{46, 0}, {160, 356}}</string>
 			<key>spriteOffset</key>
-			<string>{4, -0}</string>
+			<string>{23, -0}</string>
 			<key>spriteSize</key>
-			<string>{42, 87}</string>
+			<string>{160, 356}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 89}, {42, 87}}</string>
+			<string>{{192, 358}, {160, 356}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Level2-Run-3.png</key>
+		<key>level5-run-ipadhd-3.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{1, 9}, {46, 79}}</string>
+			<string>{{16, 0}, {190, 356}}</string>
 			<key>spriteOffset</key>
-			<string>{-2, -4}</string>
+			<string>{8, -0}</string>
 			<key>spriteSize</key>
-			<string>{46, 79}</string>
+			<string>{190, 356}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{44, 0}, {46, 79}}</string>
+			<string>{{0, 358}, {190, 356}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Level2-Run-4.png</key>
+		<key>level5-run-ipadhd-4.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{11, 5}, {34, 83}}</string>
+			<string>{{47, 20}, {126, 336}}</string>
 			<key>spriteOffset</key>
-			<string>{2, -2}</string>
+			<string>{7, -10}</string>
 			<key>spriteSize</key>
-			<string>{34, 83}</string>
+			<string>{126, 336}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{92, 0}, {34, 83}}</string>
+			<string>{{356, 0}, {126, 336}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Level2-Run-5.png</key>
+		<key>level5-run-ipadhd-5.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{10, 1}, {42, 87}}</string>
+			<string>{{46, 2}, {160, 354}}</string>
 			<key>spriteOffset</key>
-			<string>{5, -0}</string>
+			<string>{23, -1}</string>
 			<key>spriteSize</key>
-			<string>{42, 87}</string>
+			<string>{160, 354}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{0, 0}, {42, 87}}</string>
+			<string>{{354, 358}, {160, 354}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
 		
-		<key>Level2-Run-6.png</key>
+		<key>level5-run-ipadhd-6.png</key>
 		<dict>
 			<key>aliases</key>
 			<array>
 			
 			</array>
 			<key>spriteColorRect</key>
-			<string>{{1, 9}, {46, 79}}</string>
+			<string>{{16, 0}, {190, 356}}</string>
 			<key>spriteOffset</key>
-			<string>{-2, -4}</string>
+			<string>{8, -0}</string>
 			<key>spriteSize</key>
-			<string>{46, 79}</string>
+			<string>{190, 356}</string>
 			<key>spriteSourceSize</key>
-			<string>{52, 89}</string>
+			<string>{206, 356}</string>
 			<key>spriteTrimmed</key>
 			<true/>
 			<key>textureRect</key>
-			<string>{{44, 81}, {46, 79}}</string>
+			<string>{{0, 0}, {190, 356}}</string>
 			<key>textureRotated</key>
 			<false/>
 		</dict>
@@ -145,13 +145,24 @@
 		<key>format</key>
 		<integer>3</integer>
 		<key>size</key>
-		<string>{256, 256}</string>
+		<string>{1024, 1024}</string>
 		<key>name</key>
-		<string>Untitled 3</string>
-		<key>textureFileName</key>
-		<string>fatguyfredL2.png</string>
-		<key>premultipliedAlpha</key>
-		<false/>
+		<string>Untitled 4</string>
+		<key>target</key>
+		<dict>
+			<key>name</key>
+			<string>default</string>
+			<key>textureFileName</key>
+			<string>fatguyfredL5-ipadhd</string>
+			<key>textureFileExtension</key>
+			<string>.png</string>
+			<key>coordinatesFileName</key>
+			<string>fatguyfredL5-ipadhd</string>
+			<key>coordinatesFileExtension</key>
+			<string>.plist</string>
+			<key>premultipliedAlpha</key>
+			<false/>
+		</dict>
 	</dict>
 </dict>
 </plist>
