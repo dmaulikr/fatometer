@@ -1056,8 +1056,8 @@
 
 - (void)onEnterTransitionDidFinish
 {
-  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
-  [[CCDirector sharedDirector] replaceScene:recap];
+//  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
+//  [[CCDirector sharedDirector] replaceScene:recap];
   
     // setup a gesture listener for jumping and stabbing gestures
     [KKInput sharedInput].gestureSwipeEnabled = TRUE;
@@ -1086,7 +1086,7 @@
     
     popupMenu = [CCMenu menuWithItems:yes, no, nil];
     [popupMenu alignItemsHorizontally];
-    popupMenu.position = ccp(screenCenter.x, screenCenter.y-150);
+    popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-50);
     [self addChild:popupMenu z:10000];
     
     [self disableGameplayButtons];

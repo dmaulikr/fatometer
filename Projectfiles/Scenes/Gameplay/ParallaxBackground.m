@@ -30,6 +30,9 @@
         // For Parralax, set this to however many different background layers there are. So If there are 3 backgrounds, then this would be set to 3.
         numStripes = 3;
         
+        speed = [NSNumber numberWithFloat:1.0f];
+        speed2 = [NSNumber numberWithFloat:1.0f];
+        
         /*
          The Below Code is For for NON Parralax Backgrounds. Comment this if you want to use a parralax background.
          These images can be set to anything, and they don't have to be in numerical order.
@@ -56,9 +59,9 @@
         
 		// Add 4 more layers, and position them next to their neighbor stripe this allows endless scrolling
         
-        if (IS_IPAD_RETINA) {
-            
-        } else {
+//        if (IS_IPAD_RETINA) {
+        
+//        } else {
             for (NSUInteger i = 0; i < numStripes; i++)
             {
                 NSString* bgleft = [NSString stringWithFormat:@"background%i-left.png", i];
@@ -74,15 +77,15 @@
                 [backgroundNode addChild:sprite z:i tag:i + 2];
                 [backgroundNode addChild:sprite2 z:i tag:i + 2];
             }
-        }
+//        }
         
         
 		// Initialize the array that contains the scroll factors for individual layers.
         // Uncomment this line of code if not using parralax backgrounds
 		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
-		[speedFactors addObject:[NSNumber numberWithFloat:0.4f]];
-        [speedFactors addObject:[NSNumber numberWithFloat:1.1f]];
-		[speedFactors addObject:[NSNumber numberWithFloat:1.8f]];
+		[speedFactors addObject:[NSNumber numberWithFloat:0.3f]];
+        [speedFactors addObject:[NSNumber numberWithFloat:0.7f]];
+		[speedFactors addObject:[NSNumber numberWithFloat:1.1f]];
 		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
         
         /*
@@ -122,13 +125,12 @@
     // we use a c-array since it is faster on iteration
 	CCARRAY_FOREACH([backgroundNode children], sprite)
 	{
+        NSNumber *factor = [speedFactors objectAtIndex:sprite.zOrder];
+
         // retrieve the scrollspeed factor for the current sprite
-        NSNumber* factor = [NSNumber numberWithFloat:1.0f];
-		
-        // move the background layer
-		CGPoint pos = sprite.position;
-		pos.x -= scrollSpeed * [factor floatValue] * delta;
-		
+        CGPoint pos = sprite.position;
+        pos.x -= scrollSpeed * [factor floatValue] * delta;
+        
 		// when a layer is off screen on the left side, move it to the right end of the screen
 		if (pos.x < -sprite.contentSize.width)
 		{

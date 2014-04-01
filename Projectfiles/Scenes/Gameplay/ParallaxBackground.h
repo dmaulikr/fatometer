@@ -31,6 +31,10 @@
 	CGSize screenSize;
     
     CCNode *backgroundNode;
+    
+    NSNumber *speed;
+    NSNumber *speed2;
+    
 //    CCSprite *sprite;
 //    CCSprite *sprite2;
 }
