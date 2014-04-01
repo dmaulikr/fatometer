@@ -79,11 +79,11 @@
         
 		// Initialize the array that contains the scroll factors for individual layers.
         // Uncomment this line of code if not using parralax backgrounds
-//		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
-//		[speedFactors addObject:[NSNumber numberWithFloat:0.4f]];
-//        [speedFactors addObject:[NSNumber numberWithFloat:1.1f]];
-//		[speedFactors addObject:[NSNumber numberWithFloat:1.8f]];
-//		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
+		speedFactors = [[CCArray alloc] initWithCapacity:numStripes];
+		[speedFactors addObject:[NSNumber numberWithFloat:0.4f]];
+        [speedFactors addObject:[NSNumber numberWithFloat:1.1f]];
+		[speedFactors addObject:[NSNumber numberWithFloat:1.8f]];
+		NSAssert([speedFactors count] == numStripes, @"speedFactors count does not match numStripes!");
         
         /*
          The Below Code is Only for Parralax Backgrounds. Uncomment this if you want to use a parralax background.
