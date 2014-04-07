@@ -55,14 +55,8 @@
         [self addChild:background z:-100000];
         
         // add title label
-        CCLabelTTF *storeItemLabel = [CCLabelTTF labelWithString:@"Paused"
-                                                        fontName:DEFAULT_FONT
-                                                        fontSize:50];
-        storeItemLabel.color = DEFAULT_FONT_COLOR;
-        storeItemLabel.position = ccp(0, 0.5 * self.contentSize.height - 45);
-        
         CCSprite *pauseTitle = [CCSprite spriteWithFile:@"pause-title-hd.png"];
-        pauseTitle.position = ccp(0,(self.contentSize.height/2.5)-100);
+        pauseTitle.position = ccp(0,(self.contentSize.height/2.5)-10);
         [self addChild:pauseTitle];
         
         // add a resume button
@@ -79,7 +73,7 @@
 
         menu = [CCMenu menuWithItems:resumeMenuItem, resetMenuItem, homeMenuItem, storeMenuItem, nil];
         [menu alignItemsHorizontally];
-        menu.position = ccp(0, (self.contentSize.height/6)-100);
+        menu.position = ccp(0, (self.contentSize.height/6)-10);
         [self addChild:menu];
         
         // This is for aligning the menu items vertically
@@ -94,14 +88,14 @@
         //        [self addChild:menu3];
         
         // add a missions node
-//                missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
-//                missionNode.contentSize = CGSizeMake(240.f, 120.f);
-//                missionNode.anchorPoint = ccp(0.5, 0.5);
-//                missionNode.position = ccp(0, -80);
-//        
-//                // we want to use the 9Patch background on the pause screen
-//                missionNode.usesScaleSpriteBackground = TRUE;
-//                [self addChild:missionNode];
+        missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
+        missionNode.contentSize = CGSizeMake(240.f, 120.f);
+        missionNode.anchorPoint = ccp(0.5, 0.5);
+        missionNode.position = ccp(0, -70);
+
+        // we want to use the 9Patch background on the pause screen
+        missionNode.usesScaleSpriteBackground = TRUE;
+        [self addChild:missionNode];
     }
     
     return self;
