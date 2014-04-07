@@ -134,7 +134,15 @@
 		// when a layer is off screen on the left side, move it to the right end of the screen
 		if (pos.x < -sprite.contentSize.width)
 		{
-			pos.x += 2644.0f;
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 480) {
+                pos.x += 1320.0f;
+            }
+            else if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136 || [[CCDirector sharedDirector] winSizeInPixels].width == 960 || [[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
+                pos.x += 2644.0f;
+            }
+            else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+                pos.x += 6352.0f;
+            }
 		}
 		
 		sprite.position = pos;
