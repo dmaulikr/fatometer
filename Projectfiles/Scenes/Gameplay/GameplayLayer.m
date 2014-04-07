@@ -1086,7 +1086,17 @@
     
     popupMenu = [CCMenu menuWithItems:yes, no, nil];
     [popupMenu alignItemsHorizontally];
+    
     popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-50);
+    
+    if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136 || [[CCDirector sharedDirector] winSizeInPixels].width == 960 || [[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
+        popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-50);
+    }
+    else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-120);
+    }
+
+    
     [self addChild:popupMenu z:10000];
     
     [self disableGameplayButtons];
