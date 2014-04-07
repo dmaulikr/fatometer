@@ -90,8 +90,11 @@
         /********** Mission Panel *********/
         missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
         missionNode.contentSize = CGSizeMake(240.f, 201.f);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            missionNode.contentSize = CGSizeMake(460.f, 320.f);
+        }
         // we want to use a fixed size image on the recap screen
-        missionNode.usesScaleSpriteBackground = FALSE;
+//        missionNode.usesScaleSpriteBackground = FALSE;
         
         /********** Leaderboard Panel *********/
         leaderboardNode = [[LeaderboardNode alloc] initWithScoreBoard:nil];
@@ -128,6 +131,11 @@
         CCSprite *socialMenuBG = [CCSprite spriteWithFile:@"share-menu.png"];
         socialMenuBG.position = ccp(100, self.contentSize.height-40);
         [self addChild:socialMenuBG];
+        
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            socialMenu.position = ccp(220, self.contentSize.height-90);
+            socialMenuBG.position = ccp(210, self.contentSize.height-90);
+        }
 
         
         /*********** Personal Best *********/
@@ -176,6 +184,9 @@
     // animate the tabNode on to screen
     CGSize screenSize = [CCDirector sharedDirector].screenSize;
     CGPoint targetPoint = ccp(screenSize.width - 240, tabNode.position.y);
+    if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        targetPoint = ccp(screenSize.width - 500, screenCenter.y+155);
+    }
     CCMoveTo *move = [CCMoveTo actionWithDuration:1.f position:targetPoint];
     id easeMove = [CCEaseBackInOut actionWithAction:move];
     [tabNode runAction: easeMove];

@@ -19,5 +19,6 @@
 #define INVERSE_FONT_COLOR ccc3(255, 255, 255)
 
 #define FONT_SIZE_MISSIONS 12
+#define FONT_SIZE_MISSIONS_IPAD 20
 
 #endif

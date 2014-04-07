@@ -101,6 +101,15 @@
         CCLabelTTF *missionLabel = [CCLabelTTF labelWithString:mission.missionDescription
                                                       fontName:DEFAULT_FONT
                                                       fontSize:FONT_SIZE_MISSIONS];
+        
+        
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        missionLabel = [CCLabelTTF labelWithString:mission.missionDescription
+                                                          fontName:DEFAULT_FONT
+                                                          fontSize:FONT_SIZE_MISSIONS_IPAD];
+        }
+
+        
         missionLabel.color = DEFAULT_FONT_COLOR;
         missionLabel.tag = TAG_LABEL;
         missionLabel.position = ccp(missionNode.contentSize.width / 2, missionNode.contentSize.height / 2);
@@ -114,7 +123,7 @@
         missionThumbnail.anchorPoint = ccp(0, 0);
         missionThumbnail.position = ccp(5, missionNode.contentSize.height * 0.1);
         [missionThumbnail scaleSpriteToFitContentSize];
-        [missionNode addChild:missionThumbnail];
+//        [missionNode addChild:missionThumbnail];
         
         // add completion checkmark
         CCSprite *missionCheckbox = [CCSprite spriteWithFile:@"checkbox.png"];

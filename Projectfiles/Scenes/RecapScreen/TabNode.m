@@ -64,6 +64,12 @@
             backgroundSprite.contentSize = CGSizeMake(101,25);
             backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
             
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+                controllButton.contentSize = CGSizeMake(201,50);
+                controllButton.preferredSize = CGSizeMake(201,50);
+                backgroundSprite.contentSize = CGSizeMake(201,50);
+            }
+            
             [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
             tabButton = controllButton;
         } else if (i == 1) {
@@ -75,6 +81,12 @@
             backgroundSprite.contentSize = CGSizeMake(131,25);
             backgroundSprite.contentSize = controllButton.contentSize;
             backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
+            
+            if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+                controllButton.contentSize = CGSizeMake(261,50);
+                controllButton.preferredSize = CGSizeMake(261,50);
+                backgroundSprite.contentSize = CGSizeMake(261,50);
+            }
             
             [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
             tabButton = controllButton;
