@@ -93,12 +93,17 @@
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
             missionNode.contentSize = CGSizeMake(460.f, 320.f);
         }
-        // we want to use a fixed size image on the recap screen
-//        missionNode.usesScaleSpriteBackground = FALSE;
+        missionNode.usesScaleSpriteBackground = TRUE;
+        
         
         /********** Leaderboard Panel *********/
         leaderboardNode = [[LeaderboardNode alloc] initWithScoreBoard:nil];
         leaderboardNode.contentSize = CGSizeMake(240.f, 201.f);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+//            missionNode.contentSize = CGSizeMake(460.f, 320.f);
+        }
+//        leaderboardNode.position = ccp(missionNode.position.x, missionNode.position.y);
+
         
         /********** TabView Panel *********/
 //        CCSprite *tabTileScoreboard = [CCSprite spriteWithFile:@"leaderboard-active.png"];
@@ -108,10 +113,17 @@
         NSArray *tabTitles = @[@"Missions", @"Leaderboards"];
         tabNode = [[TabNode alloc] initWithTabs:tabs tabTitles:tabTitles];
         tabNode.contentSize = CGSizeMake(270, 208);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            tabNode.contentSize = CGSizeMake(460.f, 320.f);
+        }
         tabNode.anchorPoint = ccp(0,1);
         // initially this view will be off screen and will be animated on screen
         tabNode.position =  ccp(screenSize.width - 30,screenSize.height - 20);
         [self addChild:tabNode];
+        
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+//            leaderboardNode.position = ccp(tabNode.position.x, tabNode.position.y - 200);
+        }
         
         /*********** Facebook, Twitter, MGWU and MoreGames Menu **********/
 //        CCMenuItemSprite *mgwuIcon = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"share-menu.png"] selectedSprite:[CCSprite spriteWithFile:@"share-menu.png"] target:self selector:@selector(mguwIconPressed)];
@@ -133,7 +145,7 @@
         [self addChild:socialMenuBG];
         
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-            socialMenu.position = ccp(220, self.contentSize.height-90);
+            socialMenu.position = ccp(230, self.contentSize.height-90);
             socialMenuBG.position = ccp(210, self.contentSize.height-90);
         }
 
@@ -144,6 +156,9 @@
                                               [Leaderboard personalRecordRunningDistance]];
         personalBestNode.contentSize = CGSizeMake(200, 30);
         personalBestNode.position = ccp(20, 10);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            personalBestNode.position = ccp(45, 30);
+        }
         [self addChild:personalBestNode];
         
         /*********** Next Button ***********/
@@ -218,7 +233,7 @@
 
 - (void)twitterIconPressed
 {
-    NSString *tweetMessage = [NSString stringWithFormat:@"Checkout this amazing game: @shlns! @MakeGamesWithUs"];
+    NSString *tweetMessage = [NSString stringWithFormat:@"Checkout this amazing game: Fat Guy Fred @shlns!"];
     [MGWU postToTwitter:tweetMessage];
 }
 

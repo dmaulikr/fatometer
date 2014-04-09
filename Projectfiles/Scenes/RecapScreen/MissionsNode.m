@@ -70,7 +70,12 @@
     backgroundNode.contentSize = self.contentSize;
     backgroundNode.position = ccp(self.contentSize.width / 2, self.contentSize.height / 2);
     // move to the deepest possible layer
-    [self addChild:backgroundNode z:MAX_INT * (-1)];
+//    if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+    
+//    } else {
+        [self addChild:backgroundNode z:MAX_INT * (-1)];
+//    }
+    
 }
 
 

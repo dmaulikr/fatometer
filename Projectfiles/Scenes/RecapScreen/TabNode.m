@@ -62,13 +62,13 @@
             controllButton.preferredSize = CGSizeMake(101,25);
             CCScale9Sprite *backgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"missions-inactive.png" capInsets:CGRectZero];
             backgroundSprite.contentSize = CGSizeMake(101,25);
-            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
             
             if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
                 controllButton.contentSize = CGSizeMake(201,50);
                 controllButton.preferredSize = CGSizeMake(201,50);
                 backgroundSprite.contentSize = CGSizeMake(201,50);
             }
+            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
             
             [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
             tabButton = controllButton;
@@ -80,14 +80,14 @@
             CCScale9Sprite *backgroundSprite = [[CCScale9Sprite alloc] initWithFile:@"leaderboard-inactive.png" capInsets:CGRectZero];
             backgroundSprite.contentSize = CGSizeMake(131,25);
             backgroundSprite.contentSize = controllButton.contentSize;
-            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
             
             if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
                 controllButton.contentSize = CGSizeMake(261,50);
                 controllButton.preferredSize = CGSizeMake(261,50);
                 backgroundSprite.contentSize = CGSizeMake(261,50);
             }
-            
+            backgroundSprite.position = ccp(controllButton.contentSize.width / 2, controllButton.contentSize.height / 2);
+
             [controllButton setBackgroundSprite:backgroundSprite forState:CCControlStateNormal];
             tabButton = controllButton;
         } else {
@@ -108,8 +108,8 @@
         
         tab.anchorPoint = ccp(0,1);
 
-        tab.position = ccp(0, self.contentSize.height - TAB_BUTTON_HEIGHT);
-        [self addChild:tab];
+        tab.position = ccp(0, self.contentSize.height - (TAB_BUTTON_HEIGHT*1.3));
+        [self addChild:tab z:1000];
     }
     
     // initially select the first tab

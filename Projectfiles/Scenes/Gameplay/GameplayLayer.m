@@ -759,7 +759,7 @@
 }
 -(void)addPowers {
     int originalX = 5000;
-    Powers *powers = [CCSprite spriteWithFile:@"coin-mode.png"];
+    Powers *powers = [CCSprite spriteWithFile:@"powerup-mode.png"];
     powers.position = ccp(originalX, screenCenter.y);
     originalX += 20;
     powers.scale = 2.0;

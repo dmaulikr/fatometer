@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, GameState) {
  **/
 
 #define SCROLL_SPEED_DEFAULT 300.f
-#define SCROLL_SPEED_SKIP_AHEAD 380.f
+#define SCROLL_SPEED_SKIP_AHEAD 800.f
 #define KNIGHT_HIT_POINTS 5
 // Device and Widescreen Detection
 #define IS_WIDESCREEN ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )

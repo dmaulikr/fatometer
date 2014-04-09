@@ -41,6 +41,13 @@
     CCLabelTTF *highScoreLabel = [CCLabelTTF labelWithString:personalBestString
                                                     fontName:DEFAULT_FONT
                                                     fontSize:20];
+    
+    if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+        highScoreLabel = [CCLabelTTF labelWithString:personalBestString
+                                                        fontName:DEFAULT_FONT
+                                                        fontSize:30];
+    }
+    
     highScoreLabel.color = INVERSE_FONT_COLOR;
     highScoreLabel.anchorPoint = ccp(0, 1);
     highScoreLabel.position = ccp((self.contentSize.width/4) - 50, (self.contentSize.height)-18);
