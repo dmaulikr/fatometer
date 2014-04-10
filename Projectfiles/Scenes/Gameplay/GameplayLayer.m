@@ -1088,7 +1088,7 @@
     [popupMenu alignItemsHorizontally];
     
     if ([[CCDirector sharedDirector] winSizeInPixels].width == 1136 || [[CCDirector sharedDirector] winSizeInPixels].width == 960 || [[CCDirector sharedDirector] winSizeInPixels].width == 1024) {
-        popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-50);
+        popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-65);
     }
     else if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
         popupMenu.position = ccp(screenCenter.x, goOnPopUp.position.y-130);

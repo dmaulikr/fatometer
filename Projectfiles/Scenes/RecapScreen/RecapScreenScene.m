@@ -18,6 +18,8 @@
 #import "GameplayLayer.h"
 #import "Leaderboard.h"
 #import "GameplayLayer.h"
+#import "MainMenuLayer.h"
+#import "StoreScreenScene.h"
 #import "Store.h"
 
 @interface RecapScreenScene()
@@ -164,18 +166,27 @@
         [self addChild:personalBestNode];
         
         /*********** Next Button ***********/
-        CCMenuItemSprite *nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"button_playbutton.png"] selectedSprite:[CCSprite spriteWithFile:@"button_playbutton.png"]block:^(id sender) {
-            [[CCDirector sharedDirector] replaceScene:[CCTransitionZoomFlipAngular transitionWithDuration:1.0f scene:[GameplayLayer node]]];
-        }];
+//        CCMenuItemSprite *nextBu tton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"button_playbutton.png"] selectedSprite:[CCSprite spriteWithFile:@"button_playbutton.png"]block:^(id sender) {
+//            [[CCDirector sharedDirector] replaceScene:[CCTransitionZoomFlipAngular transitionWithDuration:1.0f scene:[GameplayLayer node]]];
+//        }];
+        
+        CCMenuItemImage *nextButton = [CCMenuItemImage itemWithNormalImage:@"next-button.png" selectedImage:@"next-button-down.png" disabledImage:nil target:self selector:@selector(nextPressed)];
+        
+        CCMenuItemImage *homeButton = [CCMenuItemImage itemWithNormalImage:@"home-button.png" selectedImage:@"home-button-down.png" disabledImage:nil target:self selector:@selector(homePressed)];
+
+        CCMenuItemImage *storeButton = [CCMenuItemImage itemWithNormalImage:@"store-button.png" selectedImage:@"store-button-down.png" disabledImage:nil target:self selector:@selector(storePressed)];
+        
+                                       
         
 //        CCMenuItemSprite *storeButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"next.png"] selectedSprite:[CCSprite spriteWithFile:@"next_.png"]block:^(id sender) {
 //                        StoreScreenScene *storeScreenScene = [[StoreScreenScene alloc] init];
 //                        [[CCDirector sharedDirector] replaceScene:storeScreenScene];
 //        }];
         
-        CCMenu *nextButtonMenu = [CCMenu menuWithItems:nextButton, nil];
+        CCMenu *nextButtonMenu = [CCMenu menuWithItems:homeButton, storeButton, nextButton, nil];
         nextButtonMenu.anchorPoint = ccp(1,0);
-        nextButtonMenu.position = ccp(self.contentSize.width - 60, 40);
+        nextButtonMenu.position = ccp(self.contentSize.width - 120, 35);
+        [nextButtonMenu alignItemsHorizontally];
         [self addChild:nextButtonMenu];
     }
     
@@ -238,6 +249,22 @@
     NSString *tweetMessage = [NSString stringWithFormat:@"Checkout this amazing game: Fat Guy Fred @shlns!"];
     [MGWU postToTwitter:tweetMessage];
 }
+
+- (void)nextPressed
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0f scene:[GameplayLayer node]]];
+}
+
+- (void)homePressed
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0f scene:[MainMenuLayer node]]];
+}
+
+- (void)storePressed
+{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0f scene:[StoreScreenScene node]]];
+}
+
 
 - (void)updateMissions
 {
