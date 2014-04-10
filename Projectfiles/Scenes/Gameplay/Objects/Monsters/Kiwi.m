@@ -14,13 +14,6 @@
 - (id)initWithMonsterPicture
 {
     self = [super initWithFile:@"kiwi.png"];
-    if (IS_IPHONE_5 || IS_IPOD_5 || IS_IPOD || IS_IPHONE) {
-        self.scale = 1.0f;
-    } else if (IS_IPAD) {
-        self.scale = 1.3f;
-    } else if (IS_IPAD_RETINA) {
-        self.scale = 1.6f;
-    }
     if (self)
     {
         self.animationFrames = [NSMutableArray array];
