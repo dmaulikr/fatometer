@@ -68,6 +68,9 @@
         /********** Statistics Panel *********/
         CCSprite *coinImage = [CCSprite spriteWithFile:@"coin-mode-icon.png"];
         coinImage.position = ccp((screenCenter.x / 5)+30, (screenCenter.y /2)+12);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            coinImage.position = ccp((screenCenter.x / 5)+43, (screenCenter.y /2)+85);
+        }
         [self addChild:coinImage z:1000000];
         NSString *coins = [NSString stringWithFormat:@"     %d coins", [Store availableAmountInAppCurrency]];
         NSString *distance = [NSString stringWithFormat:@"%d Meters", game.meters];
@@ -91,7 +94,7 @@
         missionNode = [[MissionsNode alloc] initWithMissions:game.missions];
         missionNode.contentSize = CGSizeMake(240.f, 201.f);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-            missionNode.contentSize = CGSizeMake(460.f, 320.f);
+            missionNode.contentSize = CGSizeMake(463.f, 345.f);
         }
         missionNode.usesScaleSpriteBackground = TRUE;
         
@@ -100,9 +103,8 @@
         leaderboardNode = [[LeaderboardNode alloc] initWithScoreBoard:nil];
         leaderboardNode.contentSize = CGSizeMake(240.f, 201.f);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-//            missionNode.contentSize = CGSizeMake(460.f, 320.f);
+            leaderboardNode.contentSize = CGSizeMake(452.f, 395.f);
         }
-//        leaderboardNode.position = ccp(missionNode.position.x, missionNode.position.y);
 
         
         /********** TabView Panel *********/
@@ -145,7 +147,7 @@
         [self addChild:socialMenuBG];
         
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
-            socialMenu.position = ccp(230, self.contentSize.height-90);
+            socialMenu.position = ccp(234, self.contentSize.height-90);
             socialMenuBG.position = ccp(210, self.contentSize.height-90);
         }
 

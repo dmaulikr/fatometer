@@ -58,6 +58,13 @@
         CCLabelTTF *highScoreLabel = [CCLabelTTF labelWithString:highScoreString
                                                         fontName:DEFAULT_FONT
                                                         fontSize:20];
+        
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            highScoreLabel = [CCLabelTTF labelWithString:highScoreString
+                                                            fontName:DEFAULT_FONT
+                                                            fontSize:35];
+        }
+        
         highScoreLabel.color = DEFAULT_FONT_COLOR;
         highScoreLabel.anchorPoint = ccp(0, 1);
         highScoreLabel.position = ccp(STATISTICS_PANEL_MARGIN_LEFT, yPosition);
