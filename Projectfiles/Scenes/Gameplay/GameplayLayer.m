@@ -171,7 +171,7 @@
         [[SimpleAudioEngine sharedEngine] preloadEffect:@"select.mp3"];
         
         // Play the Music
-        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fly.mp3" loop:TRUE];
+//        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"fly.mp3" loop:TRUE];
         
         // Preload particle effects
         // To preload the textures, play each effect once off-screen
@@ -587,7 +587,7 @@
             [self removeChild:coin];
             coinsCollected += coinValue;
             //            [Store addInAppCurrency:coinValue];
-            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
+//            [[SimpleAudioEngine sharedEngine] playEffect:@"coins.mp3"];
         }
     }
     [self powersCollisionDetection];
@@ -1229,7 +1229,7 @@
         [[GameMechanics sharedGameMechanics] setGameState:GameStatePaused];
         [self presentMoreCoinsPopUpWithTarget:self selector:@selector(returnedFromMoreCoinsScreenFromSkipAheadAction)];
     }
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)goOnPopUpButtonClicked {

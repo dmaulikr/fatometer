@@ -155,7 +155,7 @@
                 if (knight.stabbing == TRUE || knight.invincible)
                 {
                     [enemy gotCollected];
-                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
+//                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                     // since the enemy was hit, we can skip the second check, using 'continue'.
                     continue;
                 }
@@ -197,7 +197,7 @@
                     
                     [knight updateFatnessLevel];
                     
-                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
+//                    [[SimpleAudioEngine sharedEngine] playEffect:@"explode.mp3"];
                 }
             }
 		}

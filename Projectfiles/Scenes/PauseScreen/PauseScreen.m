@@ -106,7 +106,7 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1.0f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] quit];
     NSLog(@"quit button pressed");
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)resetButtonPressed
@@ -114,19 +114,19 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:1.0f scene:[GameplayLayer node]]];
     [[[GameMechanics sharedGameMechanics] gameScene] reset];
     NSLog(@"reset button pressed");
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)resumeButtonPressed
 {
     [self hideAndResume];
     [self.delegate resumeButtonPressed:self];
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 - (void)storeButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionPageTurn transitionWithDuration:1.0f scene:[StoreScreenScene node]]];
-    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
+//    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }
 
 - (void)present
