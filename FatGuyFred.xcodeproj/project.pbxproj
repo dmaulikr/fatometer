@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3803A83C17823FC1002E023A /* Sandwich.m in Sources */ = {isa = PBXBuildFile; fileRef = 3803A83A17823FBC002E023A /* Sandwich.m */; };
-		380D4F2D18CB9CB2003536FE /* powerups-mode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */; };
 		380D4F2E18CB9CB2003536FE /* powerup-mode.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2B18CB9CB2003536FE /* powerup-mode.png */; };
 		380D4F2F18CB9CB2003536FE /* powerup-mode-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */; };
 		380D4F3318CBBEF3003536FE /* keep-playing.png in Resources */ = {isa = PBXBuildFile; fileRef = 380D4F3018CBBEF3003536FE /* keep-playing.png */; };
@@ -28,6 +27,7 @@
 		384DEFC018454D86004B71A9 /* pause-down-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFBD18454D86004B71A9 /* pause-down-hd.png */; };
 		384DEFC118454D86004B71A9 /* pause-down-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFBE18454D86004B71A9 /* pause-down-ipadhd.png */; };
 		384DEFC218454D86004B71A9 /* pause-down.png in Resources */ = {isa = PBXBuildFile; fileRef = 384DEFBF18454D86004B71A9 /* pause-down.png */; };
+		3862474318F86D02001602A8 /* powerup-mode-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3862474218F86D02001602A8 /* powerup-mode-hd.png */; };
 		387F865B179E517100D2F1A4 /* Bread.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F865A179E517100D2F1A4 /* Bread.m */; };
 		387F865E179E51A900D2F1A4 /* Broccoli.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F865D179E51A900D2F1A4 /* Broccoli.m */; };
 		387F8661179E51DD00D2F1A4 /* Carrots.m in Sources */ = {isa = PBXBuildFile; fileRef = 387F8660179E51DC00D2F1A4 /* Carrots.m */; };
@@ -275,9 +275,6 @@
 		38F7517C17A9F112006B3B91 /* notification-box-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7511E17A9F112006B3B91 /* notification-box-hd.png */; };
 		38F7517D17A9F112006B3B91 /* notification-box-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7511F17A9F112006B3B91 /* notification-box-ipadhd.png */; };
 		38F7517E17A9F112006B3B91 /* notification-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512017A9F112006B3B91 /* notification-box.png */; };
-		38F7517F17A9F112006B3B91 /* keepgoing-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512117A9F112006B3B91 /* keepgoing-hd.png */; };
-		38F7518017A9F112006B3B91 /* keepgoing-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512217A9F112006B3B91 /* keepgoing-ipadhd.png */; };
-		38F7518117A9F112006B3B91 /* keepgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512317A9F112006B3B91 /* keepgoing.png */; };
 		38F7518217A9F112006B3B91 /* animation_knight-1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512517A9F112006B3B91 /* animation_knight-1-hd.png */; };
 		38F7518317A9F112006B3B91 /* animation_knight-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512617A9F112006B3B91 /* animation_knight-1.png */; };
 		38F7518417A9F112006B3B91 /* animation_knight-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38F7512717A9F112006B3B91 /* animation_knight-hd.plist */; };
@@ -705,7 +702,6 @@
 /* Begin PBXFileReference section */
 		3803A83A17823FBC002E023A /* Sandwich.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sandwich.m; sourceTree = "<group>"; };
 		3803A83D1782457F002E023A /* Sandwich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sandwich.h; sourceTree = "<group>"; };
-		380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerups-mode-hd.png"; sourceTree = "<group>"; };
 		380D4F2B18CB9CB2003536FE /* powerup-mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerup-mode.png"; sourceTree = "<group>"; };
 		380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerup-mode-ipadhd.png"; sourceTree = "<group>"; };
 		380D4F3018CBBEF3003536FE /* keep-playing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keep-playing.png"; sourceTree = "<group>"; };
@@ -727,6 +723,7 @@
 		384DEFBD18454D86004B71A9 /* pause-down-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-down-hd.png"; path = "Projectfiles/Resources/Gameplay/pause-down-hd.png"; sourceTree = SOURCE_ROOT; };
 		384DEFBE18454D86004B71A9 /* pause-down-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-down-ipadhd.png"; path = "Projectfiles/Resources/Gameplay/pause-down-ipadhd.png"; sourceTree = SOURCE_ROOT; };
 		384DEFBF18454D86004B71A9 /* pause-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-down.png"; path = "Projectfiles/Resources/Gameplay/pause-down.png"; sourceTree = SOURCE_ROOT; };
+		3862474218F86D02001602A8 /* powerup-mode-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powerup-mode-hd.png"; sourceTree = "<group>"; };
 		387F8659179E517100D2F1A4 /* Bread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bread.h; sourceTree = "<group>"; };
 		387F865A179E517100D2F1A4 /* Bread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bread.m; sourceTree = "<group>"; };
 		387F865C179E51A900D2F1A4 /* Broccoli.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Broccoli.h; sourceTree = "<group>"; };
@@ -992,9 +989,6 @@
 		38F7511E17A9F112006B3B91 /* notification-box-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box-hd.png"; sourceTree = "<group>"; };
 		38F7511F17A9F112006B3B91 /* notification-box-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box-ipadhd.png"; sourceTree = "<group>"; };
 		38F7512017A9F112006B3B91 /* notification-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "notification-box.png"; sourceTree = "<group>"; };
-		38F7512117A9F112006B3B91 /* keepgoing-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keepgoing-hd.png"; sourceTree = "<group>"; };
-		38F7512217A9F112006B3B91 /* keepgoing-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "keepgoing-ipadhd.png"; sourceTree = "<group>"; };
-		38F7512317A9F112006B3B91 /* keepgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = keepgoing.png; sourceTree = "<group>"; };
 		38F7512517A9F112006B3B91 /* animation_knight-1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_knight-1-hd.png"; sourceTree = "<group>"; };
 		38F7512617A9F112006B3B91 /* animation_knight-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "animation_knight-1.png"; sourceTree = "<group>"; };
 		38F7512717A9F112006B3B91 /* animation_knight-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "animation_knight-hd.plist"; sourceTree = "<group>"; };
@@ -1700,8 +1694,8 @@
 				380D4F3018CBBEF3003536FE /* keep-playing.png */,
 				380D4F3118CBBEF3003536FE /* keep-playing-ipadhd.png */,
 				380D4F3218CBBEF3003536FE /* keep-playing-hd.png */,
-				380D4F2A18CB9CB2003536FE /* powerups-mode-hd.png */,
 				380D4F2B18CB9CB2003536FE /* powerup-mode.png */,
+				3862474218F86D02001602A8 /* powerup-mode-hd.png */,
 				380D4F2C18CB9CB2003536FE /* powerup-mode-ipadhd.png */,
 				38F18ED418B70D2E007200C9 /* coin-mode-hd.png */,
 				38F18ED518B70D2E007200C9 /* coin-mode-ipadhd.png */,
@@ -1723,9 +1717,6 @@
 				38F750FD17A9F112006B3B91 /* arrows.png */,
 				38F7510917A9F112006B3B91 /* fire.png */,
 				38F7510A17A9F112006B3B91 /* HUD */,
-				38F7512117A9F112006B3B91 /* keepgoing-hd.png */,
-				38F7512217A9F112006B3B91 /* keepgoing-ipadhd.png */,
-				38F7512317A9F112006B3B91 /* keepgoing.png */,
 				38F7512417A9F112006B3B91 /* Objects */,
 				384DEFBD18454D86004B71A9 /* pause-down-hd.png */,
 				384DEFBE18454D86004B71A9 /* pause-down-ipadhd.png */,
@@ -3044,9 +3035,6 @@
 				70D2E1DC188B1D3500720C31 /* pause-title-hd.png in Resources */,
 				38F7517E17A9F112006B3B91 /* notification-box.png in Resources */,
 				38D9782818E7C43200752091 /* buy-button-down-ipadhd.png in Resources */,
-				38F7517F17A9F112006B3B91 /* keepgoing-hd.png in Resources */,
-				38F7518017A9F112006B3B91 /* keepgoing-ipadhd.png in Resources */,
-				38F7518117A9F112006B3B91 /* keepgoing.png in Resources */,
 				38F7518217A9F112006B3B91 /* animation_knight-1-hd.png in Resources */,
 				38F9B44718D7E6F60088077F /* fatguyfredL4.plist in Resources */,
 				38F7518317A9F112006B3B91 /* animation_knight-1.png in Resources */,
@@ -3073,6 +3061,7 @@
 				38F7518F17A9F112006B3B91 /* designed-fx.png in Resources */,
 				38F9B44518D7E6F60088077F /* fatguyfredL4-hd.plist in Resources */,
 				38F7519017A9F112006B3B91 /* fx-explosion.plist in Resources */,
+				3862474318F86D02001602A8 /* powerup-mode-hd.png in Resources */,
 				38F7519117A9F112006B3B91 /* monster-animations-hd.plist in Resources */,
 				70D2E1FB188B248D00720C31 /* pausebackground-iphone5hd.png in Resources */,
 				38F7519217A9F112006B3B91 /* monster-animations.plist in Resources */,
@@ -3131,7 +3120,6 @@
 				38D9784518E8A69600752091 /* fatguyfredL1-ipadhd.plist in Resources */,
 				38C2ED0618E288AB004FB5D8 /* large-coin.png in Resources */,
 				38F751CA17A9F125006B3B91 /* buy1.png in Resources */,
-				380D4F2D18CB9CB2003536FE /* powerups-mode-hd.png in Resources */,
 				38F751CB17A9F125006B3B91 /* buy2-hd.png in Resources */,
 				38F751CC17A9F125006B3B91 /* buy2-ipadhd.png in Resources */,
 				38F751CD17A9F125006B3B91 /* buy2.png in Resources */,

@@ -186,6 +186,9 @@
         CCMenu *nextButtonMenu = [CCMenu menuWithItems:homeButton, storeButton, nextButton, nil];
         nextButtonMenu.anchorPoint = ccp(1,0);
         nextButtonMenu.position = ccp(self.contentSize.width - 120, 35);
+        if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
+            nextButtonMenu.position = ccp(self.contentSize.width - 280, 75);
+        }
         [nextButtonMenu alignItemsHorizontally];
         [self addChild:nextButtonMenu];
     }

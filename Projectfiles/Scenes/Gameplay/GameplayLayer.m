@@ -83,6 +83,8 @@
 #import "STYLES.h"
 #import "Powers.h"
 
+#import <CoreMotion/CoreMotion.h>
+
 // defines how many update cycles run, before the missions get an update about the current game state
 #define MISSION_UPDATE_FREQUENCY 10
 
@@ -106,7 +108,9 @@
 - (void)goOnPopUpButtontaped:(CCControlButton *)sender;
 @end
 
-@implementation GameplayLayer
+@implementation GameplayLayer {
+    CMMotionManager *_motionManager;
+}
 
 + (id)scene {
     CCScene *scene = [CCScene node];
@@ -140,6 +144,7 @@
 - (id)init {
     self = [super init];
     if (self) {
+        _motionManager = [[CMMotionManager alloc] init];
         
         scrollSpeed = 280.0f;
         if (IS_IPOD || IS_IPAD_RETINA) {
@@ -229,14 +234,14 @@
         [hudNode addChild:pauseButtonMenu];
         
         // SET UP TOOLBAR, POINTER, AND FATNESS
+//        toolBar.scale = 1.3;
+//        pointer.scale = 1.3;
         toolBar = [CCSprite spriteWithFile:@"weight-bar.png"];
         pointer = [CCSprite spriteWithFile:@"weight-indicator.png"];
         toolBar.position = ccp(screenCenter.x,screenSize.height-24);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
             toolBar.position = ccp(screenCenter.x,screenSize.height-35);
         }
-        toolBar.scale = 1.3;
-        pointer.scale = 1.3;
         
         // Set Up Tutorial Images and Arrows
         tapGesture = [CCSprite spriteWithFile:@"tap-screen.png"];
@@ -521,6 +526,36 @@
 
 - (void) update:(ccTime)delta
 {
+    // determines how sensitive the accelerometer reacts (higher = more sensitive)
+    float sensitivity = 500.0f;
+    // controls how quickly velocity decelerates (lower = quicker to change direction)
+	float deceleration = 0.0001f;
+    
+    CMAccelerometerData *accelerometerData = _motionManager.accelerometerData;
+    CMAcceleration acceleration = accelerometerData.acceleration;
+    CGFloat newXPosition = knight.velocity.x * deceleration + acceleration.y * sensitivity;
+//    newXPosition = clampf(newXPosition, 0, self.contentSize.width);
+    
+    // how fast the velocity can be at most
+	float maxVelocity = 1500;
+	// adjust velocity based on current accelerometer acceleration
+//	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
+	// we must limit the maximum velocity of the player sprite, in both directions
+	if (knight.velocity.x > maxVelocity)
+	{
+		newXPosition = maxVelocity;
+	}
+	else if (knight.velocity.x < - maxVelocity)
+	{
+		newXPosition = - maxVelocity;
+	}
+    
+    knight.velocity = ccp(newXPosition, knight.velocity.y);
+    
+    
+	
+    
+    
     // update the amount of in-App currency in pause mode, too
     inAppCurrencyDisplayNode.score = coinsCollected;
     
@@ -1058,6 +1093,8 @@
 {
 //  RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
 //  [[CCDirector sharedDirector] replaceScene:recap];
+    
+    [_motionManager startAccelerometerUpdates];
   
     // setup a gesture listener for jumping and stabbing gestures
     [KKInput sharedInput].gestureSwipeEnabled = TRUE;
@@ -1068,6 +1105,8 @@
 }
 
 - (void)onExit {
+    [_motionManager stopAccelerometerUpdates];
+    
     // very important! deactivate the gestureInput, otherwise touches on scrollviews and tableviews will be cancelled!
     [KKInput sharedInput].gestureSwipeEnabled = FALSE;
 }
