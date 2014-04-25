@@ -55,7 +55,7 @@
     // mark as unvisible and move off screen
     self.visible = FALSE;
     self.position = ccp(-MAX_INT, 0);
-    [[GameMechanics sharedGameMechanics] game].fatness += 19;
+    [[GameMechanics sharedGameMechanics] game].fatness += 22;
     [[GameMechanics sharedGameMechanics] game].foodsCollected = [[GameMechanics sharedGameMechanics] game].foodsCollected += 1;
 }
 

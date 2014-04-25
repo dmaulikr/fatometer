@@ -12,7 +12,7 @@
 @implementation Watermelon
 - (id)initWithMonsterPicture
 {
-    self = [super initWithFile:@"tomato.png"];
+    self = [super initWithFile:@"watermelon.png"];
     
     if (self)
     {
