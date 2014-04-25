@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 MakeGamesWithUs Inc. All rights reserved.
 //
 
-#import "Sandwich.h"
+#import "Strawberries.h"
 
-@interface Meat : Sandwich
+@interface Meat : Strawberries
 
 @end

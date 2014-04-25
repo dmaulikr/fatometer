@@ -146,7 +146,7 @@
     if (self) {
         _motionManager = [[CMMotionManager alloc] init];
         
-        scrollSpeed = 280.0f;
+        scrollSpeed = 300.0f;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 600.0f;
         }
@@ -234,14 +234,14 @@
         [hudNode addChild:pauseButtonMenu];
         
         // SET UP TOOLBAR, POINTER, AND FATNESS
-//        toolBar.scale = 1.3;
-//        pointer.scale = 1.3;
         toolBar = [CCSprite spriteWithFile:@"weight-bar.png"];
         pointer = [CCSprite spriteWithFile:@"weight-indicator.png"];
         toolBar.position = ccp(screenCenter.x,screenSize.height-24);
         if ([[CCDirector sharedDirector] winSizeInPixels].width == 2048) {
             toolBar.position = ccp(screenCenter.x,screenSize.height-35);
         }
+//        toolBar.scale = 1.3;
+//        pointer.scale = 1.3;
         
         // Set Up Tutorial Images and Arrows
         tapGesture = [CCSprite spriteWithFile:@"tap-screen.png"];
@@ -454,29 +454,6 @@
 
 
 #pragma mark - Update & Input Events
-
--(void) accelerometer:(UIAccelerometer *)accelerometer
-        didAccelerate:(UIAcceleration *)acceleration
-{
-	// controls how quickly velocity decelerates (lower = quicker to change direction)
-	float deceleration = 0.0001f;
-	// determines how sensitive the accelerometer reacts (higher = more sensitive)
-	float sensitivity = 500.0f;
-	// how fast the velocity can be at most
-	float maxVelocity = 1500;
-	// adjust velocity based on current accelerometer acceleration
-	float velocityX = knight.velocity.x * deceleration + acceleration.y * sensitivity;
-	// we must limit the maximum velocity of the player sprite, in both directions
-	if (knight.velocity.x > maxVelocity)
-	{
-		velocityX = maxVelocity;
-	}
-	else if (knight.velocity.x < - maxVelocity)
-	{
-		velocityX = - maxVelocity;
-	}
-    knight.velocity = ccp(velocityX, knight.velocity.y);
-}
 
 - (void)pushGameStateToMissions {
     for (Mission *mission in game.missions) {
@@ -864,7 +841,7 @@
 }
 - (void)changeStuff {
     if (pointsDisplayNode.score > 1500) {
-        scrollSpeed1 = 290;
+        scrollSpeed1 = 350;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 440.0f;
         }
@@ -875,7 +852,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:300 forMonsterType:[Hotdog class]];
     }
     if (pointsDisplayNode.score > 3000) {
-        scrollSpeed2 = 330;
+        scrollSpeed2 = 390;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 480.0f;
         }
@@ -886,7 +863,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Apples class]];
     }
     if (pointsDisplayNode.score > 6000) {
-        scrollSpeed3 = 370;
+        scrollSpeed3 = 430;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 520.0f;
         }
@@ -897,7 +874,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:600 forMonsterType:[Pizza class]];
     }
     if (pointsDisplayNode.score > 7500) {
-        scrollSpeed4 = 410;
+        scrollSpeed4 = 470;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 560.0f;
         }
@@ -908,7 +885,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:570 forMonsterType:[Pizza class]];
     }
     if (pointsDisplayNode.score > 10000) {
-        scrollSpeed5 = 450;
+        scrollSpeed5 = 510;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 580.0f;
         }
@@ -919,7 +896,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
     }
     if (pointsDisplayNode.score > 13000) {
-        scrollSpeed6 = 490;
+        scrollSpeed6 = 550;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 620.0f;
         }
@@ -931,7 +908,7 @@
         
     }
     if (pointsDisplayNode.score > 16500) {
-        scrollSpeed7 = 530;
+        scrollSpeed7 = 590;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 660.0f;
         }
@@ -942,7 +919,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Apples class]];
     }
     if (pointsDisplayNode.score > 20000) {
-        scrollSpeed8 = 570;
+        scrollSpeed8 = 630;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 700.0f;
         }
@@ -953,7 +930,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:440 forMonsterType:[Oranges class]];
     }
     if (pointsDisplayNode.score > 22500) {
-        scrollSpeed9 = 580;
+        scrollSpeed9 = 670;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 710.0f;
         }
@@ -964,7 +941,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 25000) {
-        scrollSpeed10 = 590;
+        scrollSpeed10 = 710;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 720.0f;
         }
@@ -975,7 +952,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 27500) {
-        scrollSpeed11 = 600;
+        scrollSpeed11 = 750;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 730.0f;
         }
@@ -986,7 +963,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:510 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 30000) {
-        scrollSpeed12 = 610;
+        scrollSpeed12 = 790;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 740.0f;
         }
@@ -997,7 +974,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:410 forMonsterType:[Corn class]];
     }
     if (pointsDisplayNode.score > 32500) {
-        scrollSpeed13 = 620;
+        scrollSpeed13 = 800;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 750.0f;
         }
@@ -1008,7 +985,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:390 forMonsterType:[Donuts class]];
     }
     if (pointsDisplayNode.score > 35000) {
-        scrollSpeed14 = 630;
+        scrollSpeed14 = 810;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 760.0f;
         }
@@ -1019,7 +996,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:500 forMonsterType:[Pizza class]];
     }
     if (pointsDisplayNode.score > 37500) {
-        scrollSpeed15 = 640;
+        scrollSpeed15 = 820;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 770.0f;
         }
@@ -1030,7 +1007,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:490 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 40000) {
-        scrollSpeed16 = 650;
+        scrollSpeed16 = 830;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 780.0f;
         }
@@ -1041,7 +1018,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:470 forMonsterType:[Strawberries class]];
     }
     if (pointsDisplayNode.score > 42500) {
-        scrollSpeed17 = 652;
+        scrollSpeed17 = 840;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 782.0f;
         }
@@ -1052,7 +1029,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:290 forMonsterType:[Apples class]];
     }
     if (pointsDisplayNode.score > 45000) {
-        scrollSpeed18 = 654;
+        scrollSpeed18 = 850;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 784.0f;
         }
@@ -1063,7 +1040,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Donuts class]];
     }
     if (pointsDisplayNode.score > 47500) {
-        scrollSpeed19 = 655;
+        scrollSpeed19 = 860;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 785.0f;
         }
@@ -1074,7 +1051,7 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:250 forMonsterType:[Eggs class]];
     }
     if (pointsDisplayNode.score > 50000) {
-        scrollSpeed20 = 656;
+        scrollSpeed20 = 870;
         if (IS_IPOD || IS_IPAD_RETINA) {
             scrollSpeed = 786.0f;
         }
@@ -1085,6 +1062,153 @@
         [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
         [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
     }
+    if (pointsDisplayNode.score > 52500) {
+        scrollSpeed20 = 875;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 55000) {
+        scrollSpeed20 = 880;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 57500) {
+        scrollSpeed20 = 885;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 60000) {
+        scrollSpeed20 = 890;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 62500) {
+        scrollSpeed20 = 895;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 65000) {
+        scrollSpeed20 = 900;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 67500) {
+        scrollSpeed20 = 905;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 70000) {
+        scrollSpeed20 = 910;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 72500) {
+        scrollSpeed20 = 915;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 75000) {
+        scrollSpeed20 = 920;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 77500) {
+        scrollSpeed20 = 925;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+    if (pointsDisplayNode.score > 80000) {
+        scrollSpeed20 = 930;
+        if (IS_IPOD || IS_IPAD_RETINA) {
+            scrollSpeed = 786.0f;
+        }
+        [[GameMechanics sharedGameMechanics] setBackGroundScrollSpeedX:scrollSpeed20];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:202 forMonsterType:[Apples class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:169 forMonsterType:[Pizza class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Carrots class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:294 forMonsterType:[Kiwi class]];
+        [[GameMechanics sharedGameMechanics] setSpawnRate:204 forMonsterType:[Tomato class]];
+    }
+
+
+
 }
 
 #pragma mark - Scene Lifecycle

@@ -21,6 +21,7 @@
 #import "MainMenuLayer.h"
 #import "StoreScreenScene.h"
 #import "Store.h"
+#import "GameMechanics.h"
 
 @interface RecapScreenScene()
 
@@ -255,7 +256,9 @@
 
 - (void)nextPressed
 {
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionCrossFade transitionWithDuration:1.0f scene:[GameplayLayer node]]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:1.0f scene:[GameplayLayer node]]];
+    [[[GameMechanics sharedGameMechanics] gameScene] reset];
+
 }
 
 - (void)homePressed
