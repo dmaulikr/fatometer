@@ -1392,6 +1392,8 @@
 
     // IMPORTANT: set game state to 'GameStateMenu', otherwise menu animations will no be played
     [[GameMechanics sharedGameMechanics] setGameState:GameStateMenu];
+    
+    [Store addInAppCurrency:coinValue];
 
     RecapScreenScene *recap = [[RecapScreenScene alloc] initWithGame:game];
     [[CCDirector sharedDirector] replaceScene:recap];
