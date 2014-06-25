@@ -16,6 +16,7 @@
 #import "STYLES.h"
 #import "StyleManager.h"
 #import "GameplayLayer.h"
+#import "GameMechanics.h"
 
 #define ROW_HEIGHT 39
 #define ROW_HEIGHT_HEADER 20
@@ -59,10 +60,10 @@
 
 @synthesize hasVariableCellSize = _hasVariableCellSize, tableContentSize = _tableContentSize;
 
-- (id)init {
-    self = [super init];
-    
-    if (self) {
+- (id)init {    
+    if (self = [super init]) {
+        [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
+        
         _hasVariableCellSize = TRUE;
         screenSize = [CCDirector sharedDirector].screenSize;
         

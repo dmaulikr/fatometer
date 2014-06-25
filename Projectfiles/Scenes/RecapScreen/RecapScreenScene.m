@@ -49,6 +49,8 @@
     {
         game = g;
         
+        [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
+        
         CGSize screenSize = [CCDirector sharedDirector].screenSize;
         size = [[CCDirector sharedDirector] winSize];
         screenCenter = ccp(size.width/2, size.height/2);
@@ -257,7 +259,6 @@
 - (void)nextPressed
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:1.0f scene:[GameplayLayer node]]];
-    [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
 }
 
 - (void)homePressed
