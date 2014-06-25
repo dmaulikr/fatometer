@@ -112,7 +112,7 @@
 - (void)resetButtonPressed
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:1.0f scene:[GameplayLayer node]]];
-    [[[GameMechanics sharedGameMechanics] gameScene] reset];
+    [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
     NSLog(@"reset button pressed");
 //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
 }

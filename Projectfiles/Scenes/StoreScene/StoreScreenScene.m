@@ -167,7 +167,7 @@
             StoreItem *storeItem = [itemsInCategory objectAtIndex:i];
             [itemCell setupWithStoreItem:storeItem];
             itemCell.idx = index;
-            itemCell.contentSize = CGSizeMake(screenSize.width, screenSize.height / 10);
+            itemCell.contentSize = CGSizeMake(screenSize.width, screenSize.height / 7.8);
             itemCell.size = itemCell.contentSize;
             itemCell.delegate = self; 
             

@@ -257,8 +257,7 @@
 - (void)nextPressed
 {
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFadeBL transitionWithDuration:1.0f scene:[GameplayLayer node]]];
-    [[[GameMechanics sharedGameMechanics] gameScene] reset];
-
+    [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
 }
 
 - (void)homePressed

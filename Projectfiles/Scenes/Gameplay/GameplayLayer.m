@@ -258,6 +258,7 @@
         
         toolbarArrows = [CCSprite spriteWithFile:@"arrows.png"];
         toolbarArrows.position = ccp(screenCenter.x, screenCenter.y + 50);
+        toolbarArrows.scale = 0.6f;
         [self addChild:toolbarArrows z:1000];
         toolbarArrows.visible = false;
 

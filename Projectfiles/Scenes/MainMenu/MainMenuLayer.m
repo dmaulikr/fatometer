@@ -111,7 +111,7 @@
 //    [[SimpleAudioEngine sharedEngine] playEffect:@"select.mp3"];
     
     [[CCDirector sharedDirector] replaceScene: [CCTransitionSlideInB transitionWithDuration:0.5f scene:[GameplayLayer node]]];
-
+    [[[GameMechanics sharedGameMechanics] gameScene] resetGame];
 }
 
 #pragma mark - Scene Lifecyle

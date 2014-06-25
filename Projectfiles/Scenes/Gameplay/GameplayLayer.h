@@ -141,7 +141,7 @@
 //-(void)resizeSprite;
 
 - (void)quit;
-- (void)reset;
+- (void)resetGame;
 
 // returns a GamePlayLayer, with an overlayed MainMenu
 + (id)scene;
