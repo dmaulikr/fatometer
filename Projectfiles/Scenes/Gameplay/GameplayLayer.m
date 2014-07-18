@@ -1358,8 +1358,6 @@
 }
 
 - (void)goOnPopUpButtonClicked {
-//    [[GameMechanics sharedGameMechanics] game].deaths+=1;
-//    NSLog(@"Button clicked.");
 //    if (sender.tag == 0)
 //    {
         if ([Store hasSufficientFundsForGoOnAction])
@@ -1389,6 +1387,10 @@
     // Cancel button selected
     [self removeChild:popupMenu];
     [goOnPopUp dismiss];
+    // One more death
+    [[GameMechanics sharedGameMechanics] game].deaths++;
+    NSLog(@"Current Number of Deaths: %i", [[GameMechanics sharedGameMechanics] game].deaths);
+    
     game.score ++;
 
     // IMPORTANT: set game state to 'GameStateMenu', otherwise menu animations will no be played

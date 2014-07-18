@@ -21,7 +21,13 @@
     
     if (self)
     {
-        tempDeaths = 0;
+//        if ([[NSUserDefaults standardUserDefaults]  integerForKey:@"numDeaths"] == 0) {
+//            tempDeaths = 0;
+//            tempDeaths = [[GameMechanics sharedGameMechanics] game].deaths;
+//        }
+        
+//        [[NSUserDefaults standardUserDefaults] setInteger:[[GameMechanics sharedGameMechanics] game].deaths forKey:@"numDeaths"];
+
         self.missionObjectives = [[NSMutableArray alloc] init];
         
         // available mission objectives need to be defined here, for mission generator
@@ -50,9 +56,9 @@
 
 - (void)generalGameUpdate:(Game *)game
 {
-    tempDeaths = [[GameMechanics sharedGameMechanics] game].deaths;
+//    tempDeaths = [[GameMechanics sharedGameMechanics] game].deaths;
     // check if we have reached the required distance
-    if (tempDeaths >= dieingTimes.goalValue)
+    if ([[GameMechanics sharedGameMechanics] game].deaths >= dieingTimes.goalValue)
     {
         self.successfullyCompleted = TRUE;
     }
