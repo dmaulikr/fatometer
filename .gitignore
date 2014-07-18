@@ -17,6 +17,7 @@ xcuserdata
 profile
 *.moved-aside
 *.DS_Store
+Projectfiles/Resources/*
 =======
 DerivedData
 .idea/
